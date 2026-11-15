@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "scope": "Research code, protocols, frozen scientific summaries, manuscript and supplement",
   "source_text_encoding": "UTF-8 with LF",
-  "manifest_sha256": "b8e31cceaa9d5bd6ff2d1e862cb0cbe90e737ec0b4559c92d161cc159e07cf29",
+  "manifest_sha256": "2a6951aeb614c214e1e343535db3b326a524cde683a3e6133e4523aa76586732",
   "artifacts": {
     "manuscript/manuscript.pdf": {
       "sha256": "47209785a8f6489f68ebdf919323b60ef14fe6d12165f238282ed650069ba442"
@@ -55,5 +55,8 @@
     "Host and path metadata are redacted; historical artifact hashes identify their original bytes."
   ],
   "artifact_source_commit": "139fd43e44ffa02a882874882cac8dc0be0c0b2f",
-  "artifact_source_scope": "Source and release content used for the PDFs and validation; later changes to this metadata do not alter those artifacts."
+  "artifact_source_scope": "Source and release content used for the PDFs and validation; later changes to this metadata do not alter those artifacts.",
+  "documentation_notes": [
+    "The seed-2029 reproduction command uses the original comparison table in results/overnight_20261107/gpu/."
+  ]
 }

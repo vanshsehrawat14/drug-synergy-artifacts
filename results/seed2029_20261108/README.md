@@ -173,7 +173,7 @@ python experiments/overnight_20261107/seed2029/seed2029_job.py --task TASK --his
 python experiments/overnight_20261107/seed2029_report.py \
   --runs results/research_20261107/runs results/research_20261107/seed2029 \
   --f2-runs results/research_20261107/seed2029/f2_base --resolution RESOLUTION_CACHE \
-  --original results/overnight_20261107/ablation_comparisons.csv --output NEW_ANALYSIS
+  --original results/overnight_20261107/gpu/ablation_comparisons.csv --output NEW_ANALYSIS
 ```
 
 The [mechanisms protocol](../../reports/mechanisms_gpu_runs.md) gives the other campaigns and matched analysis commands. Scheduler and transfer scripts from the original execution are omitted.
