@@ -1,0 +1,34 @@
+{
+  "description": "Neighborhood CF (Shar, experiments/neighborhood_cf) on the shared five-fold benchmark, and a small validation-only extension. Written before any extension variant was run.",
+  "original": {
+    "method": "experiments/neighborhood_cf/run_neighborhood_cf.py predict_cf, unchanged",
+    "target": "mean combination inhibition over the 16 positive-dose cells and the replicate blocks of each pair and cell line",
+    "dose_rows": "the pair-cell prediction is given to every dose row of that pair and cell line"
+  },
+  "validation": "fold (k + 1) % 5 for test fold k; training folds exclude both; no refit on training plus validation",
+  "cf_stage": {
+    "default": "shar",
+    "variants": {
+      "shar": {"k": [3, 5, 10, 20], "shrink": [2.0, 5.0, 20.0], "similarity": "pearson", "purpose": "her grid and similarity"},
+      "wide": {"k": [3, 5, 10, 20, 36], "shrink": [2.0, 5.0, 20.0, 50.0, 100.0], "similarity": "pearson", "purpose": "larger neighbourhoods, stronger shrinkage"},
+      "cosine": {"k": [3, 5, 10, 20], "shrink": [2.0, 5.0, 20.0], "similarity": "cosine", "purpose": "uncentred residual similarity"},
+      "cell": {"k": [3, 5, 10, 20], "shrink": [2.0, 5.0, 20.0], "similarity": "cell", "purpose": "similarity from the same cell line, averaged with the all-cell similarity"}
+    },
+    "ridge_lambdas": [0.01, 0.1, 1.0, 10.0, 100.0],
+    "inner_selection": "k, shrink and the additive ridge lambda per fold on unweighted validation pair-cell MSE, as in her predict_cf",
+    "criterion": "pooled validation squared error of the pair-cell prediction on validation dose rows (each pair-cell weighted by its rows), over the five validation folds"
+  },
+  "dose_stage": {
+    "default": "additive",
+    "variants": {
+      "none": {"purpose": "her prediction on every dose row (reference only, not selectable)"},
+      "additive": {"purpose": "drug-by-dose-rank effects per cell line, centred within each pair-cell"},
+      "partner": {"purpose": "drug-by-own-rank-by-partner-rank effects per cell line, centred within each pair-cell"}
+    },
+    "inputs": "drug identities, cell line and each drug's dose rank (1-4) within its block; fitted on training-fold rows minus their pair-cell mean",
+    "lambdas": [1.0, 10.0, 100.0, 1000.0],
+    "inner_selection": "one lambda per fold on validation within-pair-cell squared error",
+    "criterion": "pooled validation within-pair-cell squared error over the five validation folds"
+  },
+  "rule": "Each stage keeps its default unless a challenger's pooled validation criterion is at least 1% lower; among qualifying challengers the lowest wins. The two stages add without a cross term because the dose profile sums to zero within every pair-cell. The selected pair then predicts all five test folds once. Test folds are not read before the decision file exists."
+}

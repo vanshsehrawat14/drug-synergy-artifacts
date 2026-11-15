@@ -1,0 +1,14 @@
+{
+  "protocol": "third-screen-validation-v1",
+  "dataset": "data/processed/ncats_es_v2",
+  "rows": 112165,
+  "pairs": 2396,
+  "drugs": 72,
+  "cells": 1,
+  "imputed_rows": 0,
+  "bootstrap": 1000,
+  "monotherapy_status": {
+    "exact": 110635,
+    "interpolated": 1530
+  }
+}

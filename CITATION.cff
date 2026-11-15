@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this code or its results, please cite this repository and the accompanying manuscript."
+type: software
+title: "Interaction Signal and Loewe Reference Computation in Drug-Synergy Prediction on the O'Neil Screen"
+authors:
+  - family-names: Sehrawat
+    given-names: Vanshdeep
+    affiliation: "University of Nevada, Las Vegas"
+  - family-names: Ukandu
+    given-names: Kingsley
+    affiliation: "University of Nevada, Las Vegas"
+  - family-names: Kim
+    given-names: Sharlene
+    affiliation: "University of Nevada, Las Vegas"
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/vanshsehrawat14/drug-synergy-artifacts"
+url: "https://github.com/vanshsehrawat14/drug-synergy-artifacts"
+keywords:
+  - drug synergy
+  - Loewe additivity
+  - interaction prediction
+  - drug combinations
+  - reproducibility

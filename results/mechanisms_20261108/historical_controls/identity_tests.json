@@ -1,0 +1,17 @@
+{
+  "inverse_identity": {
+    "arms_checked": 12204,
+    "max_rel_error": "2.4486e-29",
+    "failures_above_1e_30": 2
+  },
+  "arm_symmetry": {
+    "cases": 20000,
+    "status_mismatches": 0,
+    "max_root_difference": 2.5437429940211587e-12
+  },
+  "monotonicity": {
+    "adjacent_pairs": 271240,
+    "violations_beyond_1e_9": 0,
+    "note": "Certified roots must be nondecreasing in each dose for co-increasing curves (nonincreasing for co-decreasing)."
+  }
+}

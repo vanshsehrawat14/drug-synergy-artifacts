@@ -1,0 +1,572 @@
+{
+  "declared": {
+    "name": "beyond-bliss-regimes-v1",
+    "frozen": "2026-11-06, before any regime-level number was computed. The pooled results (contrast R2 F2 0.359 vs Bliss 0.315; interaction residual R2 0.064, jackknife [-0.037, 0.165]) were already known, so this is an exploratory subgroup analysis of existing out-of-fold predictions. No model is refit or retuned.",
+    "models": [
+      "selected:F2",
+      "selected:F0"
+    ],
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "reference": "bliss_reference: Bliss rule on training-pair monotherapy, as in the sprint benchmark",
+    "unit": "pair-cell panel rows: mean of the dose rows of a pair and cell inside the regime",
+    "metrics": {
+      "interaction_residual_r2": "1 - ||P(y - p)||^2 / ||P(y - R)||^2, P removes drug main effects within fold and cell",
+      "contrast_r2": "1 - ||P(y - p)||^2 / ||P y||^2",
+      "response_residual_r2": "1 - sum (y - p)^2 / sum (y - R)^2 on dose rows (includes main-effect corrections)"
+    },
+    "regimes": {
+      "dose_region": "per block, rank each arm's dose among its four combination doses; low = both ranks 1-2, high = both 3-4, mixed = otherwise",
+      "bliss_level": "Bliss expected inhibition R of the dose row: [-inf, 25), [25, 50), [50, 75), [75, inf)",
+      "drug": "pairs containing drug d, for each of the 38 drugs (per-row residual energies from the all-pair projection)"
+    },
+    "uncertainty": "delete-one-drug jackknife t intervals for regime metrics (energies averaged over seeds); pair-cluster bootstrap (2,000 draws, seed 2026) for drug subsets",
+    "multiplicity": "Holm over the 7 dose/Bliss regimes, and separately over the 38 drug subsets, for interaction residual R2 > 0 (two-sided)",
+    "pair_reliability": "per-pair interaction gain sum_cells (r_R^2 - r_p^2) computed separately on two random halves of the 39 cells (seed 2026); Spearman correlation between halves with a delete-one-drug jackknife interval. Pair-specific improvement requires a positive interval.",
+    "claim_rule": "A regime counts as a meaningful interaction-specific improvement only if its interaction residual R2 interval excludes 0 after Holm correction and it holds for every seed."
+  },
+  "selected:F2": {
+    "pair_reliability": {
+      "pairs": 583,
+      "spearman_halves": 0.47795928175391683,
+      "spearman_jackknife": [
+        0.34459981504157544,
+        0.6113187484662582
+      ],
+      "sign_agreement": 0.6466552315608919,
+      "pairs_gain_both_halves": 180,
+      "pairs_loss_both_halves": 197
+    },
+    "drugs_holm_significant": [
+      {
+        "drug": "MK4541",
+        "pairs": 37,
+        "interaction_residual_r2": 0.1741660817208995,
+        "ci_low": 0.07869550066889314,
+        "ci_high": 0.2702671892951455,
+        "p": 0.0,
+        "p_holm": 0.0
+      },
+      {
+        "drug": "PACLITAXEL",
+        "pairs": 22,
+        "interaction_residual_r2": 0.38810622766091746,
+        "ci_low": 0.20875261176836818,
+        "ci_high": 0.5088156963093449,
+        "p": 0.0,
+        "p_holm": 0.0
+      }
+    ]
+  },
+  "selected:F0": {
+    "pair_reliability": {
+      "pairs": 583,
+      "spearman_halves": 0.5159996807343015,
+      "spearman_jackknife": [
+        0.3672209248211985,
+        0.6647784366474044
+      ],
+      "sign_agreement": 0.7066895368782161,
+      "pairs_gain_both_halves": 148,
+      "pairs_loss_both_halves": 264
+    },
+    "drugs_holm_significant": [
+      {
+        "drug": "DEXAMETHASONE",
+        "pairs": 22,
+        "interaction_residual_r2": -0.35474230746793056,
+        "ci_low": -0.6212886083292165,
+        "ci_high": -0.1313713455459386,
+        "p": 0.0,
+        "p_holm": 0.0
+      },
+      {
+        "drug": "METHOTREXATE",
+        "pairs": 22,
+        "interaction_residual_r2": -0.37531496680680415,
+        "ci_low": -0.6861150257665172,
+        "ci_high": -0.1490899597789671,
+        "p": 0.0,
+        "p_holm": 0.0
+      },
+      {
+        "drug": "TEMOZOLOMIDE",
+        "pairs": 37,
+        "interaction_residual_r2": -0.3023321056690571,
+        "ci_low": -0.4649190011218692,
+        "ci_high": -0.20135570295175173,
+        "p": 0.0,
+        "p_holm": 0.0
+      }
+    ]
+  },
+  "regimes": [
+    {
+      "model": "selected:F2",
+      "family": "all",
+      "regime": "all",
+      "dose_rows": 1475328,
+      "panel_rows": 22737,
+      "interaction_residual_r2": 0.0639061906,
+      "interaction_residual_r2_seeds": [
+        0.0678451912,
+        0.061490271,
+        0.0623831097
+      ],
+      "interaction_residual_r2_jackknife": [
+        -0.0369254637,
+        0.1647378449
+      ],
+      "interaction_residual_p": 0.2070612745,
+      "contrast_r2_model": 0.3586585898,
+      "contrast_r2_bliss": 0.3148748514,
+      "contrast_r2_difference": 0.0437837383,
+      "contrast_r2_difference_jackknife": [
+        -0.026420346,
+        0.1139878227
+      ],
+      "response_residual_r2": 0.2871482743,
+      "bliss_interaction_share": 0.6851251486,
+      "interaction_residual_p_holm": null,
+      "meaningful_improvement": null
+    },
+    {
+      "model": "selected:F2",
+      "family": "dose_region",
+      "regime": "low",
+      "dose_rows": 368832,
+      "panel_rows": 22737,
+      "interaction_residual_r2": -0.0574186542,
+      "interaction_residual_r2_seeds": [
+        -0.0578483094,
+        -0.0467001531,
+        -0.0677075001
+      ],
+      "interaction_residual_r2_jackknife": [
+        -0.1447393495,
+        0.0299020411
+      ],
+      "interaction_residual_p": 0.1908952379,
+      "contrast_r2_model": 0.0768991736,
+      "contrast_r2_bliss": 0.1270242654,
+      "contrast_r2_difference": -0.0501250918,
+      "contrast_r2_difference_jackknife": [
+        -0.1270295498,
+        0.0267793662
+      ],
+      "response_residual_r2": 0.1973766681,
+      "bliss_interaction_share": 0.8729757346,
+      "interaction_residual_p_holm": 0.3817904759,
+      "meaningful_improvement": false
+    },
+    {
+      "model": "selected:F2",
+      "family": "dose_region",
+      "regime": "mixed",
+      "dose_rows": 737664,
+      "panel_rows": 22737,
+      "interaction_residual_r2": 0.0795710418,
+      "interaction_residual_r2_seeds": [
+        0.0862068473,
+        0.0762518979,
+        0.0762543801
+      ],
+      "interaction_residual_r2_jackknife": [
+        -0.0221604814,
+        0.1813025649
+      ],
+      "interaction_residual_p": 0.1215180192,
+      "contrast_r2_model": 0.3101385108,
+      "contrast_r2_bliss": 0.2505000163,
+      "contrast_r2_difference": 0.0596384945,
+      "contrast_r2_difference_jackknife": [
+        -0.0182834048,
+        0.1375603938
+      ],
+      "response_residual_r2": 0.2922440209,
+      "bliss_interaction_share": 0.7494999837,
+      "interaction_residual_p_holm": 0.3645540575,
+      "meaningful_improvement": false
+    },
+    {
+      "model": "selected:F2",
+      "family": "dose_region",
+      "regime": "high",
+      "dose_rows": 368832,
+      "panel_rows": 22737,
+      "interaction_residual_r2": 0.1092365712,
+      "interaction_residual_r2_seeds": [
+        0.1171364373,
+        0.0955791206,
+        0.1149941557
+      ],
+      "interaction_residual_r2_jackknife": [
+        0.0005741169,
+        0.2178990255
+      ],
+      "interaction_residual_p": 0.0488623801,
+      "contrast_r2_model": 0.5705868256,
+      "contrast_r2_bliss": 0.5179268024,
+      "contrast_r2_difference": 0.0526600232,
+      "contrast_r2_difference_jackknife": [
+        0.001107777,
+        0.1042122693
+      ],
+      "response_residual_r2": 0.3695739703,
+      "bliss_interaction_share": 0.4820731976,
+      "interaction_residual_p_holm": 0.1954495204,
+      "meaningful_improvement": false
+    },
+    {
+      "model": "selected:F2",
+      "family": "bliss_level",
+      "regime": "R<25",
+      "dose_rows": 519080,
+      "panel_rows": 19687,
+      "interaction_residual_r2": -0.1071662518,
+      "interaction_residual_r2_seeds": [
+        -0.1077052055,
+        -0.088633636,
+        -0.1251599139
+      ],
+      "interaction_residual_r2_jackknife": [
+        -0.1755231977,
+        -0.0388093059
+      ],
+      "interaction_residual_p": 0.0030035108,
+      "contrast_r2_model": 0.0024742677,
+      "contrast_r2_bliss": 0.0990280541,
+      "contrast_r2_difference": -0.0965537864,
+      "contrast_r2_difference_jackknife": [
+        -0.1573486764,
+        -0.0357588965
+      ],
+      "response_residual_r2": 0.2404281383,
+      "bliss_interaction_share": 0.9009719459,
+      "interaction_residual_p_holm": 0.0210245755,
+      "meaningful_improvement": false
+    },
+    {
+      "model": "selected:F2",
+      "family": "bliss_level",
+      "regime": "25-50",
+      "dose_rows": 297392,
+      "panel_rows": 17808,
+      "interaction_residual_r2": 0.0407903621,
+      "interaction_residual_r2_seeds": [
+        0.043737541,
+        0.0440560842,
+        0.034577461
+      ],
+      "interaction_residual_r2_jackknife": [
+        -0.0533281778,
+        0.1349089019
+      ],
+      "interaction_residual_p": 0.3855354828,
+      "contrast_r2_model": 0.1925621774,
+      "contrast_r2_bliss": 0.1582259074,
+      "contrast_r2_difference": 0.03433627,
+      "contrast_r2_difference_jackknife": [
+        -0.0452602191,
+        0.1139327591
+      ],
+      "response_residual_r2": 0.3150204632,
+      "bliss_interaction_share": 0.8417740926,
+      "interaction_residual_p_holm": 0.3855354828,
+      "meaningful_improvement": false
+    },
+    {
+      "model": "selected:F2",
+      "family": "bliss_level",
+      "regime": "50-75",
+      "dose_rows": 279540,
+      "panel_rows": 16114,
+      "interaction_residual_r2": 0.1027098359,
+      "interaction_residual_r2_seeds": [
+        0.0986365648,
+        0.1137264586,
+        0.0957664843
+      ],
+      "interaction_residual_r2_jackknife": [
+        0.0259984504,
+        0.1794212214
+      ],
+      "interaction_residual_p": 0.0100632664,
+      "contrast_r2_model": 0.1900108044,
+      "contrast_r2_bliss": 0.0972940215,
+      "contrast_r2_difference": 0.0927167829,
+      "contrast_r2_difference_jackknife": [
+        0.0227123299,
+        0.1627212359
+      ],
+      "response_residual_r2": 0.3099017975,
+      "bliss_interaction_share": 0.9027059785,
+      "interaction_residual_p_holm": 0.0503163321,
+      "meaningful_improvement": false
+    },
+    {
+      "model": "selected:F2",
+      "family": "bliss_level",
+      "regime": "R>=75",
+      "dose_rows": 379316,
+      "panel_rows": 14380,
+      "interaction_residual_r2": 0.1628582169,
+      "interaction_residual_r2_seeds": [
+        0.1934193733,
+        0.1395826828,
+        0.1555725945
+      ],
+      "interaction_residual_r2_jackknife": [
+        0.0545967192,
+        0.2711197146
+      ],
+      "interaction_residual_p": 0.0042367949,
+      "contrast_r2_model": 0.244253178,
+      "contrast_r2_bliss": 0.0972296004,
+      "contrast_r2_difference": 0.1470235775,
+      "contrast_r2_difference_jackknife": [
+        0.0487010163,
+        0.2453461388
+      ],
+      "response_residual_r2": 0.3358410693,
+      "bliss_interaction_share": 0.9027703996,
+      "interaction_residual_p_holm": 0.0254207694,
+      "meaningful_improvement": true
+    },
+    {
+      "model": "selected:F0",
+      "family": "all",
+      "regime": "all",
+      "dose_rows": 1475328,
+      "panel_rows": 22737,
+      "interaction_residual_r2": -0.0128283969,
+      "interaction_residual_r2_seeds": [
+        -0.04374455,
+        -0.0120624089,
+        0.0173217682
+      ],
+      "interaction_residual_r2_jackknife": [
+        -0.1135176735,
+        0.0878608797
+      ],
+      "interaction_residual_p": 0.7977227367,
+      "contrast_r2_model": 0.3060857941,
+      "contrast_r2_bliss": 0.3148748514,
+      "contrast_r2_difference": -0.0087890573,
+      "contrast_r2_difference_jackknife": [
+        -0.0775024177,
+        0.0599243031
+      ],
+      "response_residual_r2": 0.2598634657,
+      "bliss_interaction_share": 0.6851251486,
+      "interaction_residual_p_holm": null,
+      "meaningful_improvement": null
+    },
+    {
+      "model": "selected:F0",
+      "family": "dose_region",
+      "regime": "low",
+      "dose_rows": 368832,
+      "panel_rows": 22737,
+      "interaction_residual_r2": -0.1091477311,
+      "interaction_residual_r2_seeds": [
+        -0.1543436287,
+        -0.0742909831,
+        -0.0988085816
+      ],
+      "interaction_residual_r2_jackknife": [
+        -0.1959755651,
+        -0.0223198971
+      ],
+      "interaction_residual_p": 0.0151549572,
+      "contrast_r2_model": 0.0317409447,
+      "contrast_r2_bliss": 0.1270242654,
+      "contrast_r2_difference": -0.0952833207,
+      "contrast_r2_difference_jackknife": [
+        -0.1710777738,
+        -0.0194888677
+      ],
+      "response_residual_r2": 0.18600123,
+      "bliss_interaction_share": 0.8729757346,
+      "interaction_residual_p_holm": 0.090929743,
+      "meaningful_improvement": false
+    },
+    {
+      "model": "selected:F0",
+      "family": "dose_region",
+      "regime": "mixed",
+      "dose_rows": 737664,
+      "panel_rows": 22737,
+      "interaction_residual_r2": 0.0025585279,
+      "interaction_residual_r2_seeds": [
+        -0.022662339,
+        -0.000962926,
+        0.0313008487
+      ],
+      "interaction_residual_r2_jackknife": [
+        -0.0904796772,
+        0.0955967329
+      ],
+      "interaction_residual_p": 0.9558648325,
+      "contrast_r2_model": 0.2524176329,
+      "contrast_r2_bliss": 0.2505000163,
+      "contrast_r2_difference": 0.0019176166,
+      "contrast_r2_difference_jackknife": [
+        -0.0677987742,
+        0.0716340074
+      ],
+      "response_residual_r2": 0.2644897792,
+      "bliss_interaction_share": 0.7494999837,
+      "interaction_residual_p_holm": 1.0,
+      "meaningful_improvement": false
+    },
+    {
+      "model": "selected:F0",
+      "family": "dose_region",
+      "regime": "high",
+      "dose_rows": 368832,
+      "panel_rows": 22737,
+      "interaction_residual_r2": 0.0156903287,
+      "interaction_residual_r2_seeds": [
+        0.0041142108,
+        0.0064508227,
+        0.0365059527
+      ],
+      "interaction_residual_r2_jackknife": [
+        -0.0985118385,
+        0.1298924959
+      ],
+      "interaction_residual_p": 0.7822703766,
+      "contrast_r2_model": 0.5254906894,
+      "contrast_r2_bliss": 0.5179268024,
+      "contrast_r2_difference": 0.0075638869,
+      "contrast_r2_difference_jackknife": [
+        -0.046544661,
+        0.0616724348
+      ],
+      "response_residual_r2": 0.3268775551,
+      "bliss_interaction_share": 0.4820731976,
+      "interaction_residual_p_holm": 1.0,
+      "meaningful_improvement": false
+    },
+    {
+      "model": "selected:F0",
+      "family": "bliss_level",
+      "regime": "R<25",
+      "dose_rows": 519080,
+      "panel_rows": 19687,
+      "interaction_residual_r2": -0.133433669,
+      "interaction_residual_r2_seeds": [
+        -0.1776691704,
+        -0.1058791484,
+        -0.1167526881
+      ],
+      "interaction_residual_r2_jackknife": [
+        -0.2144095698,
+        -0.0524577681
+      ],
+      "interaction_residual_p": 0.0019287133,
+      "contrast_r2_model": -0.0211919383,
+      "contrast_r2_bliss": 0.0990280541,
+      "contrast_r2_difference": -0.1202199924,
+      "contrast_r2_difference_jackknife": [
+        -0.192421809,
+        -0.0480181758
+      ],
+      "response_residual_r2": 0.2333595154,
+      "bliss_interaction_share": 0.9009719459,
+      "interaction_residual_p_holm": 0.0135009928,
+      "meaningful_improvement": false
+    },
+    {
+      "model": "selected:F0",
+      "family": "bliss_level",
+      "regime": "25-50",
+      "dose_rows": 297392,
+      "panel_rows": 17808,
+      "interaction_residual_r2": -0.0427635077,
+      "interaction_residual_r2_seeds": [
+        -0.091124798,
+        -0.0163006186,
+        -0.0208651065
+      ],
+      "interaction_residual_r2_jackknife": [
+        -0.1470013883,
+        0.0614743729
+      ],
+      "interaction_residual_p": 0.411168284,
+      "contrast_r2_model": 0.1222286945,
+      "contrast_r2_bliss": 0.1582259074,
+      "contrast_r2_difference": -0.0359972129,
+      "contrast_r2_difference_jackknife": [
+        -0.1232870059,
+        0.0512925802
+      ],
+      "response_residual_r2": 0.2850216705,
+      "bliss_interaction_share": 0.8417740926,
+      "interaction_residual_p_holm": 1.0,
+      "meaningful_improvement": false
+    },
+    {
+      "model": "selected:F0",
+      "family": "bliss_level",
+      "regime": "50-75",
+      "dose_rows": 279540,
+      "panel_rows": 16114,
+      "interaction_residual_r2": 0.0111530116,
+      "interaction_residual_r2_seeds": [
+        -0.0175735061,
+        0.0150516236,
+        0.0359809173
+      ],
+      "interaction_residual_r2_jackknife": [
+        -0.0623826011,
+        0.0846886243
+      ],
+      "interaction_residual_p": 0.7603313656,
+      "contrast_r2_model": 0.1073619118,
+      "contrast_r2_bliss": 0.0972940215,
+      "contrast_r2_difference": 0.0100678903,
+      "contrast_r2_difference_jackknife": [
+        -0.0563085801,
+        0.0764443606
+      ],
+      "response_residual_r2": 0.2616945877,
+      "bliss_interaction_share": 0.9027059785,
+      "interaction_residual_p_holm": 1.0,
+      "meaningful_improvement": false
+    },
+    {
+      "model": "selected:F0",
+      "family": "bliss_level",
+      "regime": "R>=75",
+      "dose_rows": 379316,
+      "panel_rows": 14380,
+      "interaction_residual_r2": 0.1030145682,
+      "interaction_residual_r2_seeds": [
+        0.1121969095,
+        0.0854686065,
+        0.1113781885
+      ],
+      "interaction_residual_r2_jackknife": [
+        0.0191576968,
+        0.1868714395
+      ],
+      "interaction_residual_p": 0.0174308994,
+      "contrast_r2_model": 0.1902281033,
+      "contrast_r2_bliss": 0.0972296004,
+      "contrast_r2_difference": 0.0929985029,
+      "contrast_r2_difference_jackknife": [
+        0.0159944502,
+        0.1700025555
+      ],
+      "response_residual_r2": 0.2849544472,
+      "bliss_interaction_share": 0.9027703996,
+      "interaction_residual_p_holm": 0.090929743,
+      "meaningful_improvement": false
+    }
+  ]
+}

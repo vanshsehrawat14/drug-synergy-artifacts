@@ -1,0 +1,82 @@
+{
+  "changed": 158,
+  "top_drugs": [
+    {
+      "drug": "DASATINIB",
+      "changed_units": 33,
+      "units_total": 1443
+    },
+    {
+      "drug": "MK8669",
+      "changed_units": 21,
+      "units_total": 1443
+    },
+    {
+      "drug": "L778123",
+      "changed_units": 18,
+      "units_total": 1443
+    },
+    {
+      "drug": "LAPATINIB",
+      "changed_units": 17,
+      "units_total": 1443
+    },
+    {
+      "drug": "SUNITINIB",
+      "changed_units": 17,
+      "units_total": 1443
+    },
+    {
+      "drug": "BEZ235",
+      "changed_units": 16,
+      "units_total": 1443
+    },
+    {
+      "drug": "ERLOTINIB",
+      "changed_units": 15,
+      "units_total": 1443
+    },
+    {
+      "drug": "MRK003",
+      "changed_units": 15,
+      "units_total": 1443
+    }
+  ],
+  "top_cells": [
+    {
+      "cell": "MSTO",
+      "changed_units": 19
+    },
+    {
+      "cell": "A2780",
+      "changed_units": 15
+    },
+    {
+      "cell": "SKMEL30",
+      "changed_units": 13
+    },
+    {
+      "cell": "A2058",
+      "changed_units": 9
+    },
+    {
+      "cell": "SKOV3",
+      "changed_units": 9
+    },
+    {
+      "cell": "HT29",
+      "changed_units": 7
+    },
+    {
+      "cell": "DLD1",
+      "changed_units": 6
+    },
+    {
+      "cell": "PA1",
+      "changed_units": 6
+    }
+  ],
+  "distinct_drugs": 36,
+  "distinct_cells": 35,
+  "share_top3_drugs": 0.22784810126582278
+}

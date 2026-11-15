@@ -1,0 +1,54 @@
+{
+  "declared": "configs/third_screen_confirmation.json",
+  "H1": {
+    "panel_rows": 2232,
+    "interaction_residual_r2": 0.0570974832028297,
+    "seeds": [
+      0.06490423542171209,
+      0.04194088642769378,
+      0.06444732775908324
+    ],
+    "drug_jackknife": [
+      -0.005931100168248507,
+      0.12012606657390791
+    ],
+    "max_drug_influence": 0.018021528118281394,
+    "max_drug_influence_drug": "VISUDYNE",
+    "rule_met": false,
+    "confirmed_in_sequence": false
+  },
+  "H2": {
+    "panel_rows": 2396,
+    "interaction_residual_r2": 0.2811849085656051,
+    "seeds": [
+      0.2893687436396679,
+      0.27176929964594954,
+      0.2824166824111979
+    ],
+    "drug_jackknife": [
+      0.18422401033401029,
+      0.3781458067971999
+    ],
+    "max_drug_influence": 0.01691954366866466,
+    "max_drug_influence_drug": "VISUDYNE",
+    "rule_met": true,
+    "confirmed_in_sequence": false
+  },
+  "H3": {
+    "panel_rows": 2232,
+    "interaction_residual_r2": 0.055721839788552274,
+    "seeds": [
+      0.06322700632970946,
+      0.04016515764612105,
+      0.06376388309336689
+    ],
+    "drug_jackknife": [
+      -0.006735399685885317,
+      0.11817907926298987
+    ],
+    "max_drug_influence": 0.017746412575444737,
+    "max_drug_influence_drug": "VISUDYNE",
+    "rule_met": false,
+    "confirmed_in_sequence": false
+  }
+}

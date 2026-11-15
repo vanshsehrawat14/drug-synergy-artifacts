@@ -1,0 +1,124 @@
+{
+  "cases": 98,
+  "native_codes": {
+    "3": 82,
+    "999": 16
+  },
+  "solvers_max_abs_difference": 2.4158453015843406e-13,
+  "max_abs_residual_at_root": 5.948119309873157e-07,
+  "code3": {
+    "cases": 82,
+    "iterate_outside_range": 75,
+    "median_abs_iterate_minus_root": 0.008414573646966517,
+    "median_root_to_edge": 0.0002981474579852872,
+    "median_abs_slope_at_root": 159.87433749464765
+  },
+  "error_cases_median_root_to_edge": 0.01143237531049486,
+  "fallback_recomputed_vs_returned": {
+    "max_abs_difference": 0.5635757522103972,
+    "cases_within_1e-6": 70
+  },
+  "fallback_minus_root": {
+    "median": 2.982555549973573,
+    "min": -0.4544971568880669,
+    "max": 92.66912360308098,
+    "positive": 94
+  },
+  "example": {
+    "case_id": "37833:2:3",
+    "block_id": 37833,
+    "drug_a": "DASATINIB",
+    "drug_b": "MK2206",
+    "cell_line": "MSTO",
+    "dose_a": 3.0,
+    "dose_b": 0.9,
+    "native_code": 3,
+    "native_iterate": 58.5621091744902,
+    "root_brent": 58.54746600500115,
+    "root_bisection": 58.54746600500132,
+    "residual_at_iterate": null,
+    "residual_at_root": 2.360317608030016e-09,
+    "slope_at_root": -13233.702493776922,
+    "iterate_minus_root": 0.014643169489055197,
+    "fallback_recomputed": 63.68845069076293,
+    "reference_returned": 63.6884506912868,
+    "fallback_minus_root": 5.140984685761779,
+    "iterate_outside_range": true,
+    "root_to_edge": 1.9343306973951258e-05
+  },
+  "example_block": {
+    "block_id": 37833,
+    "cell_line": "MSTO",
+    "fold": 4,
+    "synergy_loewe": 30.2461,
+    "native_sum_score": 30.2461,
+    "corrected_score": 30.6379,
+    "score_shift": 0.391773,
+    "n_corrected": 6
+  },
+  "all_cases_by_class": {
+    "accepted: matches root": {
+      "cases": 180364,
+      "root_to_edge_median": 7.2599752159830455,
+      "within_0.01": 2896,
+      "within_0.01_of_upper_edge": 1868,
+      "within_0.01_of_lower_edge": 1028,
+      "within_0.1": 12382,
+      "native_iterate_outside_range": 0
+    },
+    "accepted: no admissible root": {
+      "cases": 1883,
+      "root_to_edge_median": null,
+      "within_0.01": 0,
+      "within_0.01_of_upper_edge": 0,
+      "within_0.01_of_lower_edge": 0,
+      "within_0.1": 0,
+      "native_iterate_outside_range": 0
+    },
+    "artifact: root exists, solver failed": {
+      "cases": 1720,
+      "root_to_edge_median": 0.005781930855437392,
+      "within_0.01": 906,
+      "within_0.01_of_upper_edge": 531,
+      "within_0.01_of_lower_edge": 375,
+      "within_0.1": 1242,
+      "native_iterate_outside_range": 253
+    },
+    "artifact: solver at root, answer discarded": {
+      "cases": 12477,
+      "root_to_edge_median": 0.00017902561376725856,
+      "within_0.01": 11660,
+      "within_0.01_of_upper_edge": 10381,
+      "within_0.01_of_lower_edge": 1279,
+      "within_0.1": 12477,
+      "native_iterate_outside_range": 11850
+    },
+    "boundary: root at a curve asymptote, scorer residual >= 1e-6": {
+      "cases": 1423,
+      "root_to_edge_median": 6.759037773917953e-13,
+      "within_0.01": 1423,
+      "within_0.01_of_upper_edge": 1204,
+      "within_0.01_of_lower_edge": 219,
+      "within_0.1": 1423,
+      "native_iterate_outside_range": 1389
+    },
+    "definition: no root": {
+      "cases": 121984,
+      "root_to_edge_median": null,
+      "within_0.01": 0,
+      "within_0.01_of_upper_edge": 0,
+      "within_0.01_of_lower_edge": 0,
+      "within_0.1": 0,
+      "native_iterate_outside_range": 108198
+    },
+    "definition: opposite or flat curves": {
+      "cases": 47301,
+      "root_to_edge_median": null,
+      "within_0.01": 0,
+      "within_0.01_of_upper_edge": 0,
+      "within_0.01_of_lower_edge": 0,
+      "within_0.1": 0,
+      "native_iterate_outside_range": 3753
+    }
+  }
+}

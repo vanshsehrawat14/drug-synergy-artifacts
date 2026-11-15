@@ -1,0 +1,37 @@
+{
+ "source": "Zenodo 18449193 drugcomb_data_v1.4.csv (CC-BY-4.0)",
+ "source_md5": "f5f071de351ec38ffe29c328519a7be5",
+ "source_sha256": "58c3893c9b8973eaea22aee819c0f268b3739d091a1d451187c1488c1058fe1d",
+ "source_rows": 17271848,
+ "studies": {
+  "ONEIL": 2305200,
+  "ALMANAC": 5077768,
+  "CLOUD": 160640,
+  "NCATS_DIPG": 460776,
+  "Mathews": 52316,
+  "FORCINA": 7272,
+  "NCATS_ATL": 3000,
+  "CTRPv2": 6171005,
+  "NCATS_ES(Nampt+PARP)": 209572,
+  "NCATS_HL": 111208,
+  "CCLE": 93219,
+  "NCATS_ES(FAKi/AURKi)": 67500,
+  "Wilson": 46852,
+  "Yohe": 27000,
+  "NCATS_2D_3D": 6900,
+  "NCATS_MDR_CS": 6800,
+  "Phelan": 6200,
+  "GDSC1": 1894017,
+  "gCSI": 58094,
+  "FIMM": 12805,
+  "BEATAML": 408429,
+  "GRAY": 84483,
+  "UHNBreast": 792
+ },
+ "oneil_rows": 2305200,
+ "oneil_blocks": 92208,
+ "rows_per_block": {
+  "25": 92208
+ },
+ "n_inhibition_nan": 0
+}

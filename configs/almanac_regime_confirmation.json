@@ -1,0 +1,16 @@
+{
+  "name": "almanac-regime-confirmation-v1",
+  "frozen": "2026-11-05 22:57 PST, after ALMANAC training jobs 132578_1/_2 had started (about 6 minutes earlier) but before any ALMANAC run finished and before any ALMANAC prediction, metric or log line from a model run was viewed. The hypothesis comes from the exploratory ONEIL regime analysis (configs/beyond_bliss_regimes.json and its two addenda).",
+  "oneil_finding": "Selected F2 beat Bliss on the pair-cell interaction contrast only where the Bliss expectation R >= 75 (interaction residual R2 0.163, drug jackknife [0.055, 0.271], Holm p 0.025, all seeds positive), also against isotonic-recalibrated Bliss (0.162) and against the identity-free mono_only network (0.157). It was worse than Bliss where R < 25 (-0.107, Holm p 0.021).",
+  "model": "f2_combined, seeds 2026-2028, from configs/almanac_validation.json",
+  "reference": "bliss_reference: training-pair monotherapy with interpolation (configs/almanac_reference_bliss.json)",
+  "regimes": "Bliss expected inhibition R of each dose row: [-inf, 25), [25, 50), [50, 75), [75, inf); pair-cell means within each bin; drug main effects removed within fold and cell",
+  "primary": "H1: interaction residual R2 of f2_combined vs Bliss at R >= 75 is positive. Confirmed only if the delete-one-drug jackknife interval lies above 0 and every seed is positive.",
+  "secondary": [
+    "H2: at R < 25 the interaction residual R2 is not positive (interval upper bound <= 0 or point estimate < 0)",
+    "H1 again with isotonic-recalibrated Bliss (fitted on the three training folds) as the reference",
+    "pooled interaction residual R2 and contrast R2 difference vs Bliss, with jackknife intervals"
+  ],
+  "multiplicity": "one primary test; secondary results are reported with Holm-adjusted p over the four bins",
+  "limitations_declared": "ALMANAC inhibition in DrugComb is capped at 100 and comes from a different assay (NCI-60 SRB growth vs CellTiter-Glo); most ALMANAC dose rows are low-effect, so the R >= 75 bin is smaller. Folds are generated (seed 2026), not published. ALMANAC was examined before (October exploratory panel-level SCORE analyses), but never at dose level and never with these models."
+}

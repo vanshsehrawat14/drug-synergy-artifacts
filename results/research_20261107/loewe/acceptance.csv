@@ -1,0 +1,7 @@
+rule,tolerance,accepted,recovered_fallback,accepted_historical_uncertified,n,selected,retention,turnover,spearman,sign_flips
+native_residual_certificate,0.0001,182247,0,0,22737,1137,1.0,0.0,1.0,0
+independent_bracket_certificate,0.0001,195241,14877,1883,22737,1137,0.9384344766930519,0.06156552330694809,0.9740282625545904,549
+native_residual_certificate,1e-06,182244,0,3,22737,1137,1.0,0.0,1.0,0
+independent_bracket_certificate,1e-06,194561,14197,1883,22737,1137,0.9410729991204925,0.05892700087950753,0.9768745924245218,517
+native_residual_certificate,1e-08,182162,0,85,22737,1137,1.0,0.0,1.0,0
+independent_bracket_certificate,1e-08,193515,13151,1883,22737,1137,0.9454705364995603,0.054529463500439745,0.9804626527364412,471

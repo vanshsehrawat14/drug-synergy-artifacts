@@ -1,0 +1,4 @@
+{
+  "primary": "Frozen full-support point estimate unchanged. Stable-support sensitivity changes target population and is exploratory.",
+  "intervals": "Stable-support nonparametric pair-bootstrap confidence intervals; full-support exponential pair Bayesian-bootstrap percentile intervals. No dose-level iid inference."
+}

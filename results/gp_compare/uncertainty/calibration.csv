@@ -1,0 +1,81 @@
+method,sd,level,coverage,mean_width
+gp_his,predictive,0.5,0.557239,28.6763
+gp_his,predictive,0.8,0.859163,54.4859
+gp_his,predictive,0.9,0.941815,69.9319
+gp_his,predictive,0.95,0.974869,83.329
+gp_his,validation RMSE per cell,0.5,0.499882,25.2675
+gp_his,validation RMSE per cell,0.8,0.801906,48.0091
+gp_his,validation RMSE per cell,0.9,0.901749,61.619
+gp_his,validation RMSE per cell,0.95,0.950367,73.4236
+gp_frozen,predictive,0.5,0.611482,25.9332
+gp_frozen,predictive,0.8,0.898425,49.2739
+gp_frozen,predictive,0.9,0.956501,63.2424
+gp_frozen,predictive,0.95,0.978025,75.358
+gp_frozen,validation RMSE per cell,0.5,0.516682,21.2934
+gp_frozen,validation RMSE per cell,0.8,0.823392,40.4582
+gp_frozen,validation RMSE per cell,0.9,0.912745,51.9276
+gp_frozen,validation RMSE per cell,0.95,0.952518,61.8755
+gp_full,predictive,0.5,0.540793,22.3966
+gp_full,predictive,0.8,0.84382,42.5542
+gp_full,predictive,0.9,0.92565,54.6177
+gp_full,predictive,0.95,0.96062,65.081
+gp_full,latent,0.5,0.464397,18.8002
+gp_full,latent,0.8,0.765862,35.721
+gp_full,latent,0.9,0.870533,45.8474
+gp_full,latent,0.95,0.923734,54.6306
+gp_full,"predictive, validation-scaled",0.5,0.519047,21.3436
+gp_full,"predictive, validation-scaled",0.8,0.823417,40.5534
+gp_full,"predictive, validation-scaled",0.9,0.912468,52.0498
+gp_full,"predictive, validation-scaled",0.95,0.952205,62.0211
+gp_full,validation RMSE per cell,0.5,0.517957,21.3611
+gp_full,validation RMSE per cell,0.8,0.822557,40.5867
+gp_full,validation RMSE per cell,0.9,0.911676,52.0924
+gp_full,validation RMSE per cell,0.95,0.951847,62.0719
+gp_full_w0,predictive,0.5,0.493794,20.1424
+gp_full_w0,predictive,0.8,0.81265,38.2712
+gp_full_w0,predictive,0.9,0.91076,49.1205
+gp_full_w0,predictive,0.95,0.950416,58.5307
+gp_full_w0,latent,0.5,0.0428827,1.68332
+gp_full_w0,latent,0.8,0.08175,3.19835
+gp_full_w0,latent,0.9,0.105009,4.10504
+gp_full_w0,latent,0.95,0.124988,4.89146
+gp_full_w0,"predictive, validation-scaled",0.5,0.510172,20.8867
+gp_full_w0,"predictive, validation-scaled",0.8,0.829203,39.6854
+gp_full_w0,"predictive, validation-scaled",0.9,0.920504,50.9357
+gp_full_w0,"predictive, validation-scaled",0.95,0.956073,60.6936
+gp_full_w0,validation RMSE per cell,0.5,0.509527,20.8551
+gp_full_w0,validation RMSE per cell,0.8,0.828255,39.6253
+gp_full_w0,validation RMSE per cell,0.9,0.919827,50.8585
+gp_full_w0,validation RMSE per cell,0.95,0.955753,60.6016
+gp_f0,predictive,0.5,0.581225,18.1125
+gp_f0,predictive,0.8,0.850439,34.4143
+gp_f0,predictive,0.9,0.920835,44.1703
+gp_f0,predictive,0.95,0.953349,52.6322
+gp_f0,latent,0.5,0.46208,13.6284
+gp_f0,latent,0.8,0.740298,25.8944
+gp_f0,latent,0.9,0.836535,33.2351
+gp_f0,latent,0.95,0.891019,39.602
+gp_f0,"predictive, validation-scaled",0.5,0.569869,17.657
+gp_f0,"predictive, validation-scaled",0.8,0.841327,33.5488
+gp_f0,"predictive, validation-scaled",0.9,0.914532,43.0594
+gp_f0,"predictive, validation-scaled",0.95,0.949114,51.3084
+gp_f0,validation RMSE per cell,0.5,0.568654,17.6721
+gp_f0,validation RMSE per cell,0.8,0.839713,33.5776
+gp_f0,validation RMSE per cell,0.9,0.913328,43.0963
+gp_f0,validation RMSE per cell,0.95,0.948334,51.3524
+gp_f2,predictive,0.5,0.629392,15.3136
+gp_f2,predictive,0.8,0.859128,29.0964
+gp_f2,predictive,0.9,0.920828,37.3448
+gp_f2,predictive,0.95,0.950436,44.4991
+gp_f2,latent,0.5,0.458941,9.69626
+gp_f2,latent,0.8,0.69591,18.4232
+gp_f2,latent,0.9,0.785646,23.6459
+gp_f2,latent,0.95,0.841605,28.1758
+gp_f2,"predictive, validation-scaled",0.5,0.627593,15.2495
+gp_f2,"predictive, validation-scaled",0.8,0.857413,28.9745
+gp_f2,"predictive, validation-scaled",0.9,0.919486,37.1884
+gp_f2,"predictive, validation-scaled",0.95,0.949442,44.3127
+gp_f2,validation RMSE per cell,0.5,0.626146,15.2185
+gp_f2,validation RMSE per cell,0.8,0.856319,28.9156
+gp_f2,validation RMSE per cell,0.9,0.918402,37.1128
+gp_f2,validation RMSE per cell,0.95,0.948614,44.2227

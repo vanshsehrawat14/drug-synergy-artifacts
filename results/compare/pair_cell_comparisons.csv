@@ -1,0 +1,10 @@
+model,control,delta_mse,relative_mse_change,ci_low,ci_high,jackknife_low,jackknife_high,folds_lower,seed_pairs_lower,verdict
+cf_selected,selected:F0,-1.43641,-0.0430597,-2.75177,-0.0881978,-4.61616,1.74334,4,3/3,not established
+cf_selected,selected:F2,1.12129,0.0364047,-0.179523,2.52938,-1.73926,3.98185,2,0/3,not established
+cf_selected,bliss_reference,-26.3489,-0.452179,-29.0226,-23.7763,-32.9811,-19.7168,5,1/1,lower error
+cf_selected,cf_shar,-3.98203,-0.110907,-4.81578,-3.18189,-6.0712,-1.89287,5,1/1,lower error
+cf_selected,gp_f2,0.352361,0.0111614,-0.940539,1.60545,-2.94533,3.65006,3,0/1,not established
+cf_shar,selected:F0,2.54562,0.0763111,1.11744,4.12984,-1.44221,6.53346,1,0/3,not established
+cf_shar,selected:F2,5.10333,0.165688,3.60019,6.70459,1.33305,8.8736,0,0/3,higher error
+cf_shar,bliss_reference,-22.3669,-0.383843,-25.1305,-19.4985,-29.5592,-15.1747,5,1/1,lower error
+cf_shar,additive,-147.865,-0.804623,-155.446,-140.349,-184.493,-111.236,5,1/1,lower error

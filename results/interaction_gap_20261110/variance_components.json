@@ -1,0 +1,1285 @@
+{
+ "inputs": {
+  "observations_sha256": "ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b",
+  "cache_sha256": "91f93811dedf5c0721198146638c21f25b1616d43f43ae9322cf8790a7e86687",
+  "coordinates_sha256": "ebdcf3090da9bf8bf9aede5281990b843df4befc02e429bc9972a886044896d1"
+ },
+ "audit": {
+  "pairs": 583,
+  "cells": 39,
+  "pair_cells": 22737,
+  "missing_pair_cells": 0,
+  "drugs": 38,
+  "combination_rows": 1475328,
+  "units": 365352,
+  "unit_replicate_counts": {
+   "4": 361872,
+   "8": 3480
+  },
+  "blocks": 92208,
+  "blocks_per_pair_cell": {
+   "4": 22422,
+   "8": 315
+  },
+  "batch2_blocks": 1260,
+  "batch2_pair_cells": 315,
+  "batch2_pairs": 21,
+  "batch2_cells": 15,
+  "retest_eligible_pair_cells": 240,
+  "retest_eligible_pairs": 16,
+  "retest_dose_changed_pair_cells": 75,
+  "retest_dose_changed_pairs": [
+   "[\"AZD1775\",\"GEMCITABINE\"]",
+   "[\"AZD1775\",\"L778123\"]",
+   "[\"GEMCITABINE\",\"MK8776\"]",
+   "[\"L778123\",\"MK8669\"]",
+   "[\"MRK003\",\"VINBLASTINE\"]"
+  ],
+  "row_weight_counts": {
+   "64": 22422,
+   "128": 315
+  },
+  "truth_max_abs_diff_vs_cache": 2.842170943040401e-14,
+  "frozen_vs_block_edge_bliss": {
+   "max_abs": 76.94501362911387,
+   "mean_abs": 0.009417422154971005,
+   "units_over_0.01": 604,
+   "pair_cells_with_units_over_0.01": 77,
+   "share_in_batch2_pair_cells": 1.0
+  },
+  "pair_folds": {
+   "0": 116,
+   "1": 116,
+   "2": 116,
+   "3": 116,
+   "4": 119
+  },
+  "monotherapy": {
+   "edge_values_per_block": 737664,
+   "groups_within_pair_cell_batch": 184416,
+   "groups_with_one_distinct_value": 184416,
+   "drug_cell_dose_groups_across_pairs": 5928,
+   "across_pair_pooled_sd": 0.0005998358012576647,
+   "max_across_pair_sd": 0.001177260110988563,
+   "retest_edges_identical_to_batch1": {
+    "drug_pair_cells": 480,
+    "identical": 322
+   }
+  }
+ },
+ "reproduction": {
+  "bliss_noise_share": 0.09780410529352931,
+  "raw_noise_share": 0.06713301836787675,
+  "bliss_energy_per_row": 20.588451181506063,
+  "bliss_unweighted_cross_cell_share": 0.2337499068214369,
+  "batch_split_bliss_noise_share": 0.09709689287848196,
+  "frozen_reference": {
+   "bliss_noise_share": 0.09780410529352931,
+   "bliss_energy_per_row": 20.588451181506063,
+   "bliss_cross_cell_share": 0.23374990682143693,
+   "raw_noise_share": 0.06713301836787676
+  }
+ },
+ "components": {
+  "bliss": {
+   "energy_per_row": 20.588451181506056,
+   "noise": 0.09780410529352933,
+   "pair_wide": 0.2422417915797146,
+   "pair_by_cell": 0.6599541031267561,
+   "tau2": 4.987383300059518,
+   "descriptive_pair_mean": 0.25372966682076126,
+   "noise_pair_interval": [
+    0.08863979089279687,
+    0.10761026415359727
+   ],
+   "noise_drug_interval": [
+    0.06968248297994847,
+    0.12592572760711018
+   ],
+   "noise_cell_interval": [
+    0.06881312457422117,
+    0.12679508601283748
+   ],
+   "pair_wide_pair_interval": [
+    0.1968318782170205,
+    0.2930484393493806
+   ],
+   "pair_wide_drug_interval": [
+    0.1504661960510606,
+    0.3340173871083686
+   ],
+   "pair_wide_cell_interval": [
+    0.16034126906660812,
+    0.32414231409282107
+   ],
+   "pair_by_cell_pair_interval": [
+    0.6128404952457562,
+    0.7023406079672156
+   ],
+   "pair_by_cell_drug_interval": [
+    0.5661624071978723,
+    0.7537457990556399
+   ],
+   "pair_by_cell_cell_interval": [
+    0.5533951666220306,
+    0.7665130396314815
+   ],
+   "descriptive_pair_mean_pair_interval": [
+    0.214601416644111,
+    0.29437187668433223
+   ],
+   "descriptive_pair_mean_drug_interval": [
+    0.16913699536010696,
+    0.33832233828141556
+   ],
+   "descriptive_pair_mean_cell_interval": [
+    0.17676776393184007,
+    0.33069156970968244
+   ]
+  },
+  "raw": {
+   "energy_per_row": 29.994704485836678,
+   "noise": 0.06713301836787666,
+   "pair_wide": 0.24692092462447707,
+   "pair_by_cell": 0.6859460570076463,
+   "tau2": 7.406320165480742,
+   "descriptive_pair_mean": 0.263246663901344,
+   "noise_pair_interval": [
+    0.061958988559418025,
+    0.07246567754155689
+   ],
+   "noise_drug_interval": [
+    0.05002413656987332,
+    0.08424190016588001
+   ],
+   "noise_cell_interval": [
+    0.05168209369012654,
+    0.08258394304562679
+   ],
+   "pair_wide_pair_interval": [
+    0.21382028296850034,
+    0.2819658469543642
+   ],
+   "pair_wide_drug_interval": [
+    0.1645262963009152,
+    0.32931555294803894
+   ],
+   "pair_wide_cell_interval": [
+    0.18951688820176482,
+    0.3043249610471893
+   ],
+   "pair_by_cell_pair_interval": [
+    0.651316888612046,
+    0.7184027256467086
+   ],
+   "pair_by_cell_drug_interval": [
+    0.6006149591172647,
+    0.771277154898028
+   ],
+   "pair_by_cell_cell_interval": [
+    0.6182022062624071,
+    0.7536899077528856
+   ],
+   "descriptive_pair_mean_pair_interval": [
+    0.23273150636103251,
+    0.29430065626464724
+   ],
+   "descriptive_pair_mean_drug_interval": [
+    0.1833110713173142,
+    0.3431822564853738
+   ],
+   "descriptive_pair_mean_cell_interval": [
+    0.20831368601438405,
+    0.31817964178830394
+   ]
+  },
+  "ref": {
+   "energy_per_row": 9.241733383206402,
+   "noise": 0.0,
+   "pair_wide": 0.26451308030040976,
+   "pair_by_cell": 0.7354869196995902,
+   "tau2": 2.4445593645070525,
+   "descriptive_pair_mean": 0.2861395290244404,
+   "noise_pair_interval": [
+    0.0,
+    0.0
+   ],
+   "noise_drug_interval": [
+    0.0,
+    0.0
+   ],
+   "noise_cell_interval": [
+    0.0,
+    0.0
+   ],
+   "pair_wide_pair_interval": [
+    0.23013396915121057,
+    0.29805658929442
+   ],
+   "pair_wide_drug_interval": [
+    0.1459724554187396,
+    0.38305370518207993
+   ],
+   "pair_wide_cell_interval": [
+    0.22037511484449485,
+    0.3086510457563247
+   ],
+   "pair_by_cell_pair_interval": [
+    0.7019434107055799,
+    0.7698660308487895
+   ],
+   "pair_by_cell_drug_interval": [
+    0.6169462948179201,
+    0.8540275445812604
+   ],
+   "pair_by_cell_cell_interval": [
+    0.6913489542436753,
+    0.7796248851555052
+   ],
+   "descriptive_pair_mean_pair_interval": [
+    0.25245274898472975,
+    0.31940418796464837
+   ],
+   "descriptive_pair_mean_drug_interval": [
+    0.16956197831347763,
+    0.40271707973540316
+   ],
+   "descriptive_pair_mean_cell_interval": [
+    0.24276960424785182,
+    0.329509453801029
+   ]
+  },
+  "hsa": {
+   "energy_per_row": 21.31855136660189,
+   "noise": 0.09445459086593057,
+   "pair_wide": 0.248361416986205,
+   "pair_by_cell": 0.6571839921478645,
+   "tau2": 5.294705625502442,
+   "descriptive_pair_mean": 0.25899033845469444,
+   "noise_pair_interval": [
+    0.08580491973801958,
+    0.10378552808613974
+   ],
+   "noise_drug_interval": [
+    0.06780657234166243,
+    0.1211026093901987
+   ],
+   "noise_cell_interval": [
+    0.06724626308957904,
+    0.1216629186422821
+   ],
+   "pair_wide_pair_interval": [
+    0.20363069467343603,
+    0.29643532300616454
+   ],
+   "pair_wide_drug_interval": [
+    0.16229945571205237,
+    0.3344233782603576
+   ],
+   "pair_wide_cell_interval": [
+    0.16710685305111928,
+    0.32961598092129074
+   ],
+   "pair_by_cell_pair_interval": [
+    0.6118983499054804,
+    0.6985669609688012
+   ],
+   "pair_by_cell_drug_interval": [
+    0.5697997342380061,
+    0.7445682500577229
+   ],
+   "pair_by_cell_cell_interval": [
+    0.5532023661799144,
+    0.7611656181158146
+   ],
+   "descriptive_pair_mean_pair_interval": [
+    0.2214035081687497,
+    0.29866072895426227
+   ],
+   "descriptive_pair_mean_drug_interval": [
+    0.18032993616442383,
+    0.33765074074496504
+   ],
+   "descriptive_pair_mean_cell_interval": [
+    0.18276902724581726,
+    0.33521164966357164
+   ]
+  },
+  "bliss_edge": {
+   "energy_per_row": 20.629739712955605,
+   "noise": 0.09760835934939746,
+   "pair_wide": 0.2470061813627691,
+   "pair_by_cell": 0.6553854592878334,
+   "tau2": 5.095673229005032,
+   "descriptive_pair_mean": 0.2574650515671846,
+   "noise_pair_interval": [
+    0.08840701323596672,
+    0.10736104326204893
+   ],
+   "noise_drug_interval": [
+    0.06939418990631371,
+    0.1258225287924812
+   ],
+   "noise_cell_interval": [
+    0.068757684189008,
+    0.12645903450978693
+   ],
+   "pair_wide_pair_interval": [
+    0.19963817619798643,
+    0.2985051739311016
+   ],
+   "pair_wide_drug_interval": [
+    0.15463061476340312,
+    0.3393817479621351
+   ],
+   "pair_wide_cell_interval": [
+    0.1638947468865295,
+    0.3301176158390087
+   ],
+   "pair_by_cell_pair_interval": [
+    0.6074625590312129,
+    0.6991163744972044
+   ],
+   "pair_by_cell_drug_interval": [
+    0.5623441888240055,
+    0.7484267297516614
+   ],
+   "pair_by_cell_cell_interval": [
+    0.5478403810589294,
+    0.7629305375167375
+   ],
+   "descriptive_pair_mean_pair_interval": [
+    0.2177845103835017,
+    0.2990975870415972
+   ],
+   "descriptive_pair_mean_drug_interval": [
+    0.17301345724455314,
+    0.341916645889816
+   ],
+   "descriptive_pair_mean_cell_interval": [
+    0.17964550576382413,
+    0.33528459737054506
+   ]
+  },
+  "train": {
+   "energy_per_row": 31.71561859237913,
+   "noise": 0.10333022499183096,
+   "pair_wide": 0.24881977989018608,
+   "pair_by_cell": 0.6478499951179829,
+   "tau2": 7.891473237236868,
+   "descriptive_pair_mean": 0.25535020508025386,
+   "noise_pair_interval": [
+    0.09266078915643403,
+    0.11496351928553986
+   ],
+   "noise_drug_interval": [
+    0.07004591783431101,
+    0.13661453214935093
+   ],
+   "noise_cell_interval": [
+    0.07554148423854215,
+    0.13111896574511978
+   ],
+   "pair_wide_pair_interval": [
+    0.195047731439006,
+    0.30439228425049797
+   ],
+   "pair_wide_drug_interval": [
+    0.14710958368772048,
+    0.3505299760926517
+   ],
+   "pair_wide_cell_interval": [
+    0.16247284968694506,
+    0.33516671009342713
+   ],
+   "pair_by_cell_pair_interval": [
+    0.5949097626301383,
+    0.6971937924214403
+   ],
+   "pair_by_cell_drug_interval": [
+    0.5442972755805261,
+    0.7514027146554397
+   ],
+   "pair_by_cell_cell_interval": [
+    0.5386909248274677,
+    0.7570090654084981
+   ],
+   "descriptive_pair_mean_pair_interval": [
+    0.21046686634535602,
+    0.2997937886948366
+   ],
+   "descriptive_pair_mean_drug_interval": [
+    0.16218896929502297,
+    0.34851144086548475
+   ],
+   "descriptive_pair_mean_cell_interval": [
+    0.17626451310634467,
+    0.33443589705416304
+   ]
+  },
+  "bliss_batch_split_noise": {
+   "energy_per_row": 20.588451181506056,
+   "noise": 0.09709689287848201,
+   "pair_wide": 0.2422417915797146,
+   "pair_by_cell": 0.6606613155418034,
+   "tau2": 4.987383300059518,
+   "descriptive_pair_mean": 0.25372966682076126,
+   "noise_pair_interval": [
+    0.08804830021946425,
+    0.10681919497420497
+   ],
+   "noise_drug_interval": [
+    0.06902043830040792,
+    0.12517334745655612
+   ],
+   "noise_cell_interval": [
+    0.06817023248723247,
+    0.12602355326973155
+   ],
+   "pair_wide_pair_interval": [
+    0.1968318782170205,
+    0.2930484393493806
+   ],
+   "pair_wide_drug_interval": [
+    0.1504661960510606,
+    0.3340173871083686
+   ],
+   "pair_wide_cell_interval": [
+    0.16034126906660812,
+    0.32414231409282107
+   ],
+   "pair_by_cell_pair_interval": [
+    0.6134807632848388,
+    0.7031575223202179
+   ],
+   "pair_by_cell_drug_interval": [
+    0.5667784998512847,
+    0.7545441312323221
+   ],
+   "pair_by_cell_cell_interval": [
+    0.5542007001187634,
+    0.7671219309648434
+   ],
+   "descriptive_pair_mean_pair_interval": [
+    0.214601416644111,
+    0.29437187668433223
+   ],
+   "descriptive_pair_mean_drug_interval": [
+    0.16913699536010696,
+    0.33832233828141556
+   ],
+   "descriptive_pair_mean_cell_interval": [
+    0.17676776393184007,
+    0.33069156970968244
+   ]
+  },
+  "pair_wide_algebra": {
+   "tau2_raw": 7.40632016548074,
+   "tau2_bliss": 4.987383300059518,
+   "tau2_ref": 2.444559364507052,
+   "cross_ref_bliss": -0.012811249542913909,
+   "bliss_energy_per_row": 20.588451181506063
+  },
+  "pair_mean_correlations": {
+   "bliss~raw": 0.8122279009784948,
+   "bliss~ref": 0.00876335997326165,
+   "raw~ref": 0.5904356868960767,
+   "bliss~hsa": 0.9808856232880043,
+   "bliss~bliss_edge": 0.9995278831662819,
+   "bliss~train": 0.7991575005244262
+  }
+ },
+ "covariance_structure": {
+  "eigenvalues_noise_corrected": [
+   221.63978343621403,
+   100.84214500638171,
+   71.02601530203307,
+   57.74539359073387,
+   48.38164750460534,
+   38.775709884936816,
+   25.671227205678584,
+   20.37195944895107,
+   18.101495048664557,
+   13.012830157245984,
+   10.93056003579006,
+   10.106157503195794,
+   9.196027071787567,
+   7.963966888571675,
+   7.785611348180585,
+   6.006710095019303,
+   5.535740425088117,
+   5.359293125496831,
+   4.864369108433355,
+   4.7132429601908905,
+   4.353424803121806,
+   3.593553008366254,
+   3.5048479982916922,
+   3.4476746197216395,
+   2.916965369273243,
+   2.7804178743882755,
+   2.5664613453982494,
+   2.5261067845922724,
+   1.980762884112722,
+   1.6686012829836283,
+   1.5146205019036931,
+   1.4285159852937654,
+   1.3493431874264923,
+   1.067516417319788,
+   0.9779894583205091,
+   0.8596556510528585,
+   0.3632964701830764,
+   0.24846872034620643,
+   -0.12396640653040406
+  ],
+  "trace": 725.0541411027649,
+  "top_eigenvalue_share": 0.30568721819740646,
+  "top_eigenvector_cosine_with_constant": 0.9378790624474841,
+  "compound_symmetry_tau2": 4.815276082032457,
+  "offdiagonal_sd": 2.6263919018105244
+ },
+ "loco": {
+  "bliss": {
+   "B1": {
+    "r2": 0.21523078606954293,
+    "pair_interval": [
+     0.17445786166604785,
+     0.2577506126296056
+    ],
+    "drug_interval": [
+     0.12710007628774692,
+     0.303361495851339
+    ]
+   },
+   "B2": {
+    "r2": 0.3594570225954862,
+    "pair_interval": [
+     0.3186414302215303,
+     0.3995886207477616
+    ],
+    "drug_interval": [
+     0.2627691702480872,
+     0.45614487494288514
+    ]
+   },
+   "B2_minus_B1": {
+    "r2": 0.1442262365259432,
+    "pair_interval": [
+     0.1163426898033637,
+     0.17242709082988134
+    ],
+    "drug_interval": [
+     0.07581171943662565,
+     0.21264075361526077
+    ]
+   },
+   "b2_configs": {
+    "0": [
+     0.5,
+     38
+    ],
+    "1": [
+     0.25,
+     38
+    ],
+    "2": [
+     0.25,
+     38
+    ],
+    "3": [
+     0.5,
+     38
+    ],
+    "4": [
+     0.5,
+     38
+    ]
+   },
+   "noise_share": 0.09780410529352931
+  },
+  "raw": {
+   "B1": {
+    "r2": 0.22498584272399702,
+    "pair_interval": [
+     0.19306538363914044,
+     0.2575334987884519
+    ],
+    "drug_interval": [
+     0.14153974456894705,
+     0.308431940879047
+    ]
+   },
+   "B2": {
+    "r2": 0.41945981907086527,
+    "pair_interval": [
+     0.38891925876327743,
+     0.449390866056496
+    ],
+    "drug_interval": [
+     0.3455899136836806,
+     0.49332972445804996
+    ]
+   },
+   "B2_minus_B1": {
+    "r2": 0.19447397634686822,
+    "pair_interval": [
+     0.1712003519691332,
+     0.21825968853040867
+    ],
+    "drug_interval": [
+     0.1367180851724495,
+     0.25222986752128695
+    ]
+   },
+   "b2_configs": {
+    "0": [
+     0.25,
+     38
+    ],
+    "1": [
+     0.25,
+     38
+    ],
+    "2": [
+     0.25,
+     38
+    ],
+    "3": [
+     0.25,
+     38
+    ],
+    "4": [
+     0.25,
+     38
+    ]
+   },
+   "noise_share": 0.06713301836787675
+  },
+  "ref": {
+   "B1": {
+    "r2": 0.24896408077515664,
+    "pair_interval": [
+     0.21385471120523908,
+     0.2839229207224773
+    ],
+    "drug_interval": [
+     0.12697976701957628,
+     0.370948394530737
+    ]
+   },
+   "B2": {
+    "r2": 0.619618933365039,
+    "pair_interval": [
+     0.5895713057410845,
+     0.6473115162441373
+    ],
+    "drug_interval": [
+     0.5128782253025546,
+     0.7263596414275235
+    ]
+   },
+   "B2_minus_B1": {
+    "r2": 0.37065485258988246,
+    "pair_interval": [
+     0.343966987642216,
+     0.3975046025571475
+    ],
+    "drug_interval": [
+     0.31551002517130206,
+     0.42579968000846286
+    ]
+   },
+   "b2_configs": {
+    "0": [
+     0.25,
+     38
+    ],
+    "1": [
+     0.25,
+     38
+    ],
+    "2": [
+     0.25,
+     38
+    ],
+    "3": [
+     0.25,
+     38
+    ],
+    "4": [
+     0.25,
+     38
+    ]
+   },
+   "noise_share": 0.0
+  },
+  "train": {
+   "B1": {
+    "r2": 0.21680643633046148,
+    "pair_interval": [
+     0.16992841818255267,
+     0.2632548721334279
+    ],
+    "drug_interval": [
+     0.1198764561688085,
+     0.3137364164921145
+    ]
+   },
+   "B2": {
+    "r2": 0.3814942810498755,
+    "pair_interval": [
+     0.3338571904049104,
+     0.428448753669066
+    ],
+    "drug_interval": [
+     0.26732861825939513,
+     0.49565994384035583
+    ]
+   },
+   "B2_minus_B1": {
+    "r2": 0.16468784471941406,
+    "pair_interval": [
+     0.13217060653965568,
+     0.2012077910430938
+    ],
+    "drug_interval": [
+     0.07480728123431596,
+     0.25456840820451215
+    ]
+   },
+   "b2_configs": {
+    "0": [
+     0.25,
+     38
+    ],
+    "1": [
+     0.25,
+     38
+    ],
+    "2": [
+     0.25,
+     38
+    ],
+    "3": [
+     0.25,
+     38
+    ],
+    "4": [
+     0.25,
+     38
+    ]
+   },
+   "noise_share": 0.10333022499183098
+  }
+ },
+ "held_out_pair_models": {
+  "f2_base": {
+   "pair_mean_r2": -0.2767471090738136,
+   "residual_r2": 0.026874985353750287,
+   "pair_mean_energy_share_of_target": 0.25372966682076126,
+   "total_r2": -0.050162947504777344
+  },
+  "f2_selected": {
+   "pair_mean_r2": -0.1442886208633468,
+   "residual_r2": 0.13115541771310016,
+   "pair_mean_energy_share_of_target": 0.25372966682076126,
+   "total_r2": 0.06126709357733336
+  },
+  "gp": {
+   "pair_mean_r2": 0.059090747546562516,
+   "residual_r2": 0.016825054679243,
+   "pair_mean_energy_share_of_target": 0.25372966682076126,
+   "total_r2": 0.02754911484841671
+  },
+  "cf": {
+   "pair_mean_r2": 0.06256710759302653,
+   "residual_r2": 0.021211176190669145,
+   "pair_mean_energy_share_of_target": 0.25372966682076126,
+   "total_r2": 0.03170440288645171
+  },
+  "loco_B1": {
+   "pair_mean_r2": 0.9923810591419586,
+   "residual_r2": -0.04899796735856321,
+   "pair_mean_energy_share_of_target": 0.25372966682076126,
+   "total_r2": 0.21523078606954293
+  },
+  "loco_B2": {
+   "pair_mean_r2": 0.9671564684196984,
+   "residual_r2": 0.15284104034243728,
+   "pair_mean_energy_share_of_target": 0.25372966682076126,
+   "total_r2": 0.3594570225954864
+  }
+ },
+ "controls": {
+  "pair_permutation": {
+   "pair_wide_mean": 0.000684208688459254,
+   "pair_wide_sd": 0.001593666990968937,
+   "pair_wide_max": 0.003080461922973675,
+   "loco_b1_r2_mean": -7.387499879729642e-05,
+   "loco_b1_r2_max": 0.00020311772266523587,
+   "permutations": 20
+  },
+  "zero_interaction": {
+   "noise_share_mean": 0.987642509521617,
+   "noise_share_range": [
+    0.9741906001435628,
+    1.0040039716635631
+   ],
+   "pair_wide_mean": -0.0009240491282637624,
+   "loco_b1_r2_mean": -4.8996434209502836e-05,
+   "loco_b2_r2_mean": -0.0013677300016010196,
+   "energy_per_row_mean": 2.051217828620947,
+   "realizations": 5
+  },
+  "reference_perturbation": {
+   "2.0": {
+    "induced_energy_share": 0.00249621179210211,
+    "pair_wide_share_perturbed": 0.24630389134179512,
+    "pair_mean_corr": 0.9998719223709183,
+    "pair_wide_share_of_perturbation": 0.0015334889834059818
+   },
+   "5.0": {
+    "induced_energy_share": 0.015758190802517783,
+    "pair_wide_share_perturbed": 0.24298637204055532,
+    "pair_mean_corr": 0.9992073675165634,
+    "pair_wide_share_of_perturbation": 0.0010074022678180513
+   },
+   "10.0": {
+    "induced_energy_share": 0.0634552799975419,
+    "pair_wide_share_perturbed": 0.23369810729108495,
+    "pair_mean_corr": 0.9966564614902609,
+    "pair_wide_share_of_perturbation": 0.002703481746196085
+   }
+  },
+  "reference_only": {
+   "energy_share_of_raw": 0.30811216651827006
+  }
+ },
+ "cross_batch": {
+  "eligible_pair_cells": 240,
+  "raw": {
+   "none": {
+    "within_batch_reproducible": 45.791708672739766,
+    "cross_batch_reproducible": 25.604325092223043,
+    "within_pair_wide": 22.38549687388871,
+    "cross_pair_wide": 8.280443544535407,
+    "within_pair_by_cell": 23.406211798851057,
+    "cross_pair_by_cell": 17.323881547687634,
+    "replication_overall": 0.5591476237589172,
+    "replication_pair_wide": 0.3699021554528919,
+    "replication_pair_by_cell": 0.7401403395203837,
+    "mean_shift": 4.866614953471207,
+    "msd": 50.55164472729812,
+    "msd_over_within_noise": 4.472366395276201,
+    "within_batch_reproducible_pair_interval": [
+     30.504257123231724,
+     66.38599484574324
+    ],
+    "cross_batch_reproducible_pair_interval": [
+     10.154131345839389,
+     47.4723391029094
+    ],
+    "within_pair_wide_pair_interval": [
+     10.85034818425946,
+     39.064627315958084
+    ],
+    "cross_pair_wide_pair_interval": [
+     -4.034008458172936,
+     25.673009605328595
+    ],
+    "within_pair_by_cell_pair_interval": [
+     15.223798004316624,
+     34.15263208129837
+    ],
+    "cross_pair_by_cell_pair_interval": [
+     11.83852040999894,
+     23.390395570505056
+    ],
+    "replication_overall_pair_interval": [
+     0.2968568804475657,
+     0.7555232388875691
+    ],
+    "replication_pair_wide_pair_interval": [
+     -0.3170971820485782,
+     0.7123176221888933
+    ],
+    "replication_pair_by_cell_pair_interval": [
+     0.5523465043293457,
+     0.9438770812625658
+    ],
+    "mean_shift_pair_interval": [
+     3.702861443065911,
+     6.088586896384044
+    ],
+    "msd_pair_interval": [
+     36.30108297615364,
+     67.25666353604268
+    ],
+    "msd_over_within_noise_pair_interval": [
+     2.9626620317331107,
+     6.594933219684285
+    ],
+    "corr_pc": 0.7044828771297525,
+    "corr_pair_means": 0.8406463230524716,
+    "corr_residuals": 0.6162774495514268,
+    "noise_mean_square": 5.651554485863651,
+    "target_mean_square": 51.443263158603415
+   },
+   "cell_shift": {
+    "within_batch_reproducible": 44.88652836691081,
+    "cross_batch_reproducible": 39.88344857005567,
+    "within_pair_wide": 25.168213582140922,
+    "cross_pair_wide": 22.476417893040114,
+    "within_pair_by_cell": 19.718314784769888,
+    "cross_pair_by_cell": 17.407030677015555,
+    "replication_overall": 0.8885393907954067,
+    "replication_pair_wide": 0.8930478049101238,
+    "replication_pair_by_cell": 0.8827849066726772,
+    "mean_shift": -0.15500254001774288,
+    "msd": 20.183037159974955,
+    "msd_over_within_noise": 1.785618205615747,
+    "within_batch_reproducible_pair_interval": [
+     22.05833705407012,
+     76.60126956281049
+    ],
+    "cross_batch_reproducible_pair_interval": [
+     18.570958881678678,
+     69.91787944355622
+    ],
+    "within_pair_wide_pair_interval": [
+     9.180919733841675,
+     50.362073043011485
+    ],
+    "cross_pair_wide_pair_interval": [
+     6.05332490380602,
+     47.485232824166516
+    ],
+    "within_pair_by_cell_pair_interval": [
+     11.59638345844391,
+     31.053258144210783
+    ],
+    "cross_pair_by_cell_pair_interval": [
+     11.677557747158646,
+     23.99198249833068
+    ],
+    "replication_overall_pair_interval": [
+     0.7110232786861201,
+     1.0062633845414568
+    ],
+    "replication_pair_wide_pair_interval": [
+     0.6152903696533708,
+     0.9687374888277573
+    ],
+    "replication_pair_by_cell_pair_interval": [
+     0.6809035780753298,
+     1.1216702890035768
+    ],
+    "mean_shift_pair_interval": [
+     -1.320100923120965,
+     1.120770480447249
+    ],
+    "msd_pair_interval": [
+     10.265353524984887,
+     36.088522839550166
+    ],
+    "msd_over_within_noise_pair_interval": [
+     0.8636998806883823,
+     3.3252169071011504
+    ],
+    "corr_pc": 0.7652585597770638,
+    "corr_pair_means": 0.8425312317419371,
+    "corr_residuals": 0.722985681114853,
+    "noise_mean_square": 5.651554485863651,
+    "target_mean_square": 50.538082852774465
+   }
+  },
+  "bliss_frozen_reference": {
+   "none": {
+    "within_batch_reproducible": 38.49963856432728,
+    "cross_batch_reproducible": 18.318664455869847,
+    "within_pair_wide": 19.283807473737685,
+    "cross_pair_wide": 5.18448569883163,
+    "within_pair_by_cell": 19.215831090589592,
+    "cross_pair_by_cell": 13.134178757038217,
+    "replication_overall": 0.4758139332986732,
+    "replication_pair_wide": 0.2688517662236724,
+    "replication_pair_by_cell": 0.6835082331396173,
+    "mean_shift": 4.865279678598506,
+    "msd": 50.538825783179554,
+    "msd_over_within_noise": 4.4712322874700545,
+    "within_batch_reproducible_pair_interval": [
+     21.67357233237533,
+     62.69008853524775
+    ],
+    "cross_batch_reproducible_pair_interval": [
+     2.009964248880667,
+     43.370272100746384
+    ],
+    "within_pair_wide_pair_interval": [
+     7.369906360601121,
+     39.09206994545834
+    ],
+    "cross_pair_wide_pair_interval": [
+     -7.84886563268818,
+     25.928694348095096
+    ],
+    "within_pair_by_cell_pair_interval": [
+     11.319205288147003,
+     29.976682569286716
+    ],
+    "cross_pair_by_cell_pair_interval": [
+     7.81882978169174,
+     19.086323299325745
+    ],
+    "replication_overall_pair_interval": [
+     0.08286158024041178,
+     0.7408807868059499
+    ],
+    "replication_pair_wide_pair_interval": [
+     -0.7699526740702693,
+     0.7162867569210164
+    ],
+    "replication_pair_by_cell_pair_interval": [
+     0.4768621034653041,
+     0.9282307469840247
+    ],
+    "mean_shift_pair_interval": [
+     3.7008430467526368,
+     6.087358301054062
+    ],
+    "msd_pair_interval": [
+     36.293748661824175,
+     67.2398975856442
+    ],
+    "msd_over_within_noise_pair_interval": [
+     2.9625103946186915,
+     6.592805427690238
+    ],
+    "corr_pc": 0.641865843956815,
+    "corr_pair_means": 0.7942999085083505,
+    "corr_residuals": 0.5508284829779929,
+    "noise_mean_square": 5.651554485863651,
+    "target_mean_square": 44.151193050190926
+   },
+   "cell_shift": {
+    "within_batch_reproducible": 40.953452124834726,
+    "cross_batch_reproducible": 35.948875757758984,
+    "within_pair_wide": 25.486830733262124,
+    "cross_pair_wide": 22.793511343502423,
+    "within_pair_by_cell": 15.466621391572602,
+    "cross_pair_by_cell": 13.15536441425656,
+    "replication_overall": 0.8777984246158116,
+    "replication_pair_wide": 0.8943250568127826,
+    "replication_pair_by_cell": 0.8505648442021481,
+    "mean_shift": -0.15514329546367076,
+    "msd": 20.186030300416192,
+    "msd_over_within_noise": 1.7858830124444456,
+    "within_batch_reproducible_pair_interval": [
+     15.325705155192797,
+     77.97397285516755
+    ],
+    "cross_batch_reproducible_pair_interval": [
+     12.267616715371059,
+     72.19099848019967
+    ],
+    "within_pair_wide_pair_interval": [
+     6.633711259473707,
+     56.7149835832215
+    ],
+    "cross_pair_wide_pair_interval": [
+     3.7365025190933445,
+     53.63512001305712
+    ],
+    "within_pair_by_cell_pair_interval": [
+     7.911509226591082,
+     26.691454012882478
+    ],
+    "cross_pair_by_cell_pair_interval": [
+     7.517692339620169,
+     19.585748075608272
+    ],
+    "replication_overall_pair_interval": [
+     0.6458571070618968,
+     1.006809385497254
+    ],
+    "replication_pair_wide_pair_interval": [
+     0.523736664237441,
+     0.9707401622683232
+    ],
+    "replication_pair_by_cell_pair_interval": [
+     0.6204806364750909,
+     1.1588456218135377
+    ],
+    "mean_shift_pair_interval": [
+     -1.320456086491232,
+     1.1205125594687977
+    ],
+    "msd_pair_interval": [
+     10.2685483782179,
+     36.090011370197935
+    ],
+    "msd_over_within_noise_pair_interval": [
+     0.8641353710304769,
+     3.3253215558420135
+    ],
+    "corr_pc": 0.7129966047561862,
+    "corr_pair_means": 0.8072548896548064,
+    "corr_residuals": 0.6611663522158756,
+    "noise_mean_square": 5.651554485863651,
+    "target_mean_square": 46.60500661069838
+   }
+  },
+  "bliss_own_edges": {
+   "none": {
+    "within_batch_reproducible": 38.497992566150145,
+    "cross_batch_reproducible": 18.320675904584856,
+    "within_pair_wide": 19.282215517912825,
+    "cross_pair_wide": 5.186725434259394,
+    "within_pair_by_cell": 19.21577704823732,
+    "cross_pair_by_cell": 13.133950470325463,
+    "replication_overall": 0.4758865250728306,
+    "replication_pair_wide": 0.26899011835237613,
+    "replication_pair_by_cell": 0.6834982752638802,
+    "mean_shift": 4.864779279918106,
+    "msd": 50.53151088939524,
+    "msd_over_within_noise": 4.470585129789578,
+    "within_batch_reproducible_pair_interval": [
+     21.67112033166365,
+     62.68700465178173
+    ],
+    "cross_batch_reproducible_pair_interval": [
+     2.013395740680118,
+     43.370806353313384
+    ],
+    "within_pair_wide_pair_interval": [
+     7.369460121234095,
+     39.09056356542606
+    ],
+    "cross_pair_wide_pair_interval": [
+     -7.844505027438433,
+     25.930573981862636
+    ],
+    "within_pair_by_cell_pair_interval": [
+     11.318936302585543,
+     29.976525287148096
+    ],
+    "cross_pair_by_cell_pair_interval": [
+     7.8184346837521215,
+     19.08588292613976
+    ],
+    "replication_overall_pair_interval": [
+     0.0829731148875425,
+     0.7409113429068425
+    ],
+    "replication_pair_wide_pair_interval": [
+     -0.769757269658632,
+     0.7163270630101168
+    ],
+    "replication_pair_by_cell_pair_interval": [
+     0.4768292586315276,
+     0.9282022028707215
+    ],
+    "mean_shift_pair_interval": [
+     3.7000989668162676,
+     6.086332134598919
+    ],
+    "msd_pair_interval": [
+     36.29333291388068,
+     67.2293414768687
+    ],
+    "msd_over_within_noise_pair_interval": [
+     2.9622732143053576,
+     6.590783873143574
+    ],
+    "corr_pc": 0.6418895243640603,
+    "corr_pair_means": 0.7943806811404285,
+    "corr_residuals": 0.5508205089129063,
+    "noise_mean_square": 5.651554485863651,
+    "target_mean_square": 44.14954705201379
+   },
+   "cell_shift": {
+    "within_batch_reproducible": 40.95280165222961,
+    "cross_batch_reproducible": 35.94917866465471,
+    "within_pair_wide": 25.48610235545139,
+    "cross_pair_wide": 22.7940715658642,
+    "within_pair_by_cell": 15.46669929677822,
+    "cross_pair_by_cell": 13.15510709879051,
+    "replication_overall": 0.87781976358869,
+    "replication_pair_wide": 0.894372597581153,
+    "replication_pair_by_cell": 0.8505439231970311,
+    "mean_shift": -0.1551579712209438,
+    "msd": 20.184123541414497,
+    "msd_over_within_noise": 1.7857143191224167,
+    "within_batch_reproducible_pair_interval": [
+     15.325109419553621,
+     77.9735941002033
+    ],
+    "cross_batch_reproducible_pair_interval": [
+     12.267527532552243,
+     72.19057724533329
+    ],
+    "within_pair_wide_pair_interval": [
+     6.632512687156437,
+     56.71493828679607
+    ],
+    "cross_pair_wide_pair_interval": [
+     3.7378662907898192,
+     53.63253360364966
+    ],
+    "within_pair_by_cell_pair_interval": [
+     7.91117438959316,
+     26.691086602803566
+    ],
+    "cross_pair_by_cell_pair_interval": [
+     7.517382178003782,
+     19.58570616235348
+    ],
+    "replication_overall_pair_interval": [
+     0.6459158783807485,
+     1.0068201488845019
+    ],
+    "replication_pair_wide_pair_interval": [
+     0.5238916154974576,
+     0.9707518600579526
+    ],
+    "replication_pair_by_cell_pair_interval": [
+     0.6204434928286856,
+     1.1588764705937058
+    ],
+    "mean_shift_pair_interval": [
+     -1.3198863571745645,
+     1.1198493889624475
+    ],
+    "msd_pair_interval": [
+     10.268629188224235,
+     36.08425360173359
+    ],
+    "msd_over_within_noise_pair_interval": [
+     0.8641482289662065,
+     3.3251423232555855
+    ],
+    "corr_pc": 0.713018188848655,
+    "corr_pair_means": 0.8073212173322675,
+    "corr_residuals": 0.661150969783139,
+    "noise_mean_square": 5.651554485863651,
+    "target_mean_square": 46.60435613809326
+   }
+  },
+  "retested_pairs_frozen_components": {
+   "energy_per_row": 26.91542370048342,
+   "noise": 0.08507149022235848,
+   "pair_wide": 0.4491843069771399,
+   "pair_by_cell": 0.46574420280050155,
+   "tau2": 12.089985941897732,
+   "descriptive_pair_mean": 0.4622241680486944
+  },
+  "all_pairs_frozen_components": {
+   "energy_per_row": 20.588451181506056,
+   "noise": 0.09780410529352933,
+   "pair_wide": 0.2422417915797146,
+   "pair_by_cell": 0.6599541031267561,
+   "tau2": 4.987383300059518,
+   "descriptive_pair_mean": 0.25372966682076126
+  }
+ },
+ "runtime_seconds": 40.1
+}

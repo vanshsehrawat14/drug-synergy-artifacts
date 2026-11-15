@@ -1,0 +1,19 @@
+{
+  "amendment": "The clause names one replacement. Of the variants that clear 1% at cap 1500, take the one with the lowest validation MSE (w 0). Run it at the selected cap and predictor on the study fold. It replaces the default if its pooled validation MSE there is more than 1% below the default's; then the five folds are run with it and that run is the frozen selection. results/neural/runs/gp_final is reported as the default kernel at the selected scale either way.",
+  "selected_scale": [
+    "cap3000",
+    "inducing"
+  ],
+  "variant": "cap1500_w0",
+  "variant_group": "cap3000_w0",
+  "default_validation_mse": 250.1327636945774,
+  "variant_validation_mse": 249.1461194093295,
+  "change": -0.003944482404762639,
+  "variant_replaces_default": false,
+  "method": {
+    "cap": 3000,
+    "predictor": "inducing"
+  },
+  "computed_on": "RebelX CPU job 132631: gp_shared study --group cap3000_w0, then gp_select --amendment (amendment hash there bc65002e353b..., LF checkout)",
+  "amendment_sha256": "8a84cf8db3309af12662853fa43c33e1cdc3c7dcf20fa75d2b3ff04c5ffa9fb7"
+}

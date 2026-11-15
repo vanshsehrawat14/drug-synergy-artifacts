@@ -1,0 +1,9 @@
+{
+  "cases": 400,
+  "native_code_mismatches": 0,
+  "native_reference_max_abs_error": 7.894129794294713e-12,
+  "affected_cases_any_start": 102,
+  "valid_root_cases_acceptance_changed": 68,
+  "large_reference_change_cases_any_start": 103,
+  "interpretation": "Stratified fixed-fit numerical intervention, not population incidence or biological evidence."
+}

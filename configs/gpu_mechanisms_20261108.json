@@ -1,0 +1,35 @@
+{
+  "name": "gpu-mechanisms-20261108",
+  "status": "Exploratory; frozen before new training results. All screens have been inspected previously. This does not repair or replace the failed NCATS confirmation.",
+  "common": {
+    "dataset": "oneil_v1",
+    "split": "Existing unordered-pair folds: test f, validation (f+1)%5, other folds train. Monotherapy from training pairs only.",
+    "seeds": [2026, 2027, 2028],
+    "architecture": "Unchanged production F2: symmetric endpoint encoder 32, head [128,64], dropout 0.1.",
+    "training": "Adam lr 0.001, weight decay 1e-5, batch 1024, max 200 epochs, patience 20, no scheduler; original validation checkpoint rule.",
+    "inference": "Average matched seed-specific errors, pair bootstrap 2000 seed 20261108, delete-one-drug refitting every evaluation projection; all five fold directions. At most two primary endpoints, Holm over them.",
+    "threshold": "A new material effect requires magnitude >=5% of the matched full-input control MSE, both grouped intervals excluding zero, Holm p<0.05 and all five folds agreeing. This is a new exploratory rule and does not amend historical outcomes.",
+    "resources": "One allocated CUDA GPU, four CPU cores, 16 GiB RAM per task; one active task, 30 minute task cap. Historical task times 59-509 s; use a 2x time contingency, no automatic config changes.",
+    "stopping": "Exactly 15 new tasks per experiment. Stop the affected experiment on source/hash/split mismatch, nonfinite outputs or irrecoverable deterministic error. Resume identical checkpoints only. No added seeds, models or datasets based on these outcomes. Missing tasks are never averaged as complete."
+  },
+  "joint_identity": {
+    "hypothesis": "Drug and cell identity channels supply overlapping response information conditional on per-dose monotherapy; their joint omission produces a nonadditive error penalty.",
+    "competing": "Independent additive information gives no factorial interaction; complementary information can make joint omission worse than the sum; redundant channels can make either single omission underestimate the joint cost.",
+    "new_runs": "Both direct drug and direct cell identity removed, monotherapy and dose retained, raw-response target. Three seeds by five folds.",
+    "controls": "Existing full F2 base, no_drug_identity and no_cell_identity at the identical seeds/folds; all have raw-response targets. Internal monotherapy lookup identities remain available.",
+    "primary": "Factorial response-error interaction: (SSE_both-SSE_no_drug-SSE_no_cell+SSE_full)/SSE_full. Signed pair contributions and matched cluster resampling.",
+    "distinguishing": "A supported nonzero interaction establishes nonadditivity of these predictive error costs under the frozen learning procedure: positive means joint omission costs more than the sum, negative means less. A nonsignificant result is inconclusive unless its uncertainty excludes material effects. Redundancy, complementarity and optimization are competing interpretations, not uniquely identified biological mechanisms. This wording is clarified before launch; configurations, metrics and decision rules are unchanged.",
+    "secondary": "Exact additive/contrast attribution and reference-augmented contrast errors. Interpret no identity as no direct channel, not complete removal of identity information.",
+    "cost": "15 new tasks, 0.25-2.12 historical-range GPU hours; budget 4.25 GPU hours with 2x contingency. Existing controls require no retraining."
+  },
+  "residual_drug_identity": {
+    "hypothesis": "The apparent drug-identity panel-contrast penalty persists when dominant Bliss variation is supplied as a fixed offset, rather than learned through the raw-response target.",
+    "competing": "Identity-channel overfitting predicts a similar contrast improvement on removal under both targets. Target conditioning/optimization predicts attenuation or reversal after the Bliss offset. Insufficient power yields inconclusive grouped intervals.",
+    "new_runs": "Fixed training-pair Bliss offset, direct drug identity removed, all other F2 inputs retained. Three seeds by five folds.",
+    "controls": "Existing full-input production f2_residual, same architecture, seeds and folds; raw-target full F2/no-drug runs. Verify complete f2_residual controls before launching; missing controls are a gate failure, not permission to substitute f2_combined or selected:F2.",
+    "primary": "Paired relative MSE change on the reference-augmented panel contrast (remove additive endpoint incidence, then projected Bliss/HSA spans), no-drug versus full f2_residual.",
+    "distinguishing": "A material negative change surviving both grouped intervals supports a reproducible identity-channel contrast penalty for this residual objective. Failure/reversal weakens the original overfitting explanation. Predeclared raw/residual difference-in-effect is secondary.",
+    "secondary": "Original panel/dose contrasts, response MSE, error attribution, and difference-in-effect versus raw-target identity ablation. No biological synergy or confirmed overfitting mechanism from these alone.",
+    "cost": "15 new tasks, 0.25-2.12 historical-range GPU hours; budget 4.25 GPU hours with 2x contingency. Existing controls require no retraining."
+  }
+}

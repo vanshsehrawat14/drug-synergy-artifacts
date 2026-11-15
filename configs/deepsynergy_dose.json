@@ -1,0 +1,16 @@
+{
+  "name": "deepsynergy-dose-v1",
+  "status": "declared 2026-11-05 before any dose-level DeepSynergy run; epochs and patience frozen 2026-11-05 from the fold-0 validation pilot (validation MSE 604.0 at epoch 1, best 376.7 at epoch 13 of 16 and still falling; longest stretch without improvement 2 epochs), before any test prediction: budget 3x the pilot, patience 8",
+  "adaptation": "published DeepSynergy network, normalization and optimizer on the shared dose-response rows: a standardized log10 dose follows each drug's descriptors; target is measured inhibition centered on the training mean; training folds in both drug orders; validation-MSE epoch selection without refit, as for F0/F2",
+  "dataset": "data/processed/oneil_v1",
+  "features": "data/processed/deepsynergy/features.npz",
+  "provenance": "data/processed/deepsynergy/features.provenance.json",
+  "seeds": [2026, 2027, 2028],
+  "folds": [0, 1, 2, 3, 4],
+  "bootstrap": 1000,
+  "settings": {"layers": [8192, 4096], "input_dropout": 0.2, "dropout": 0.5, "placement": "paper", "norm": "tanh_norm",
+               "lr": 1e-05, "momentum": 0.5, "batch_size": 64, "epochs": 48, "patience": 8, "center_target": true,
+               "checkpoint_every": 1, "print_every": 1, "eval_batch_size": 8192, "threads": 4, "keep_checkpoints": false},
+  "pilot": {"fold": 0, "seed": 2026, "scope": "train folds 2-4, validation fold 1; test fold 0 is never predicted",
+            "settings": {"epochs": 16, "patience": 16}}
+}

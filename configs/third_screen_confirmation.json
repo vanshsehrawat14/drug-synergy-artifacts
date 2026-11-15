@@ -1,0 +1,30 @@
+{
+ "name": "third-screen-confirmation-v1",
+ "frozen": "2026-11-06 08:28 PST, committed before any third-screen model, baseline or Bliss-reference run started and before any prediction or metric existed. Examined beforehand: study structure only (rows, blocks, drugs, cells, pairs per drug, grid sizes, monotherapy-edge availability, name collisions) and, to judge feasibility, the number of combination rows per Bliss-expectation bin computed from each block's own monotherapy edges. No response was compared with any prediction.",
+ "screen_choice": {
+  "astrazeneca_sanger_dream": "Not used. The dose-response files (Synapse syn18496666, 'AZ Pharmacology Data') carry a managed ACT access requirement and need a Synapse login; no request was filed. DrugComb v1.4 does not include the study.",
+  "gdsc_combinations": "Not used. The public processed anchor files (breast, colon, pancreas) are curve-level summaries (library XMID, Emax, AUC and their Bliss expectations), not dose-level. Dose-level values exist only as raw plate fluorescence on Figshare under an internal-research licence and would need a new normalization pipeline.",
+  "drugcomb_v1_4": "Combination studies other than ONEIL and ALMANAC, after the min-pairs rule: NCATS_DIPG 3,564 pairs, 128 drugs, 2 cells; NCATS_ES(Nampt+PARP) 2,402 pairs, 73 drugs, 4 cells; CLOUD 39,878 pairs but one dose per drug and one cell line; Wilson 437 pairs; NCATS_HL 490 pairs; the rest have under 100 eligible pairs.",
+  "primary": "NCATS_ES(Nampt+PARP): NCATS 6x6 and 10x10 matrix screen, cells EW8, RH36, TC71, UHO1; runs through the frozen data pipeline without any change; 130,066 combination rows; median 70 pairs per drug.",
+  "secondary": "NCATS_DIPG: same laboratory, different cells (DIPG25, TC32); needs one declared rule, merge_name_variants, because four drugs appear under two spellings (BREFELDIN A/brefeldin A, MEFLOQUINE/mefloquine, PIRARUBICIN/pirarubicin, XL888/Xl-888).",
+  "independence": "Different laboratory and platform from ONEIL (Merck) and ALMANAC (NCI DTP). No cell line is shared with ONEIL; 6 (primary) and 12 (secondary) drugs are shared with ONEIL. Nothing trained on ONEIL or ALMANAC is used; the frozen architectures are retrained on each screen, as for ALMANAC."
+ },
+ "preprocessing": "configs/data_ncats_es.json and configs/data_ncats_dipg.json: DrugComb v1.4 rows of the study, uM only, inhibition as reported (no clipping), drugs in fewer than 10 distinct pairs excluded (single pass, as in ALMANAC amendment 1), generated pair folds from the first seed >= 2026 that keeps validation and test drugs seen in training (seed 2026 qualifies for both screens).",
+ "models": "configs/third_screen_validation.json (primary) and configs/third_screen_dipg_validation.json (secondary): f0_combined, f2_combined, mono_only; seeds 2026, 2027, 2028; no selection. Baselines: training mean, additive ridge, Bliss reference on training-pair monotherapy with interpolation (configs/ncats_{es,dipg}_{mean,additive,reference_bliss}.json).",
+ "metrics": "RMSE, MSE, MAE, R2, Pearson on combination rows; pair-cluster bootstrap (1000) and delete-one-drug jackknife; contrast R2; interaction residual R2 vs Bliss, with P removing drug main effects within fold and cell. Response comparisons use the sprint verdict rule.",
+ "regimes": "Bliss expectation R of each dose row from the Bliss reference: [-inf, 25), [25, 50), [50, 75), [75, inf); pair-cell means within each bin.",
+ "hypotheses": {
+  "H1": "Primary. Interaction residual R2 of f2_combined vs Bliss at R >= 75 is positive. Confirmed only if the delete-one-drug jackknife interval lies above 0 and every seed is positive.",
+  "H2": "Key secondary. Pooled interaction residual R2 of f2_combined vs Bliss is positive, same rule.",
+  "H3": "Key secondary. At R >= 75, f2_combined beats the identity-free mono_only network on the interaction contrast (mono_only as reference, seed s against seed s), same rule."
+ },
+ "multiplicity": "Fixed sequence H1, H2, H3: a hypothesis is called confirmed only if every earlier one is. All three are reported whatever happens. Per-bin results carry Holm-adjusted jackknife p over the four bins.",
+ "secondary_descriptive": [
+  "all four Bliss bins for f2_combined and f0_combined",
+  "isotonic-recalibrated Bliss (training folds) as reference",
+  "response-level comparisons from the protocol"
+ ],
+ "replication": "The primary screen decides. The secondary screen is reported with the same rules; agreement or disagreement is stated, not pooled.",
+ "no_tuning": "Nothing is changed after freezing. A run that fails for an engineering reason is rerun unchanged and logged. Any amendment is dated and committed before any test output is viewed.",
+ "limitations_declared": "Folds are generated, not published. Both screens come from one laboratory (NCATS). Pair-cells mostly have one block, so measurement noise per unit is larger than in ONEIL. Monotherapy is block-associated, as in ONEIL and ALMANAC."
+}

@@ -1,0 +1,5 @@
+arm,endpoint_dim,cell_dim,parameter_min,parameter_max,all_monotherapy_coverage_matches,retains_training_pair_lookup
+full,42,39,23009,23009,True,True
+no_drug_identity,4,39,21793,21793,True,True
+no_cell_identity,42,0,18017,18017,True,True
+no_dose,40,39,22945,22945,True,True

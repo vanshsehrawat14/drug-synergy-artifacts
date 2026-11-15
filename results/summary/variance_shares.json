@@ -1,0 +1,14 @@
+{
+  "dose_rows": 1475328,
+  "pair_cell_units": 22737,
+  "dose_level": {
+    "within_pair_cell": 0.6074137952845041,
+    "between_pair_cell": 0.3925862047154959
+  },
+  "pair_cell_level": {
+    "fold_and_cell": 0.16998271167562862,
+    "drug_main_effects_within_cell": 0.7639141998822464,
+    "pair_specific_contrast": 0.06610308844212492
+  },
+  "contrast_share_of_dose_variance": 0.025951160611466587
+}

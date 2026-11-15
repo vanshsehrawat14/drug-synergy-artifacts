@@ -1,0 +1,15 @@
+{
+  "study": "NCATS_ES(Nampt+PARP)",
+  "raw": "data/raw/drugcomb/drugcomb_data_v1.4.csv",
+  "summary": "data/raw/drugcomb/summary_table_v1.4.csv",
+  "output": "data/processed/ncats_es_v2",
+  "chunksize": 500000,
+  "fold_seed": 2026,
+  "expected_sha256": {
+    "raw": "58c3893c9b8973eaea22aee819c0f268b3739d091a1d451187c1488c1058fe1d",
+    "summary": "e08e3d35bfa4bea011afe1b05b7025acde5c669c5e8d265866b5e12b08037a2f"
+  },
+  "min_pairs_per_drug": 10,
+  "coverage": "drug_cell",
+  "min_pairs_per_drug_cell": 10
+}

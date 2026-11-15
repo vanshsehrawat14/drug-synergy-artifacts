@@ -1,0 +1,224 @@
+{
+ "r08_audit.json": {
+  "numeric_leaves": 50,
+  "max_abs_diff": 0,
+  "largest": [
+   [
+    "rows",
+    0
+   ],
+   [
+    "replicate_reliability.synergy_zip.total_var",
+    0.0
+   ],
+   [
+    "replicate_reliability.synergy_zip.retest_corr",
+    0.0
+   ]
+  ],
+  "non_numeric_mismatches": [],
+  "key_set_differences": []
+ },
+ "r12_summary.json": {
+  "numeric_leaves": 120,
+  "max_abs_diff": 0.0,
+  "largest": [
+   [
+    "[9].sse",
+    0.0
+   ],
+   [
+    "[9].ss",
+    0.0
+   ],
+   [
+    "[9].pooled_cr2",
+    0.0
+   ]
+  ],
+  "non_numeric_mismatches": [],
+  "key_set_differences": []
+ },
+ "r13_summary.json": {
+  "numeric_leaves": 24,
+  "max_abs_diff": 0.0,
+  "largest": [
+   [
+    "[7].sse",
+    0.0
+   ],
+   [
+    "[7].ss",
+    0.0
+   ],
+   [
+    "[7].pooled_cr2",
+    0.0
+   ]
+  ],
+  "non_numeric_mismatches": [],
+  "key_set_differences": []
+ },
+ "r18_gate2.json": {
+  "numeric_leaves": 208,
+  "max_abs_diff": 0.0,
+  "largest": [
+   [
+    "max_abs_diff_vs_r08_panel.Y_S",
+    0.0
+   ],
+   [
+    "max_abs_diff_vs_r08_panel.Y_L",
+    0.0
+   ],
+   [
+    "max_abs_diff_vs_r08_panel.Y_H",
+    0.0
+   ]
+  ],
+  "non_numeric_mismatches": [],
+  "key_set_differences": [],
+  "key_values": {
+   "P2.cr2_M_DC": {
+    "committed": 0.7721428928169389,
+    "rerun": 0.7721428928169389
+   },
+   "components.M_alg.cr2_vs_Y_L": {
+    "committed": -0.04672880449957839,
+    "rerun": -0.04672880449957839
+   },
+   "components.M_impl.cr2_vs_Y_L": {
+    "committed": 0.7521061548942811,
+    "rerun": 0.7521061548942811
+   },
+   "components.M_exist.cr2_vs_Y_L": {
+    "committed": 0.7031787680132171,
+    "rerun": 0.7031787680132171
+   },
+   "P3.s0": {
+    "committed": 0.3072,
+    "rerun": 0.3072
+   },
+   "P3.gate2_pass": {
+    "committed": true,
+    "rerun": true
+   },
+   "P3.M_impl_energy_share_in_fallback_units": {
+    "committed": 0.9169821933533906,
+    "rerun": 0.9169821933533906
+   },
+   "P3.fraction_units_with_fallback": {
+    "committed": 0.7982143642521001,
+    "rerun": 0.7982143642521001
+   },
+   "P4.runs.cell_independent:loewe_sim.knn.cr2": {
+    "committed": 0.48847826100074854,
+    "rerun": 0.48847826100074854
+   },
+   "P4.runs.cell_independent:loewe_sim.krr.cr2": {
+    "committed": 0.5146943433481435,
+    "rerun": 0.5146943433481435
+   },
+   "P4.runs.cell_independent:bliss_sim.knn.cr2": {
+    "committed": -0.09892000641423992,
+    "rerun": -0.09892000641423992
+   },
+   "P4.runs.cell_independent:bliss_sim.krr.cr2": {
+    "committed": -0.0013089218011694825,
+    "rerun": -0.0013089218011694825
+   },
+   "fidelity_vs_DC_block.exist_rule": {
+    "committed": 0.987505331167282,
+    "rerun": 0.987505331167282
+   },
+   "fidelity_vs_DC_block_exact_frac.exist_rule": {
+    "committed": 0.7701284053444387,
+    "rerun": 0.7701284053444387
+   }
+  }
+ },
+ "r19_summary.json": {
+  "numeric_leaves": 6,
+  "max_abs_diff": 0.0,
+  "largest": [
+   [
+    "[1].sse",
+    0.0
+   ],
+   [
+    "[1].ss",
+    0.0
+   ],
+   [
+    "[1].pooled_cr2",
+    0.0
+   ]
+  ],
+  "non_numeric_mismatches": [],
+  "key_set_differences": []
+ },
+ "r20_fallback_mechanism.json": {
+  "numeric_leaves": 13,
+  "max_abs_diff": 0.0,
+  "largest": [
+   [
+    "spearman_logratio_shift_fallback_cells",
+    0.0
+   ],
+   [
+    "shift_by_logratio_quintile.(2.159, 7.482]",
+    0.0
+   ],
+   [
+    "shift_by_logratio_quintile.(1.106, 2.159]",
+    0.0
+   ]
+  ],
+  "non_numeric_mismatches": [],
+  "key_set_differences": []
+ },
+ "r12_runs.csv": {
+  "shape_committed": [
+   150,
+   6
+  ],
+  "shape_rerun": [
+   150,
+   6
+  ],
+  "max_abs_diff_numeric": 0.0
+ },
+ "r13_runs.csv": {
+  "shape_committed": [
+   40,
+   5
+  ],
+  "shape_rerun": [
+   40,
+   5
+  ],
+  "max_abs_diff_numeric": 0.0
+ },
+ "r19_runs.csv": {
+  "shape_committed": [
+   10,
+   4
+  ],
+  "shape_rerun": [
+   10,
+   4
+  ],
+  "max_abs_diff_numeric": 0.0
+ },
+ "r17_fits.csv": {
+  "shape_committed": [
+   3051,
+   6
+  ],
+  "shape_rerun": [
+   3051,
+   6
+  ],
+  "max_abs_diff_numeric": 0.0
+ }
+}

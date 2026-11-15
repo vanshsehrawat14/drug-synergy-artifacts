@@ -1,0 +1,11 @@
+{
+  "pooled_within_input_variance": 83.33657866969914,
+  "pair_ci": [
+    80.93703729590898,
+    85.61645910874445
+  ],
+  "within_input_degrees_of_freedom": 1109976,
+  "identical_input_units": 365352,
+  "hsa_reference_mse": 224.18476271530088,
+  "limitation": "Dispersion among repeat rows at identical inputs includes experimental and processing variation. Pooling weights by within-input degrees of freedom. Independence across plates and independent monotherapy repeat noise are not established; this is not a biological-noise floor."
+}

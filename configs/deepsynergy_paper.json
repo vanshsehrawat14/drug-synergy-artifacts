@@ -1,0 +1,19 @@
+{
+  "dataset": "data/processed/oneil_v1",
+  "table": "published_rows",
+  "target": "synergy",
+  "test_fold": 0,
+  "seed": 2026,
+  "features": {
+    "regime": "F1",
+    "identities": false,
+    "normalization": "tanh",
+    "remove_constant": true,
+    "external": "data/processed/deepsynergy/features.npz",
+    "provenance": "data/processed/deepsynergy/features.provenance.json"
+  },
+  "model": {"kind": "deepsynergy", "hidden": [8192, 4096], "input_dropout": 0.2, "dropout": 0.5},
+  "training": {"epochs": 1000, "batch_size": 64, "optimizer": "sgd", "lr": 0.00001, "momentum": 0.5, "normalize_target": false, "patience": 50, "threads": 4, "device": "auto"},
+  "bootstrap": 1000,
+  "fidelity": "paper architecture, adapted trainer; not a completed faithful reproduction"
+}

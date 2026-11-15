@@ -1,0 +1,57 @@
+[
+  {
+    "screen": "ONEIL",
+    "combination_rows": 1475328,
+    "evaluable_rows": 1475328,
+    "dropped_rows": 0,
+    "coverage": {
+      "f2": 1475328,
+      "f0": 1475328,
+      "mono_only": 1475328,
+      "mean": 1475328,
+      "additive": 1475328,
+      "bliss": 1475328
+    }
+  },
+  {
+    "screen": "ALMANAC",
+    "combination_rows": 2871834,
+    "evaluable_rows": 2871834,
+    "dropped_rows": 0,
+    "coverage": {
+      "f2": 2871834,
+      "f0": 2871834,
+      "mean": 2871834,
+      "additive": 2871834,
+      "bliss": 2871834
+    }
+  },
+  {
+    "screen": "NCATS_ES",
+    "combination_rows": 112165,
+    "evaluable_rows": 112165,
+    "dropped_rows": 0,
+    "coverage": {
+      "f2": 112165,
+      "f0": 112165,
+      "mono_only": 112165,
+      "mean": 112165,
+      "additive": 112165,
+      "bliss": 112165
+    }
+  },
+  {
+    "screen": "NCATS_DIPG",
+    "combination_rows": 224708,
+    "evaluable_rows": 224708,
+    "dropped_rows": 0,
+    "coverage": {
+      "f2": 224708,
+      "f0": 224708,
+      "mono_only": 224708,
+      "mean": 224708,
+      "additive": 224708,
+      "bliss": 224708
+    }
+  }
+]

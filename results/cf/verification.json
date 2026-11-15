@@ -1,0 +1,122 @@
+{
+  "cf_shar": {
+    "directory": "results/neural/runs/cf_shar",
+    "method": "Neighborhood CF (Sharlene Kim), experiments/neighborhood_cf, unchanged",
+    "folds": {
+      "0": {
+        "rows": 291456,
+        "covers_test_rows_once": true,
+        "finite": true
+      },
+      "1": {
+        "rows": 295296,
+        "covers_test_rows_once": true,
+        "finite": true
+      },
+      "2": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true
+      },
+      "3": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true
+      },
+      "4": {
+        "rows": 299904,
+        "covers_test_rows_once": true,
+        "finite": true
+      }
+    },
+    "rows": 1475328,
+    "pairs_in_one_fold": true,
+    "validation_fold_is_next": true,
+    "training_pairs_exclude_test_and_validation": true,
+    "fold_0_refit_with_test_labels_replaced": {
+      "max_abs_difference": 0.0,
+      "identical": true
+    },
+    "passed": true
+  },
+  "cf_selected": {
+    "directory": "results/neural/runs/cf_selected",
+    "method": "Neighborhood CF (Sharlene Kim) with the cf_study extension: cf cell, dose profile partner",
+    "folds": {
+      "0": {
+        "rows": 291456,
+        "covers_test_rows_once": true,
+        "finite": true
+      },
+      "1": {
+        "rows": 295296,
+        "covers_test_rows_once": true,
+        "finite": true
+      },
+      "2": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true
+      },
+      "3": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true
+      },
+      "4": {
+        "rows": 299904,
+        "covers_test_rows_once": true,
+        "finite": true
+      }
+    },
+    "rows": 1475328,
+    "pairs_in_one_fold": true,
+    "validation_fold_is_next": true,
+    "training_pairs_exclude_test_and_validation": true,
+    "fold_0_refit_with_test_labels_replaced": {
+      "max_abs_difference": 0.0,
+      "identical": true
+    },
+    "passed": true
+  },
+  "cf_shar_dose": {
+    "directory": "results/neural/runs/cf_shar_dose",
+    "method": "Neighborhood CF (Sharlene Kim) with the cf_study extension: cf shar, dose profile partner",
+    "folds": {
+      "0": {
+        "rows": 291456,
+        "covers_test_rows_once": true,
+        "finite": true
+      },
+      "1": {
+        "rows": 295296,
+        "covers_test_rows_once": true,
+        "finite": true
+      },
+      "2": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true
+      },
+      "3": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true
+      },
+      "4": {
+        "rows": 299904,
+        "covers_test_rows_once": true,
+        "finite": true
+      }
+    },
+    "rows": 1475328,
+    "pairs_in_one_fold": true,
+    "validation_fold_is_next": true,
+    "training_pairs_exclude_test_and_validation": true,
+    "fold_0_refit_with_test_labels_replaced": {
+      "max_abs_difference": 0.0,
+      "identical": true
+    },
+    "passed": true
+  }
+}

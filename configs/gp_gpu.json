@@ -1,0 +1,31 @@
+{
+  "purpose": "Exploratory GPU extensions of Kingsley Ukandu's GP, run after the frozen CPU study (configs/gp_study.json) and kept separate from it. Every choice uses validation fold (f+1)%5 only; the frozen selection is not revisited.",
+  "dated": "2026-11-06, before any GPU fit",
+  "dataset": "data/processed/oneil_v1",
+  "seed": 42,
+  "study_fold": 0,
+  "variants": {
+    "cap1500": {"rows": 1500},
+    "cap3000": {"rows": 3000},
+    "cap6000": {"rows": 6000},
+    "cap12000": {"rows": 12000},
+    "full": {"rows": "all", "inducing": [256, 512, 1024, 2048, 4096]},
+    "his_hyper_all_rows": {"rows": "all", "hyper_rows": 1500},
+    "f0_drug_dose": {"rows": "all", "dose": "per_drug"},
+    "f2_mono": {"rows": "all", "monotherapy": true},
+    "f2_residual": {"rows": "all", "target": "bliss_residual"},
+    "f2_residual_mono": {"rows": "all", "target": "bliss_residual", "monotherapy": true}
+  },
+  "groups": {
+    "demo": {"cells": ["A2058"], "variants": ["cap1500", "full"]},
+    "coverage": {"variants": ["cap1500", "cap3000", "cap6000", "cap12000", "full", "his_hyper_all_rows"]},
+    "features": {"variants": ["f0_drug_dose", "f2_mono", "f2_residual", "f2_residual_mono"]}
+  },
+  "selection": {
+    "metric": "pooled validation MSE, each cell at its selected family (lowest validation RMSE), exact predictor",
+    "F0": {"default": "full", "challenger": "f0_drug_dose", "margin": 0.01},
+    "F2": {"candidates": ["f2_mono", "f2_residual", "f2_residual_mono"]},
+    "production": "the selected F0 and F2 variants on all five folds, with test and validation predictions"
+  },
+  "order": "demo on one cell (A2058, study fold) and a direct-likelihood check of the replicate collapse; then coverage and features; then select; then production"
+}

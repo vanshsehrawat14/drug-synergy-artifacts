@@ -1,0 +1,4 @@
+mask,seed,status,rows,duplicate_ids,finite,configs_seed_fold_ok,mask_flags
+no_drug_identity,2026,validated,1475328,0,True,True,"{'mono_missing': 'interpolate', 'drug_identity': False}"
+no_cell_identity,2026,validated,1475328,0,True,True,"{'mono_missing': 'interpolate', 'cell_identity': False}"
+no_dose,2026,validated,1475328,0,True,True,"{'mono_missing': 'interpolate', 'dose_input': False}"

@@ -1,0 +1,15 @@
+{
+ "dataset": "data/processed/ncats_dipg_v2",
+ "table": "observations",
+ "target": "inhibition",
+ "test_fold": 0,
+ "seed": 2026,
+ "features": {
+  "regime": "F2",
+  "mono_missing": "interpolate"
+ },
+ "model": {
+  "kind": "reference_bliss"
+ },
+ "bootstrap": 1000
+}

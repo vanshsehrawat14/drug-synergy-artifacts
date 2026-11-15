@@ -1,0 +1,113 @@
+% Shared layout for manuscript.tex and supplement.tex (XeLaTeX): Latin Modern text, Computer Modern
+% math, 11 pt on letter paper with 0.85 in side margins and 1.25 line spacing.
+\usepackage[
+  left=0.85in,
+  right=0.85in,
+  top=0.80in,
+  bottom=0.75in,
+  footskip=0.35in
+]{geometry}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,bm}
+\usepackage{fontspec}
+\XeTeXgenerateactualtext=1
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{needspace}
+\usepackage{booktabs,tabularx,array,multirow}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\usepackage{microtype}
+\usepackage{caption}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[round,authoryear]{natbib}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,bookmarksdepth=2]{hyperref}
+\usepackage{xurl}
+\definecolor{paperblue}{rgb}{0,0,0.6}
+\definecolor{paperviolet}{rgb}{0.4,0.2,0.7}
+\hypersetup{linkcolor=paperblue,citecolor=paperviolet,urlcolor=magenta}
+\DeclareUrlCommand\file{\urlstyle{tt}}
+
+\captionsetup{font=small,skip=9pt,justification=raggedright,singlelinecheck=false}
+\captionsetup[table]{position=above}
+\setlength{\emergencystretch}{1em}
+\linespread{1.25}
+\raggedbottom
+\setlength{\parskip}{0pt}
+\setcounter{tocdepth}{2}
+\makeatletter
+\renewcommand*\l@section[2]{%
+  \addpenalty\@secpenalty
+  \addvspace{1.0em \@plus\p@}%
+  \setlength\@tempdima{2.4em}%
+  \begingroup
+    \parindent\z@ \rightskip\@pnumwidth
+    \parfillskip -\@pnumwidth
+    \leavevmode\bfseries
+    \advance\leftskip\@tempdima
+    \hskip -\leftskip
+    #1\nobreak\hfil
+    \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+  \endgroup}
+\renewcommand*\l@subsection{\@dottedtocline{2}{2.4em}{2.6em}}
+\makeatother
+
+\titleformat{\paragraph}[block]
+  {\normalfont\normalsize\bfseries}{}{0pt}{}
+\titlespacing*{\section}{0pt}{1.40\baselineskip plus 0.20\baselineskip minus 0.15\baselineskip}{0.55\baselineskip}
+\titlespacing*{\subsection}{0pt}{1.00\baselineskip plus 0.15\baselineskip minus 0.12\baselineskip}{0.40\baselineskip}
+\titlespacing*{\paragraph}{0pt}{0.80\baselineskip plus 0.10\baselineskip minus 0.10\baselineskip}{0.30\baselineskip}
+
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}[proposition]{Lemma}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+% Figures and tables are set with [H] where they stand in the source, after the paragraph that introduces them,
+% so that no float interrupts a paragraph.
+\clubpenalty=5000
+\widowpenalty=5000
+\displaywidowpenalty=5000
+
+% Title block: bold title, bold authors with numbered affiliations; centred abstract heading over an indented block.
+\newcommand{\papertitle}{Interaction Signal and Loewe Reference Computation\\
+  in Drug-Synergy Prediction on the O'Neil Screen}
+\newcommand{\titleblock}{%
+  {\Large\bfseries\linespread{1.2}\selectfont \papertitle\par}
+  \vspace{1.4em}
+  {\bfseries Vanshdeep Sehrawat\textsuperscript{1}, Kingsley Ukandu\textsuperscript{2}
+    and Sharlene Kim\textsuperscript{3}\par}
+  \vspace{1.2em}
+  {\small
+    \textsuperscript{1}\,Department of Computer Science, University of Nevada, Las Vegas, Las Vegas, NV 89154, USA\par
+    \textsuperscript{2}\,Department of Mathematical Sciences, University of Nevada, Las Vegas, Las Vegas, NV 89154, USA\par
+    \textsuperscript{3}\,Howard R. Hughes College of Engineering, University of Nevada, Las Vegas, Las Vegas, NV 89154, USA\par}
+  \vspace{0.8em}
+  {\small Institutional contacts: V.S., \href{mailto:sehrawat@unlv.nevada.edu}{sehrawat@unlv.nevada.edu};
+    K.U., \href{mailto:kingsley.ukandu@unlv.edu}{kingsley.ukandu@unlv.edu}\par}}
+\newenvironment{abstractblock}{\list{}{\leftmargin=0.4in\rightmargin=0.4in\listparindent=1.5em
+  \parsep=0pt\itemindent=1.5em}\item\relax\linespread{1.12}\selectfont}{\endlist}
+\newcommand{\contents}{%
+  \begingroup
+  \linespread{1.18}\selectfont
+  \let\tocaddvspace\addvspace
+  \renewcommand{\addvspace}[1]{\tocaddvspace{0.45em}}
+  \tableofcontents
+  \endgroup}
+\newenvironment{references}{\par\begingroup\small\linespread{1.1}\selectfont\raggedright
+  \setlength{\bibsep}{5pt plus 2pt minus 1pt}}{\par\endgroup}
+\renewcommand{\bibsection}{\section*{\refname}\phantomsection\addcontentsline{toc}{section}{\refname}}
+
+% Notation
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\operatorname{E}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+% Figures are drawn at their printed size: \fig{file}{label}{caption}
+\newcommand{\fig}[4][H]{\begin{figure}[#1]\centering\includegraphics{figures/#2.pdf}
+  \caption{#4}\label{#3}\end{figure}}

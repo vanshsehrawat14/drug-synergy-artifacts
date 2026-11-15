@@ -1,0 +1,16 @@
+{
+  "strata_sample": {
+    "fallback_near_boundary": 40,
+    "fallback_other": 40,
+    "accepted_root": 40,
+    "no_certified_root": 40
+  },
+  "native_answer_certified_recovery": 0,
+  "distance_corrected_quantiles": [
+    1.1901590823981678e-13,
+    5.1327630927744394e-06,
+    0.00023288678764576964,
+    0.002960852046513196,
+    2.1627665812495023
+  ]
+}

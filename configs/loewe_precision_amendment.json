@@ -1,0 +1,11 @@
+{
+  "status": "Exploratory amendment after the declared rounding test exposed certificate discontinuities; before high-precision roots or revised rankings are computed.",
+  "trigger": "Rounding coefficients to ten significant digits changed individual block/pair-cell scores by several points despite common accepted roots moving by less than 1e-7 inhibition points.",
+  "hypothesis": "Near-asymptote cancellation in the inverse-effect certificate, rather than large movement of the mathematical root, accounts for some apparent root-status instability.",
+  "scope": "Historical fallback cases where the double-precision forward solver finds a same-direction bracketed root but the inverse-equation residual exceeds 1e-8 or the strict-domain test fails. Existing 14,197-case results remain the primary historical correction.",
+  "method": "An independent 100-decimal-digit bisection in common-effect coordinates over the joint effect interval, parameterized by a logit coordinate in [-200,200]. Require strict interior membership and inverse-equation residual <1e-30 at high precision. Opposite/flat curves and no bracket remain unresolved. Recheck 100 seed-selected well-certified controls. Compare unchanged coefficients and ten-significant-digit coefficients.",
+  "primary_metric": "Count of double-precision failures with a high-precision-certified root, and maximum change of certified expected response after rounding.",
+  "secondary": "Top-5% turnover using high-precision recovery in addition to the original valid-root correction; retain the original fallback and clipping conventions for unresolved cases. Report numerical stability separately from experimental validity.",
+  "decision": "Attribute a certification discontinuity only when both high-precision roots satisfy the equation, move by less than 1e-3 inhibition points, and the double-precision accept/reject outcome differs. No claim of biological ranking improvement follows.",
+  "negative_result": "Failure to certify at higher precision leaves a case unresolved; it must not be counted as a numerical artifact merely because a forward solver reports a boundary value."
+}

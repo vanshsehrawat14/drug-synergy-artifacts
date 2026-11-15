@@ -1,0 +1,15 @@
+{
+  "dataset": "data/processed/almanac_v1",
+  "table": "observations",
+  "target": "inhibition",
+  "test_fold": 0,
+  "seed": 2026,
+  "features": {
+    "regime": "F0"
+  },
+  "model": {
+    "kind": "additive",
+    "regularization": 1.0
+  },
+  "bootstrap": 1000
+}

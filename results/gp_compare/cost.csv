@@ -1,0 +1,12 @@
+model,inputs,unit,parameters,training_rows_per_fit,fit_seconds_five_folds,hardware
+selected:F2,"identities, doses, training-pair monotherapy","one network per fold, all cell lines",224513,all training-fold rows,898.082,NVIDIA A100-SXM4-80GB
+selected:F0,"identities, doses","one network per fold, all cell lines",224385,all training-fold rows,1102.43,NVIDIA A100-SXM4-80GB
+deepsynergy_dose,"chemical descriptors, expression, doses","one network per fold, all cell lines",105988097,all training-fold rows,31546.3,NVIDIA A100-SXM4-80GB
+additive,"identities, doses (additive ridge)",one ridge per fold,,all training-fold rows,,CPU
+bliss_reference,"training-pair monotherapy, fixed rule","fixed rule, no fit",0,training-pair monotherapy,0,CPU
+gp_his,"identities, doses",one GP per cell line and fold,3 kernel hyperparameters per GP; stores its training inputs,1488 exact,22119.5,CPU
+gp_frozen,"identities, doses",one GP per cell line and fold,3 kernel hyperparameters per GP; stores its training inputs,"2992 for hyperparameters, 22464 conditioned",69332.1,CPU
+gp_full,"identities, doses",one GP per cell line and fold,3 kernel hyperparameters per GP; stores its training inputs,"22464 rows (5616 distinct inputs), exact",1090.06,NVIDIA A100-SXM4-80GB
+gp_full_w0,"identities, doses",one GP per cell line and fold,3 kernel hyperparameters per GP; stores its training inputs,"22464 rows (5616 distinct inputs), exact",1857.45,NVIDIA A100-SXM4-80GB
+gp_f0,"identities, doses",one GP per cell line and fold,3 kernel hyperparameters per GP; stores its training inputs,"22464 rows (5616 distinct inputs), exact",968.864,NVIDIA A100-SXM4-80GB
+gp_f2,"identities, doses, training-pair monotherapy",one GP per cell line and fold,4 kernel hyperparameters per GP; stores its training inputs,"22464 rows (5616 distinct inputs), exact",1952.92,NVIDIA A100-SXM4-80GB

@@ -1,0 +1,13 @@
+{
+  "tests": {
+    "passed": 99,
+    "skipped": 1,
+    "skip_reason": "CUDA unavailable locally"
+  },
+  "native_input_reproduction": {
+    "edges.csv": true,
+    "coordinates.csv": true,
+    "mapping.csv": true
+  },
+  "scope": "Local analyses complete; GPU ablations and standardized cross-screen error gaps pending cluster return"
+}

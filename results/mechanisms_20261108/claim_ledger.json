@@ -1,0 +1,84 @@
+[
+  {
+    "id": "L1",
+    "status": "established_fixed_pipeline_exploratory",
+    "statement": "C1 changes the top-five-percent pair-cell shortlist",
+    "replaced": 67,
+    "selected": 1137,
+    "evidence": "prioritization/budget_stability.csv"
+  },
+  {
+    "id": "L2",
+    "status": "unsupported",
+    "statement": "All incoming selections are near-tied rounding substitutes",
+    "shared_integer_rounding_entries": 3,
+    "corrected_entries": 67,
+    "evidence": "prioritization/rounding_overlap.csv"
+  },
+  {
+    "id": "L3",
+    "status": "established_fixed_pipeline_exploratory",
+    "statement": "Native acceptance depends on numerical solver path at fixed fits",
+    "cases": 400,
+    "native_code_mismatches": 0,
+    "native_reference_max_abs_error": 7.894129794294713e-12,
+    "affected_cases_any_start": 102,
+    "valid_root_cases_acceptance_changed": 68,
+    "large_reference_change_cases_any_start": 103,
+    "interpretation": "Stratified fixed-fit numerical intervention, not population incidence or biological evidence.",
+    "evidence": "native_starts/interventions.csv"
+  },
+  {
+    "id": "I1",
+    "status": "provisional",
+    "statement": "Drug identity response penalty exceeds five percent",
+    "estimate": 0.0508264646771161,
+    "additional_seed": 2029,
+    "additional_endpoint_status": "exploratory",
+    "evidence": "seed2029_design_audit.json"
+  },
+  {
+    "id": "I2",
+    "status": "exploratory_supported_for_specified_target",
+    "statement": "Selected neural and GP predict dose-shape variation beyond projected Bliss/HSA span",
+    "values": [
+      {
+        "model": "neural_F2",
+        "contrast": "dose_reference_residual",
+        "r2": 0.1064889116957554,
+        "pair_low": 0.0905996232163681,
+        "pair_high": 0.1222309186764692,
+        "drug_low": 0.0575605904980144,
+        "drug_high": 0.1554172328934965
+      },
+      {
+        "model": "gp_F2",
+        "contrast": "dose_reference_residual",
+        "r2": 0.1354121616933025,
+        "pair_low": 0.1237212347071552,
+        "pair_high": 0.1470926281645773,
+        "drug_low": 0.0910820762092989,
+        "drug_high": 0.1797422471773061
+      }
+    ],
+    "evidence": "information/model_reference_residuals.csv"
+  },
+  {
+    "id": "X1",
+    "status": "frozen_criterion_not_met",
+    "statement": "The specified input strata explain the between-screen gain gaps",
+    "evidence": "screen_support/sensitivities.csv"
+  },
+  {
+    "id": "X2",
+    "status": "failed_confirmation_preserved",
+    "statement": "NCATS ES H1 remains unconfirmed",
+    "evidence": "historical_controls/failed_ncats_confirmation.json"
+  },
+  {
+    "id": "B1",
+    "status": "unresolved",
+    "statement": "Certified numerical correction improves biological hit selection",
+    "evidence": "prioritization/changed_selections.csv"
+  }
+]

@@ -1,0 +1,27 @@
+screen,control,variant,regime,panel_rows,interaction_residual_r2,seeds,drug_jackknife,max_drug_influence,max_drug_influence_drug,cell_jackknife,interval,survives
+almanac,none,as reported,R>=75,68627,0.373323,0.3606;0.3836;0.3758,0.2593;0.4874,0.0361171,TOPOTECANHYDROCHLORIDE,0.3185;0.4281,drug_jackknife,True
+almanac,correlated pairs,delete-one-cell jackknife,R>=75,68627,0.373323,0.3606;0.3836;0.3758,0.2593;0.4874,0.0361171,TOPOTECANHYDROCHLORIDE,0.3185;0.4281,cell_jackknife,True
+almanac,none,as reported,all,299436,0.403326,0.3958;0.4099;0.4042,0.2431;0.5636,0.0749028,PRALATREXATE,0.3871;0.4196,drug_jackknife,
+almanac,correlated pairs,delete-one-cell jackknife,all,299436,0.403326,0.3958;0.4099;0.4042,0.2431;0.5636,0.0749028,PRALATREXATE,0.3871;0.4196,cell_jackknife,
+almanac,dose regime,low doses,R<25,297208,0.199494,0.2010;0.1918;0.2057,0.1104;0.2886,0.0390338,PRALATREXATE,0.1803;0.2186,drug_jackknife,
+almanac,dose regime,low doses,25-50,36003,0.449855,0.4251;0.4538;0.4706,0.0377;0.8620,0.198063,PRALATREXATE,0.4171;0.4826,drug_jackknife,
+almanac,dose regime,low doses,50-75,13084,0.238629,0.2051;0.2546;0.2562,0.0938;0.3835,0.0498111,ANTIBIOTICAD32,0.1996;0.2776,drug_jackknife,
+almanac,dose regime,low doses,R>=75,4863,0.229066,0.2212;0.2154;0.2506,0.0123;0.4458,0.0590906,5FLUORO2DEOXYURIDINE,0.1563;0.3018,drug_jackknife,True
+almanac,dose regime,mixed doses,R<25,253292,0.264756,0.2563;0.2703;0.2676,0.1774;0.3521,0.0229309,PRALATREXATE,0.2447;0.2849,drug_jackknife,
+almanac,dose regime,mixed doses,25-50,116169,0.409209,0.3987;0.4180;0.4109,0.2540;0.5644,0.0723378,PRALATREXATE,0.3891;0.4293,drug_jackknife,
+almanac,dose regime,mixed doses,50-75,83988,0.375974,0.3685;0.3796;0.3799,0.2762;0.4757,0.0220177,MERCAPTOPURINE,0.3536;0.3983,drug_jackknife,
+almanac,dose regime,mixed doses,R>=75,57704,0.388198,0.3805;0.4012;0.3828,0.2482;0.5282,0.0406003,TOPOTECANHYDROCHLORIDE,0.3220;0.4544,drug_jackknife,True
+almanac,dose regime,high doses,R<25,111841,0.199654,0.2006;0.2080;0.1903,0.0873;0.3120,0.0274109,SORAFENIB,0.1818;0.2175,drug_jackknife,
+almanac,dose regime,high doses,25-50,69067,0.341179,0.3425;0.3468;0.3343,0.1943;0.4880,0.0673962,PRALATREXATE,0.3186;0.3638,drug_jackknife,
+almanac,dose regime,high doses,50-75,67305,0.312509,0.3044;0.3160;0.3171,0.2253;0.3998,0.0236277,MERCAPTOPURINE,0.2897;0.3353,drug_jackknife,
+almanac,dose regime,high doses,R>=75,68306,0.316483,0.2965;0.3250;0.3280,0.2130;0.4200,0.0360457,TOPOTECANHYDROCHLORIDE,0.2727;0.3602,drug_jackknife,True
+almanac,calibration,isotonic Bliss per cell line,R>=75,68627,0.375854,0.3632;0.3861;0.3783,0.2627;0.4891,0.0356771,TOPOTECANHYDROCHLORIDE,0.3215;0.4303,drug_jackknife,True
+almanac,calibration,mono_only network as reference (seed by seed),R>=75,68627,0.36354,0.3504;0.3739;0.3663,0.2456;0.4815,0.0376129,TOPOTECANHYDROCHLORIDE,0.3028;0.4243,drug_jackknife,True
+almanac,calibration,isotonic Bliss per cell line,all,299436,0.402694,0.3952;0.4093;0.4036,0.2436;0.5618,0.0743188,PRALATREXATE,0.3866;0.4188,drug_jackknife,
+almanac,calibration,mono_only network as reference (seed by seed),all,299436,0.397321,0.3898;0.4041;0.3981,0.2349;0.5598,0.0761001,PRALATREXATE,0.3809;0.4137,drug_jackknife,
+almanac,correlated pairs,pairs below median analog similarity (0.835),R>=75,33341,0.29204,0.2569;0.3531;0.2661,0.1389;0.4451,0.0381396,ROMIDEPSIN,0.2157;0.3684,drug_jackknife,True
+almanac,correlated pairs,pairs below median analog similarity (0.835),all,148922,0.352152,0.3394;0.3700;0.3470,0.2245;0.4798,0.0488166,PRALATREXATE,0.3342;0.3701,drug_jackknife,
+almanac,batch,NCI test date main effects removed,R>=75,68627,0.327549,0.3203;0.3349;0.3275,0.2219;0.4332,0.0331017,TOPOTECANHYDROCHLORIDE,0.2809;0.3742,drug_jackknife,True
+almanac,batch,NCI test date main effects removed,all,299436,0.353515,0.3454;0.3601;0.3550,0.1914;0.5156,0.076468,PRALATREXATE,0.3370;0.3700,drug_jackknife,
+almanac,batch,NCI plate main effects removed,R>=75,68627,0.266845,0.2735;0.2635;0.2635,0.1502;0.3835,0.0234673,ROMIDEPSIN,0.2245;0.3092,drug_jackknife,True
+almanac,batch,NCI plate main effects removed,all,299436,0.233353,0.2180;0.2487;0.2334,0.1563;0.3104,0.0138685,ACTINOMYCIND,0.2089;0.2578,drug_jackknife,

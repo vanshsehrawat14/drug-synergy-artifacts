@@ -1,0 +1,7 @@
+regime,cases,native_accepted,changed_in_I,abs_ref_change_sum,abs_ref_change_max
+fallback_boundary_certified_root,13989,0,13910,293212.2404047008,103.89395347500655
+fallback_certified_no_root,117824,0,0,0.0,0.0
+fallback_certified_unique_root,1631,0,1570,33404.912068367135,100.80762914252162
+native_accepted_certified_root,180364,180364,0,0.0,0.0
+undefined_empty_interval,4160,0,0,0.0,0.0
+undefined_opposite_or_flat,49184,1883,0,0.0,0.0

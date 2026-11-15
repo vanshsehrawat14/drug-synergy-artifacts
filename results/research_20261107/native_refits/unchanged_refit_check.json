@@ -1,0 +1,9 @@
+{
+  "cases": 2560,
+  "historical_endpoint_swaps": 74,
+  "max_scaled_coefficient_difference": 10.355292714824724,
+  "median_scaled_coefficient_difference": 1.684987501089641e-10,
+  "native_code_changes": 16,
+  "native_reference_max_difference": 80.0181645385892,
+  "interpretation": "Unchanged-data refits are compared separately from coefficient-fixed solver corrections; small coefficient changes can change historical acceptance."
+}

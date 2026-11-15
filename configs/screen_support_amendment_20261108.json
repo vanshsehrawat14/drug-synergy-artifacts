@@ -1,0 +1,9 @@
+{
+  "status": "Exploratory sensitivity, declared after the original pair bootstrap revealed missing rare strata, before the following sensitivity endpoints are computed.",
+  "trigger": "The frozen full-support nonparametric pair bootstrap has draws with no sampled observations in strata carrying positive reference mass. Conditional complete-draw intervals must not be presented as unconditional confidence intervals.",
+  "analyses": [
+    "Repeat the same paired raw/standardized gap-reduction endpoint on input-defined common strata represented by at least 10 drug pairs in each screen. Report mass removed from both screens. Keep the original full-support point estimate and incomplete bootstrap, without replacing its endpoint.",
+    "Use independent exponential mean-one weights for complete pairs within each screen, with common O'Neil weights shared between raw and standardized statistics. Report 2000 pair Bayesian-bootstrap percentile intervals as a sensitivity, explicitly distinct from frequentist confidence intervals."
+  ],
+  "thresholds": "No historical threshold or claim classification changes. Negative findings are not proof that assay differences cause the performance gap."
+}

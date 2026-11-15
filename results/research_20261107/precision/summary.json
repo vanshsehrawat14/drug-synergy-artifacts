@@ -1,0 +1,38 @@
+{
+  "suspects": 2579,
+  "controls": 100,
+  "control_certified": 100,
+  "unchanged_suspects_certified": 2579,
+  "round10_suspects_certified": 2579,
+  "additional_recovered_cases": 1423,
+  "original_correction_cases": 14197,
+  "certified_both_max_abs_effect_change": 3.873351772654132e-08,
+  "certification_discontinuities": 195,
+  "high_precision_round10": {
+    "n": 22737,
+    "selected": 1137,
+    "retention": 1.0,
+    "turnover": 0.0,
+    "spearman": 1.0,
+    "sign_flips": 0
+  },
+  "high_precision_round10_max_abs_panel_shift": 3.865987530105031e-09,
+  "original_to_augmented": {
+    "n": 22737,
+    "selected": 1137,
+    "retention": 0.9885664028144239,
+    "turnover": 0.011433597185576128,
+    "spearman": 0.9966653082067409,
+    "sign_flips": 69
+  },
+  "native_to_augmented": {
+    "n": 22737,
+    "selected": 1137,
+    "retention": 0.93051890941073,
+    "turnover": 0.06948109058926999,
+    "spearman": 0.9697583618560045,
+    "sign_flips": 586
+  },
+  "protocol_sha256": "c89f640bc1bf2143eea73fe78a98f414d43b3eea2ffaf06b327604e5e2ac6640",
+  "cases_sha256": "69e2c76476c8d14aa3c289b0a98ad6703b40b7eb9ad903f9e2df2cd1d4e23528"
+}

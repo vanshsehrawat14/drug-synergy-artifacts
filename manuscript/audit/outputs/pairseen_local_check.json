@@ -1,0 +1,46 @@
+{
+ "runs": 15,
+ "commits": [
+  "8bce416b9374323c45fb9eb5b51c8b05bcf62eec"
+ ],
+ "dirty_flags": [
+  "False"
+ ],
+ "split_sha256": [
+  "d32914a94d8ead90e12d8cb10b6beed15f93339b0de2200ce2075a67a79370ea"
+ ],
+ "all_hashes_match_manifest": true,
+ "test_rows_total_per_seed": {
+  "2026": 1475328,
+  "2027": 1475328,
+  "2028": 1475328
+ },
+ "train_rows_pair_cell_split": {
+  "0": 884672,
+  "1": 886208,
+  "2": 885312,
+  "3": 885184,
+  "4": 884608
+ },
+ "train_rows_pair_split": {
+  "0": 888576,
+  "1": 885696,
+  "2": 886656,
+  "3": 881088,
+  "4": 883968
+ },
+ "pair_seen_mse_per_seed": {
+  "2026": 130.70203105287968,
+  "2027": 130.15686877480948,
+  "2028": 129.07789328599654
+ },
+ "pair_seen_mse_mean": 129.97893103789522,
+ "f2_base_mse_per_seed": [
+  150.29547874121172,
+  153.7335821395605,
+  150.84466946808513
+ ],
+ "f2_base_mse_mean": 151.62457678295246,
+ "relative_change": -0.14275816100738437,
+ "monotherapy_coverage_example": "{\"train\": {\"a\": {\"available\": 884672, \"interpolated\": 0, \"unavailable\": 0, \"rows\": 884672}, \"b\": {\"available\": 884672, \"interpolated\": 0, \"unavailable\": 0, \"rows\": 884672}}, \"validation\": {\"a\": {\"avai"
+}

@@ -1,0 +1,30 @@
+{
+  "frozen": "2026-11-06, committed before any study output",
+  "purpose": "Choose the final GP method from validation only, then run it on all five folds.",
+  "dataset": "data/processed/oneil_v1",
+  "seed": 42,
+  "study_fold": 0,
+  "split": "Train on folds 2-4, validate on fold 1, all 39 cell lines. Test-fold rows are never predicted in the study.",
+  "base_method": "Kingsley Ukandu's GP (GP_Regression/src/project_utils.py): one model per cell line, drug identities and standardized log doses, rho 0.25, w 1, RBF vs Matern 5/2 per cell by validation RMSE.",
+  "groups": {
+    "cap1500": {"fit": {"cap": 1500}, "predictors": ["exact", "inducing"]},
+    "cap1500_w0": {"fit": {"cap": 1500, "interaction_weight": 0.0}, "predictors": ["exact"]},
+    "cap1500_rho0": {"fit": {"cap": 1500, "shared_similarity": 0.0}, "predictors": ["exact"]},
+    "cap1500_rho05": {"fit": {"cap": 1500, "shared_similarity": 0.5}, "predictors": ["exact"]},
+    "cap3000": {"fit": {"cap": 3000}, "predictors": ["exact", "inducing"]},
+    "cap6000": {"fit": {"cap": 6000}, "predictors": ["exact"]}
+  },
+  "predictors": {
+    "exact": "His exact GP on the capped training blocks.",
+    "inducing": "Extension: his fitted hyperparameters and the capped blocks as inducing inputs, conditioned on every training row of the cell (DTC/VFE predictive, Titsias 2009)."
+  },
+  "metrics": "Per method, pooled over cells using each cell's selected family: validation MSE (primary), RMSE, Gaussian NLL, 90% interval coverage, fit seconds, peak traced memory, convergence warnings, hyperparameters at a bound.",
+  "selection": [
+    "Candidates are the his-kernel methods (w 1, rho 0.25): cap1500, cap3000 and cap6000 exact, and cap1500 and cap3000 inducing.",
+    "Eligible: estimated five-fold production cost <= 8 h wall on the local 8-core CPU, from the measured study seconds scaled by 5 folds and the worker count.",
+    "Choose the eligible candidate with the lowest pooled validation MSE. If a cheaper eligible candidate is within 1% of that MSE, choose the cheapest such candidate.",
+    "Kernel variants (w 0, rho 0, rho 0.5) are diagnostics. One replaces the default only if it lowers pooled validation MSE by more than 1% at cap 1500; it would then be validated at the selected scale before production.",
+    "Ineligible candidates are reported as validation-only results with their measured cost."
+  ],
+  "production": "Selected method, all five folds, fold_<k>.parquet with observation_id, prediction and predictive_std."
+}

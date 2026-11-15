@@ -1,0 +1,8 @@
+{
+  "status": "Exploratory control completion after the original cell/Bliss comparison; before fitting the additional dose-based baseline.",
+  "reason": "The declared dose/monotherapy error control was not included in the first implementation. Preserve its original comparisons and add this sensitivity without replacing the primary result.",
+  "baseline": "Ridge regression (alpha=20) of log(1+squared error) on cell indicators, mean log10 endpoint dose, absolute endpoint log-dose difference and Bliss reference/100. Continuous features standardized using calibration training rows only. This is monotone in each transformed continuous feature conditional on other features; fitted directions are unconstrained. Rescale back-transformed predictions to training mean squared error, floor at 1e-8. Fit separate calibrators for row error and error of pair-cell means.",
+  "selection": "Add this baseline to the original three candidates, choose using the existing fixed half-validation-pair split, then refit all validation pairs. Outcomes from test rows never choose a baseline or its scale.",
+  "metric": "Paired top-10% error-mass gain of uncertainty over the augmented selected baseline, whole-pair bootstrap and drug jackknife. Same +5 percentage-point material-effect rule as the original protocol.",
+  "negative_result": "Failure against either original or augmented controls does not establish practical value from model-specific uncertainty. No additional architecture or calibration search."
+}

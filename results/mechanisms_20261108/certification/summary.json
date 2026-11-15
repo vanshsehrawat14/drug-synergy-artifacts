@@ -1,0 +1,12 @@
+{
+  "input_sha256": "0bb4d2da2ce08c7f49e4511a8926e1590f42e5b6839b0d3065338126c5edeb3b",
+  "root_count": 195984,
+  "structurally_unreplayable": 5,
+  "audited_roots": 15820,
+  "corrected_fallback_roots": 15620,
+  "historical_equation_failures": 5,
+  "repaired_count": 5,
+  "replay_failures": 0,
+  "max_float_root_shift": 0.0,
+  "note": "All root brackets checked structurally; equation replay covers every corrected fallback, every structurally invalid bracket, and 200 seeded accepted controls. Other accepted equations retain historical evidence."
+}

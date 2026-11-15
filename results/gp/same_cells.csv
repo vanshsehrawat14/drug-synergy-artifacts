@@ -1,0 +1,9 @@
+group,predictor,cells,validation_mse,validation_rmse,training_rows_conditioned
+cap1500,exact,8,328.558,18.1262,1488
+cap1500,inducing,8,229.506,15.1495,22464
+cap1500_rho0,exact,8,317.825,17.8277,1488
+cap1500_rho05,exact,8,347.228,18.6341,1488
+cap1500_w0,exact,8,282.253,16.8004,1488
+cap3000,exact,8,263.976,16.2473,2992
+cap3000,inducing,8,225.683,15.0227,22464
+cap6000_subset,exact,8,235.772,15.3549,6000

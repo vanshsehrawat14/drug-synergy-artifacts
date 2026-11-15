@@ -1,0 +1,10 @@
+{
+  "dataset": "data/processed/oneil_v1",
+  "table": "observations",
+  "target": "inhibition",
+  "test_fold": 0,
+  "seed": 2026,
+  "features": {"regime": "F2"},
+  "model": {"kind": "reference_bliss"},
+  "bootstrap": 1000
+}

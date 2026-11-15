@@ -1,0 +1,57 @@
+{
+  "existence": {
+    "cases": 309056,
+    "agreement": 309056,
+    "disagreement": 0,
+    "disagreement_max_margin": null,
+    "equal_plateau_cases": 0
+  },
+  "boundary_layer": {
+    "cases": 194291,
+    "near_cases": 12964,
+    "log_log_correlation_near": 0.9974573913270098,
+    "median_ratio_delta_below_0_01": 0.8116282071133869,
+    "c1_share_with_slope_above_2": 0.9382217090069284,
+    "all_root_share_with_slope_above_2": 0.4329330746148818
+  },
+  "summed_dose_jump": {
+    "c1_cases": 13856,
+    "upper_plateau": 10712,
+    "lower_asymptote": 1608,
+    "interior": 1536,
+    "median_jump": 4.587065767952593,
+    "mean_jump": 21.256355958367706,
+    "share_jump_above_1": 0.5622834872979214,
+    "upper_median_jump": 3.666760556394637,
+    "upper_mean_jump": 18.771394921393203,
+    "upper_max_abs_theory_minus_observed": 0.00999023257634235,
+    "upper_median_abs_theory_minus_observed": 0.00018480602446668826,
+    "share_of_c1_absolute_shift_from_upper": 0.6829316771311056
+  },
+  "fallback_error_on_rejected_roots": {
+    "all": {
+      "cases": 14197,
+      "summed_dose_median": 4.171754315872775,
+      "summed_dose_mean": 20.860326242729556,
+      "hsa_median": 0.004429561729679676,
+      "hsa_mean": 0.7285102229708519,
+      "share_hsa_closer": 0.7169824610833274
+    },
+    "within_0_01_of_asymptote": {
+      "cases": 12566,
+      "summed_dose_median": 4.377559123248238,
+      "summed_dose_mean": 20.90737156484456,
+      "hsa_median": 0.0026813046469955637,
+      "hsa_mean": 0.7049732305282693,
+      "share_hsa_closer": 0.7148655101066369
+    },
+    "interior": {
+      "cases": 1631,
+      "summed_dose_median": 2.0811775726469226,
+      "summed_dose_mean": 20.49786669785084,
+      "hsa_median": 0.040941350483549854,
+      "hsa_mean": 0.9098504112194666,
+      "share_hsa_closer": 0.733292458614347
+    }
+  }
+}

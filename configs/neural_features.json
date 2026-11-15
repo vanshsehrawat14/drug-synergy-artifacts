@@ -1,0 +1,16 @@
+{
+  "dataset": "data/processed/oneil_v1",
+  "table": "observations",
+  "target": "inhibition",
+  "test_fold": 0,
+  "seed": 2026,
+  "features": {
+    "regime": "F1",
+    "identities": true,
+    "external": "data/processed/deepsynergy/features.npz",
+    "provenance": "data/processed/deepsynergy/features.provenance.json"
+  },
+  "model": {"kind": "dose", "hidden": [128, 64], "encoder_dim": 32, "dropout": 0.1},
+  "training": {"epochs": 200, "batch_size": 1024, "lr": 0.001, "weight_decay": 0.00001, "patience": 20, "threads": 4, "device": "auto"},
+  "bootstrap": 1000
+}

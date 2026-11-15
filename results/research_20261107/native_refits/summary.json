@@ -1,0 +1,27 @@
+{
+  "surfaces": 160,
+  "conditions": 21,
+  "fits": 6720,
+  "fit_failures": 0,
+  "cases": 53760,
+  "official_native_max_abs_difference": 0.0,
+  "unchanged_refit_vs_historical_max_abs_score": 4.988896305980383,
+  "unchanged_refit_vs_historical_median_abs_score": 5.050998368005821e-06,
+  "unchanged_refit_vs_historical_top5": {
+    "n": 160,
+    "selected": 8,
+    "retention": 1.0,
+    "turnover": 0.0,
+    "spearman": 0.9991620766436189,
+    "sign_flips": 0
+  },
+  "sample_only": true,
+  "independent_monotherapy_repeats": false,
+  "limitation": "Status-stratified 160-surface sample; perturbation scales are numerical stress tests, not estimated monotherapy noise. Corrected scores retain unresolved historical fallbacks. High-precision certificate instability is analyzed separately.",
+  "provenance": {
+    "protocol.json": "2f702f25265daa745d85a18deca86a22c5637853e35618da97640a36cab9d976",
+    "mapping.csv": "dca09730d0c80fd39e912dd0317762bdaac3b2e5c91a1bcfc65e8b105b99b3b0",
+    "native/cases.csv": "80c8c83255a9baa6c9e0824c10a4fae656b0dbe34460dc41052d6148819ad3c2",
+    "native/fits.csv": "a625213932c44e6fc7f16490d2d71d8ea9ca6c7d13270274d12a67161f5a7240"
+  }
+}

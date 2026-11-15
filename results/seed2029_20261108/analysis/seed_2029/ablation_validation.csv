@@ -1,0 +1,5 @@
+mask,seed,status,rows,duplicate_ids,finite,configs_seed_fold_ok,mask_flags
+neural_base_F2,2029,validated,1475328,0,True,True,{'mono_missing': 'interpolate'}
+no_drug_identity,2029,validated,1475328,0,True,True,"{'mono_missing': 'interpolate', 'drug_identity': False}"
+no_cell_identity,2029,validated,1475328,0,True,True,"{'mono_missing': 'interpolate', 'cell_identity': False}"
+no_dose,2029,validated,1475328,0,True,True,"{'mono_missing': 'interpolate', 'dose_input': False}"

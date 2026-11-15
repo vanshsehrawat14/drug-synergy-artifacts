@@ -1,0 +1,43 @@
+{
+  "rule": {
+    "metric": "pooled validation MSE, each cell at its selected family (lowest validation RMSE), exact predictor",
+    "F0": {
+      "default": "full",
+      "challengers": [
+        "f0_drug_dose",
+        "full_w0"
+      ],
+      "margin": 0.01
+    },
+    "F2": {
+      "candidates": [
+        "f2_mono",
+        "f2_residual",
+        "f2_residual_mono",
+        "f2_residual_w0"
+      ]
+    },
+    "production": "the selected F0 and F2 variants on all five folds, plus full and full_w0 as diagnostics of the interaction term"
+  },
+  "F0": "f0_drug_dose",
+  "F2": "f2_residual_mono",
+  "validation_mse": {
+    "cap1500": 355.429,
+    "cap3000": 294.554,
+    "cap6000": 264.329,
+    "cap12000": 251.244,
+    "full": 247.879,
+    "his_hyper_all_rows": 249.73,
+    "f0_drug_dose": 177.815,
+    "f2_mono": 138.933,
+    "f2_residual": 146.287,
+    "f2_residual_mono": 137.527,
+    "full_w0": 249.02,
+    "f2_residual_w0": 145.651
+  },
+  "computed_on": "RebelX job 132632 (gp_gpu select); recomputed here from study_summary.csv",
+  "config_sha256": [
+    "ffb8e28358724bb0d0ffb7d531eb5c6b16c54393f26d48960ee71b095b72a8b2",
+    "e79c631673160c008d46cf4b8c1926812be1cd3bfe8b0b9689b3d19bf46377f5"
+  ]
+}

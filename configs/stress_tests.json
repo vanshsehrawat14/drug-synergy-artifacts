@@ -1,0 +1,23 @@
+{
+ "name": "high-inhibition-stress-tests-v1",
+ "frozen": "2026-11-06 08:28 PST, before any control below was computed. Post hoc relative to the known ONEIL and ALMANAC results (pooled, per Bliss bin, site check).",
+ "target": "Interaction residual R2 vs Bliss at R >= 75 (and pooled) for selected F2 on ONEIL (results/neural/runs/sprint_v1, seeds 2026-2028) and f2_combined on ALMANAC (results/neural/runs/almanac_v1).",
+ "controls": {
+  "site": "ALMANAC only; computed earlier (configs/almanac_site_check.json) and restated, not recomputed.",
+  "dose_regime": "R bin x dose region (low/low, mixed, high/high by dense dose rank within block, as in configs/beyond_bliss_regimes.json). The R >= 75 gain is checked within each dose region holding at least 200 pair-cells.",
+  "calibration": [
+   "isotonic Bliss refitted separately for each cell line on the three training folds",
+   "ALMANAC: the identity-free mono_only network (configs/almanac_mono_only.json, new GPU runs) as reference, F2 seed s against mono_only seed s; ONEIL: computed earlier (configs/beyond_bliss_regimes_addendum2.json), restated"
+  ],
+  "correlated_pairs": [
+   "delete-one-cell jackknife interval in place of the drug jackknife",
+   "analog exclusion: a drug's profile is its mean monotherapy inhibition per cell (block edges); a test pair's analog similarity is the highest profile correlation between one of its drugs and the other drug of a training-fold pair that shares the remaining drug; the gain is recomputed on test pair-cells below the median similarity",
+   "the largest change in the point estimate from deleting any one drug"
+  ],
+  "batch": [
+   "ALMANAC: P additionally removes NCI test-date main effects within fold and cell (primary batch control); more stringently, plate main effects. Batches come from exact row matches to ComboDrugGrowth_Nov2017.csv (majority test date and plate per pair-cell); unmatched pair-cells form their own level.",
+   "ONEIL: DrugComb carries no batch identifiers and no local copy of the original batch file exists, so batch is not testable there; this is reported as a limitation."
+  ]
+ },
+ "rule": "The high-inhibition gain survives a control only if the controlled interaction residual R2 at R >= 75 keeps an interval above 0 (drug jackknife, or cell jackknife for that control) and every seed is positive. Controls that remove the gain are reported as negative results. Pooled values are reported alongside."
+}

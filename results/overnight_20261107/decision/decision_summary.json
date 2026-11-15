@@ -1,0 +1,16 @@
+{
+  "top5_N_C1_exited": 67,
+  "top5_N_C1_selected": 1137,
+  "reproduces_5_89": true,
+  "cases": 367152,
+  "blocks": 92208,
+  "pair_cells": 22737,
+  "drug_pairs": 583,
+  "version_case_changes": {
+    "C1": 14070,
+    "C2": 15479,
+    "I": 15480,
+    "R": 193260,
+    "H": 183725
+  }
+}

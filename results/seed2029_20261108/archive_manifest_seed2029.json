@@ -1,0 +1,1055 @@
+{
+ "job": "132713",
+ "tasks": [
+  {
+   "task": 0,
+   "model": "f2_base",
+   "fold": 0,
+   "complete": true,
+   "logged_exit": 0
+  },
+  {
+   "task": 1,
+   "model": "f2_base",
+   "fold": 1,
+   "complete": true,
+   "logged_exit": 0
+  },
+  {
+   "task": 2,
+   "model": "f2_base",
+   "fold": 2,
+   "complete": true,
+   "logged_exit": 0
+  },
+  {
+   "task": 3,
+   "model": "f2_base",
+   "fold": 3,
+   "complete": true,
+   "logged_exit": 0
+  },
+  {
+   "task": 4,
+   "model": "f2_base",
+   "fold": 4,
+   "complete": true,
+   "logged_exit": 0
+  },
+  {
+   "task": 5,
+   "model": "no_drug_identity",
+   "fold": 0,
+   "complete": true,
+   "logged_exit": 0
+  },
+  {
+   "task": 6,
+   "model": "no_drug_identity",
+   "fold": 1,
+   "complete": true,
+   "logged_exit": 0
+  },
+  {
+   "task": 7,
+   "model": "no_drug_identity",
+   "fold": 2,
+   "complete": true,
+   "logged_exit": 0
+  },
+  {
+   "task": 8,
+   "model": "no_drug_identity",
+   "fold": 3,
+   "complete": true,
+   "logged_exit": 0
+  },
+  {
+   "task": 9,
+   "model": "no_drug_identity",
+   "fold": 4,
+   "complete": true,
+   "logged_exit": 0
+  },
+  {
+   "task": 10,
+   "model": "no_cell_identity",
+   "fold": 0,
+   "complete": true,
+   "logged_exit": 0
+  },
+  {
+   "task": 11,
+   "model": "no_cell_identity",
+   "fold": 1,
+   "complete": true,
+   "logged_exit": 0
+  },
+  {
+   "task": 12,
+   "model": "no_cell_identity",
+   "fold": 2,
+   "complete": true,
+   "logged_exit": 0
+  },
+  {
+   "task": 13,
+   "model": "no_cell_identity",
+   "fold": 3,
+   "complete": true,
+   "logged_exit": 0
+  },
+  {
+   "task": 14,
+   "model": "no_cell_identity",
+   "fold": 4,
+   "complete": true,
+   "logged_exit": 0
+  },
+  {
+   "task": 15,
+   "model": "no_dose",
+   "fold": 0,
+   "complete": true,
+   "logged_exit": 0
+  },
+  {
+   "task": 16,
+   "model": "no_dose",
+   "fold": 1,
+   "complete": true,
+   "logged_exit": 0
+  },
+  {
+   "task": 17,
+   "model": "no_dose",
+   "fold": 2,
+   "complete": true,
+   "logged_exit": 0
+  },
+  {
+   "task": 18,
+   "model": "no_dose",
+   "fold": 3,
+   "complete": true,
+   "logged_exit": 0
+  },
+  {
+   "task": 19,
+   "model": "no_dose",
+   "fold": 4,
+   "complete": true,
+   "logged_exit": 0
+  }
+ ],
+ "files": {
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_0/checkpoints/best.pt": {
+   "bytes": 587087,
+   "sha256": "cd00c83724a199ce14e8a8326f103d250db5cd5d12cd10befad09ed58d6f4c2a"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_0/checkpoints/history.json": {
+   "bytes": 18393,
+   "sha256": "006a4a6500c4f083f3833c2809b495ff474d7da885225c658fdb806e03e7a7e8"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_0/checkpoints/latest.pt": {
+   "bytes": 589169,
+   "sha256": "087f15640427af6683a9627b9490ff00018470e0bcab90e7682c30338a8d90a4"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_0/config.json": {
+   "bytes": 546,
+   "sha256": "f0ca7dad5f233ecba0b2c723502805de1fcc60a730b649171ba89b377807aabf"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_0/evaluation/metrics.json": {
+   "bytes": 48981,
+   "sha256": "6d3e5b0ea456e5aae73ec7451b9a7ffb0b511f3419d205b5b0961027a51fb800"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_0/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5221712,
+   "sha256": "e42e5a58819f02d11df5bf9e5be4cc2a284ea41a6c9f70ba91d34ccf38ac117c"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_0/features.json": {
+   "bytes": 514509,
+   "sha256": "e216e437c0b26c769297f7a997ebc1966dbed0c18295e508bde5624c3804429c"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_0/metadata.json": {
+   "bytes": 7300,
+   "sha256": "70dba6256bb5a1077524f9dff46192fe24495cc56f0dbb696987c9bb0726403a"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_0/predictions.parquet": {
+   "bytes": 2659684,
+   "sha256": "232497e9c15ddc414db073df5f1853f1f39f49f6a4fc439049350c192ed7edea"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_0/research_job.json": {
+   "bytes": 348,
+   "sha256": "fd3acba3a872aed4386dd6a413f3e2c4e075d6727ed588583a60b836bdd363df"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_1/checkpoints/best.pt": {
+   "bytes": 581967,
+   "sha256": "3365fa08c29917498590b1942f9729f9bb91214a30d0b638177b9602018915e3"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_1/checkpoints/history.json": {
+   "bytes": 5960,
+   "sha256": "18bf68f3b7fa2b284922e8b19c7a6b3141a2f7c3029e6489a4a1d86aa850cd8d"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_1/checkpoints/latest.pt": {
+   "bytes": 584049,
+   "sha256": "cea490cd26c049e77b72addec208d457c32cb420f06fd5b6a6a58bc42525a78f"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_1/config.json": {
+   "bytes": 546,
+   "sha256": "0a826172fa2f8b22f03dedc416a45d77c2ad8eb55481a0b0bb9bfd8daa8ec5b9"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_1/evaluation/metrics.json": {
+   "bytes": 48929,
+   "sha256": "0f73238b1c883876abe48b962ce07371750fcd3b794d5d75d4256f848dc0e797"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_1/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5265494,
+   "sha256": "b2f4e6ec8b938957ded7f5c8ffa81c3e7cebff97fd41c3f0d8c7ded709ea2e0c"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_1/features.json": {
+   "bytes": 514138,
+   "sha256": "975d3cabeccad82e67fc607b5253af46194edf318e880188fd0d32e8c773dbd2"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_1/metadata.json": {
+   "bytes": 7298,
+   "sha256": "9127473daa55989e560cb0ef4a1f1d7e9cd2b5b94db884d69fc7202f4edc7a1e"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_1/predictions.parquet": {
+   "bytes": 2676841,
+   "sha256": "870fb445485a753e720b0436a62e683b88d8ef392e20a3d4ec9e8dc82249577b"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_1/research_job.json": {
+   "bytes": 348,
+   "sha256": "26100f8ef72b7c49ede5d83a3d7cc6ced45feed93b48cc6e8279d02143ea08f4"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_2/checkpoints/best.pt": {
+   "bytes": 585423,
+   "sha256": "92f5daa411847679f8e592939a2c6f3878b49a64e8d80c7f67bee97d789ce681"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_2/checkpoints/history.json": {
+   "bytes": 14336,
+   "sha256": "31f6c11c96e1ee97bd19b923525086ce5090fba714d4e202192d788f6260dd78"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_2/checkpoints/latest.pt": {
+   "bytes": 587505,
+   "sha256": "03e1dd3d723c2fc63daabfae4ba32896e8bad0f6c1083af1e84a0c56f1e057ba"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_2/config.json": {
+   "bytes": 546,
+   "sha256": "319ceb99ed5fedbaa812ae16b496d6682de070f8ed57d8aa5f7889a5d7bf0335"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_2/evaluation/metrics.json": {
+   "bytes": 48884,
+   "sha256": "ca68b8e8826925bb7ee498e173985d3f98262cfb2a736c94f4966dc4d8abaf79"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_2/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5275116,
+   "sha256": "a07e2c542c7705eb651ed6d608324a4d9582d4a4b943162cd35ca9d21d765164"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_2/features.json": {
+   "bytes": 514472,
+   "sha256": "4076225861fcf3b3584b21a1392682825d968ea9d641e0a1f9ac5cd0f29be5ff"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_2/metadata.json": {
+   "bytes": 7299,
+   "sha256": "481b5fa21b4edc4d77f5bfd3c929b94a935aa51fa1a33f569cb7c606542151ec"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_2/predictions.parquet": {
+   "bytes": 2691020,
+   "sha256": "006fdc257cf9dc3bc19933c3200f990778a969420b2d9007b1950ce44b9d6f37"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_2/research_job.json": {
+   "bytes": 348,
+   "sha256": "ec50bb96e0fc0c3b99a2fdfee2b3d011b71f3d617fd7387dd8b9fb31a01a709e"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_3/checkpoints/best.pt": {
+   "bytes": 582927,
+   "sha256": "a335f372b94bdce5c21eca97229cd53c170e5b78b76eb1193f27f67c7311f4ee"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_3/checkpoints/history.json": {
+   "bytes": 7158,
+   "sha256": "5b27ea7f85bdc64cf5262b391800fc6ef473ddf6e90dadfa23698043b2fd54c9"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_3/checkpoints/latest.pt": {
+   "bytes": 584945,
+   "sha256": "50980c33877f38366f588db40f77ad18ffba380931588a349d76204abda48fca"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_3/config.json": {
+   "bytes": 546,
+   "sha256": "95b162c42b287ddad9702d426f297edefaf9d7b639e5eb17eee0be0c778718c8"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_3/evaluation/metrics.json": {
+   "bytes": 48991,
+   "sha256": "2f9880319c72a12ad7f40202c87d3245345e837716cbe1ff8ce100b2ab878f95"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_3/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5236879,
+   "sha256": "0832f9871c35ee8cd9a36168424cbf8e085a1743f420ec47fdda14d5f15c9394"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_3/features.json": {
+   "bytes": 516341,
+   "sha256": "4c03b088d5d2e7a98db75c6d4ad528592b44d802399a8dd51018bc407ec32d85"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_3/metadata.json": {
+   "bytes": 7297,
+   "sha256": "20a1ec655a0c375de568a029b7f1f010abde97e1c8dca383f1b766f27ac97198"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_3/predictions.parquet": {
+   "bytes": 2651667,
+   "sha256": "a59b7dce9b1ec4fe1aa12ba76e4953f1d72d2b7929632881d1a5b6242f26e79b"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_3/research_job.json": {
+   "bytes": 348,
+   "sha256": "ec7e8497bfca0dbe6de6b250bf830091c9d606228dd65da54ff504b9d64aae19"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_4/checkpoints/best.pt": {
+   "bytes": 586511,
+   "sha256": "c963b57bd9050a6f92a24b0a5dec8d4b78e59c54f700e4339d2f377bf222a1cf"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_4/checkpoints/history.json": {
+   "bytes": 12665,
+   "sha256": "b6d4a6cc1b18104dbcce3aced594c11b7bb35f444038a4af049a9d1939553ea2"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_4/checkpoints/latest.pt": {
+   "bytes": 588593,
+   "sha256": "42759989864ddcc0b2b72165ee545a7ba70d2c2659565d6d7df951a72411d529"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_4/config.json": {
+   "bytes": 546,
+   "sha256": "07dccf7bb20a0556d2616632ee7e7d19e33b4fcb25817cb2f049ec421d2cf99b"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_4/evaluation/metrics.json": {
+   "bytes": 49893,
+   "sha256": "29bdc4d31356a570f70069281b760ac11f077d2dd8a5d1103a3ce49ebce10692"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_4/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5321096,
+   "sha256": "97634c9ae51c5f7597d9faf0fa989ec703868d7d6794438e502d8b5f16a82c87"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_4/features.json": {
+   "bytes": 519840,
+   "sha256": "6de9fc46184444a7adb13bb32d7820ff1af87cad3caac1ebd283b2ebfbff1e3b"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_4/metadata.json": {
+   "bytes": 7295,
+   "sha256": "ffd55b565e1d0b895b9e5c8f0d21e4f01ff31848b02d41ec916483233e4e89fa"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_4/predictions.parquet": {
+   "bytes": 2690672,
+   "sha256": "e6e4b5a401376115f0d9228e7cbb4a0a81427736259e9023992d2aa11a62345b"
+  },
+  "results/research_20261107/seed2029/f2_base/seed_2029/fold_4/research_job.json": {
+   "bytes": 348,
+   "sha256": "f2661889e164449f86d4d259b25f5585fcf92f6998e7d08f4589863733a0fc9e"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_0/checkpoints/best.pt": {
+   "bytes": 503247,
+   "sha256": "db14fad0604c2df19a0e32db67774210667f6502f34803c09871b5d1315d593b"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_0/checkpoints/history.json": {
+   "bytes": 8822,
+   "sha256": "2ca93755153f386dbb7a787f8004775aefe8e066b238c09902f0f64501728d0e"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_0/checkpoints/latest.pt": {
+   "bytes": 505329,
+   "sha256": "ca0a7e1e730a4773de5e4fafa8c72dbf49984bc2e07471cfe0bd7abc92ee196e"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_0/config.json": {
+   "bytes": 574,
+   "sha256": "a0a3308f54e7eeac2ee8e74d183b52a9873729fc86ffb5e3cfeaf26c0f7234a3"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_0/evaluation/metrics.json": {
+   "bytes": 49006,
+   "sha256": "c58b215ed291b144e8ca49da5c3fd67b1b73fc6b89cdf8dffb6106db5e823298"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_0/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5220609,
+   "sha256": "bc2d538fb7a0935bbfb4d3f8aec153fe019912635c05089bf15b2436ad6e50da"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_0/features.json": {
+   "bytes": 514510,
+   "sha256": "e02cd24ff92779eb63def5b637451f82d51c5be861231f22b0003c2d4f6645e8"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_0/metadata.json": {
+   "bytes": 7327,
+   "sha256": "6a23984bbb9c9a2780de83a5537f8827f3723df9f18271f59a9ba323ee13e975"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_0/predictions.parquet": {
+   "bytes": 2658581,
+   "sha256": "44313459c87773e3e2d3633bcbb7a538660c791d9bd4c501bf5634749e11ddc1"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_0/research_job.json": {
+   "bytes": 394,
+   "sha256": "b1b8b610c363bc0d482bebbf5f1db04060ee1394b250d7ca5d724d2080ad8341"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_1/checkpoints/best.pt": {
+   "bytes": 502159,
+   "sha256": "db43992eeb45929bdaa2493cb3c77c6738f6a093f0ad8abccd3fcdab6b30108b"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_1/checkpoints/history.json": {
+   "bytes": 6204,
+   "sha256": "5c10fa48494a517b2f55133d2959be2281cbd91a45b0ad9006092a72651083f4"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_1/checkpoints/latest.pt": {
+   "bytes": 504241,
+   "sha256": "d7970f11922041de64285eb875b18b0abf46bc86bddf94a0c2b94f07bf8339ad"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_1/config.json": {
+   "bytes": 574,
+   "sha256": "5640773f761d0e5091d0ee4db6ddde4d850f07f34435b2433fc750f733813795"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_1/evaluation/metrics.json": {
+   "bytes": 48954,
+   "sha256": "1a0b7f5ad00bf918da0b3dd2f4303ecace2e7b45e88242c70cd434f6c12be388"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_1/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5266176,
+   "sha256": "5aab8a3bdffdb427a16237500dca1dad7e36f3d5fffbd9dbb4ec1d3be26f1ebb"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_1/features.json": {
+   "bytes": 514139,
+   "sha256": "90227802eb583e02c1de1443e28b0c817d61977314c5d7d56a68095e2b7955b1"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_1/metadata.json": {
+   "bytes": 7328,
+   "sha256": "6c0a5ee0c85ed21467286b28e2c46333bd04d509ee61dab3a7294049d4ae47d0"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_1/predictions.parquet": {
+   "bytes": 2677523,
+   "sha256": "3d2e62bf9c8085d9534fedb18c6b3835a94df7d7b8de582b758ccd3d5fde347a"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_1/research_job.json": {
+   "bytes": 394,
+   "sha256": "131eeb559619efa688fa1739ff73ab8a4627349ff63e7e83ad5dca44b6c1c2db"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_2/checkpoints/best.pt": {
+   "bytes": 501711,
+   "sha256": "1599e13567ec1775c3b3d5546eb96d4166ef50f9731a1bd12149bf3448de3f84"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_2/checkpoints/history.json": {
+   "bytes": 5011,
+   "sha256": "1a0086dc6b8f911f65c80c87193218b353c2fccc2dc84524865643037d3f344b"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_2/checkpoints/latest.pt": {
+   "bytes": 503793,
+   "sha256": "473041fbbdcb4eddffe75c91e1bbbaf5cecf852329821b9f42f039705ef99210"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_2/config.json": {
+   "bytes": 574,
+   "sha256": "ec9f346840f75a6adae88ff89d6a1b93647d01b28323772025d939f68a00f4bc"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_2/evaluation/metrics.json": {
+   "bytes": 48910,
+   "sha256": "5d42526a07ca5874125c2d3a67d581439c7d88372d64a7b1e6fec0285035c809"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_2/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5274955,
+   "sha256": "ababa2237cca2435f0d250bdb28fe24769a2a4809c7258669d1795b854bd2241"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_2/features.json": {
+   "bytes": 514473,
+   "sha256": "29f243f95b749d3c016fcdc182ad51139a7f452cd8158a4c55044b2067164ffc"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_2/metadata.json": {
+   "bytes": 7327,
+   "sha256": "cd2a26f4c4d553bfbd5f8469ee21d92f39c95ca7fcc12a735270982734448fbe"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_2/predictions.parquet": {
+   "bytes": 2690859,
+   "sha256": "276558fc79585fb96f61b538d9dfec762074177411dc6c7bf13eda068b9ef8d9"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_2/research_job.json": {
+   "bytes": 394,
+   "sha256": "fe3b1b719c9a85781c9f52da5973171199bde2c7ac00831f060c02814b02ea84"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_3/checkpoints/best.pt": {
+   "bytes": 502735,
+   "sha256": "ac728c0ee9cdc4f82f5f694f13f18efab8e4fc1c3f2f667511513b9718c83b98"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_3/checkpoints/history.json": {
+   "bytes": 6440,
+   "sha256": "710ff470fd18ac69a9dbe3d3980192794386d54f7eb915899c01e0f4393c1f9c"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_3/checkpoints/latest.pt": {
+   "bytes": 504817,
+   "sha256": "e61415b183fe3729ea8af83eb27b5ad757946d2793e2e43ed6014db13caa4e10"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_3/config.json": {
+   "bytes": 574,
+   "sha256": "1f017dada69b52b20ee93bd407041d31f0b8830cf03a08d3a7f648c9aee79b8c"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_3/evaluation/metrics.json": {
+   "bytes": 49008,
+   "sha256": "08ad18164abcaf0331d8b6d2e0b86812f75f7d9807c5d40790bba5a3fd9ef214"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_3/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5237061,
+   "sha256": "6034f25e8f6313a2acff66ebd573ce72da04166df75c2635504012f2c22a41b7"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_3/features.json": {
+   "bytes": 516342,
+   "sha256": "2ac34063765e18b03ef416f885a9ce7336759e794731cdcc33198ed322ccca53"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_3/metadata.json": {
+   "bytes": 7326,
+   "sha256": "06a05bb843834973a6a326ecccba1b78352d3773bacc369bd64f9cf0a9f3eece"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_3/predictions.parquet": {
+   "bytes": 2651849,
+   "sha256": "68bc5104bd237b7524da9a02f4d5f3b47737508d67fd1d7731a9e70265badaec"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_3/research_job.json": {
+   "bytes": 394,
+   "sha256": "cb8f0cc34bc25b37ab896f1eedba9a93360ecfe57456bfdeeb1339eaea7329f7"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_4/checkpoints/best.pt": {
+   "bytes": 504399,
+   "sha256": "4fd0b3db93b095d78d0abdfa97db187edaa87550c19278b75c883c6bcf9ca42b"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_4/checkpoints/history.json": {
+   "bytes": 7153,
+   "sha256": "80469b7beecb387deb74439118b37d9dae4f1641698bc372cf8f958097c84bda"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_4/checkpoints/latest.pt": {
+   "bytes": 506481,
+   "sha256": "742004e028fe4798c791bfa559546efb59345cf4fae199ecc8df5b9ca6b95972"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_4/config.json": {
+   "bytes": 574,
+   "sha256": "0b65f589d7edcdfa6987627903b46b1ab71c7158bf5122578f32d0c1d131707e"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_4/evaluation/metrics.json": {
+   "bytes": 49931,
+   "sha256": "511a44c59991f0aa44aba8c53e9531f13cf5e3589470182fc5eadfa96a729d1a"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_4/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5321492,
+   "sha256": "28e1683a0999e96bdfd4f3ea376a109ca9d43a23cbfa735b5331606e51ac1932"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_4/features.json": {
+   "bytes": 519841,
+   "sha256": "8c54104c5dbeb9b06b863ce3cbacf7a5449afdcdffc5816032510964a25bec79"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_4/metadata.json": {
+   "bytes": 7322,
+   "sha256": "f50f5df90bc3a975b13b4145474bebdbda5de2b3269659f14100f495c2b4c38b"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_4/predictions.parquet": {
+   "bytes": 2691068,
+   "sha256": "8259cc74e8dfc934e219dee1cd6e50941addf0461bd3c4101e0d6449317e8325"
+  },
+  "results/research_20261107/seed2029/no_cell_identity/seed_2029/fold_4/research_job.json": {
+   "bytes": 394,
+   "sha256": "2de4927f9260bb4077fb0dee89bc21c2195ad5b9ba00c7c1497be74d4997f962"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_0/checkpoints/best.pt": {
+   "bytes": 584847,
+   "sha256": "6e5e77868264bf2188b687b3152ea545bdeebd3e93fad6ef97a7efe62911fc5a"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_0/checkpoints/history.json": {
+   "bytes": 15519,
+   "sha256": "dac886adb5e82ad8cf158db10f87397e0f7379318604a76b53eb2fd31f538129"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_0/checkpoints/latest.pt": {
+   "bytes": 586929,
+   "sha256": "5d6e319a67886db650514c4c601f1256bb6866bdf590da8e99f2647038bac104"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_0/config.json": {
+   "bytes": 571,
+   "sha256": "e0f6c45418f2efaa9664043135648823a29883f6e43c90fb1db1e895b377684c"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_0/evaluation/metrics.json": {
+   "bytes": 49010,
+   "sha256": "fd4a9ede859bf4905d8eec8a879c4108656137e980fd76138cd26d93e33bfbb2"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_0/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5209405,
+   "sha256": "ef7c08776b6e955eb1216818881ee14c09c9eb224c937b474691f3c31ee95bc0"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_0/features.json": {
+   "bytes": 514411,
+   "sha256": "cdb0f1826a24619ce531e87b6ff300d6cf21360e160ecc04c51aa6d000fad308"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_0/metadata.json": {
+   "bytes": 7324,
+   "sha256": "eb14a92c892e6ec71b6d2c371c2f3fddbdfe50cc9ace89f280b3abc62e92b28b"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_0/predictions.parquet": {
+   "bytes": 2647377,
+   "sha256": "7ed2171e868f72680897a6d7f4a2bc1b15eedcd7e3cc41dff5bc2f857ffc76c5"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_0/research_job.json": {
+   "bytes": 385,
+   "sha256": "f38a4c29ce76c8c38ed3d0286082a262fad500a3b1472c5a7ed2041c95816278"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_1/checkpoints/best.pt": {
+   "bytes": 583951,
+   "sha256": "b48806e16ea54bc22a95d76b4afcdf1422fa63dca7c87bfd881066bcfc770ecb"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_1/checkpoints/history.json": {
+   "bytes": 13387,
+   "sha256": "a9d611ef4c3298f530eda2032f749f9c256e2eb3fb6a88afd999947ea41c21ee"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_1/checkpoints/latest.pt": {
+   "bytes": 586033,
+   "sha256": "acd3ff4c118610d63d53335aa2ea6be053612a9ba9299ba41d17341382f2512c"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_1/config.json": {
+   "bytes": 571,
+   "sha256": "61ebe30cbff7f43be5ce7254929daa4f548c43917007b3212aef4d41928bd543"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_1/evaluation/metrics.json": {
+   "bytes": 48947,
+   "sha256": "55459cdbf7f82182291b28dcb8d0623c50277295f192b963783d93363000dd92"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_1/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5260768,
+   "sha256": "154010cadb37c043a3cfcf71847251084e1b01aef30f7dfbe03bdb503a18bc39"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_1/features.json": {
+   "bytes": 514040,
+   "sha256": "85ff86546ca72eb9a197b48cf5855a6f3eb263a4ee15942d175b98783987e876"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_1/metadata.json": {
+   "bytes": 7327,
+   "sha256": "01c11bc75094f2657ae5f7e5ae2396a19801e81590937fa67570440cdae1dd09"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_1/predictions.parquet": {
+   "bytes": 2672115,
+   "sha256": "8201eee8d6e90c866689463871f28ddcb5dd4c432f4816a3e65dafd1dd223e9b"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_1/research_job.json": {
+   "bytes": 385,
+   "sha256": "8b47dd8a7d1a7f67ff4ebe3156e37a10f40eab47ddd181b965988be4668ac865"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_2/checkpoints/best.pt": {
+   "bytes": 584335,
+   "sha256": "faefb82c1eebd3cdbb152e870da0629ff723ae245095260c03cfddca965dc0d2"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_2/checkpoints/history.json": {
+   "bytes": 14328,
+   "sha256": "f4aa46a77b1712024b22ba0a9bec73831c126da52ac90920eb1e3738f1a0ad6e"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_2/checkpoints/latest.pt": {
+   "bytes": 586417,
+   "sha256": "b8baa64dad64eacc39f31feba72977f1e8310e310dd8c3f8b973a47391a62881"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_2/config.json": {
+   "bytes": 571,
+   "sha256": "87807d0e9656123fb25fabd3e42022e0acfeeb01c34be50e5e516c662b610141"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_2/evaluation/metrics.json": {
+   "bytes": 48894,
+   "sha256": "2ccb45f748962cece292b6de055a860b83ce5cce6e5fbbaffbf77b88e9bc8307"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_2/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5269783,
+   "sha256": "70da07f4603ab872bef41c906c036cb35030e1efeb6b27bd98d3fcccdc777bac"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_2/features.json": {
+   "bytes": 514374,
+   "sha256": "a4db7bb2280854cbfd1a797b8f90a93284781ec98966f02c6e7fc93f78a953e5"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_2/metadata.json": {
+   "bytes": 7326,
+   "sha256": "d63d3fcfb7d71ba4afa65bee15f41a4a820363094c23e068d00291f4619d6914"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_2/predictions.parquet": {
+   "bytes": 2685687,
+   "sha256": "2f12a577feb430597dacb7ad21a304a8ae669ae24d97772bc2e0d7841d5e71ee"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_2/research_job.json": {
+   "bytes": 385,
+   "sha256": "a78e628940d8bcee1a7ac4f9e3b67e46a8cde0fa7a70e13674d299353bbb460d"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_3/checkpoints/best.pt": {
+   "bytes": 592207,
+   "sha256": "5711bdfd70a3d8187793b9303e1a7102d7a372db26434f12da993a28bd97278e"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_3/checkpoints/history.json": {
+   "bytes": 32315,
+   "sha256": "3e62b872e7c16ad41b7fb29d6224fc054ed275df308c76f55140674ba3b4acd5"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_3/checkpoints/latest.pt": {
+   "bytes": 594289,
+   "sha256": "99134f0b781dbd6f412988d3b7313770854fd6d75ec910780971d96fe63ecc6c"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_3/config.json": {
+   "bytes": 571,
+   "sha256": "d8479aea4ec17b512c3cb9e015273cf8b7270ea5c6763af063a73731dbabe4ff"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_3/evaluation/metrics.json": {
+   "bytes": 49012,
+   "sha256": "eee7eabd0fa91c59d5d55d4485fa1935c8d495db4e048b28f6eeb4b7c8b6f969"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_3/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5231438,
+   "sha256": "a3684ef384ff9321d1ada4d1ccd9bb9c26864abaaf2f14d63cbc60b9d78b85d8"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_3/features.json": {
+   "bytes": 516244,
+   "sha256": "43eb1f0a6b018200b94986a9cba1a3f00bf13705a78ebafb4b0513a610f89632"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_3/metadata.json": {
+   "bytes": 7327,
+   "sha256": "b967411eb937c6461d4cc005e03d36352290f744f927d2670e65a575f5001fd3"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_3/predictions.parquet": {
+   "bytes": 2646226,
+   "sha256": "402013169eefbb961c1acbb7ee30d0fe2148a76d9ea3ec72f5ccf4c87de82b4f"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_3/research_job.json": {
+   "bytes": 385,
+   "sha256": "2a58c0128e053c0ae64baeefeff5633400dd6f862ce781fc80d97d68841ee784"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_4/checkpoints/best.pt": {
+   "bytes": 587023,
+   "sha256": "f44ad6d54355e8950d38d86074310c265039ae7fee87686d75c85b3c935fc508"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_4/checkpoints/history.json": {
+   "bytes": 16493,
+   "sha256": "25e42498657a8e06a228ef792cbd88d078ae2b83868cc5316046f363ec6fe6b0"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_4/checkpoints/latest.pt": {
+   "bytes": 589105,
+   "sha256": "553a9ed83de77da7ee154283ab2b63cd7e8dce4fd81a95c17b7af3d6c894c5b1"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_4/config.json": {
+   "bytes": 571,
+   "sha256": "716f24122e6896f9220c91de3fa5c9031fcda63ace324dab4ac1533dbd181994"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_4/evaluation/metrics.json": {
+   "bytes": 49921,
+   "sha256": "57cbb0152c785d3d9a7d3aaf91d66f47ad1625e34cd8519fb2a9957aecd97ff6"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_4/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5315374,
+   "sha256": "acbf859ccbba67250b5ed8b20a1e4f5d3e4f74a49d2057d15951950e2ed36ac2"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_4/features.json": {
+   "bytes": 519742,
+   "sha256": "d7af4427684b51a478df35eae544ce5cdb3abe5c47c8d67ccf9e1e52f2f89cad"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_4/metadata.json": {
+   "bytes": 7322,
+   "sha256": "ad2f7d5d583b9a2cf92a95333c145ef7319e3ed6829dc7ad0933d31d12ab84cc"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_4/predictions.parquet": {
+   "bytes": 2684950,
+   "sha256": "720790d1159d42ff175836d5d941789e6ebc9e6f321ed5f3c0d6c440d660ae39"
+  },
+  "results/research_20261107/seed2029/no_dose/seed_2029/fold_4/research_job.json": {
+   "bytes": 385,
+   "sha256": "88083f6dc8ab3754e3c0218b5c98c32bd3c16ccc10a4f0f2e4b92b997958baaf"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_0/checkpoints/best.pt": {
+   "bytes": 573967,
+   "sha256": "0d6bdfa087f2e4510c3d63691a3c9fce5101ac8c56c8bfabc4e9f34d66359071"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_0/checkpoints/history.json": {
+   "bytes": 33713,
+   "sha256": "9db62fbe844ba21ddd5ca364d623807ca1f37aa743b7631f4d11b8d38d032742"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_0/checkpoints/latest.pt": {
+   "bytes": 576049,
+   "sha256": "d4d145f185c750cadb71b374aff0b0110b65be5b2b5031c06008d8b443e31f0d"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_0/config.json": {
+   "bytes": 574,
+   "sha256": "1b11cb78ddbbe5ae192b7f8e9fc132ed833ccc26d6176a1a16902479575e734c"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_0/evaluation/metrics.json": {
+   "bytes": 49000,
+   "sha256": "f31f256033f9b92b3b24ab7d3ace2ce46f23f8a62128c7bf6809dd5cb26c2d15"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_0/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5220554,
+   "sha256": "262cdca84dcb85e58c7697aa1b6a431773b712ff76b5a21df3c8047f3e2dce6f"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_0/features.json": {
+   "bytes": 514510,
+   "sha256": "971297fc97cf2d54adeb6df0c1a887598ab25ebdf7b0d4bca736fc3df63e1fea"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_0/metadata.json": {
+   "bytes": 7331,
+   "sha256": "f5997b9452542a01e448aeda12281dc6355cb439be5658977657235bd343e6fd"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_0/predictions.parquet": {
+   "bytes": 2658526,
+   "sha256": "8aad39922a2828e34f88453ecb6198aa55253ef6e931ca3214a01c7ae6c10dd4"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_0/research_job.json": {
+   "bytes": 393,
+   "sha256": "b12f081548d234261400641d3dedd5a9c1328e02939a8bd1d5ec038ba2c2cc74"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_1/checkpoints/best.pt": {
+   "bytes": 570511,
+   "sha256": "3e16be5a210eb0612f2c644682012cfeaae49c6380fc0b003f5a2cbe8bc0d045"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_1/checkpoints/history.json": {
+   "bytes": 25340,
+   "sha256": "e1b0643d1615eaf598759a7274ecba23f93412df9fdc8bedc368f18e45e75187"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_1/checkpoints/latest.pt": {
+   "bytes": 572593,
+   "sha256": "cae3a0d9a04ce7e59318765db888dd26d8f685783bf5d221ac1617ce9fb3a719"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_1/config.json": {
+   "bytes": 574,
+   "sha256": "e7cdb6e8f2213eec825e3ac1b56c16943ba4593cf415d92f4830041b795f1e0a"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_1/evaluation/metrics.json": {
+   "bytes": 48937,
+   "sha256": "3b60b5b186e51fa83339cf6d36bc439dc09038ee62a46b63d6092184e6d446b4"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_1/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5264624,
+   "sha256": "76b5f64d7ed58de61d1be37564d95098553fb1cdb04fbb6884ff911751b96fc7"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_1/features.json": {
+   "bytes": 514139,
+   "sha256": "3d46c28e232ed2e87e25e3db978312da6d9495677d2562b2f46393670668975d"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_1/metadata.json": {
+   "bytes": 7330,
+   "sha256": "901c1d33e1b91ef7b05ed05b72d31ee089316b5fee0b2c17bb9ac7f0287db8e0"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_1/predictions.parquet": {
+   "bytes": 2675971,
+   "sha256": "13ae7c3dcd4ab599d888783b06d2456f4582f591e02cf9cf2190674bd0e84186"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_1/research_job.json": {
+   "bytes": 393,
+   "sha256": "ca9c0fe77be30bf9fa06dd2c650837fd42e809e53085230ca867cb744e5e35fa"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_2/checkpoints/best.pt": {
+   "bytes": 570511,
+   "sha256": "fc2ef489913b034afc0b3e7580afe0c97f8f7f959b7673514a2502b6448e9dda"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_2/checkpoints/history.json": {
+   "bytes": 25311,
+   "sha256": "9a0a1379cc1996b8b333c2d3b5eeb574de3d415edb31f15b38ba0e8b74266a80"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_2/checkpoints/latest.pt": {
+   "bytes": 572593,
+   "sha256": "c12053d7f116ca7b00bebd91b802db44875a3f833a912ee03806cb8ddafcd844"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_2/config.json": {
+   "bytes": 574,
+   "sha256": "c5f511b934195791ad456beb9d48d55fc18e188634da2c16edae39145298cdc3"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_2/evaluation/metrics.json": {
+   "bytes": 48903,
+   "sha256": "c615143ade19bf1033e6e2b613a3789281cbd90464610cd5478fd580d35facf8"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_2/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5274141,
+   "sha256": "21a83bcfceda361709f73bd0cd5b158d643e13200b7c01b7ecab49304e76f81d"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_2/features.json": {
+   "bytes": 514473,
+   "sha256": "eabe0a86670aa2f77e1646bca403f96a9774bd348a4a4d234b69c3dba0d49259"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_2/metadata.json": {
+   "bytes": 7331,
+   "sha256": "be3a41cdeed098fa8100e8e1c642a999f73a8bd2440e1677a0d35c84c080f06b"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_2/predictions.parquet": {
+   "bytes": 2690045,
+   "sha256": "94fa9112aa223b02a772cd98dc5c68da410dbed478a2db4ed28575232b4014e8"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_2/research_job.json": {
+   "bytes": 393,
+   "sha256": "2a994a9c22c991651599ef8bfa8e9ea7d1401e3aa3f91650791910ebd7a5a063"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_3/checkpoints/best.pt": {
+   "bytes": 570895,
+   "sha256": "ce3e74be7a891e4006d30cf9c2606b62398ad485bc20940d73e034cdbfc80fec"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_3/checkpoints/history.json": {
+   "bytes": 25090,
+   "sha256": "1ffd54efe58ccafe19066e0fdd9734f5c27ae3e38abb7d7a73dc2a24d1cfdcc9"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_3/checkpoints/latest.pt": {
+   "bytes": 572913,
+   "sha256": "650b3a60a9ede956b07071cb8af1d66d93cb196f83fe439112431439ebc79745"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_3/config.json": {
+   "bytes": 574,
+   "sha256": "14807ed72a69f88e5de4146ba0bf9745a00377524c612195b5b0b84842415700"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_3/evaluation/metrics.json": {
+   "bytes": 49023,
+   "sha256": "1c51e9566d72e7a2c637ede171e85f607477e1e535f527f36a8e217cc3f335ef"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_3/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5234900,
+   "sha256": "f493017c0502f0694c643186d65b5263a3828a85650aa6614c7bcd8babbdb428"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_3/features.json": {
+   "bytes": 516342,
+   "sha256": "289ed97bab44a8576914cae59c6586b122677e4dd6b95e2087e9cfd0a4e668f6"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_3/metadata.json": {
+   "bytes": 7330,
+   "sha256": "cc6176183c9302b9f7716c75941d7b7447adda50b80754fa657d7d0f8947b16e"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_3/predictions.parquet": {
+   "bytes": 2649688,
+   "sha256": "67c7ca8c5943d2473ad232e7774dc5981ea89a9310befa9149040b74690b5b13"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_3/research_job.json": {
+   "bytes": 393,
+   "sha256": "1924b1052e26ec2bee9544cbf59ac99f8858adfa8cb65fa7e0fe14e780f80ae2"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_4/checkpoints/best.pt": {
+   "bytes": 571919,
+   "sha256": "1df484ed42c83354cf3e12746585bbce514eabddfe45d70c45738439ee3c5e11"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_4/checkpoints/history.json": {
+   "bytes": 24363,
+   "sha256": "ab2d5afa0233aaa9422bba11c542dd26415e4c8d0150ea801a39eaf3044eb606"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_4/checkpoints/latest.pt": {
+   "bytes": 574001,
+   "sha256": "0bf557a771bdbe03157682d57e83dca39080be790b4c60cd84de50c1bfb14da1"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_4/config.json": {
+   "bytes": 574,
+   "sha256": "e2daf1966a353f04cc0d1a377cfb721877f43fb93542eb146870e98fdf9dabad"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_4/evaluation/metrics.json": {
+   "bytes": 49879,
+   "sha256": "09b73055e19bb1aff80305f69ab6a649f085bf40e2bf535f6f3ad583ac310818"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_4/evaluation/predictions_with_truth.parquet": {
+   "bytes": 5320752,
+   "sha256": "e007431230f9071276c7271e2d2b51ff87dee99e0058b37960929b819a8b825e"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_4/features.json": {
+   "bytes": 519841,
+   "sha256": "5c7d0a3b3c08bef62fd404d3e34db99b3f23f49271775553d3237d988b40a47a"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_4/metadata.json": {
+   "bytes": 7325,
+   "sha256": "62bc413043503299f44729843f660ddc024486b3f50322c1f79947d7630141be"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_4/predictions.parquet": {
+   "bytes": 2690328,
+   "sha256": "a9ca5fd4b242deae31c29a4fa0fc74db8aa2a834ce900962858facb6913c5e29"
+  },
+  "results/research_20261107/seed2029/no_drug_identity/seed_2029/fold_4/research_job.json": {
+   "bytes": 393,
+   "sha256": "d3cf1c392a3828c98395fc37b586cd5f29d5975269615363d081ee713201f770"
+  },
+  "results/research_20261107/slurm/132713_0.out": {
+   "bytes": 1793,
+   "sha256": "5709012c555516058c444f27ab2fadec4a1554f368b48279afc19b5b3b42ebfd"
+  },
+  "results/research_20261107/slurm/132713_1.out": {
+   "bytes": 1555,
+   "sha256": "9fdd60ddd20bb727639fb93a787749435e9d4566e7731067cdcd8e66b1738bb0"
+  },
+  "results/research_20261107/slurm/132713_10.out": {
+   "bytes": 1613,
+   "sha256": "99576d9b586fe59b1b160c786ad8c8e9551fbd6388f581ae23d5af87d43e17d4"
+  },
+  "results/research_20261107/slurm/132713_11.out": {
+   "bytes": 1568,
+   "sha256": "3dc2a3d1c3646c064ac00913a64594804d0226ec527185aadf0393f616a80522"
+  },
+  "results/research_20261107/slurm/132713_12.out": {
+   "bytes": 1566,
+   "sha256": "a9c0e551a470e0df1146b856f28378fe71a53b13e32c0ace6d5fe5f93ccbcec5"
+  },
+  "results/research_20261107/slurm/132713_13.out": {
+   "bytes": 1566,
+   "sha256": "3cbc3b5aad7758af4648ca1a9087d554002acab0f6c303fb76815075c32fde7a"
+  },
+  "results/research_20261107/slurm/132713_14.out": {
+   "bytes": 1613,
+   "sha256": "7a6d9353b68a5a26cdf545cf44589fcffb1ff46c39738726317b355c3276574b"
+  },
+  "results/research_20261107/slurm/132713_15.out": {
+   "bytes": 1744,
+   "sha256": "f51c13a5286f6077337455665eaf3e42462559f6d10864a1c41dc3ec3afe7f09"
+  },
+  "results/research_20261107/slurm/132713_16.out": {
+   "bytes": 1700,
+   "sha256": "a438bebfd07470b37871e3722fbd8257d05e5fc622dc2b1c0cd00b4dc213b0f9"
+  },
+  "results/research_20261107/slurm/132713_17.out": {
+   "bytes": 1746,
+   "sha256": "51d7c3b8f38cd19fba4108fdd3766ce3d8780585efebf00891f002263d8c0127"
+  },
+  "results/research_20261107/slurm/132713_18.out": {
+   "bytes": 2084,
+   "sha256": "b640c9cb0c6b1974b55a203c49a40a169e7bf6623b0db971d160f91ef2e6742a"
+  },
+  "results/research_20261107/slurm/132713_19.out": {
+   "bytes": 1751,
+   "sha256": "e75539c8a3c1074c7da5e974225effaaf051362a4e3c4be48730ec356713440d"
+  },
+  "results/research_20261107/slurm/132713_2.out": {
+   "bytes": 1751,
+   "sha256": "29deddb517b6a2e407b1d27125a929c496864b37b867ec62df11f877817c35f8"
+  },
+  "results/research_20261107/slurm/132713_3.out": {
+   "bytes": 1602,
+   "sha256": "d9f3c7abcf0c9d038dc9a6bcbd73b8e158d131d9b19afc886f722b643896cdb2"
+  },
+  "results/research_20261107/slurm/132713_4.out": {
+   "bytes": 1703,
+   "sha256": "b8335a3578cd600d97efcc603d4be6a12f3253e93a82138c4a2b3b7900ebeb93"
+  },
+  "results/research_20261107/slurm/132713_5.out": {
+   "bytes": 2148,
+   "sha256": "3291f24a5397739b25f157ce40e2511dcfb9ff1b69d3b15122cc4429c1b3931a"
+  },
+  "results/research_20261107/slurm/132713_6.out": {
+   "bytes": 1952,
+   "sha256": "7846739bd07ac5d8fd4c0805dfc521fc99d75b82ca9bdab1ba3eac8a18bb78a9"
+  },
+  "results/research_20261107/slurm/132713_7.out": {
+   "bytes": 1951,
+   "sha256": "459b68173d734378b23a39101906f4cc4829c24412657be6dc42d4d04f56f28b"
+  },
+  "results/research_20261107/slurm/132713_8.out": {
+   "bytes": 1952,
+   "sha256": "16bcabbf1befa621d0a76d44239bb55f5d7888d507cbc499995c359f419b5d0b"
+  },
+  "results/research_20261107/slurm/132713_9.out": {
+   "bytes": 1951,
+   "sha256": "bb287a207c9bc866c7b2fad978b28ae91c459855926f2b2bd31a75ca926fd0bf"
+  },
+  "driver/pack_seed2029.py": {
+   "bytes": 2479,
+   "sha256": "9bb0117c04dd5a45aa1b1f0307c84f1f3799d65a3ba8e9d7bda92717a400cf56"
+  },
+  "driver/seed2029.sbatch": {
+   "bytes": 926,
+   "sha256": "a0433b7312d82d0781983aa412b39502113d4052ab7b2a6285997289dd453459"
+  },
+  "driver/seed2029_job.py": {
+   "bytes": 3290,
+   "sha256": "a32f1dee20c529ab7ea96a321de72b22668e0168509516888c3f8ced3bc760bf"
+  },
+  "driver/submit_seed2029.sh": {
+   "bytes": 950,
+   "sha256": "40ec2d24382c241ba90094deb0bd48841edf5e4b14b6bc76691fedbdbcfd0f39"
+  },
+  "driver/logs/seed2029_check.log": {
+   "bytes": 1493,
+   "sha256": "f88e80b31ac208df30b67fba57b9df9e08b1f35cb73fb54ab13f8e1c21e37875"
+  },
+  "driver/logs/seed2029_pack.log": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "driver/logs/seed2029_submit.log": {
+   "bytes": 2247,
+   "sha256": "cc19f5819c339d84169f805acb9963526ce1a297ea88b54e668be6c248eb8edb"
+  }
+ }
+}

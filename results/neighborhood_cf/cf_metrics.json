@@ -1,0 +1,175 @@
+{
+  "target": "raw combination inhibition",
+  "n_pairs": 583,
+  "n_cells": 39,
+  "folds": 5,
+  "selection": {
+    "validation_fold": "(test_fold + 1) mod 5",
+    "k_grid": [
+      3,
+      5,
+      10,
+      20
+    ],
+    "shrink_grid": [
+      2.0,
+      5.0,
+      20.0
+    ],
+    "ridge_lambdas": [
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ]
+  },
+  "overall_out_of_fold_metrics": {
+    "cf": {
+      "mse": 35.90414844169341,
+      "pearson": 0.9596168087358594,
+      "contrast_sse": 802635.5426130693,
+      "contrast_ss": 937093.7988407023,
+      "contrast_r2": 0.143484309034991
+    },
+    "baseline": {
+      "mse": 49.4726416537649,
+      "pearson": 0.9438935515652482,
+      "contrast_sse": 1118815.7884429658,
+      "contrast_ss": 937093.7988407023,
+      "contrast_r2": -0.19392081115793913
+    }
+  },
+  "fold_results": [
+    {
+      "fold": 0,
+      "n_train": 351,
+      "n_validation": 116,
+      "n_test": 116,
+      "cf_parameters": {
+        "k": 10,
+        "shrink": 2.0,
+        "lambda": 0.1,
+        "validation_mse": 35.6171857827262
+      },
+      "cf": {
+        "mse": 39.287108374167126,
+        "pearson": 0.9581132897301846,
+        "contrast_sse": 102739.67506919245,
+        "contrast_ss": 132787.76756406308,
+        "contrast_r2": 0.22628660038564175
+      },
+      "baseline": {
+        "mse": 51.740804479703264,
+        "pearson": 0.9444280113677791,
+        "contrast_sse": 132787.76756406308,
+        "contrast_ss": 132787.76756406308,
+        "contrast_r2": 0.0
+      }
+    },
+    {
+      "fold": 1,
+      "n_train": 351,
+      "n_validation": 116,
+      "n_test": 116,
+      "cf_parameters": {
+        "k": 5,
+        "shrink": 20.0,
+        "lambda": 0.01,
+        "validation_mse": 36.3311181657331
+      },
+      "cf": {
+        "mse": 35.22676487081065,
+        "pearson": 0.9578249227719419,
+        "contrast_sse": 100185.35783587214,
+        "contrast_ss": 134903.71129054695,
+        "contrast_r2": 0.2573565480337353
+      },
+      "baseline": {
+        "mse": 47.64873210208021,
+        "pearson": 0.9426968212926421,
+        "contrast_sse": 134903.71129054693,
+        "contrast_ss": 134903.71129054695,
+        "contrast_r2": 2.220446049250313e-16
+      }
+    },
+    {
+      "fold": 2,
+      "n_train": 351,
+      "n_validation": 116,
+      "n_test": 116,
+      "cf_parameters": {
+        "k": 3,
+        "shrink": 5.0,
+        "lambda": 0.01,
+        "validation_mse": 40.08064958867988
+      },
+      "cf": {
+        "mse": 35.17401938377503,
+        "pearson": 0.9614659192776475,
+        "contrast_sse": 93185.26605257808,
+        "contrast_ss": 134000.3612898535,
+        "contrast_r2": 0.3045894417328405
+      },
+      "baseline": {
+        "mse": 49.876183915332426,
+        "pearson": 0.9449031570432346,
+        "contrast_sse": 134000.3612898535,
+        "contrast_ss": 134000.3612898535,
+        "contrast_r2": 0.0
+      }
+    },
+    {
+      "fold": 3,
+      "n_train": 348,
+      "n_validation": 119,
+      "n_test": 116,
+      "cf_parameters": {
+        "k": 10,
+        "shrink": 2.0,
+        "lambda": 0.01,
+        "validation_mse": 30.300404316434726
+      },
+      "cf": {
+        "mse": 39.50315339217905,
+        "pearson": 0.953647598638367,
+        "contrast_sse": 113587.53526770929,
+        "contrast_ss": 161954.84370672412,
+        "contrast_r2": 0.29864687793222633
+      },
+      "baseline": {
+        "mse": 56.179546550542575,
+        "pearson": 0.9342541480230204,
+        "contrast_sse": 161954.84370672412,
+        "contrast_ss": 161954.84370672412,
+        "contrast_r2": 0.0
+      }
+    },
+    {
+      "fold": 4,
+      "n_train": 348,
+      "n_validation": 116,
+      "n_test": 119,
+      "cf_parameters": {
+        "k": 5,
+        "shrink": 2.0,
+        "lambda": 0.1,
+        "validation_mse": 36.703787328141516
+      },
+      "cf": {
+        "mse": 30.47022859730387,
+        "pearson": 0.9668979085290303,
+        "contrast_sse": 85496.36403808827,
+        "contrast_ss": 117567.5990931483,
+        "contrast_r2": 0.27278974226266306
+      },
+      "baseline": {
+        "mse": 42.108395853920634,
+        "pearson": 0.9540849359515458,
+        "contrast_sse": 117567.5990931483,
+        "contrast_ss": 117567.5990931483,
+        "contrast_r2": 0.0
+      }
+    }
+  ]
+}

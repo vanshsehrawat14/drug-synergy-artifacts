@@ -1,0 +1,12 @@
+{
+  "name": "almanac-site-check-v1",
+  "frozen": "2026-11-06 ~04:05 PST, after the ALMANAC report (job 132595) was read and before this check was computed. Post hoc.",
+  "reason": "Every ALMANAC pair was screened at a single site (FF, FG or 1A). A site batch offset is a pair-level effect, so the interaction contrast (which removes drug main effects within fold and cell) counts it as interaction, and identity models can learn it when site follows drug identity.",
+  "site_map": "pair -> screener from the NCI raw file (ComboDrugGrowth_Nov2017.csv), matched to DrugComb rows by cell, the two concentrations and inhibition = 100 - PercentGrowthNoTZ",
+  "analyses": [
+    "share of pairs per site and how well drug identity predicts site",
+    "interaction residual R2 of f2_combined and f0_combined vs Bliss with P removing drug main effects within fold, cell and site, pooled and per declared Bliss level",
+    "the same within each site separately"
+  ],
+  "rule": "the ALMANAC beyond-Bliss gain counts as not explained by site only if the within-site interaction residual R2 keeps a drug-jackknife interval above 0 in every seed"
+}

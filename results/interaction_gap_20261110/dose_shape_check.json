@@ -1,0 +1,10 @@
+{
+ "target_energy_per_row": 43.88201699884026,
+ "dose_shape_bliss_noise_share_grid_split": 0.36334704817338515,
+ "dose_shape_bliss_noise_share_batch_split": 0.36306047364273175,
+ "dose_shape_bliss_noise_share_panel_split": 0.44733649775744294,
+ "frozen_reference": {
+  "grid": 0.36334704817338515,
+  "panel": 0.4473364977574429
+ }
+}

@@ -1,0 +1,57 @@
+{
+ "name": "almanac-mono-only-control-v1",
+ "frozen": "2026-11-06, post hoc stress-test control declared in configs/stress_tests.json before it was run: the sprint's identity-free mono_only network (unchanged from configs/neural_sprint.json) retrained on ALMANAC with the ALMANAC folds and seeds.",
+ "base": {
+  "F0": "configs/neural_dose_aware.json",
+  "F2": "configs/neural_monotherapy.json"
+ },
+ "shared_overrides": {
+  "dataset": "data/processed/almanac_v1",
+  "training": {
+   "eval_batch_size": 16384
+  }
+ },
+ "candidates": {
+  "mono_only": {
+   "base": "F2",
+   "purpose": "information ablation: monotherapy values only, no identities or doses, Bliss offset",
+   "overrides": {
+    "features": {
+     "mono_missing": "interpolate",
+     "identities": false,
+     "dose_input": false,
+     "reference_offset": "bliss"
+    }
+   }
+  }
+ },
+ "selection": {
+  "seed": 2026,
+  "metric": "best-checkpoint validation MSE",
+  "scope": "single frozen candidate per regime; no choice is made",
+  "ties": "not applicable",
+  "groups": {}
+ },
+ "benchmark": {
+  "models": [
+   "mono_only"
+  ],
+  "seeds": [
+   2026,
+   2027,
+   2028
+  ],
+  "extension_seeds": []
+ },
+ "comparisons": [
+  [
+   "mono_only",
+   "bliss_reference",
+   "learned function of monotherapy values vs the fixed Bliss rule"
+  ]
+ ],
+ "secondary": [
+  "F2 against mono_only on the interaction contrast, seed by seed (configs/stress_tests.json)"
+ ],
+ "verdict_rule": "as in the ONEIL sprint: lower error only if the pair-bootstrap and drug-jackknife intervals, every fold and every seed pairing agree"
+}

@@ -1,0 +1,24 @@
+{
+  "primary_delta_r2": 0.2683984704920106,
+  "pair_interval": [
+    0.2080092902801222,
+    0.3239389896208819
+  ],
+  "drug_interval": [
+    0.06881388635305888,
+    0.46798305463096235
+  ],
+  "folds_positive": 5,
+  "noise_corrected_delta_r2": 0.29846602022934915,
+  "oracle_fraction_captured": 1.050228478816818,
+  "exploitable": true,
+  "representation_limited": false,
+  "rule": "Exploitable: change >= 0.05, both grouped intervals above zero, at least 4/5 original folds positive.",
+  "split_sha256": "d32914a94d8ead90e12d8cb10b6beed15f93339b0de2200ce2075a67a79370ea",
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "note": "Reference-augmented rows were added after B1 was observed and are exploratory secondaries."
+}

@@ -1,0 +1,8 @@
+{
+  "dataset_sha256": "ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b",
+  "source": "frozen five-fold predictions and saved best checkpoints",
+  "neural": "three-seed ensemble mean and sample disagreement; distinct from historical seed-average error",
+  "gp": "mean marginal predictive variance ranks panels; no independence assumption or panel interval from marginal variances",
+  "baseline_selection": "fixed 50/50 split of validation pairs; refit selected simple score on all validation pairs",
+  "limitation": "Validation rows previously selected models/checkpoints; calibration is development calibration, not an untouched conformal guarantee."
+}

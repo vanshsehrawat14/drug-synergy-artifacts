@@ -1,0 +1,290 @@
+{
+  "gp_his": {
+    "directory": "results\\neural\\runs\\gp_cap1500",
+    "folds": {
+      "0": {
+        "rows": 291456,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "1": {
+        "rows": 295296,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "2": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "3": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "4": {
+        "rows": 299904,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      }
+    },
+    "rows": 1475328,
+    "cells": 39,
+    "pairs_in_one_fold": true,
+    "selection": {
+      "validation_fold_is_next": true,
+      "training_rows_match_or_cap": true,
+      "training_rows_equal_available": true,
+      "one_selected_family_per_cell_fold": true
+    },
+    "passed": true,
+    "reproduced": []
+  },
+  "gp_frozen": {
+    "directory": "results\\neural\\runs\\gp_final",
+    "folds": {
+      "0": {
+        "rows": 291456,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "1": {
+        "rows": 295296,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "2": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "3": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "4": {
+        "rows": 299904,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      }
+    },
+    "rows": 1475328,
+    "cells": 39,
+    "pairs_in_one_fold": true,
+    "selection": {
+      "validation_fold_is_next": true,
+      "training_rows_match_or_cap": true,
+      "training_rows_equal_available": true,
+      "one_selected_family_per_cell_fold": true
+    },
+    "passed": true,
+    "reproduced": []
+  },
+  "gp_full": {
+    "directory": "results\\neural\\runs\\gp_gpu_full",
+    "folds": {
+      "0": {
+        "rows": 291456,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "1": {
+        "rows": 295296,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "2": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "3": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "4": {
+        "rows": 299904,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      }
+    },
+    "rows": 1475328,
+    "cells": 39,
+    "pairs_in_one_fold": true,
+    "selection": {
+      "validation_fold_is_next": true,
+      "training_rows_match_or_cap": true,
+      "training_rows_equal_available": true,
+      "one_selected_family_per_cell_fold": true
+    },
+    "passed": true,
+    "reproduced": []
+  },
+  "gp_full_w0": {
+    "directory": "results\\neural\\runs\\gp_gpu_full_w0",
+    "folds": {
+      "0": {
+        "rows": 291456,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "1": {
+        "rows": 295296,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "2": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "3": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "4": {
+        "rows": 299904,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      }
+    },
+    "rows": 1475328,
+    "cells": 39,
+    "pairs_in_one_fold": true,
+    "selection": {
+      "validation_fold_is_next": true,
+      "training_rows_match_or_cap": true,
+      "training_rows_equal_available": true,
+      "one_selected_family_per_cell_fold": true
+    },
+    "passed": true,
+    "reproduced": []
+  },
+  "gp_f0": {
+    "directory": "results\\neural\\runs\\gp_gpu_f0_drug_dose",
+    "folds": {
+      "0": {
+        "rows": 291456,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "1": {
+        "rows": 295296,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "2": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "3": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "4": {
+        "rows": 299904,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      }
+    },
+    "rows": 1475328,
+    "cells": 39,
+    "pairs_in_one_fold": true,
+    "selection": {
+      "validation_fold_is_next": true,
+      "training_rows_match_or_cap": true,
+      "training_rows_equal_available": true,
+      "one_selected_family_per_cell_fold": true
+    },
+    "passed": true,
+    "reproduced": []
+  },
+  "gp_f2": {
+    "directory": "results\\neural\\runs\\gp_gpu_f2_residual_mono",
+    "folds": {
+      "0": {
+        "rows": 291456,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "1": {
+        "rows": 295296,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "2": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "3": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "4": {
+        "rows": 299904,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      }
+    },
+    "rows": 1475328,
+    "cells": 39,
+    "pairs_in_one_fold": true,
+    "selection": {
+      "validation_fold_is_next": true,
+      "training_rows_match_or_cap": true,
+      "training_rows_equal_available": true,
+      "one_selected_family_per_cell_fold": true
+    },
+    "passed": true,
+    "reproduced": []
+  },
+  "frozen_selection": {
+    "selected_saved": [
+      "cap3000",
+      "inducing"
+    ],
+    "selected_recomputed": [
+      "cap3000",
+      "inducing"
+    ],
+    "method_matches": true,
+    "agrees": true
+  }
+}

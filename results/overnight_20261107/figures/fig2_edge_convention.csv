@@ -1,0 +1,14 @@
+series,eps,top5_replacement_pct
+Exclude near-edge fallback roots only,1e-12,6.156552330694811
+Exclude near-edge fallback roots only,1e-08,5.27704485488126
+Exclude near-edge fallback roots only,1e-06,4.39753737906772
+Exclude near-edge fallback roots only,0.0001,2.1108179419525
+Exclude near-edge fallback roots only,0.001,1.1433597185575999
+Exclude near-edge fallback roots only,0.01,0.08795074758135
+Exclude near-edge fallback roots only,0.1,0.08795074758135
+Exclude near-edge fallback roots only,1.0,0.0
+Exclude near-edge roots consistently (incl. accepted),1e-08,5.27704485488126
+Exclude near-edge roots consistently (incl. accepted),1e-06,4.39753737906772
+Exclude near-edge roots consistently (incl. accepted),0.0001,2.19876868953386
+Exclude near-edge roots consistently (incl. accepted),0.001,1.23131046613896
+Exclude near-edge roots consistently (incl. accepted),0.01,1.23131046613896

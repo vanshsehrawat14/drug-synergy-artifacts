@@ -1,0 +1,30 @@
+{
+  "dataset_sha256": "ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b",
+  "resolution_inputs_sha256": "8b81e6e3f526e232f0269c826ad26dcbe8f0466297521e2cf60b68696afc78f4",
+  "draws": 50,
+  "seed": 20261110,
+  "replicate_variance": 83.33657866969914,
+  "within_unit_df": 1109976.0,
+  "row_variance": 1152.2790533344146,
+  "row_ceiling_r2": 0.927676739042905,
+  "names": [
+    "truth",
+    "neural_F2:2026",
+    "neural_F2:2027",
+    "neural_F2:2028",
+    "neural_F0:2026",
+    "neural_F0:2027",
+    "neural_F0:2028",
+    "neural_base_F2:2026",
+    "neural_base_F2:2027",
+    "neural_base_F2:2028",
+    "mono_only:2026",
+    "mono_only:2027",
+    "mono_only:2028",
+    "bliss",
+    "gp_F2",
+    "cf_selected"
+  ],
+  "estimator": "Equal block halves within each pair-cell; d = (mean half 1 - mean half 2)/2 per identical-input unit.",
+  "limitations": "Combination replicate blocks only; shared plates or processing would make noise an underestimate. Monotherapy is shared across blocks."
+}

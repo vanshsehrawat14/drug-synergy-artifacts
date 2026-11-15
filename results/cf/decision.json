@@ -1,0 +1,22 @@
+{
+  "config": "configs/cf_study.json",
+  "config_sha256": "b1bab0ae9be32350a52ccc4a9bd04d76729cf2793cbd4649b6015fde1bbc0a51",
+  "rule": "Each stage keeps its default unless a challenger's pooled validation criterion is at least 1% lower; among qualifying challengers the lowest wins. The two stages add without a cross term because the dose profile sums to zero within every pair-cell. The selected pair then predicts all five test folds once. Test folds are not read before the decision file exists.",
+  "cf": "cell",
+  "cf_validation_mse": {
+    "shar": 36.26026937240233,
+    "wide": 36.24644085600497,
+    "cosine": 36.32828959622221,
+    "cell": 31.69275025810483
+  },
+  "dose": "partner",
+  "dose_validation_mse": {
+    "none": 699.9101930126924,
+    "additive": 198.1414077942412,
+    "partner": 130.79923184112846
+  },
+  "validation_mse": {
+    "selected": 162.4919820992333,
+    "shar_on_every_dose_row": 736.1704623850948
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "amends": "configs/gp_study.json",
+  "dated": "2026-11-06 ~14:55 PST, before any cap6000 output and before any cap3000 or kernel-variant output",
+  "trigger": "Measured study throughput on the local CPU: exact cap-1500 fits take 39-67 s each with four workers. The cap6000 group as frozen (39 cells, both families, two workers) would take about 7 h.",
+  "changes": [
+    "cap6000 exact leaves the production candidate set. In the PR review (results/gp_review/cap_sensitivity.csv), a cap-6000 fit took 190-257 s per family and cell as a single process. Five folds, 39 cells and two families come to about 24 h of compute, three times the frozen 8 h production budget. Memory per fit also grows with n^2, which limits parallel workers on this 15 GB machine.",
+    "cap6000 still runs validation-only, after production, on a fixed subset of eight cell lines: every fifth cell in sorted order. It is compared with the other methods on the same eight cells.",
+    "Order: cap1500, the kernel variants and cap3000 complete; the selection rule is applied; production runs; then cap6000_subset."
+  ],
+  "seen_before_amendment": "Validation metrics of cap1500 exact for all 39 cells and cap1500 inducing for 9 cells. No other group output and no test outcome.",
+  "dataset": "data/processed/oneil_v1",
+  "seed": 42,
+  "study_fold": 0,
+  "groups": {
+    "cap6000_subset": {"fit": {"cap": 6000}, "predictors": ["exact"],
+                       "cells": ["A2058", "COLO320DM", "HT144", "MDAMB436", "NCIH460", "PA1", "SKOV3", "UWB1289"]}
+  }
+}

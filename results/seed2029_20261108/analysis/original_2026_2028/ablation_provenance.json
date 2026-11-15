@@ -1,0 +1,35 @@
+{
+  "runs": "..\\cluster_return\\ablations\\results\\research_20261107\\runs",
+  "dataset_sha256": "ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b",
+  "resolution_cache": "..\\..\\2026-11-07_research\\repo\\results\\research_20261107\\resolution",
+  "protocol_sha256": "def2c9cfa38aaf99c0fbc360317edb0dbc304877ebfa8cef0e987471f47c209c",
+  "names": [
+    "truth",
+    "neural_base_F0:2026",
+    "neural_base_F0:2027",
+    "neural_base_F0:2028",
+    "neural_base_F2:2026",
+    "neural_base_F2:2027",
+    "neural_base_F2:2028",
+    "mono_only:2026",
+    "mono_only:2027",
+    "mono_only:2028",
+    "bliss",
+    "no_drug_identity:2026",
+    "no_drug_identity:2027",
+    "no_drug_identity:2028",
+    "no_cell_identity:2026",
+    "no_cell_identity:2027",
+    "no_cell_identity:2028",
+    "no_dose:2026",
+    "no_dose:2027",
+    "no_dose:2028"
+  ],
+  "pseudo": false,
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "f2_runs": null
+}

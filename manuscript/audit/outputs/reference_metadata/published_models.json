@@ -1,0 +1,82 @@
+{
+  "checked": "2026-11-15",
+  "method": "Crossref DOI metadata and primary full texts; supplementary methods where available",
+  "references": {
+    "kuru2022matchmaker": {
+      "authors": [
+        "Kuru HI",
+        "Tastan O",
+        "Cicek AE"
+      ],
+      "title": "MatchMaker: A Deep Learning Framework for Drug Synergy Prediction",
+      "container": "IEEE/ACM Transactions on Computational Biology and Bioinformatics",
+      "volume": "19",
+      "issue": "4",
+      "pages": "2334-2344",
+      "year": 2022,
+      "doi": "10.1109/tcbb.2021.3086702",
+      "verified": "Crossref and primary full text, 2026-11-15"
+    },
+    "wang2022deepdds": {
+      "authors": [
+        "Wang J",
+        "Liu X",
+        "Shen S",
+        "Deng L",
+        "Liu H"
+      ],
+      "title": "DeepDDS: deep graph neural network with attention mechanism to predict synergistic drug combinations",
+      "container": "Briefings in Bioinformatics",
+      "volume": "23",
+      "issue": "1",
+      "pages": "bbab390",
+      "year": 2022,
+      "doi": "10.1093/bib/bbab390",
+      "verified": "Crossref and primary full text, 2026-11-15"
+    },
+    "li2024jointsyn": {
+      "authors": [
+        "Li X",
+        "Shen B",
+        "Feng F",
+        "Li K",
+        "Tang Z",
+        "Ma L",
+        "Li H"
+      ],
+      "title": "Dual-view jointly learning improves personalized drug synergy prediction",
+      "container": "Bioinformatics",
+      "volume": "40",
+      "issue": "10",
+      "pages": "btae604",
+      "year": 2024,
+      "doi": "10.1093/bioinformatics/btae604",
+      "verified": "Crossref and primary full text, 2026-11-15"
+    },
+    "kuru2026deepsynba": {
+      "authors": [
+        "Kuru HI",
+        "Zhang H",
+        "Rattray M",
+        "Ek CH",
+        "Cicek AE",
+        "Tastan O",
+        "Milo M"
+      ],
+      "title": "DeepSynBa: actionable drug combination prediction with complete dose-response profiles",
+      "container": "Bioinformatics",
+      "volume": "42",
+      "issue": "7",
+      "pages": "btag416",
+      "year": 2026,
+      "doi": "10.1093/bioinformatics/btag416",
+      "verified": "Crossref and primary full text, 2026-11-15"
+    }
+  },
+  "primary_urls": {
+    "kuru2022matchmaker": "https://yoksis.bilkent.edu.tr/pdf/files/15293.pdf",
+    "wang2022deepdds": "https://arxiv.org/abs/2107.02467",
+    "li2024jointsyn": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11524890/",
+    "kuru2026deepsynba": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13341016/"
+  }
+}

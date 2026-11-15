@@ -1,0 +1,35 @@
+{
+  "dataset": "data/processed/oneil_v1",
+  "table": "observations",
+  "target": "inhibition",
+  "test_fold": 2,
+  "seed": 2028,
+  "features": {
+    "regime": "F2",
+    "mono_missing": "interpolate"
+  },
+  "model": {
+    "kind": "dose",
+    "hidden": [
+      128,
+      64
+    ],
+    "encoder_dim": 32,
+    "dropout": 0.1
+  },
+  "training": {
+    "epochs": 200,
+    "batch_size": 1024,
+    "lr": 0.001,
+    "weight_decay": 1e-05,
+    "patience": 20,
+    "threads": 4,
+    "device": "cuda",
+    "eval_batch_size": 16384
+  },
+  "bootstrap": 1000,
+  "split": {
+    "kind": "pair_cell",
+    "seed": 20261110
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "task": 8,
+  "seed": 2027,
+  "fold": 3,
+  "protocol_sha256": "e389c42cb6d47a072edc030440640fec514cd5f58852f304efbb65f1de9842ec",
+  "control": "f2_base seed 2027 fold 3, identical except the split"
+}

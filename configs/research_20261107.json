@@ -1,0 +1,44 @@
+{
+  "name": "resolution-and-reliability-20261107",
+  "baseline_commit": "c56fda8",
+  "status": "Exploratory follow-up on previously inspected screens; declared before computing the new endpoints. This does not replace the failed NCATS confirmation.",
+  "seed": 20261107,
+  "bootstrap_draws": 2000,
+  "experiment_1": {
+    "hypothesis": "Similar dose-response error can conceal material differences in pair-cell mean and pair-specific contrast error among neural, GP and CF methods.",
+    "primary": "Paired relative contrast MSE: GP F2 versus neural F2, CF selected versus neural F0, GP F0 versus neural F0. Holm-adjusted delete-one-drug tests across these three comparisons.",
+    "levels": ["pair-cell mean, both equal-panel and dose-row weights", "individual dose rows", "residuals against training-pair Bliss and HSA", "pair-cell interaction contrast and within-panel dose-shape contrast"],
+    "decomposition": "Weighted orthogonal sums of squares: grand mean; additive drug effects within cell and outer fold on pair-cell means; remaining pair-cell contrast; within-panel additive drug-dose-rank effects within cell and fold; remaining within-panel dose shape; replicate deviations at identical inputs. Every component uses the same projector for truth and prediction. This is an evaluation contrast, not a fitted predictor or a causal interaction estimate.",
+    "controls": ["fixed Bliss/HSA", "additive ridge", "neural F0/F2 base and monotherapy-only/monotherapy+dose", "CF original with/without dose extension", "GP interaction weight zero/full"],
+    "new_information_ablations": "If compute is accessible, use the production neural architecture and fixed training settings with drug identity, cell identity, dose, or monotherapy removed separately; no architecture search. Preserve monotherapy lookup identities internally while masking only model inputs. Five outer folds, seeds 2026/2027/2028. Existing model families are compared only within their documented input regimes; CF has no native monotherapy feature interface.",
+    "inference": "Whole-pair bootstrap, delete-one-drug jackknife with contrast projections refitted after each deletion, and fold/seed consistency. Conditional pair bootstrap on projected scores is labelled conditional. No dose-row iid intervals. Report equal-weight pair-cell sensitivity and replicate-noise estimates.",
+    "decision": "Material superiority requires at least 5% contrast-MSE reduction, Holm p<0.05, both grouped intervals excluding zero and the same direction in all five folds. Response equivalence requires both grouped 95% intervals entirely within +/-5% relative MSE. Otherwise describe uncertainty without equivalence/superiority claims.",
+    "negative_result": "Failure to distinguish models limits evidence for interaction-specific advantages; high response R2 alone is insufficient."
+  },
+  "experiment_2": {
+    "hypothesis": "Replacing only numerically rejected admissible Loewe roots changes experimental prioritization, while near-boundary and fit uncertainty may limit the stability of either ranking.",
+    "primary": "Retention of the native top 5% pair-cell combinations after the valid_root_any correction; secondary top 1%/10%, within-cell top 5%, pair averages, sign flips, rank correlation and rank displacement.",
+    "controls": ["original fixed coefficients and historical native results", "independent forward-curve theta solver", "accepted-root residual certification", "HSA fallback convention reported separately", "published-versus-native reconstruction difference"],
+    "perturbations": "First test fixed-coefficient numerical rounding to 6/8/10 significant digits and multiplicative dose changes +/-1e-6. Then native drc single-agent refits at unchanged data and parametric response perturbations: 0.1, 0.5, 1 and 2 inhibition points, plus a repeat-grounded scale only if independent monotherapy repeats can be established. Treat shared copied edges as one curve, not independent replicates. Seeded fixed curve sample stratified by fallback and boundary status; selection uses historical status, never new ranking outcomes.",
+    "acceptance_rules": "Compare historical termination-code rule, native answer accepted only when strictly in both effect ranges and absolute equation residual <1e-6, and independent bracketed roots with that same certificate. Sensitivity residual thresholds 1e-4 and 1e-8. Do not certify opposite-direction/no-root cases or change clipping/fallback definitions.",
+    "inference": "Whole-drug-pair bootstrap for ranking overlap; delete-one-drug sensitivity. Native refits are a paired numerical experiment, not independent biological evidence.",
+    "decision": "A material prioritization effect requires at least 5% turnover of the top-5% list and a pair-bootstrap lower bound above zero turnover. Report whether this persists within cells and whether perturbation turnover is larger. Rank change is not proof the corrected ranking predicts biological efficacy better.",
+    "negative_result": "Stable ranks would restrict the consequence to score reconstruction/calibration. Fit sensitivity would weaken prioritization claims even if fixed-fit numerical correction is verified."
+  },
+  "experiment_3": {
+    "hypothesis": "Dose, monotherapy coverage and response-distribution differences explain part of the heterogeneous within-screen gains.",
+    "primary": "Change in the between-screen F2-versus-Bliss relative MSE-gain difference after standardizing common input-defined strata: Bliss level, log-dose range and monotherapy availability.",
+    "controls": "Exact drug/cell mappings and units first; no guessed aliases. Report common-support mass, sample sizes and effective sample sizes. Prior NCATS H1 failures remain failed. Compare response conventions and shared monotherapy provenance before interpreting standardized differences.",
+    "transfer_gate": "Frozen source models may be tested only on identified shared drugs/cells with source-supported doses and compatible response definitions. If these gates fail, report the overlap audit and do not interpret transport as biological generalization. A monotherapy-only calibration function is an exploratory transport control where identities do not overlap.",
+    "decision": "Describe a measurable contribution only when the standardized gap is smaller with a grouped interval supporting the reduction; this is descriptive, not causal attribution. No new screen search.",
+    "negative_result": "Persistent heterogeneity or poor overlap rules out simple transport claims and motivates a harmonized repeated assay."
+  },
+  "experiment_4": {
+    "hypothesis": "GP uncertainty or neural disagreement improves combination-level error detection beyond validation-calibrated cell and dose/monotherapy baselines.",
+    "primary": "Pair-cell mean squared error captured by the highest-uncertainty 10% of pair-cell units; paired difference versus the strongest validation-only simple baseline. Secondary 90% coverage, Gaussian NLL, risk-coverage and ranking correlation.",
+    "controls": "GP predictive versus latent SD; neural ensemble mean and three-seed disagreement, with validation-fitted noise floor/scale; validation RMSE global/per-cell and monotone error model based on dose and monotherapy; empirical replicate dispersion where estimable. Restore validation predictions from existing checkpoints where necessary; no test-error calibration.",
+    "inference": "Whole-pair bootstrap and delete-one-drug intervals. Treat the ensemble as an ensemble, separately from the historical seed-average metrics. Selecting high-error combinations is a measurement-planning surrogate, not demonstrated experimental utility.",
+    "decision": "Useful error triage requires at least a 5-percentage-point increase in error mass captured at 10% budget with both grouped intervals above zero. Calibration alone does not establish useful ranking.",
+    "negative_result": "If simple baselines match uncertainty, recommend those baselines; disagreement without observation noise is not a predictive interval."
+  }
+}

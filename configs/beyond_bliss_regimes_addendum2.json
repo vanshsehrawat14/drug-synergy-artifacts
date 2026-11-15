@@ -1,0 +1,11 @@
+{
+  "name": "beyond-bliss-regimes-v1-addendum-2",
+  "frozen": "2026-11-06, after the calibrated-Bliss addendum and before this control was computed. Post hoc.",
+  "reason": "The R >= 75 gain of selected F2 survives isotonic recalibration of Bliss. A learned two-argument noninteraction surface g(mono_a, mono_b) could still explain it without pair identity. The sprint's mono_only network (training-pair monotherapy inputs only, no drug or cell identity) is that surface; its out-of-fold predictions already exist for seeds 2026-2028.",
+  "analyses": [
+    "interaction residual R2 of mono_only relative to Bliss, per declared regime",
+    "interaction residual R2 of selected F2 relative to mono_only, per declared regime"
+  ],
+  "interpretation": "If F2 keeps a positive Holm-corrected interval against mono_only at R >= 75 in every seed, the gain needs pair or drug identity; otherwise it is a better noninteraction surface, not pair-specific interaction.",
+  "rule": "same intervals, Holm correction and seed requirement as the declared analysis; regimes stay defined by the original R"
+}

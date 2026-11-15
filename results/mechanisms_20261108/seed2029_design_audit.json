@@ -1,0 +1,199 @@
+{
+  "trigger_audit": [
+    {
+      "mask": "no_drug_identity",
+      "endpoint": "response",
+      "trigger": false,
+      "near_bounds": [],
+      "opposite_fold_extreme": false,
+      "historical_trigger": false,
+      "note": "Fold min/max detects sign disagreement; literal exactly-one-fold dependence requires all five fold results.",
+      "opposing_fold_numbers": []
+    },
+    {
+      "mask": "no_drug_identity",
+      "endpoint": "panel_contrast",
+      "trigger": true,
+      "near_bounds": [],
+      "opposite_fold_extreme": true,
+      "historical_trigger": true,
+      "note": "Fold min/max detects sign disagreement; literal exactly-one-fold dependence requires all five fold results.",
+      "opposing_fold_numbers": [
+        3
+      ]
+    },
+    {
+      "mask": "no_drug_identity",
+      "endpoint": "dose_contrast",
+      "trigger": false,
+      "near_bounds": [],
+      "opposite_fold_extreme": false,
+      "historical_trigger": false,
+      "note": "Fold min/max detects sign disagreement; literal exactly-one-fold dependence requires all five fold results.",
+      "opposing_fold_numbers": [
+        2,
+        3
+      ]
+    },
+    {
+      "mask": "no_cell_identity",
+      "endpoint": "response",
+      "trigger": false,
+      "near_bounds": [],
+      "opposite_fold_extreme": false,
+      "historical_trigger": false,
+      "note": "Fold min/max detects sign disagreement; literal exactly-one-fold dependence requires all five fold results.",
+      "opposing_fold_numbers": []
+    },
+    {
+      "mask": "no_cell_identity",
+      "endpoint": "panel_contrast",
+      "trigger": true,
+      "near_bounds": [
+        "pair_high"
+      ],
+      "opposite_fold_extreme": false,
+      "historical_trigger": true,
+      "note": "Fold min/max detects sign disagreement; literal exactly-one-fold dependence requires all five fold results.",
+      "opposing_fold_numbers": [
+        1,
+        2
+      ]
+    },
+    {
+      "mask": "no_cell_identity",
+      "endpoint": "dose_contrast",
+      "trigger": true,
+      "near_bounds": [
+        "drug_high"
+      ],
+      "opposite_fold_extreme": false,
+      "historical_trigger": true,
+      "note": "Fold min/max detects sign disagreement; literal exactly-one-fold dependence requires all five fold results.",
+      "opposing_fold_numbers": []
+    },
+    {
+      "mask": "no_dose",
+      "endpoint": "response",
+      "trigger": false,
+      "near_bounds": [],
+      "opposite_fold_extreme": false,
+      "historical_trigger": false,
+      "note": "Fold min/max detects sign disagreement; literal exactly-one-fold dependence requires all five fold results.",
+      "opposing_fold_numbers": []
+    },
+    {
+      "mask": "no_dose",
+      "endpoint": "panel_contrast",
+      "trigger": false,
+      "near_bounds": [],
+      "opposite_fold_extreme": false,
+      "historical_trigger": false,
+      "note": "Fold min/max detects sign disagreement; literal exactly-one-fold dependence requires all five fold results.",
+      "opposing_fold_numbers": []
+    },
+    {
+      "mask": "no_dose",
+      "endpoint": "dose_contrast",
+      "trigger": true,
+      "near_bounds": [
+        "drug_high"
+      ],
+      "opposite_fold_extreme": false,
+      "historical_trigger": true,
+      "note": "Fold min/max detects sign disagreement; literal exactly-one-fold dependence requires all five fold results.",
+      "opposing_fold_numbers": [
+        0,
+        4
+      ]
+    }
+  ],
+  "triggered_cells": [
+    {
+      "mask": "no_drug_identity",
+      "endpoint": "panel_contrast",
+      "trigger": true,
+      "near_bounds": [],
+      "opposite_fold_extreme": true,
+      "historical_trigger": true,
+      "note": "Fold min/max detects sign disagreement; literal exactly-one-fold dependence requires all five fold results.",
+      "opposing_fold_numbers": [
+        3
+      ]
+    },
+    {
+      "mask": "no_cell_identity",
+      "endpoint": "panel_contrast",
+      "trigger": true,
+      "near_bounds": [
+        "pair_high"
+      ],
+      "opposite_fold_extreme": false,
+      "historical_trigger": true,
+      "note": "Fold min/max detects sign disagreement; literal exactly-one-fold dependence requires all five fold results.",
+      "opposing_fold_numbers": [
+        1,
+        2
+      ]
+    },
+    {
+      "mask": "no_cell_identity",
+      "endpoint": "dose_contrast",
+      "trigger": true,
+      "near_bounds": [
+        "drug_high"
+      ],
+      "opposite_fold_extreme": false,
+      "historical_trigger": true,
+      "note": "Fold min/max detects sign disagreement; literal exactly-one-fold dependence requires all five fold results.",
+      "opposing_fold_numbers": []
+    },
+    {
+      "mask": "no_dose",
+      "endpoint": "dose_contrast",
+      "trigger": true,
+      "near_bounds": [
+        "drug_high"
+      ],
+      "opposite_fold_extreme": false,
+      "historical_trigger": true,
+      "note": "Fold min/max detects sign disagreement; literal exactly-one-fold dependence requires all five fold results.",
+      "opposing_fold_numbers": [
+        0,
+        4
+      ]
+    }
+  ],
+  "source_sha256": "6bac7339972c8ba87be155b5aebb5124c768447d2034a8353497f8af5cb78881",
+  "seed_2029_baseline_tasks": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "mask_tasks": {
+    "no_drug_identity": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "no_cell_identity": [
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "no_dose": [
+      15,
+      16,
+      17,
+      18,
+      19
+    ]
+  },
+  "exploratory_drug_response": "The no-drug seed-2029 response endpoint shares five runs with a triggered panel-contrast endpoint; this does not make its response endpoint preregistered."
+}

@@ -1,0 +1,126 @@
+{
+  "rule": [
+    "Candidates are the his-kernel methods (w 1, rho 0.25): cap1500, cap3000 and cap6000 exact, and cap1500 and cap3000 inducing.",
+    "Eligible: estimated five-fold production cost <= 8 h wall on the local 8-core CPU, from the measured study seconds scaled by 5 folds and the worker count.",
+    "Choose the eligible candidate with the lowest pooled validation MSE. If a cheaper eligible candidate is within 1% of that MSE, choose the cheapest such candidate.",
+    "Kernel variants (w 0, rho 0, rho 0.5) are diagnostics. One replaces the default only if it lowers pooled validation MSE by more than 1% at cap 1500; it would then be validated at the selected scale before production.",
+    "Ineligible candidates are reported as validation-only results with their measured cost."
+  ],
+  "lowest_mse_eligible": [
+    "cap3000",
+    "inducing"
+  ],
+  "selected": [
+    "cap3000",
+    "inducing"
+  ],
+  "method": {
+    "cap": 3000,
+    "predictor": "inducing"
+  },
+  "kernel_variants": {
+    "cap1500_w0": {
+      "validation_mse": 315.3440003069129,
+      "change_vs_his_kernel": -0.11277825144687326
+    },
+    "cap1500_rho0": {
+      "validation_mse": 342.84990402331385,
+      "change_vs_his_kernel": -0.03539026890384778
+    },
+    "cap1500_rho05": {
+      "validation_mse": 375.8364336180183,
+      "change_vs_his_kernel": 0.057417478943675215
+    }
+  },
+  "kernel_variant_beats_default_by_more_than_1pct": [
+    "cap1500_w0",
+    "cap1500_rho0"
+  ],
+  "candidates": [
+    {
+      "group": "cap1500",
+      "predictor": "exact",
+      "cells": 39,
+      "training_rows_hyperparameters": 1488.0,
+      "training_rows_conditioned": 1488.0,
+      "validation_rows": 295296,
+      "validation_mse": 355.4286184048,
+      "validation_rmse": 18.8528146017,
+      "validation_nll": 4.3449054246,
+      "validation_coverage90": 0.9466603002,
+      "matern_cells": 7,
+      "seconds_both_families": 4515.7897694989,
+      "median_seconds_per_fit": 58.1839066501,
+      "peak_mb_max": 253.6445951462,
+      "convergence_warnings": 0,
+      "hyperparameters_at_bound": 0,
+      "study_workers": 4,
+      "production_hours_estimate": 1.5679825589,
+      "eligible": true
+    },
+    {
+      "group": "cap1500",
+      "predictor": "inducing",
+      "cells": 39,
+      "training_rows_hyperparameters": 1488.0,
+      "training_rows_conditioned": 22464.0,
+      "validation_rows": 295296,
+      "validation_mse": 254.1828867824,
+      "validation_rmse": 15.9431140867,
+      "validation_nll": 4.2516675342,
+      "validation_coverage90": 0.9763457683,
+      "matern_cells": 39,
+      "seconds_both_families": 7907.6712166995,
+      "median_seconds_per_fit": 99.28857155,
+      "peak_mb_max": 403.2001504898,
+      "convergence_warnings": 0,
+      "hyperparameters_at_bound": 0,
+      "study_workers": 4,
+      "production_hours_estimate": 2.7457191725,
+      "eligible": true
+    },
+    {
+      "group": "cap3000",
+      "predictor": "exact",
+      "cells": 39,
+      "training_rows_hyperparameters": 2992.0,
+      "training_rows_conditioned": 2992.0,
+      "validation_rows": 295296,
+      "validation_mse": 294.5543088087,
+      "validation_rmse": 17.1625845609,
+      "validation_nll": 4.2481548787,
+      "validation_coverage90": 0.9475678641,
+      "matern_cells": 10,
+      "seconds_both_families": 13149.2329169994,
+      "median_seconds_per_fit": 170.7541408,
+      "peak_mb_max": 1024.8992776871,
+      "convergence_warnings": 0,
+      "hyperparameters_at_bound": 0,
+      "study_workers": 4,
+      "production_hours_estimate": 4.565705874,
+      "eligible": true
+    },
+    {
+      "group": "cap3000",
+      "predictor": "inducing",
+      "cells": 39,
+      "training_rows_hyperparameters": 2992.0,
+      "training_rows_conditioned": 22464.0,
+      "validation_rows": 295296,
+      "validation_mse": 250.1327636946,
+      "validation_rmse": 15.8155861003,
+      "validation_nll": 4.1987259713,
+      "validation_coverage90": 0.9655227297,
+      "matern_cells": 39,
+      "seconds_both_families": 15444.4512876007,
+      "median_seconds_per_fit": 198.2880649499,
+      "peak_mb_max": 1024.8490724564,
+      "convergence_warnings": 0,
+      "hyperparameters_at_bound": 0,
+      "study_workers": 4,
+      "production_hours_estimate": 5.3626566971,
+      "eligible": true
+    }
+  ],
+  "config_sha256": "f84b73e2e641802918788827cfd9b83b8f0322f91cdded58d85b52d0f0e00879"
+}

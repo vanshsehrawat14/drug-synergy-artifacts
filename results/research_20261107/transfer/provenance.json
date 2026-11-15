@@ -1,0 +1,11 @@
+{
+  "almanac_raw_sha256": "c0c05e96732007f8752be542a7da0a3c3620ac62dfe1dccd3bf87fe5489820ed",
+  "source_sha256": "58c3893c9b8973eaea22aee819c0f268b3739d091a1d451187c1488c1058fe1d",
+  "excluded_almanac_drugs": [
+    "NSC707389"
+  ],
+  "identity_rule": "Positive exact PubChem CID and exact Cellosaurus accession; no salt/parent or spelling-based equivalence inferred.",
+  "dose_support": "Each endpoint within the source drug-cell observed concentration range; range overlap alone does not establish interpolation quality or response compatibility.",
+  "monotherapy": "Full-screen availability is descriptive only; training features retain training-pair-only lookups. Repeated copied edges are not independent measurements.",
+  "transfer_status": "Response-definition compatibility must additionally be established. Cross-screen predictions and standardized error gaps require retained source predictions; aggregate relative gains are insufficient."
+}

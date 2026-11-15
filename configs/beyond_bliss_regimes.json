@@ -1,0 +1,22 @@
+{
+  "name": "beyond-bliss-regimes-v1",
+  "frozen": "2026-11-06, before any regime-level number was computed. The pooled results (contrast R2 F2 0.359 vs Bliss 0.315; interaction residual R2 0.064, jackknife [-0.037, 0.165]) were already known, so this is an exploratory subgroup analysis of existing out-of-fold predictions. No model is refit or retuned.",
+  "models": ["selected:F2", "selected:F0"],
+  "seeds": [2026, 2027, 2028],
+  "reference": "bliss_reference: Bliss rule on training-pair monotherapy, as in the sprint benchmark",
+  "unit": "pair-cell panel rows: mean of the dose rows of a pair and cell inside the regime",
+  "metrics": {
+    "interaction_residual_r2": "1 - ||P(y - p)||^2 / ||P(y - R)||^2, P removes drug main effects within fold and cell",
+    "contrast_r2": "1 - ||P(y - p)||^2 / ||P y||^2",
+    "response_residual_r2": "1 - sum (y - p)^2 / sum (y - R)^2 on dose rows (includes main-effect corrections)"
+  },
+  "regimes": {
+    "dose_region": "per block, rank each arm's dose among its four combination doses; low = both ranks 1-2, high = both 3-4, mixed = otherwise",
+    "bliss_level": "Bliss expected inhibition R of the dose row: [-inf, 25), [25, 50), [50, 75), [75, inf)",
+    "drug": "pairs containing drug d, for each of the 38 drugs (per-row residual energies from the all-pair projection)"
+  },
+  "uncertainty": "delete-one-drug jackknife t intervals for regime metrics (energies averaged over seeds); pair-cluster bootstrap (2,000 draws, seed 2026) for drug subsets",
+  "multiplicity": "Holm over the 7 dose/Bliss regimes, and separately over the 38 drug subsets, for interaction residual R2 > 0 (two-sided)",
+  "pair_reliability": "per-pair interaction gain sum_cells (r_R^2 - r_p^2) computed separately on two random halves of the 39 cells (seed 2026); Spearman correlation between halves with a delete-one-drug jackknife interval. Pair-specific improvement requires a positive interval.",
+  "claim_rule": "A regime counts as a meaningful interaction-specific improvement only if its interaction residual R2 interval excludes 0 after Holm correction and it holds for every seed."
+}

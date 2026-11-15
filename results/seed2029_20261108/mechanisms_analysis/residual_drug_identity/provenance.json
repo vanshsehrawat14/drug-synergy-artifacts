@@ -1,0 +1,187 @@
+{
+  "campaign": "residual_drug_identity",
+  "dataset_sha256": "ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b",
+  "predictions": [
+    {
+      "family": "full_residual",
+      "seed": 2026,
+      "fold": 0,
+      "predictions_sha256": "95f6ae79b625b847acd24174c9add37de51dcfb4c232151125722814b38bd422"
+    },
+    {
+      "family": "full_residual",
+      "seed": 2026,
+      "fold": 1,
+      "predictions_sha256": "b03c27422f53fb663418be9e6966bf51eaad6ecd4eb030755eabc5102703523a"
+    },
+    {
+      "family": "full_residual",
+      "seed": 2026,
+      "fold": 2,
+      "predictions_sha256": "701060954389b043485a2bea9592ab977f2b6d0353b26b547c972c9d9b166397"
+    },
+    {
+      "family": "full_residual",
+      "seed": 2026,
+      "fold": 3,
+      "predictions_sha256": "be55ab9810ea6d289c84d15c957f4145355cef485bb19da7dcbadcd5dc65bf70"
+    },
+    {
+      "family": "full_residual",
+      "seed": 2026,
+      "fold": 4,
+      "predictions_sha256": "cc39e544282dfff9e9bb6a40688a799d3ac30eb92b4db395008d1e78b90623f2"
+    },
+    {
+      "family": "full_residual",
+      "seed": 2027,
+      "fold": 0,
+      "predictions_sha256": "0f5400c8765c752e80a6c65335ca4df8f15b5a25ef48c5db739c27b57571a097"
+    },
+    {
+      "family": "full_residual",
+      "seed": 2027,
+      "fold": 1,
+      "predictions_sha256": "5982305fb182fe20b69a1219809bc7c0362f4e3612cbf41464355b611cd49351"
+    },
+    {
+      "family": "full_residual",
+      "seed": 2027,
+      "fold": 2,
+      "predictions_sha256": "34e21df1ae36cd3cb8ae87d1b00923f65c276d8b9cf5fd11055695a449550484"
+    },
+    {
+      "family": "full_residual",
+      "seed": 2027,
+      "fold": 3,
+      "predictions_sha256": "0d12e02986cd171b176b40ef49bf8aa83eeb4abfcb9770a9682d747f3e92fdb0"
+    },
+    {
+      "family": "full_residual",
+      "seed": 2027,
+      "fold": 4,
+      "predictions_sha256": "a4b854878fef852cfa7955184e9ea2018c97bc521dc7e43a15f46efe224a7885"
+    },
+    {
+      "family": "full_residual",
+      "seed": 2028,
+      "fold": 0,
+      "predictions_sha256": "43d31742fb293095a62b63f7215658517e3f7e78e96b3c9b2b70333cd63a78cc"
+    },
+    {
+      "family": "full_residual",
+      "seed": 2028,
+      "fold": 1,
+      "predictions_sha256": "b0b6de25adab2df2576ca5691e99a70fb35ec5a28572dcb1e249106ec916edc9"
+    },
+    {
+      "family": "full_residual",
+      "seed": 2028,
+      "fold": 2,
+      "predictions_sha256": "be2d2e622e62085a08f8179fc158a2f6ac2d5c06ac4dce403e7afaf82eb85a51"
+    },
+    {
+      "family": "full_residual",
+      "seed": 2028,
+      "fold": 3,
+      "predictions_sha256": "381458ddb6057e0e3058fdb68aa4381b851265283b22e101836f7b4761235a42"
+    },
+    {
+      "family": "full_residual",
+      "seed": 2028,
+      "fold": 4,
+      "predictions_sha256": "fd7f16bb82b8fdf36865740c3c430ef4860d4e2667fe9734f0abc4a1c6d05ec0"
+    },
+    {
+      "family": "residual_no_drug",
+      "seed": 2026,
+      "fold": 0,
+      "predictions_sha256": "2ad2aaa20d4f670c32ae5d82a4bd9582d77518feb2017ea870e465a5f1188177"
+    },
+    {
+      "family": "residual_no_drug",
+      "seed": 2026,
+      "fold": 1,
+      "predictions_sha256": "7aa7574a393c42358eaeeb5e3503a851916569ef1225e3d373f4f875ad40a3dd"
+    },
+    {
+      "family": "residual_no_drug",
+      "seed": 2026,
+      "fold": 2,
+      "predictions_sha256": "96feb1c40df83edcd4efe0d21ab918b03c59053bd10c7645ed50cecc2eace076"
+    },
+    {
+      "family": "residual_no_drug",
+      "seed": 2026,
+      "fold": 3,
+      "predictions_sha256": "7a09fd90def500db201b64989c3bd061e793eea381b7512c8296d5f26a9dda40"
+    },
+    {
+      "family": "residual_no_drug",
+      "seed": 2026,
+      "fold": 4,
+      "predictions_sha256": "4844269820da3f4119b7c1b9db7588c8eace099f3f65aee8f62950af2951d38d"
+    },
+    {
+      "family": "residual_no_drug",
+      "seed": 2027,
+      "fold": 0,
+      "predictions_sha256": "2a1111372f2ca9b6c8a9f38bfbddf05de64168da8efb4b08039f4bd7f3a56561"
+    },
+    {
+      "family": "residual_no_drug",
+      "seed": 2027,
+      "fold": 1,
+      "predictions_sha256": "cf9d6873afed33a866a0b6cbb99292c501834bfad47657ea781a5886dd072ff2"
+    },
+    {
+      "family": "residual_no_drug",
+      "seed": 2027,
+      "fold": 2,
+      "predictions_sha256": "9d28088535a0f1710f2a3abbadb5a89c8ce729d70590a9299fcf59ff66a69964"
+    },
+    {
+      "family": "residual_no_drug",
+      "seed": 2027,
+      "fold": 3,
+      "predictions_sha256": "a3d209b382f7066fbc3d6eb24a11b38fc706b304a92a27221fd00937d395a95d"
+    },
+    {
+      "family": "residual_no_drug",
+      "seed": 2027,
+      "fold": 4,
+      "predictions_sha256": "5a5e2907ab7a3704afcd67eedcb941ef07bf3948b40ee2863edad2f43d98a61a"
+    },
+    {
+      "family": "residual_no_drug",
+      "seed": 2028,
+      "fold": 0,
+      "predictions_sha256": "f82c8b06c16fd89becee4768a6860a92e9d028c47136088887cd28ebc69df11a"
+    },
+    {
+      "family": "residual_no_drug",
+      "seed": 2028,
+      "fold": 1,
+      "predictions_sha256": "c63b074bbb607e782e9389decfd7dc4193c414f4573c9e720b56ca194756eca2"
+    },
+    {
+      "family": "residual_no_drug",
+      "seed": 2028,
+      "fold": 2,
+      "predictions_sha256": "8e06bf8bf59373319c7ebb0d371089ba7a4989a0e924cab49053dae5b2f05e61"
+    },
+    {
+      "family": "residual_no_drug",
+      "seed": 2028,
+      "fold": 3,
+      "predictions_sha256": "0459d8fab23ed0eea41cee0aff3aa8be8bffaea2a2971646e50c79d109734b74"
+    },
+    {
+      "family": "residual_no_drug",
+      "seed": 2028,
+      "fold": 4,
+      "predictions_sha256": "d8f6fc05993e2439d07b26e6b6107ad4e0037a907234c98f38629fe53db5d80f"
+    }
+  ],
+  "interpretation": "Seed-2029 drug response is exploratory. New experiment claims need Holm across both new primary endpoints; use --combine after both complete."
+}

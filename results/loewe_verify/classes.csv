@@ -1,0 +1,8 @@
+class,cases,surfaces,native_code_3,native_error_999,decreasing,median_abs_native_minus_root,mean_root_minus_native,median_root_minus_native
+accepted: matches root,180364,17667,0,0,401,3.01874e-11,7.15893e-09,5.32907e-13
+accepted: no admissible root,1883,417,0,0,0,,,
+"artifact: root exists, solver failed",1720,448,253,1467,196,0.0565388,-28.4649,-6.57787
+"artifact: solver at root, answer discarded",12477,4848,12477,0,113,0.00881787,-19.7971,-3.71992
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",1423,704,1389,34,66,0.00724085,-21.538,-4.02053
+definition: no root,121984,14637,108198,13786,0,,,
+definition: opposite or flat curves,47301,3063,15325,31968,0,,,

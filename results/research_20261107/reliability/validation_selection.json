@@ -1,0 +1,257 @@
+[
+  {
+    "model": "neural_ensemble",
+    "fold": 0,
+    "selected": "cell_bliss",
+    "validation_half_capture": {
+      "global": 0.10035366931918656,
+      "cell": 0.3083525165745931,
+      "cell_bliss": 0.3125836070885455
+    },
+    "augmented_selected": "cell_bliss",
+    "augmented_half_capture": {
+      "global": 0.10035366931918656,
+      "cell": 0.3083525165745931,
+      "cell_bliss": 0.3125836070885455,
+      "dose_bliss": 0.20279239541729158
+    }
+  },
+  {
+    "model": "gp_F2",
+    "fold": 0,
+    "selected": "cell_bliss",
+    "validation_half_capture": {
+      "global": 0.10035366931918656,
+      "cell": 0.32848300483330406,
+      "cell_bliss": 0.3440339725604598
+    },
+    "augmented_selected": "cell_bliss",
+    "augmented_half_capture": {
+      "global": 0.10035366931918656,
+      "cell": 0.32848300483330406,
+      "cell_bliss": 0.3440339725604598,
+      "dose_bliss": 0.25255998822367326
+    }
+  },
+  {
+    "model": "gp_F2_latent",
+    "fold": 0,
+    "selected": "cell_bliss",
+    "validation_half_capture": {
+      "global": 0.10035366931918656,
+      "cell": 0.32848300483330406,
+      "cell_bliss": 0.3440339725604598
+    },
+    "augmented_selected": "cell_bliss",
+    "augmented_half_capture": {
+      "global": 0.10035366931918656,
+      "cell": 0.32848300483330406,
+      "cell_bliss": 0.3440339725604598,
+      "dose_bliss": 0.25255998822367326
+    }
+  },
+  {
+    "model": "neural_ensemble",
+    "fold": 1,
+    "selected": "cell",
+    "validation_half_capture": {
+      "global": 0.10035366931918654,
+      "cell": 0.35294636536591706,
+      "cell_bliss": 0.3525830243949996
+    },
+    "augmented_selected": "cell",
+    "augmented_half_capture": {
+      "global": 0.10035366931918654,
+      "cell": 0.35294636536591706,
+      "cell_bliss": 0.3525830243949996,
+      "dose_bliss": 0.2650132333620793
+    }
+  },
+  {
+    "model": "gp_F2",
+    "fold": 1,
+    "selected": "cell_bliss",
+    "validation_half_capture": {
+      "global": 0.10035366931918656,
+      "cell": 0.34658172702657203,
+      "cell_bliss": 0.35121458101187675
+    },
+    "augmented_selected": "cell_bliss",
+    "augmented_half_capture": {
+      "global": 0.10035366931918656,
+      "cell": 0.34658172702657203,
+      "cell_bliss": 0.35121458101187675,
+      "dose_bliss": 0.262967243007097
+    }
+  },
+  {
+    "model": "gp_F2_latent",
+    "fold": 1,
+    "selected": "cell_bliss",
+    "validation_half_capture": {
+      "global": 0.10035366931918656,
+      "cell": 0.34658172702657203,
+      "cell_bliss": 0.35121458101187675
+    },
+    "augmented_selected": "cell_bliss",
+    "augmented_half_capture": {
+      "global": 0.10035366931918656,
+      "cell": 0.34658172702657203,
+      "cell_bliss": 0.35121458101187675,
+      "dose_bliss": 0.262967243007097
+    }
+  },
+  {
+    "model": "neural_ensemble",
+    "fold": 2,
+    "selected": "cell",
+    "validation_half_capture": {
+      "global": 0.10035366931918656,
+      "cell": 0.27294366158764793,
+      "cell_bliss": 0.19858656774008376
+    },
+    "augmented_selected": "cell",
+    "augmented_half_capture": {
+      "global": 0.10035366931918656,
+      "cell": 0.27294366158764793,
+      "cell_bliss": 0.19858656774008376,
+      "dose_bliss": 0.17006684298666971
+    }
+  },
+  {
+    "model": "gp_F2",
+    "fold": 2,
+    "selected": "cell",
+    "validation_half_capture": {
+      "global": 0.10035366931918657,
+      "cell": 0.27211456811312645,
+      "cell_bliss": 0.2166158178719998
+    },
+    "augmented_selected": "cell",
+    "augmented_half_capture": {
+      "global": 0.10035366931918657,
+      "cell": 0.27211456811312645,
+      "cell_bliss": 0.2166158178719998,
+      "dose_bliss": 0.24557610537820476
+    }
+  },
+  {
+    "model": "gp_F2_latent",
+    "fold": 2,
+    "selected": "cell",
+    "validation_half_capture": {
+      "global": 0.10035366931918657,
+      "cell": 0.27211456811312645,
+      "cell_bliss": 0.2166158178719998
+    },
+    "augmented_selected": "cell",
+    "augmented_half_capture": {
+      "global": 0.10035366931918657,
+      "cell": 0.27211456811312645,
+      "cell_bliss": 0.2166158178719998,
+      "dose_bliss": 0.24557610537820476
+    }
+  },
+  {
+    "model": "neural_ensemble",
+    "fold": 3,
+    "selected": "cell",
+    "validation_half_capture": {
+      "global": 0.1,
+      "cell": 0.3496500374615517,
+      "cell_bliss": 0.2877212050616992
+    },
+    "augmented_selected": "cell",
+    "augmented_half_capture": {
+      "global": 0.1,
+      "cell": 0.3496500374615517,
+      "cell_bliss": 0.2877212050616992,
+      "dose_bliss": 0.2442652016663322
+    }
+  },
+  {
+    "model": "gp_F2",
+    "fold": 3,
+    "selected": "cell",
+    "validation_half_capture": {
+      "global": 0.1,
+      "cell": 0.3964515897947278,
+      "cell_bliss": 0.24967370550362522
+    },
+    "augmented_selected": "cell",
+    "augmented_half_capture": {
+      "global": 0.1,
+      "cell": 0.3964515897947278,
+      "cell_bliss": 0.24967370550362522,
+      "dose_bliss": 0.27235838228190407
+    }
+  },
+  {
+    "model": "gp_F2_latent",
+    "fold": 3,
+    "selected": "cell",
+    "validation_half_capture": {
+      "global": 0.1,
+      "cell": 0.3964515897947278,
+      "cell_bliss": 0.24967370550362522
+    },
+    "augmented_selected": "cell",
+    "augmented_half_capture": {
+      "global": 0.1,
+      "cell": 0.3964515897947278,
+      "cell_bliss": 0.24967370550362522,
+      "dose_bliss": 0.27235838228190407
+    }
+  },
+  {
+    "model": "neural_ensemble",
+    "fold": 4,
+    "selected": "cell_bliss",
+    "validation_half_capture": {
+      "global": 0.10035366931918656,
+      "cell": 0.2337939606402742,
+      "cell_bliss": 0.24001445378991845
+    },
+    "augmented_selected": "cell_bliss",
+    "augmented_half_capture": {
+      "global": 0.10035366931918656,
+      "cell": 0.2337939606402742,
+      "cell_bliss": 0.24001445378991845,
+      "dose_bliss": 0.19052973480065274
+    }
+  },
+  {
+    "model": "gp_F2",
+    "fold": 4,
+    "selected": "cell",
+    "validation_half_capture": {
+      "global": 0.10035366931918656,
+      "cell": 0.35799342361963393,
+      "cell_bliss": 0.29592636133306743
+    },
+    "augmented_selected": "cell",
+    "augmented_half_capture": {
+      "global": 0.10035366931918656,
+      "cell": 0.35799342361963393,
+      "cell_bliss": 0.29592636133306743,
+      "dose_bliss": 0.25677958532169914
+    }
+  },
+  {
+    "model": "gp_F2_latent",
+    "fold": 4,
+    "selected": "cell",
+    "validation_half_capture": {
+      "global": 0.10035366931918656,
+      "cell": 0.35799342361963393,
+      "cell_bliss": 0.29592636133306743
+    },
+    "augmented_selected": "cell",
+    "augmented_half_capture": {
+      "global": 0.10035366931918656,
+      "cell": 0.35799342361963393,
+      "cell_bliss": 0.29592636133306743,
+      "dose_bliss": 0.25677958532169914
+    }
+  }
+]

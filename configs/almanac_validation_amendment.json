@@ -1,0 +1,8 @@
+{
+  "name": "almanac-validation-v1-amendment-1",
+  "date": "2026-11-05 23:10 PST",
+  "trigger": "Shard 0 of job 132578 stopped before training: the runner's seen-drug rule found NSC707389 absent from fold 0 training pairs. NSC707389 occurs in only 2 of 5,142 ALMANAC pairs, so random pair folds cannot keep it seen.",
+  "change": "configs/data_almanac.json adds min_pairs_per_drug 10 (excludes NSC707389: 2 pairs) and the data module now takes the first fold seed >= 2026 whose generated pair folds keep every validation and test drug in the training pairs. Both rules use pair identifiers only.",
+  "unchanged": "models, features, training settings, seeds, comparisons, verdict rule and the regime confirmation test",
+  "evidence_seen_before_change": "Only training logs of jobs 132578_1 and _2 (epoch-level training and validation MSE on the discarded folds); no test prediction or metric existed. Those runs and the seed-2026 dataset are moved aside on the cluster, not used."
+}

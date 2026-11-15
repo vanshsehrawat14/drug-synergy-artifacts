@@ -1,0 +1,129 @@
+class,log10_low,log10_high,cases
+accepted: matches root,-14.0,-13.5,0
+accepted: matches root,-13.5,-13.0,0
+accepted: matches root,-13.0,-12.5,0
+accepted: matches root,-12.5,-12.0,0
+accepted: matches root,-12.0,-11.5,0
+accepted: matches root,-11.5,-11.0,0
+accepted: matches root,-11.0,-10.5,0
+accepted: matches root,-10.5,-10.0,0
+accepted: matches root,-10.0,-9.5,0
+accepted: matches root,-9.5,-9.0,0
+accepted: matches root,-9.0,-8.5,0
+accepted: matches root,-8.5,-8.0,0
+accepted: matches root,-8.0,-7.5,0
+accepted: matches root,-7.5,-7.0,0
+accepted: matches root,-7.0,-6.5,0
+accepted: matches root,-6.5,-6.0,0
+accepted: matches root,-6.0,-5.5,0
+accepted: matches root,-5.5,-5.0,7
+accepted: matches root,-5.0,-4.5,18
+accepted: matches root,-4.5,-4.0,76
+accepted: matches root,-4.0,-3.5,231
+accepted: matches root,-3.5,-3.0,434
+accepted: matches root,-3.0,-2.5,735
+accepted: matches root,-2.5,-2.0,1395
+accepted: matches root,-2.0,-1.5,3532
+accepted: matches root,-1.5,-1.0,5954
+accepted: matches root,-1.0,-0.5,8577
+accepted: matches root,-0.5,0.0,14734
+accepted: matches root,0.0,0.5,25108
+accepted: matches root,0.5,1.0,44027
+accepted: matches root,1.0,1.5,59007
+accepted: matches root,1.5,2.0,16262
+"artifact: root exists, solver failed",-14.0,-13.5,0
+"artifact: root exists, solver failed",-13.5,-13.0,0
+"artifact: root exists, solver failed",-13.0,-12.5,0
+"artifact: root exists, solver failed",-12.5,-12.0,0
+"artifact: root exists, solver failed",-12.0,-11.5,2
+"artifact: root exists, solver failed",-11.5,-11.0,0
+"artifact: root exists, solver failed",-11.0,-10.5,6
+"artifact: root exists, solver failed",-10.5,-10.0,1
+"artifact: root exists, solver failed",-10.0,-9.5,17
+"artifact: root exists, solver failed",-9.5,-9.0,24
+"artifact: root exists, solver failed",-9.0,-8.5,26
+"artifact: root exists, solver failed",-8.5,-8.0,28
+"artifact: root exists, solver failed",-8.0,-7.5,28
+"artifact: root exists, solver failed",-7.5,-7.0,42
+"artifact: root exists, solver failed",-7.0,-6.5,41
+"artifact: root exists, solver failed",-6.5,-6.0,39
+"artifact: root exists, solver failed",-6.0,-5.5,48
+"artifact: root exists, solver failed",-5.5,-5.0,59
+"artifact: root exists, solver failed",-5.0,-4.5,90
+"artifact: root exists, solver failed",-4.5,-4.0,95
+"artifact: root exists, solver failed",-4.0,-3.5,81
+"artifact: root exists, solver failed",-3.5,-3.0,120
+"artifact: root exists, solver failed",-3.0,-2.5,85
+"artifact: root exists, solver failed",-2.5,-2.0,74
+"artifact: root exists, solver failed",-2.0,-1.5,113
+"artifact: root exists, solver failed",-1.5,-1.0,223
+"artifact: root exists, solver failed",-1.0,-0.5,329
+"artifact: root exists, solver failed",-0.5,0.0,106
+"artifact: root exists, solver failed",0.0,0.5,43
+"artifact: root exists, solver failed",0.5,1.0,0
+"artifact: root exists, solver failed",1.0,1.5,0
+"artifact: root exists, solver failed",1.5,2.0,0
+"artifact: solver at root, answer discarded",-14.0,-13.5,0
+"artifact: solver at root, answer discarded",-13.5,-13.0,0
+"artifact: solver at root, answer discarded",-13.0,-12.5,1
+"artifact: solver at root, answer discarded",-12.5,-12.0,1
+"artifact: solver at root, answer discarded",-12.0,-11.5,3
+"artifact: solver at root, answer discarded",-11.5,-11.0,6
+"artifact: solver at root, answer discarded",-11.0,-10.5,27
+"artifact: solver at root, answer discarded",-10.5,-10.0,68
+"artifact: solver at root, answer discarded",-10.0,-9.5,102
+"artifact: solver at root, answer discarded",-9.5,-9.0,189
+"artifact: solver at root, answer discarded",-9.0,-8.5,233
+"artifact: solver at root, answer discarded",-8.5,-8.0,291
+"artifact: solver at root, answer discarded",-8.0,-7.5,309
+"artifact: solver at root, answer discarded",-7.5,-7.0,389
+"artifact: solver at root, answer discarded",-7.0,-6.5,354
+"artifact: solver at root, answer discarded",-6.5,-6.0,479
+"artifact: solver at root, answer discarded",-6.0,-5.5,542
+"artifact: solver at root, answer discarded",-5.5,-5.0,658
+"artifact: solver at root, answer discarded",-5.0,-4.5,837
+"artifact: solver at root, answer discarded",-4.5,-4.0,1128
+"artifact: solver at root, answer discarded",-4.0,-3.5,1207
+"artifact: solver at root, answer discarded",-3.5,-3.0,1358
+"artifact: solver at root, answer discarded",-3.0,-2.5,1727
+"artifact: solver at root, answer discarded",-2.5,-2.0,1751
+"artifact: solver at root, answer discarded",-2.0,-1.5,814
+"artifact: solver at root, answer discarded",-1.5,-1.0,3
+"artifact: solver at root, answer discarded",-1.0,-0.5,0
+"artifact: solver at root, answer discarded",-0.5,0.0,0
+"artifact: solver at root, answer discarded",0.0,0.5,0
+"artifact: solver at root, answer discarded",0.5,1.0,0
+"artifact: solver at root, answer discarded",1.0,1.5,0
+"artifact: solver at root, answer discarded",1.5,2.0,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-14.0,-13.5,74
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-13.5,-13.0,76
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-13.0,-12.5,62
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-12.5,-12.0,93
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-12.0,-11.5,101
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-11.5,-11.0,138
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-11.0,-10.5,114
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-10.5,-10.0,123
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-10.0,-9.5,99
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-9.5,-9.0,80
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-9.0,-8.5,24
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-8.5,-8.0,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-8.0,-7.5,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-7.5,-7.0,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-7.0,-6.5,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-6.5,-6.0,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-6.0,-5.5,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-5.5,-5.0,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-5.0,-4.5,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-4.5,-4.0,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-4.0,-3.5,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-3.5,-3.0,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-3.0,-2.5,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-2.5,-2.0,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-2.0,-1.5,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-1.5,-1.0,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-1.0,-0.5,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",-0.5,0.0,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",0.0,0.5,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",0.5,1.0,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",1.0,1.5,0
+"boundary: root at a curve asymptote, scorer residual >= 1e-6",1.5,2.0,0

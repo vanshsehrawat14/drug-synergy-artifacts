@@ -1,0 +1,14 @@
+{
+  "protocol": "almanac-validation-v1",
+  "dataset": "data/processed/almanac_v1",
+  "rows": 2871834,
+  "pairs": 5140,
+  "drugs": 102,
+  "cells": 60,
+  "imputed_rows": 0,
+  "bootstrap": 1000,
+  "monotherapy_status": {
+    "exact": 2821220,
+    "interpolated": 50614
+  }
+}

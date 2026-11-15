@@ -1,0 +1,92 @@
+[
+  {
+    "fold": 0,
+    "seed": 2026,
+    "max_abs_difference": 1.2820080883102491e-05,
+    "checkpoint_sha256": "8e63f64c8b8a108b60c6c8499886ab05b742dec3ad3be2b2df727567a578eb63"
+  },
+  {
+    "fold": 0,
+    "seed": 2027,
+    "max_abs_difference": 1.4559966984961648e-05,
+    "checkpoint_sha256": "1ce23e0e98746d3e4278e840e55b8568314e218f9b5f0cd1ee3c76da5418613d"
+  },
+  {
+    "fold": 0,
+    "seed": 2028,
+    "max_abs_difference": 1.166809397545876e-05,
+    "checkpoint_sha256": "36cd5b1d90023b5592000dc55c7e390f7fccf373d0fcaac94bbc4131ee5ac019"
+  },
+  {
+    "fold": 1,
+    "seed": 2026,
+    "max_abs_difference": 1.3651551853399724e-05,
+    "checkpoint_sha256": "3be9772790b11df6fb3a4ae492833feba539aa672f016155bdfa5bd71802c1a9"
+  },
+  {
+    "fold": 1,
+    "seed": 2027,
+    "max_abs_difference": 1.2871450053353328e-05,
+    "checkpoint_sha256": "5272cfdd5a7271f3ba83ca41f60947cee0b4b842da6bcddf8d625a70a1be22e3"
+  },
+  {
+    "fold": 1,
+    "seed": 2028,
+    "max_abs_difference": 1.370011432300089e-05,
+    "checkpoint_sha256": "9ccb548974b1b895ddfdb285488b1d3c804c127a953d02da966b009b2d8f00bd"
+  },
+  {
+    "fold": 2,
+    "seed": 2026,
+    "max_abs_difference": 1.1815640846180031e-05,
+    "checkpoint_sha256": "7e030343004021441b377874e4cde7655c777892bdfc780a9cc42caa1b4c0c6b"
+  },
+  {
+    "fold": 2,
+    "seed": 2027,
+    "max_abs_difference": 9.588038210495142e-06,
+    "checkpoint_sha256": "884e37442ba9a076d570976b01f3f44249228a2e2f543124be4d8f0910f44fb9"
+  },
+  {
+    "fold": 2,
+    "seed": 2028,
+    "max_abs_difference": 1.0900445886363741e-05,
+    "checkpoint_sha256": "23437c0ff4172c08706fb4db19974ff46f9ec2d933d2c92e561a88cfa6688738"
+  },
+  {
+    "fold": 3,
+    "seed": 2026,
+    "max_abs_difference": 1.3575592674897052e-05,
+    "checkpoint_sha256": "0a3a4b94399cb3320f2dfa7025a85a5de51a5b1ae5f1c118dc38a6b062ec2489"
+  },
+  {
+    "fold": 3,
+    "seed": 2027,
+    "max_abs_difference": 1.3661628145200666e-05,
+    "checkpoint_sha256": "9f5fc2a456ca8e678368eab5e39fe513ea0414806f60bf11ad12914865384f5f"
+  },
+  {
+    "fold": 3,
+    "seed": 2028,
+    "max_abs_difference": 1.2654529200517572e-05,
+    "checkpoint_sha256": "8318a1215be2b57d68c34fcf27e26e2b18d276b12a4ebda195036bd8f4f92886"
+  },
+  {
+    "fold": 4,
+    "seed": 2026,
+    "max_abs_difference": 1.2126964975323062e-05,
+    "checkpoint_sha256": "6baa9b13dd54785b616ce2cc25bcef289c1a2ea2d29db59d70e73a59c82a90fc"
+  },
+  {
+    "fold": 4,
+    "seed": 2027,
+    "max_abs_difference": 1.369166056974791e-05,
+    "checkpoint_sha256": "3f6fcd07425a4f7f0b110fe4988c2d4cb03dad45cc4a9f44fd1002930b56cd5c"
+  },
+  {
+    "fold": 4,
+    "seed": 2028,
+    "max_abs_difference": 1.3497879081114661e-05,
+    "checkpoint_sha256": "89ab380e34fbc85bea1943dabda24f5b7b46ecdf77eba5c92db0163fb01634fb"
+  }
+]

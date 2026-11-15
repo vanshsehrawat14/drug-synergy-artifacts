@@ -1,0 +1,56 @@
+{
+  "gp_his": {
+    "directory": "results\\neural\\runs\\gp_cap1500",
+    "folds": {
+      "0": {
+        "rows": 291456,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "1": {
+        "rows": 295296,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "2": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "3": {
+        "rows": 294336,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      },
+      "4": {
+        "rows": 299904,
+        "covers_test_rows_once": true,
+        "finite": true,
+        "cells": 39
+      }
+    },
+    "rows": 1475328,
+    "cells": 39,
+    "pairs_in_one_fold": true,
+    "selection": {
+      "validation_fold_is_next": true,
+      "training_rows_match_or_cap": true,
+      "training_rows_equal_available": true,
+      "one_selected_family_per_cell_fold": true
+    },
+    "passed": true,
+    "reproduced": [
+      {
+        "cell_line": "A2058",
+        "fold": 0,
+        "rows": 7552,
+        "max_abs_difference": 0.0,
+        "max_abs_std_difference": 0.0
+      }
+    ]
+  }
+}

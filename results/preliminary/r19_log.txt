@@ -1,0 +1,6 @@
+oneil_only_loewe
+oneil_only_bliss
+                           sse            ss  pooled_cr2
+panel                                                   
+oneil_only_bliss  4.661519e+05  4.673306e+05      0.0025
+oneil_only_loewe  1.422044e+06  2.050981e+06      0.3067

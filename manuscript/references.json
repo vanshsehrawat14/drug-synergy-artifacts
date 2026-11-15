@@ -1,0 +1,931 @@
+{
+ "oneil2016": {
+  "authors": [
+   "O'Neil J",
+   "Benita Y",
+   "Feldman I",
+   "Chenard M",
+   "Roberts B",
+   "Liu Y",
+   "Li J",
+   "Kral A",
+   "Lejnine S",
+   "Loboda A",
+   "Arthur W",
+   "Cristescu R",
+   "Haines BB",
+   "Winter C",
+   "Zhang T",
+   "Bloecher A",
+   "Shumway SD"
+  ],
+  "title": "An Unbiased Oncology Compound Screen to Identify Novel Combination Strategies",
+  "container": "Molecular Cancer Therapeutics",
+  "volume": "15",
+  "issue": "6",
+  "pages": "1155-1162",
+  "year": 2016,
+  "doi": "10.1158/1535-7163.MCT-15-0843",
+  "verified": "Crossref"
+ },
+ "holbeck2017": {
+  "authors": [
+   "Holbeck SL",
+   "Camalier R",
+   "Crowell JA",
+   "Govindharajulu JP",
+   "Hollingshead M",
+   "Anderson LW",
+   "Polley E",
+   "Rubinstein L",
+   "Srivastava A",
+   "Wilsker D",
+   "Collins JM",
+   "Doroshow JH"
+  ],
+  "title": "The National Cancer Institute ALMANAC: A Comprehensive Screening Resource for the Detection of Anticancer Drug Pairs with Enhanced Therapeutic Activity",
+  "container": "Cancer Research",
+  "volume": "77",
+  "issue": "13",
+  "pages": "3564-3576",
+  "year": 2017,
+  "doi": "10.1158/0008-5472.CAN-17-0489",
+  "verified": "Crossref"
+ },
+ "zagidullin2019": {
+  "authors": [
+   "Zagidullin B",
+   "Aldahdooh J",
+   "Zheng S",
+   "Wang W",
+   "Wang Y",
+   "Saad J",
+   "Malyutina A",
+   "Jafari M",
+   "Tanoli Z",
+   "Pessia A",
+   "Tang J"
+  ],
+  "title": "DrugComb: an integrative cancer drug combination data portal",
+  "container": "Nucleic Acids Research",
+  "volume": "47",
+  "issue": "W1",
+  "pages": "W43-W51",
+  "year": 2019,
+  "doi": "10.1093/nar/gkz337",
+  "verified": "Crossref"
+ },
+ "zheng2021": {
+  "authors": [
+   "Zheng S",
+   "Aldahdooh J",
+   "Shadbahr T",
+   "Wang Y",
+   "Aldahdooh D",
+   "Bao J",
+   "Wang W",
+   "Tang J"
+  ],
+  "title": "DrugComb update: a more comprehensive drug sensitivity data repository and analysis portal",
+  "container": "Nucleic Acids Research",
+  "volume": "49",
+  "issue": "W1",
+  "pages": "W174-W184",
+  "year": 2021,
+  "doi": "10.1093/nar/gkab438",
+  "verified": "Crossref"
+ },
+ "ianevski2017": {
+  "authors": [
+   "Ianevski A",
+   "He L",
+   "Aittokallio T",
+   "Tang J"
+  ],
+  "title": "SynergyFinder: a web application for analyzing drug combination dose–response matrix data",
+  "container": "Bioinformatics",
+  "volume": "33",
+  "issue": "15",
+  "pages": "2413-2415",
+  "year": 2017,
+  "doi": "10.1093/bioinformatics/btx162",
+  "verified": "Crossref"
+ },
+ "ianevski2020": {
+  "authors": [
+   "Ianevski A",
+   "Giri AK",
+   "Aittokallio T"
+  ],
+  "title": "SynergyFinder 2.0: visual analytics of multi-drug combination synergies",
+  "container": "Nucleic Acids Research",
+  "volume": "48",
+  "issue": "W1",
+  "pages": "W488-W493",
+  "year": 2020,
+  "doi": "10.1093/nar/gkaa216",
+  "verified": "Crossref"
+ },
+ "ianevski2022": {
+  "authors": [
+   "Ianevski A",
+   "Giri AK",
+   "Aittokallio T"
+  ],
+  "title": "SynergyFinder 3.0: an interactive analysis and consensus interpretation of multi-drug synergies across multiple samples",
+  "container": "Nucleic Acids Research",
+  "volume": "50",
+  "issue": "W1",
+  "pages": "W739-W743",
+  "year": 2022,
+  "doi": "10.1093/nar/gkac382",
+  "verified": "Crossref"
+ },
+ "ritz2015": {
+  "authors": [
+   "Ritz C",
+   "Baty F",
+   "Streibig JC",
+   "Gerhard D"
+  ],
+  "title": "Dose-Response Analysis Using R",
+  "container": "PLOS ONE",
+  "volume": "10",
+  "issue": "12",
+  "pages": "e0146021",
+  "year": 2015,
+  "doi": "10.1371/journal.pone.0146021",
+  "verified": "Crossref"
+ },
+ "bliss1939": {
+  "authors": [
+   "Bliss CI"
+  ],
+  "title": "The toxicity of poisons applied jointly",
+  "container": "Annals of Applied Biology",
+  "volume": "26",
+  "issue": "3",
+  "pages": "585-615",
+  "year": 1939,
+  "doi": "10.1111/j.1744-7348.1939.tb06990.x",
+  "verified": "Crossref"
+ },
+ "loewe1926": {
+  "authors": [
+   "Loewe S",
+   "Muischnek H"
+  ],
+  "title": "Über Kombinationswirkungen",
+  "container": "Archiv für Experimentelle Pathologie und Pharmakologie",
+  "volume": "114",
+  "issue": "5-6",
+  "pages": "313-326",
+  "year": 1926,
+  "doi": "10.1007/BF01952257",
+  "verified": "Crossref"
+ },
+ "tang2015": {
+  "authors": [
+   "Tang J",
+   "Wennerberg K",
+   "Aittokallio T"
+  ],
+  "title": "What is synergy? The Saariselkä agreement revisited",
+  "container": "Frontiers in Pharmacology",
+  "volume": "6",
+  "issue": null,
+  "pages": null,
+  "year": 2015,
+  "doi": "10.3389/fphar.2015.00181",
+  "verified": "Crossref"
+ },
+ "yadav2015": {
+  "authors": [
+   "Yadav B",
+   "Wennerberg K",
+   "Aittokallio T",
+   "Tang J"
+  ],
+  "title": "Searching for Drug Synergy in Complex Dose–Response Landscapes Using an Interaction Potency Model",
+  "container": "Computational and Structural Biotechnology Journal",
+  "volume": "13",
+  "issue": null,
+  "pages": "504-513",
+  "year": 2015,
+  "doi": "10.1016/j.csbj.2015.09.001",
+  "verified": "Crossref"
+ },
+ "meyer2019": {
+  "authors": [
+   "Meyer CT",
+   "Wooten DJ",
+   "Paudel BB",
+   "Bauer J",
+   "Hardeman KN",
+   "Westover D",
+   "Lovly CM",
+   "Harris LA",
+   "Tyson DR",
+   "Quaranta V"
+  ],
+  "title": "Quantifying Drug Combination Synergy along Potency and Efficacy Axes",
+  "container": "Cell Systems",
+  "volume": "8",
+  "issue": "2",
+  "pages": "97-108.e16",
+  "year": 2019,
+  "doi": "10.1016/j.cels.2019.01.003",
+  "verified": "Crossref"
+ },
+ "wooten2021musyc": {
+  "authors": [
+   "Wooten DJ",
+   "Meyer CT",
+   "Lubbock ALR",
+   "Quaranta V",
+   "Lopez CF"
+  ],
+  "title": "MuSyC is a consensus framework that unifies multi-drug synergy metrics for combinatorial drug discovery",
+  "container": "Nature Communications",
+  "volume": "12",
+  "issue": "1",
+  "pages": "4607",
+  "year": 2021,
+  "doi": "10.1038/s41467-021-24789-z",
+  "verified": "Crossref"
+ },
+ "vanderborght2017": {
+  "authors": [
+   "Van der Borght K",
+   "Tourny A",
+   "Bagdziunas R",
+   "Thas O",
+   "Nazarov M",
+   "Turner H",
+   "Verbist B",
+   "Ceulemans H"
+  ],
+  "title": "BIGL: Biochemically Intuitive Generalized Loewe null model for prediction of the expected combined effect compatible with partial agonism and antagonism",
+  "container": "Scientific Reports",
+  "volume": "7",
+  "issue": "1",
+  "pages": "17935",
+  "year": 2017,
+  "doi": "10.1038/s41598-017-18068-5",
+  "verified": "Crossref"
+ },
+ "grabovsky2004": {
+  "authors": [
+   "Grabovsky Y",
+   "Tallarida RJ"
+  ],
+  "title": "Isobolographic Analysis for Combinations of a Full and Partial Agonist: Curved Isoboles",
+  "container": "The Journal of Pharmacology and Experimental Therapeutics",
+  "volume": "310",
+  "issue": "3",
+  "pages": "981-986",
+  "year": 2004,
+  "doi": "10.1124/jpet.104.067264",
+  "verified": "Crossref"
+ },
+ "twarog2016": {
+  "authors": [
+   "Twarog NR",
+   "Stewart E",
+   "Hammill CV",
+   "Shelat AA"
+  ],
+  "title": "BRAID: A Unifying Paradigm for the Analysis of Combined Drug Action",
+  "container": "Scientific Reports",
+  "volume": "6",
+  "issue": "1",
+  "pages": "25523",
+  "year": 2016,
+  "doi": "10.1038/srep25523",
+  "verified": "Crossref"
+ },
+ "twarog2020": {
+  "authors": [
+   "Twarog NR",
+   "Connelly M",
+   "Shelat AA"
+  ],
+  "title": "A critical evaluation of methods to interpret drug combinations",
+  "container": "Scientific Reports",
+  "volume": "10",
+  "issue": "1",
+  "pages": "5144",
+  "year": 2020,
+  "doi": "10.1038/s41598-020-61923-1",
+  "verified": "Crossref"
+ },
+ "lederer2019": {
+  "authors": [
+   "Lederer S",
+   "Dijkstra TMH",
+   "Heskes T"
+  ],
+  "title": "Additive Dose Response Models: Defining Synergy",
+  "container": "Frontiers in Pharmacology",
+  "volume": "10",
+  "issue": null,
+  "pages": "1384",
+  "year": 2019,
+  "doi": "10.3389/fphar.2019.01384",
+  "verified": "Crossref"
+ },
+ "vlot2019": {
+  "authors": [
+   "Vlot AH",
+   "Aniceto N",
+   "Menden MP",
+   "Ulrich-Merzenich G",
+   "Bender A"
+  ],
+  "title": "Applying synergy metrics to combination screening data: agreements, disagreements and pitfalls",
+  "container": "Drug Discovery Today",
+  "volume": "24",
+  "issue": "12",
+  "pages": "2286-2298",
+  "year": 2019,
+  "doi": "10.1016/j.drudis.2019.09.002",
+  "verified": "Crossref"
+ },
+ "wooten2021synergy": {
+  "authors": [
+   "Wooten DJ",
+   "Albert R"
+  ],
+  "title": "synergy: a Python library for calculating, analyzing and visualizing drug combination synergy",
+  "container": "Bioinformatics",
+  "volume": "37",
+  "issue": "10",
+  "pages": "1473-1474",
+  "year": 2021,
+  "doi": "10.1093/bioinformatics/btaa826",
+  "verified": "Crossref"
+ },
+ "malyutina2019": {
+  "authors": [
+   "Malyutina A",
+   "Majumder MM",
+   "Wang W",
+   "Pessia A",
+   "Heckman CA",
+   "Tang J"
+  ],
+  "title": "Drug combination sensitivity scoring facilitates the discovery of synergistic and efficacious drug combinations in cancer",
+  "container": "PLOS Computational Biology",
+  "volume": "15",
+  "issue": "5",
+  "pages": "e1006752",
+  "year": 2019,
+  "doi": "10.1371/journal.pcbi.1006752",
+  "verified": "Crossref"
+ },
+ "geary2013": {
+  "authors": [
+   "Geary N"
+  ],
+  "title": "Understanding synergy",
+  "container": "American Journal of Physiology-Endocrinology and Metabolism",
+  "volume": "304",
+  "issue": "3",
+  "pages": "E237-E253",
+  "year": 2013,
+  "doi": "10.1152/ajpendo.00308.2012",
+  "verified": "Crossref"
+ },
+ "chou2006": {
+  "authors": [
+   "Chou TC"
+  ],
+  "title": "Theoretical Basis, Experimental Design, and Computerized Simulation of Synergism and Antagonism in Drug Combination Studies",
+  "container": "Pharmacological Reviews",
+  "volume": "58",
+  "issue": "3",
+  "pages": "621-681",
+  "year": 2006,
+  "doi": "10.1124/pr.58.3.10",
+  "verified": "Crossref"
+ },
+ "preuer2018": {
+  "authors": [
+   "Preuer K",
+   "Lewis RPI",
+   "Hochreiter S",
+   "Bender A",
+   "Bulusu KC",
+   "Klambauer G"
+  ],
+  "title": "DeepSynergy: predicting anti-cancer drug synergy with Deep Learning",
+  "container": "Bioinformatics",
+  "volume": "34",
+  "issue": "9",
+  "pages": "1538-1546",
+  "year": 2018,
+  "doi": "10.1093/bioinformatics/btx806",
+  "verified": "Crossref"
+ },
+ "candir2026": {
+  "authors": [
+   "Çandır EB",
+   "Kuru Hİ",
+   "Rattray M",
+   "Çiçek AE",
+   "Tastan O"
+  ],
+  "title": "One-hot news: drug synergy models shortcut molecular features",
+  "container": "Bioinformatics",
+  "volume": "42",
+  "issue": "3",
+  "pages": "btag040",
+  "year": 2026,
+  "doi": "10.1093/bioinformatics/btag040",
+  "verified": "Crossref"
+ },
+ "tasnina2025": {
+  "authors": [
+   "Tasnina N",
+   "Haghani M",
+   "Murali TM"
+  ],
+  "title": "SynVerse: a modular framework for building and evaluating deep learning-based drug synergy prediction models",
+  "container": "Briefings in Bioinformatics",
+  "volume": "26",
+  "issue": "6",
+  "pages": "bbaf676",
+  "year": 2025,
+  "doi": "10.1093/bib/bbaf676",
+  "verified": "Crossref"
+ },
+ "park2012": {
+  "authors": [
+   "Park Y",
+   "Marcotte EM"
+  ],
+  "title": "Flaws in evaluation schemes for pair-input computational predictions",
+  "container": "Nature Methods",
+  "volume": "9",
+  "issue": "12",
+  "pages": "1134-1136",
+  "year": 2012,
+  "doi": "10.1038/nmeth.2259",
+  "verified": "Crossref"
+ },
+ "menden2019": {
+  "authors": [
+   "Menden MP",
+   "Wang D",
+   "Mason MJ",
+   "AstraZeneca-Sanger Drug Combination DREAM Consortium"
+  ],
+  "title": "Community assessment to advance computational prediction of cancer drug combinations in a pharmacogenomic screen",
+  "container": "Nature Communications",
+  "volume": "10",
+  "issue": "1",
+  "pages": "2674",
+  "year": 2019,
+  "doi": "10.1038/s41467-019-09799-2",
+  "verified": "Crossref"
+ },
+ "julkunen2020": {
+  "authors": [
+   "Julkunen H",
+   "Cichonska A",
+   "Gautam P",
+   "Szedmak S",
+   "Douat J",
+   "Pahikkala T",
+   "Aittokallio T",
+   "Rousu J"
+  ],
+  "title": "Leveraging multi-way interactions for systematic prediction of pre-clinical drug combination effects",
+  "container": "Nature Communications",
+  "volume": "11",
+  "issue": "1",
+  "pages": "6136",
+  "year": 2020,
+  "doi": "10.1038/s41467-020-19950-z",
+  "verified": "Crossref"
+ },
+ "bertin2023": {
+  "authors": [
+   "Bertin P",
+   "Rector-Brooks J",
+   "Sharma D",
+   "Gaudelet T",
+   "Anighoro A",
+   "Gross T",
+   "Martínez-Peña F",
+   "Tang EL",
+   "Suraj M",
+   "Regep C",
+   "Hayter JB",
+   "Korablyov M",
+   "Valiante N",
+   "van der Sloot A",
+   "Tyers M",
+   "Roberts CE",
+   "Bronstein MM",
+   "Lairson LL",
+   "Taylor-King JP",
+   "Bengio Y"
+  ],
+  "title": "RECOVER identifies synergistic drug combinations in vitro through sequential model optimization",
+  "container": "Cell Reports Methods",
+  "volume": "3",
+  "issue": "10",
+  "pages": "100599",
+  "year": 2023,
+  "doi": "10.1016/j.crmeth.2023.100599",
+  "verified": "Crossref"
+ },
+ "zhang2023harmonizing": {
+  "authors": [
+   "Zhang H",
+   "Wang Z",
+   "Nan Y",
+   "Zagidullin B",
+   "Yi D",
+   "Tang J",
+   "Guan Y"
+  ],
+  "title": "Harmonizing across datasets to improve the transferability of drug combination prediction",
+  "container": "Communications Biology",
+  "volume": "6",
+  "issue": "1",
+  "pages": "397",
+  "year": 2023,
+  "doi": "10.1038/s42003-023-04783-5",
+  "verified": "Crossref"
+ },
+ "zhang2023synba": {
+  "authors": [
+   "Zhang H",
+   "Ek CH",
+   "Rattray M",
+   "Milo M"
+  ],
+  "title": "SynBa: improved estimation of drug combination synergies with uncertainty quantification",
+  "container": "Bioinformatics",
+  "volume": "39",
+  "issue": "Supplement_1",
+  "pages": "i121-i130",
+  "year": 2023,
+  "doi": "10.1093/bioinformatics/btad240",
+  "verified": "Crossref"
+ },
+ "bernett2024": {
+  "authors": [
+   "Bernett J",
+   "Blumenthal DB",
+   "Grimm DG",
+   "Haselbeck F",
+   "Joeres R",
+   "Kalinina OV",
+   "List M"
+  ],
+  "title": "Guiding questions to avoid data leakage in biological machine learning applications",
+  "container": "Nature Methods",
+  "volume": "21",
+  "issue": "8",
+  "pages": "1444-1453",
+  "year": 2024,
+  "doi": "10.1038/s41592-024-02362-y",
+  "verified": "Crossref"
+ },
+ "ianevski2019": {
+  "authors": [
+   "Ianevski A",
+   "Giri AK",
+   "Gautam P",
+   "Kononov A",
+   "Potdar S",
+   "Saarela J",
+   "Wennerberg K",
+   "Aittokallio T"
+  ],
+  "title": "Prediction of drug combination effects with a minimal set of experiments",
+  "container": "Nature Machine Intelligence",
+  "volume": "1",
+  "issue": "12",
+  "pages": "568-577",
+  "year": 2019,
+  "doi": "10.1038/s42256-019-0122-4",
+  "verified": "Crossref"
+ },
+ "sarwar2001": {
+  "authors": [
+   "Sarwar B",
+   "Karypis G",
+   "Konstan J",
+   "Riedl J"
+  ],
+  "title": "Item-based collaborative filtering recommendation algorithms",
+  "container": "Proceedings of the 10th international conference on World Wide Web",
+  "volume": null,
+  "issue": null,
+  "pages": "285-295",
+  "year": 2001,
+  "doi": "10.1145/371920.372071",
+  "verified": "Crossref"
+ },
+ "koren2008": {
+  "authors": [
+   "Koren Y"
+  ],
+  "title": "Factorization meets the neighborhood",
+  "container": "Proceedings of the 14th ACM SIGKDD international conference on Knowledge discovery and data mining",
+  "volume": null,
+  "issue": null,
+  "pages": "426-434",
+  "year": 2008,
+  "doi": "10.1145/1401890.1401944",
+  "verified": "Crossref"
+ },
+ "aronow2015": {
+  "authors": [
+   "Aronow PM",
+   "Samii C",
+   "Assenova VA"
+  ],
+  "title": "Cluster–Robust Variance Estimation for Dyadic Data",
+  "container": "Political Analysis",
+  "volume": "23",
+  "issue": "4",
+  "pages": "564-577",
+  "year": 2015,
+  "doi": "10.1093/pan/mpv018",
+  "verified": "Crossref"
+ },
+ "lagecastellanos2019": {
+  "authors": [
+   "Lage-Castellanos A",
+   "Valente G",
+   "Formisano E",
+   "De Martino F"
+  ],
+  "title": "Methods for computing the maximum performance of computational models of fMRI responses",
+  "container": "PLOS Computational Biology",
+  "volume": "15",
+  "issue": "3",
+  "pages": "e1006397",
+  "year": 2019,
+  "doi": "10.1371/journal.pcbi.1006397",
+  "verified": "Crossref"
+ },
+ "schoppe2016": {
+  "authors": [
+   "Schoppe O",
+   "Harper NS",
+   "Willmore BDB",
+   "King AJ",
+   "Schnupp JWH"
+  ],
+  "title": "Measuring the Performance of Neural Models",
+  "container": "Frontiers in Computational Neuroscience",
+  "volume": "10",
+  "issue": null,
+  "pages": null,
+  "year": 2016,
+  "doi": "10.3389/fncom.2016.00010",
+  "verified": "Crossref"
+ },
+ "loewe1953": {
+  "authors": [
+   "Loewe S"
+  ],
+  "title": "The problem of synergism and antagonism of combined drugs",
+  "container": "Arzneimittelforschung",
+  "volume": "3",
+  "issue": "6",
+  "pages": "285-290",
+  "year": 1953,
+  "pmid": "13081480",
+  "verified": "PubMed"
+ },
+ "berenbaum1989": {
+  "authors": [
+   "Berenbaum MC"
+  ],
+  "title": "What is synergy?",
+  "container": "Pharmacological Reviews",
+  "volume": "41",
+  "issue": "2",
+  "pages": "93-141",
+  "year": 1989,
+  "pmid": "2692037",
+  "verified": "PubMed"
+ },
+ "greco1995": {
+  "authors": [
+   "Greco WR",
+   "Bravo G",
+   "Parsons JC"
+  ],
+  "title": "The search for synergy: a critical review from a response surface perspective",
+  "container": "Pharmacological Reviews",
+  "volume": "47",
+  "issue": "2",
+  "pages": "331-385",
+  "year": 1995,
+  "pmid": "7568331",
+  "verified": "PubMed"
+ },
+ "abbasi2024": {
+  "authors": [
+   "Abbasi F",
+   "Rousu J"
+  ],
+  "title": "New methods for drug synergy prediction: a mini-review",
+  "container": "arXiv",
+  "volume": null,
+  "issue": null,
+  "pages": "2404.02484",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2404.02484",
+  "verified": "arXiv API"
+ },
+ "bertin2022": {
+  "authors": [
+   "Bertin P",
+   "Rector-Brooks J",
+   "Sharma D",
+   "Gaudelet T",
+   "Anighoro A",
+   "Gross T"
+  ],
+  "title": "RECOVER: sequential model optimization platform for combination drug repurposing identifies novel synergistic compounds in vitro",
+  "container": "arXiv",
+  "volume": null,
+  "issue": null,
+  "pages": "2202.04202",
+  "year": 2022,
+  "url": "https://arxiv.org/abs/2202.04202",
+  "verified": "arXiv API"
+ },
+ "majha2024": {
+  "authors": [
+   "Majha AGK",
+   "Stott I",
+   "Bender A"
+  ],
+  "title": "On modelability and generalizability: are machine learning models for drug synergy exploiting artefacts and biases in available data?",
+  "container": "Proceedings of Machine Learning Research",
+  "volume": "240",
+  "issue": null,
+  "pages": "123-134",
+  "year": 2024,
+  "url": "https://proceedings.mlr.press/v240/majha24a.html",
+  "verified": "PMLR page"
+ },
+ "hasselman_nleqslv": {
+  "authors": [
+   "Hasselman B"
+  ],
+  "title": "nleqslv: Solve Systems of Nonlinear Equations. R package version 3.3.2",
+  "container": "CRAN",
+  "volume": null,
+  "issue": null,
+  "pages": null,
+  "year": 2018,
+  "url": "https://cran.r-project.org/package=nleqslv",
+  "verified": "CRAN archive listing"
+ },
+ "synergyfinder_source": {
+  "authors": [],
+  "title": "synergyfinder R/Bioconductor package source, versions 2.0.3 (commit aa414fa, 12 November 2019) and 3.7.4",
+  "container": "Bioconductor",
+  "volume": null,
+  "issue": null,
+  "pages": null,
+  "year": 2019,
+  "url": "https://github.com/bioc/synergyfinder",
+  "verified": "GitHub API, source files"
+ },
+ "tosh2025": {
+  "authors": [
+   "Tosh C",
+   "Tec M",
+   "White JB",
+   "Quinn JF",
+   "Ibanez Sanchez G",
+   "Calder P",
+   "Kung AL",
+   "Dela Cruz FS",
+   "Tansey W"
+  ],
+  "title": "A Bayesian active learning platform for scalable combination drug screens",
+  "container": "Nature Communications",
+  "volume": "16",
+  "issue": null,
+  "pages": "156",
+  "year": 2025,
+  "doi": "10.1038/s41467-024-55287-7",
+  "verified": "Crossref 2026-11-10"
+ },
+ "wang2025": {
+  "authors": [
+   "Wang S",
+   "Allauzen A",
+   "Nghe P",
+   "Opuu V"
+  ],
+  "title": "A guide for active learning in synergistic drug discovery",
+  "container": "Scientific Reports",
+  "volume": "15",
+  "issue": null,
+  "pages": "3484",
+  "year": 2025,
+  "doi": "10.1038/s41598-025-85600-3",
+  "verified": "Crossref 2026-11-10"
+ },
+ "asiaee2026": {
+  "authors": [
+   "Asiaee A",
+   "Long JP",
+   "Pal S",
+   "Pua HH",
+   "Coombes KR"
+  ],
+  "title": "A shape-constrained regression and wild bootstrap framework for reproducible drug synergy testing",
+  "container": "bioRxiv",
+  "volume": null,
+  "issue": null,
+  "pages": "2026.02.05.704019",
+  "year": 2026,
+  "doi": "10.64898/2026.02.05.704019",
+  "verified": "PMC (PMC13060067, version 2)"
+ },
+ "kuru2022matchmaker": {
+  "authors": [
+   "Kuru HI",
+   "Tastan O",
+   "Cicek AE"
+  ],
+  "title": "MatchMaker: A Deep Learning Framework for Drug Synergy Prediction",
+  "container": "IEEE/ACM Transactions on Computational Biology and Bioinformatics",
+  "volume": "19",
+  "issue": "4",
+  "pages": "2334-2344",
+  "year": 2022,
+  "doi": "10.1109/tcbb.2021.3086702",
+  "verified": "Crossref and primary full text, 2026-11-15"
+ },
+ "wang2022deepdds": {
+  "authors": [
+   "Wang J",
+   "Liu X",
+   "Shen S",
+   "Deng L",
+   "Liu H"
+  ],
+  "title": "DeepDDS: deep graph neural network with attention mechanism to predict synergistic drug combinations",
+  "container": "Briefings in Bioinformatics",
+  "volume": "23",
+  "issue": "1",
+  "pages": "bbab390",
+  "year": 2022,
+  "doi": "10.1093/bib/bbab390",
+  "verified": "Crossref and primary full text, 2026-11-15"
+ },
+ "li2024jointsyn": {
+  "authors": [
+   "Li X",
+   "Shen B",
+   "Feng F",
+   "Li K",
+   "Tang Z",
+   "Ma L",
+   "Li H"
+  ],
+  "title": "Dual-view jointly learning improves personalized drug synergy prediction",
+  "container": "Bioinformatics",
+  "volume": "40",
+  "issue": "10",
+  "pages": "btae604",
+  "year": 2024,
+  "doi": "10.1093/bioinformatics/btae604",
+  "verified": "Crossref and primary full text, 2026-11-15"
+ },
+ "kuru2026deepsynba": {
+  "authors": [
+   "Kuru HI",
+   "Zhang H",
+   "Rattray M",
+   "Ek CH",
+   "Cicek AE",
+   "Tastan O",
+   "Milo M"
+  ],
+  "title": "DeepSynBa: actionable drug combination prediction with complete dose-response profiles",
+  "container": "Bioinformatics",
+  "volume": "42",
+  "issue": "7",
+  "pages": "btag416",
+  "year": 2026,
+  "doi": "10.1093/bioinformatics/btag416",
+  "verified": "Crossref and primary full text, 2026-11-15"
+ }
+}

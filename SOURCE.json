@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "development_source_commit": "47f310dcf35a61f870a86bb3d8adf8fe597ea3f8",
+  "repository": "https://github.com/vanshsehrawat14/drug-synergy-artifacts",
+  "version": "0.1.0",
+  "scope": "Research code, protocols, frozen scientific summaries, manuscript and supplement",
+  "source_text_encoding": "UTF-8 with LF",
+  "manifest_sha256": "b8e31cceaa9d5bd6ff2d1e862cb0cbe90e737ec0b4559c92d161cc159e07cf29",
+  "artifacts": {
+    "manuscript/manuscript.pdf": {
+      "sha256": "47209785a8f6489f68ebdf919323b60ef14fe6d12165f238282ed650069ba442"
+    },
+    "manuscript/supplement.pdf": {
+      "sha256": "8338dd8a1dc6ceeb244aeda6d2704c17054d96549ff301606932711dc15f9966"
+    },
+    "manuscript/figures/MANIFEST.json": {
+      "sha256": "6b0307897ce33c9a66e4c34a87525de5704d49690c4ed1814832fd8055e56507"
+    }
+  },
+  "validation": {
+    "python": "3.14",
+    "tests": {
+      "passed": 140,
+      "skipped": 1,
+      "skip_reason": "Original CF real-data target matrix is not redistributed."
+    },
+    "numerical_checks": {
+      "passed": 132,
+      "original": 116,
+      "additional_existing_DeepSynergy_checks": 16
+    },
+    "manuscript": {
+      "pages": 27,
+      "citations": 49,
+      "undefined_references": 0,
+      "missing_glyphs": 0,
+      "overfull_boxes": 0
+    },
+    "supplement": {
+      "pages": 24,
+      "citations": 8,
+      "undefined_references": 0,
+      "missing_glyphs": 0,
+      "overfull_boxes": 0
+    },
+    "engineering_smoke": "passed; synthetic fixtures, no scientific training",
+    "import_check": "Research package and original GP source resolve within this checkout.",
+    "gate2_protocol_sha256": "cc3051abd6e59205e5990088f66830bf050084773dadd19bdad799f7fe91c88b"
+  },
+  "notes": [
+    "Independent repository history begins with the curated research snapshot.",
+    "Frozen scientific CSV bytes and numerical JSON values are preserved.",
+    "Site-specific launch scripts, operational logs, presentation files and original input datasets are omitted.",
+    "Historical commit identifiers record provenance; new runs use this checkout.",
+    "Host and path metadata are redacted; historical artifact hashes identify their original bytes."
+  ]
+}

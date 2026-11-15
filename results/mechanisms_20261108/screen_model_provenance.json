@@ -1,0 +1,166 @@
+[
+  {
+    "screen": "ONEIL",
+    "rows": 1475328,
+    "all_targets_valid": true,
+    "all_doses_valid": true,
+    "units": [
+      "uM"
+    ],
+    "features": {
+      "regime": "F2",
+      "mono_missing": "interpolate"
+    },
+    "model": {
+      "kind": "dose",
+      "hidden": [
+        512,
+        256
+      ],
+      "encoder_dim": 64,
+      "dropout": 0.3,
+      "encoder_layers": 2
+    },
+    "training": {
+      "epochs": 200,
+      "batch_size": 1024,
+      "lr": 0.001,
+      "weight_decay": 0.0001,
+      "patience": 20,
+      "threads": 4,
+      "device": "cuda",
+      "eval_batch_size": 16384,
+      "scheduler": {
+        "kind": "plateau",
+        "factor": 0.5,
+        "patience": 5,
+        "min_lr": 1e-05
+      }
+    },
+    "folds_match": true,
+    "dataset_sha256": "ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b"
+  },
+  {
+    "screen": "ALMANAC",
+    "rows": 2871834,
+    "all_targets_valid": true,
+    "all_doses_valid": true,
+    "units": [
+      "uM"
+    ],
+    "features": {
+      "regime": "F2",
+      "mono_missing": "interpolate"
+    },
+    "model": {
+      "kind": "dose",
+      "hidden": [
+        512,
+        256
+      ],
+      "encoder_dim": 64,
+      "dropout": 0.3,
+      "encoder_layers": 2
+    },
+    "training": {
+      "epochs": 200,
+      "batch_size": 1024,
+      "lr": 0.001,
+      "weight_decay": 0.0001,
+      "patience": 20,
+      "threads": 4,
+      "device": "cuda",
+      "eval_batch_size": 16384,
+      "scheduler": {
+        "kind": "plateau",
+        "factor": 0.5,
+        "patience": 5,
+        "min_lr": 1e-05
+      }
+    },
+    "folds_match": true,
+    "dataset_sha256": "020621a651620d7f5d18d3fd1ccc005f731366ee433eee83c75029a8ba67a078"
+  },
+  {
+    "screen": "NCATS_ES",
+    "rows": 112165,
+    "all_targets_valid": true,
+    "all_doses_valid": true,
+    "units": [
+      "uM"
+    ],
+    "features": {
+      "regime": "F2",
+      "mono_missing": "interpolate"
+    },
+    "model": {
+      "kind": "dose",
+      "hidden": [
+        512,
+        256
+      ],
+      "encoder_dim": 64,
+      "dropout": 0.3,
+      "encoder_layers": 2
+    },
+    "training": {
+      "epochs": 200,
+      "batch_size": 1024,
+      "lr": 0.001,
+      "weight_decay": 0.0001,
+      "patience": 20,
+      "threads": 4,
+      "device": "cuda",
+      "eval_batch_size": 16384,
+      "scheduler": {
+        "kind": "plateau",
+        "factor": 0.5,
+        "patience": 5,
+        "min_lr": 1e-05
+      }
+    },
+    "folds_match": true,
+    "dataset_sha256": "872056a00c930ece72d7230fc69daf360d372eba69e03ace0accf81b850ffd27"
+  },
+  {
+    "screen": "NCATS_DIPG",
+    "rows": 224708,
+    "all_targets_valid": true,
+    "all_doses_valid": true,
+    "units": [
+      "uM"
+    ],
+    "features": {
+      "regime": "F2",
+      "mono_missing": "interpolate"
+    },
+    "model": {
+      "kind": "dose",
+      "hidden": [
+        512,
+        256
+      ],
+      "encoder_dim": 64,
+      "dropout": 0.3,
+      "encoder_layers": 2
+    },
+    "training": {
+      "epochs": 200,
+      "batch_size": 1024,
+      "lr": 0.001,
+      "weight_decay": 0.0001,
+      "patience": 20,
+      "threads": 4,
+      "device": "cuda",
+      "eval_batch_size": 16384,
+      "scheduler": {
+        "kind": "plateau",
+        "factor": 0.5,
+        "patience": 5,
+        "min_lr": 1e-05
+      }
+    },
+    "folds_match": true,
+    "dataset_sha256": "836e245a0c0dc6937b93a97c7d19eddfa25a76d3d2b596428322f825cb088af8"
+  }
+]

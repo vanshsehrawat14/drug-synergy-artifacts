@@ -1,0 +1,358 @@
+{
+ "figures": {
+  "fig1_dose_response": {
+   "outputs": {
+    "pdf": "0a87f8989c3feeb78b83e4489a5bf4bee66d7f2021ca33bc5fabfe5c1498fa5f",
+    "png": "54bf35a21f9291d0ad0db3c2fe11aa8d4d4edc17affe59d4b099a124a672e06e"
+   },
+   "inputs": {
+    "native_panel": {
+     "file": "panel.parquet",
+     "sha256": "cc314c726f7e161dab0d49cc2edc49606805b1a2945889bdf68e0f527456a9bc"
+    },
+    "observations": {
+     "file": "observations.parquet",
+     "sha256": "ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b"
+    },
+    "surfaces": {
+     "file": "surface_cases.parquet",
+     "sha256": "69e2c76476c8d14aa3c289b0a98ad6703b40b7eb9ad903f9e2df2cd1d4e23528"
+    },
+    "targets": {
+     "file": "pair_cell_targets.parquet",
+     "sha256": "f6ae95583992b6a44628ee7faac174fb3feba38ea2c2a0fb6f68dcc5f3b325bf"
+    }
+   },
+   "notes": {
+    "selection": "pair-cells measured in one batch (n = 22422 of 22737) with Bliss pair-cell contrast closest to the 5th, 50th and 95th percentiles of all values",
+    "cases": [
+     {
+      "pct": 5,
+      "quantile": -5.977824800415741,
+      "drug_a": "DINACICLIB",
+      "drug_b": "MK2206",
+      "cell_line": "NCIH2122",
+      "t_bliss": -5.977300023043233,
+      "surface_id": 10605,
+      "m_pc": 3.7107598563664013
+     },
+     {
+      "pct": 50,
+      "quantile": -0.016221318909821925,
+      "drug_a": "BEZ235",
+      "drug_b": "SN38",
+      "cell_line": "DLD1",
+      "t_bliss": -0.016221318909821925,
+      "surface_id": 3503,
+      "m_pc": 4.853282211417278
+     },
+     {
+      "pct": 95,
+      "quantile": 6.360919144698729,
+      "drug_a": "L778123",
+      "drug_b": "MK5108",
+      "cell_line": "CAOV3",
+      "t_bliss": 6.360613133725901,
+      "surface_id": 2530,
+      "m_pc": 7.033202563925876
+     }
+    ]
+   }
+  },
+  "fig2_design": {
+   "outputs": {
+    "pdf": "b4cfe5db85d1e1f1073e14f69381addde2a8df04d9783544f92a593b964227b4",
+    "png": "13ec9cbdf56a848540d05b63280061fa762cdc587926c09eec516071d9c63447"
+   },
+   "inputs": {},
+   "notes": {
+    "type": "schematic; fold assignments are illustrative, not the published folds"
+   }
+  },
+  "fig3_response_interaction": {
+   "outputs": {
+    "pdf": "d33caeff3a5ebd2e0a24a875c11fb373ceb5ca932feb1306585a5a51f80efc4f",
+    "png": "84b2e015b3c44b2bc512ab05d4c9f270e85261e2f390019c04b6e740df66f2d6"
+   },
+   "inputs": {
+    "error_decomposition": {
+     "file": "error_decomposition.csv",
+     "sha256": "f475aab09e8849a305f7302f3ff237384ef160e1137558aaf8e8fdf99ad76e7e"
+    },
+    "interaction_audit": {
+     "file": "interaction_audit.json",
+     "sha256": "fd2e5c957d2b2a5338da747b30b197bc621bc40f3bb407ebb76face38c4f6d53"
+    },
+    "pairseen_audit": {
+     "file": "pairseen_audit.json",
+     "sha256": "bfb7a55b8a3de38429f3146fef738a267304f33636cd0cad0887355f3ac3ffb4"
+    },
+    "resolution_cache": {
+     "file": "cache.npz",
+     "sha256": "91f93811dedf5c0721198146638c21f25b1616d43f43ae9322cf8790a7e86687"
+    },
+    "resolution_inputs": {
+     "file": "inputs.json",
+     "sha256": "8b81e6e3f526e232f0269c826ad26dcbe8f0466297521e2cf60b68696afc78f4"
+    },
+    "variance_shares": {
+     "file": "variance.json",
+     "sha256": "4393fa99455217fe29709a0761fa0c4a5fbf42cbf9226fdc529110cc37f3284c"
+    }
+   }
+  },
+  "fig4_decomposition": {
+   "outputs": {
+    "pdf": "56b87e32a96560a6ff98fab53d13f546bf7a04253e12eba3f0dfce6d6d5b8f2b",
+    "png": "1f687eb2d86cfc2a2c8a2b1cc3670c5850f481d6f10075c87bb1d760b89a8f3c"
+   },
+   "inputs": {
+    "cross_batch": {
+     "file": "cross_batch_values.csv",
+     "sha256": "1dfd133315ea28de99be75024efe9b1bf71705e902a465148ede588c9d060735"
+    },
+    "targets": {
+     "file": "pair_cell_targets.parquet",
+     "sha256": "f6ae95583992b6a44628ee7faac174fb3feba38ea2c2a0fb6f68dcc5f3b325bf"
+    },
+    "variance_components": {
+     "file": "variance_components.json",
+     "sha256": "3b9c1ee652d0ace9c9e0e1930897b83b901432803f7b105cf46bbc07570aa4ee"
+    }
+   },
+   "notes": {
+    "heatmap_clip": 12.0,
+    "pairs": 583,
+    "cells": 39
+   }
+  },
+  "fig5_same_pair": {
+   "outputs": {
+    "pdf": "649b938f01a854fa88b9cd2ea9579ff8a7b67cfdf17e03f138dd8978c162919d",
+    "png": "66816906c7a20d5cc8414d102a9d192bc8f0cb21e1e4579075e6799193af80da"
+   },
+   "inputs": {
+    "anchor_experiment": {
+     "file": "anchor_experiment.json",
+     "sha256": "e043421f1e05f3ac47c72686d9615368b62fa38f509e7d6a02660666dbb272c4"
+    },
+    "b3_paired": {
+     "file": "b3_paired_summary.json",
+     "sha256": "469ef3afbce4f606bc79a608cb8286318aed53a8cf7b63710c2f3af2cdfecb97"
+    },
+    "pairseen_audit": {
+     "file": "pairseen_audit.json",
+     "sha256": "bfb7a55b8a3de38429f3146fef738a267304f33636cd0cad0887355f3ac3ffb4"
+    },
+    "variance_components": {
+     "file": "variance_components.json",
+     "sha256": "3b9c1ee652d0ace9c9e0e1930897b83b901432803f7b105cf46bbc07570aa4ee"
+    }
+   }
+  },
+  "fig6_reference_labels": {
+   "outputs": {
+    "pdf": "9950b2a4e9359dc3a1e24655ea10f4abf25ba161129c509a560f289d09eb8413",
+    "png": "ffd15325924d2f8870f8503dc935d5c982a01e58f29077935761536529f1fe13"
+   },
+   "inputs": {
+    "gate2": {
+     "file": "r18_gate2.json",
+     "sha256": "9db2939781ded864e55401b1a28523a588b3ff0502c794f37a7e5464e8616aa4"
+    },
+    "gate2_units": {
+     "file": "r18_units.npz",
+     "sha256": "d55477283e0fadd3a9e983586d36e3f12731a7b0a5132c09f6a1da6ad956367e"
+    },
+    "labels": {
+     "file": "labels.csv",
+     "sha256": "4ef40678fff51faa84fa4de63344c5b51e2e4abe7c28a417af24ec2b50fa135a"
+    },
+    "native_panel": {
+     "file": "panel.parquet",
+     "sha256": "cc314c726f7e161dab0d49cc2edc49606805b1a2945889bdf68e0f527456a9bc"
+    },
+    "observations": {
+     "file": "observations.parquet",
+     "sha256": "ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b"
+    },
+    "surfaces": {
+     "file": "surface_cases.parquet",
+     "sha256": "69e2c76476c8d14aa3c289b0a98ad6703b40b7eb9ad903f9e2df2cd1d4e23528"
+    },
+    "targets": {
+     "file": "pair_cell_targets.parquet",
+     "sha256": "f6ae95583992b6a44628ee7faac174fb3feba38ea2c2a0fb6f68dcc5f3b325bf"
+    }
+   },
+   "notes": {
+    "case": {
+     "drug_a": "L778123",
+     "drug_b": "MK5108",
+     "cell_line": "CAOV3",
+     "surface_id": 2530
+    },
+    "fallback_cells": 7,
+    "M_contrast_r2_recomputed": 0.7721428928169388,
+    "M_contrast_r2_recorded": 0.7721428928169389
+   }
+  },
+  "fig7_loewe_mechanism": {
+   "outputs": {
+    "pdf": "36b4fbb3d8445b2a3454ecf1ac91e5e67adc3a6bb23121e8f542f9646e736a0a",
+    "png": "30fb1dbe1a93016b87535eee037169c95601db062493dcaa40f0b45e9d5846ee"
+   },
+   "inputs": {
+    "boundary_layer": {
+     "file": "boundary_layer_cases.csv",
+     "sha256": "c096ae4cd3262d107d796c1b895ef5fcee61a93f0d77e076641743290874e275"
+    },
+    "loewe_audit": {
+     "file": "loewe_audit.json",
+     "sha256": "8edd81ea2d9977a5e81391189f579c8bd0ec30b3771da9b13b50106488b09437"
+    },
+    "observations": {
+     "file": "observations.parquet",
+     "sha256": "ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b"
+    },
+    "rejected_roots": {
+     "file": "rejected_roots.csv",
+     "sha256": "42caca7b90d24bddf359b245aa3672c553fdc6d1dce8943ca47c33f7f45068d2"
+    },
+    "surfaces": {
+     "file": "surface_cases.parquet",
+     "sha256": "69e2c76476c8d14aa3c289b0a98ad6703b40b7eb9ad903f9e2df2cd1d4e23528"
+    }
+   },
+   "notes": {
+    "surface": 9458,
+    "x_j_star_uM": 3.037346329110982,
+    "h_i": 58.54748534830812,
+    "jump_at_boundary_slice": 14.000857657128314,
+    "selection": "illustrative surface: co-increasing LL.4 arms, weaker plateau below 100, at least four grid cases each of accepted roots, C1 rejected roots and certified no-root cases"
+   }
+  },
+  "fig8_screening": {
+   "outputs": {
+    "pdf": "82b2fe7a85cec563c0a58d7da8da2baa88f4f81eb4ec3c0d26d47a3a22ab198e",
+    "png": "cba0c6b2b85a38bf7b0bbc36b4ca4100148128433cf9df882477c1f0f47f7c77"
+   },
+   "inputs": {
+    "pair_cell_scores": {
+     "file": "pair_cell_scores.csv",
+     "sha256": "f47636f298ab7a9817031e4f48fae93d6dbd7c569cec040e1d18b38e01b52491"
+    },
+    "screening_audit": {
+     "file": "screening_audit.json",
+     "sha256": "77a95b967e70042fdf9838e40a0b56ca57a8a64394b6e41c3004cf7aa149cb9d"
+    }
+   },
+   "notes": {
+    "entrants": 67,
+    "exits": 67,
+    "labelled_entrants": [
+     "BORTEZOMIB + OXALIPLATIN, MSTO",
+     "DASATINIB + PACLITAXEL, MSTO",
+     "AZD1775 + DASATINIB, A2780"
+    ]
+   }
+  },
+  "figS1_replicates": {
+   "outputs": {
+    "pdf": "3e734ea48be29aca6407dcc4b317231178503c6b3b3ca15b165660a47290289a",
+    "png": "298caf964aff489bdf9f16731bf31b3d818535d32bf218b808eb1759e26894f3"
+   },
+   "inputs": {
+    "observations": {
+     "file": "observations.parquet",
+     "sha256": "ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b"
+    },
+    "targets": {
+     "file": "pair_cell_targets.parquet",
+     "sha256": "f6ae95583992b6a44628ee7faac174fb3feba38ea2c2a0fb6f68dcc5f3b325bf"
+    }
+   },
+   "notes": {
+    "case": {
+     "drug_a": "BEZ235",
+     "drug_b": "SN38",
+     "cell_line": "DLD1",
+     "t_bliss": -0.016221318909821925
+    },
+    "edge_sd_max": 0.0,
+    "combination_sd_median": 6.628747737425514
+   }
+  },
+  "figS2_anchor_robustness": {
+   "outputs": {
+    "pdf": "c310dcee75b8a24cd07ccc761b87aa019574d089ec3be43ab48baccfd9f4c7f2",
+    "png": "76cbb8b9965bf95576de579b37eb60cc2c5982824c79565eb3c5b6a42ab28a15"
+   },
+   "inputs": {
+    "anchor_experiment": {
+     "file": "anchor_experiment.json",
+     "sha256": "e043421f1e05f3ac47c72686d9615368b62fa38f509e7d6a02660666dbb272c4"
+    },
+    "b3_paired": {
+     "file": "b3_paired_summary.json",
+     "sha256": "469ef3afbce4f606bc79a608cb8286318aed53a8cf7b63710c2f3af2cdfecb97"
+    },
+    "variance_components": {
+     "file": "variance_components.json",
+     "sha256": "3b9c1ee652d0ace9c9e0e1930897b83b901432803f7b105cf46bbc07570aa4ee"
+    }
+   }
+  },
+  "figS3_cross_batch": {
+   "outputs": {
+    "pdf": "c7a4d31bae7a50493e032e556ae84cad4090d4fc3603ee427e2df8b9d404f9ae",
+    "png": "352afafab3e21e8fe43d764fe2374081c8a5111cc23db6e5d6ffb9400fac1ef2"
+   },
+   "inputs": {
+    "cross_batch": {
+     "file": "cross_batch_values.csv",
+     "sha256": "1dfd133315ea28de99be75024efe9b1bf71705e902a465148ede588c9d060735"
+    },
+    "variance_components": {
+     "file": "variance_components.json",
+     "sha256": "3b9c1ee652d0ace9c9e0e1930897b83b901432803f7b105cf46bbc07570aa4ee"
+    }
+   }
+  },
+  "figS4_loewe_populations": {
+   "outputs": {
+    "pdf": "fb307a6f0726b09dec7cad4ba6eb687891942276c23340096ac614852d76bc11",
+    "png": "b7ea47843e57440cfab1482ffc9408baaeb539bbe1519886280e190c616bd9b4"
+   },
+   "inputs": {
+    "loewe_audit": {
+     "file": "loewe_audit.json",
+     "sha256": "8edd81ea2d9977a5e81391189f579c8bd0ec30b3771da9b13b50106488b09437"
+    }
+   }
+  },
+  "figS5_fallback_errors": {
+   "outputs": {
+    "pdf": "18e11c72e2f2a878c67ff41bfc91e418ea9af4b7c66d8588951b5cebcddc7428",
+    "png": "7181d54534c8cfc99b0b1f267b70f4f128566c0886d1fd7e104f3bf07d4fd467"
+   },
+   "inputs": {
+    "loewe_audit": {
+     "file": "loewe_audit.json",
+     "sha256": "8edd81ea2d9977a5e81391189f579c8bd0ec30b3771da9b13b50106488b09437"
+    },
+    "rejected_roots": {
+     "file": "rejected_roots.csv",
+     "sha256": "42caca7b90d24bddf359b245aa3672c553fdc6d1dce8943ca47c33f7f45068d2"
+    }
+   }
+  }
+ },
+ "scripts": {
+  "fig_interaction.py": "df90cac2e1e7671669c15e13ed7e1b04706d5df08a36fd10baa58158f2407375",
+  "fig_loewe.py": "8ddd6215cfdf351d9537de7cf05a4a732a91f03e7e667684f87a66da945d7820",
+  "fig_measure.py": "05bc37e6419911de99fb81f7cc10f7b87b4cb106e7be91c37269ccff87425869",
+  "figstyle.py": "29adb48f98a994f2733134d1295fe65843ae1575aa53119094fb2522a866e375",
+  "make_figures.py": "2a703f7c9bc25f3e6e22b1e724d33e9340f49b661d07d7494b3090f0007088fc"
+ }
+}

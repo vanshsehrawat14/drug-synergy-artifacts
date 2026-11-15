@@ -1,0 +1,23 @@
+{
+  "target": "mean raw combination inhibition across 16 positive-positive dose cells, then across replicate blocks",
+  "n_pairs": 583,
+  "n_cells": 39,
+  "target_shape": [
+    583,
+    39
+  ],
+  "missing_pair_cell_targets": 0,
+  "complete_pair_cell_targets": 22737,
+  "min_blocks_per_observed_unit": 4,
+  "max_blocks_per_unit": 8,
+  "fold_counts": {
+    "0": 116,
+    "1": 116,
+    "2": 116,
+    "3": 116,
+    "4": 119
+  },
+  "response_min": -37.72787469223695,
+  "response_max": 99.84443780776301,
+  "response_mean": 46.483173491659244
+}

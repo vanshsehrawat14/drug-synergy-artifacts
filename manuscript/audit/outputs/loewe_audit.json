@@ -1,0 +1,232 @@
+{
+ "inputs": {
+  "cases": "69e2c76476c8d14aa3c289b0a98ad6703b40b7eb9ad903f9e2df2cd1d4e23528",
+  "certificates": "7087e8531dfdf595e81a6b745861459cdc37c1b2bb110da2f7e2cb41381c9728",
+  "verified": "384a2bd51b4c9ffeca7d4d1768237a6212bf5cf126b2c16a382af87d72acf438",
+  "regimes": "9129a93bb77634db885bf8c7854c3314e9cd8ef4c377d98e74011fd2bff1fbc7"
+ },
+ "populations": {
+  "cases": 367152,
+  "surfaces": 22947,
+  "native_accepted": 182247,
+  "native_fallback": 184905,
+  "native_code_counts": {
+   "1": 182162,
+   "2": 85,
+   "3": 137642,
+   "6": 8,
+   "999": 47255
+  },
+  "certificate_status": {
+   "certified_root": 195984,
+   "certified_no_root": 117824,
+   "undefined_opposite_or_flat": 49184,
+   "undefined_empty_interval": 4160
+  },
+  "status_by_fallback": {
+   "certified_no_root|fallback": 117824,
+   "certified_root|accepted": 180364,
+   "certified_root|fallback": 15620,
+   "undefined_empty_interval|fallback": 4160,
+   "undefined_opposite_or_flat|accepted": 1883,
+   "undefined_opposite_or_flat|fallback": 47301
+  },
+  "historical_class": {
+   "accepted: matches root": 180364,
+   "definition: no root": 121984,
+   "definition: opposite or flat curves": 47301,
+   "artifact: solver at root, answer discarded": 12477,
+   "accepted: no admissible root": 1883,
+   "artifact: root exists, solver failed": 1720,
+   "boundary: root at a curve asymptote, scorer residual >= 1e-6": 1423
+  },
+  "C1": 14197,
+  "C2_recovered": 1423,
+  "C1_equals_fallback_and_admissible": true,
+  "fallback_certified_roots": 15620,
+  "C1_or_C2_equals_fallback_certified_roots": true,
+  "models_in_C1": {
+   "L.4/LL.4": 4,
+   "LL.4/L.4": 28,
+   "LL.4/LL.4": 14165
+  },
+  "direction_in_C1": {
+   "1.0": 13888,
+   "-1.0": 309
+  }
+ },
+ "fallback_formulas": {
+  "summed_dose_max_abs_diff_on_native_fallbacks": 1.1667111721180845e-11,
+  "hsa_max_abs_diff_vs_regimes_table_on_fallbacks": 1.4502177236863645e-11,
+  "native_reference_matches_regimes_table": 0.0
+ },
+ "existence_criterion": {
+  "population": "both arms LL.4, co-monotone, non-flat, nonempty common interval, certificate root or no root",
+  "cases": 310928,
+  "co_increasing": 309056,
+  "co_decreasing": 1872,
+  "agreements": 310928,
+  "disagreements": 0,
+  "float64_near_ties_resolved_at_60_digits": 0,
+  "defined_nonempty_but_certificate_undefined": 0,
+  "empty_interval_cases_matching_status": 3936,
+  "excluded_any_L4_arm": 4576
+ },
+ "independent_bracket_replay": {
+  "fallback_roots": {
+   "cases": 15620,
+   "LL4_checked": 15588,
+   "inside_common_interval": 15588,
+   "sign_change_confirmed": 15588,
+   "examples_not_confirmed": []
+  },
+  "accepted_controls": {
+   "cases": 2000,
+   "LL4_checked": 1994,
+   "inside_common_interval": 1994,
+   "sign_change_confirmed": 1994,
+   "examples_not_confirmed": []
+  },
+  "accepted_near_asymptote": {
+   "cases": 2896,
+   "LL4_checked": 2443,
+   "inside_common_interval": 2443,
+   "sign_change_confirmed": 2443,
+   "examples_not_confirmed": []
+  }
+ },
+ "fallback_error_on_rejected_roots": {
+  "C1_14197": {
+   "summed_dose": {
+    "n": 14197,
+    "median": 4.167034200623917,
+    "mean": 20.847265674014707,
+    "p10": 9.427908399815138e-06,
+    "p90": 70.89417200122656,
+    "max": 103.89395347500653
+   },
+   "hsa": {
+    "n": 14197,
+    "median": 0.003978399646854314,
+    "mean": 0.7154496542559768,
+    "p10": 6.535445855604395e-07,
+    "p90": 1.2768385479798265,
+    "max": 64.00415822653967
+   },
+   "share_hsa_closer": 0.7169824610833274,
+   "within_0_01_of_asymptote": 12566,
+   "interior": 1631,
+   "asymptote_distance": {
+    "n": 14197,
+    "median": 0.00023288678758014253,
+    "mean": 0.01587402789291835,
+    "p10": 3.6414123955562214e-08,
+    "p90": 0.011707104008674106,
+    "max": 2.162766581249391
+   }
+  },
+  "C2_1423": {
+   "summed_dose": {
+    "n": 1423,
+    "median": 4.020534231607613,
+    "mean": 21.5379632460163,
+    "p10": 8.526512829121323e-15,
+    "p90": 71.12545592566649,
+    "max": 100.74545743606495
+   },
+   "hsa": {
+    "n": 1423,
+    "median": 1.873651456207881e-09,
+    "mean": 0.29476011342216146,
+    "p10": 1.3015144517680712e-13,
+    "p90": 0.32583108900462143,
+    "max": 15.149807070305899
+   },
+   "share_hsa_closer": 0.6718200983836964,
+   "within_0_01_of_asymptote": 1423,
+   "interior": 0,
+   "asymptote_distance": {
+    "n": 1423,
+    "median": 3.552713678800501e-13,
+    "mean": 7.389636934824723e-11,
+    "p10": 6.452564328209361e-20,
+    "p90": 1.9773421069881096e-10,
+    "max": 3.1039567167101434e-09
+   }
+  },
+  "all_15620": {
+   "summed_dose": {
+    "n": 15620,
+    "median": 4.155405275943121,
+    "mean": 20.910189018762356,
+    "p10": 1.5280714769971843e-06,
+    "p90": 70.91356383937925,
+    "max": 103.89395347500653
+   },
+   "hsa": {
+    "n": 15620,
+    "median": 0.002881834739589806,
+    "mean": 0.6771243522965326,
+    "p10": 9.29487953271746e-09,
+    "p90": 1.1703116131498852,
+    "max": 64.00415822653967
+   },
+   "share_hsa_closer": 0.7128681177976952,
+   "within_0_01_of_asymptote": 13989,
+   "interior": 1631,
+   "asymptote_distance": {
+    "n": 15620,
+    "median": 0.00012326042542241573,
+    "mean": 0.014427885665871727,
+    "p10": 3.2870216633150973e-10,
+    "p90": 0.010507228480764616,
+    "max": 2.162766581249391
+   }
+  }
+ },
+ "c1_location": {
+  "co_increasing_LL4_C1": 13856,
+  "upper": 10712,
+  "lower": 1608,
+  "interior": 1536,
+  "upper_with_plateau_below_100": 10646,
+  "jump_upper_plateau_below_100": {
+   "n": 10646,
+   "median": 3.832665414857498,
+   "mean": 18.901263277600034,
+   "p10": -1.203751512335316e-05,
+   "p90": 62.7868532226105,
+   "max": 99.99894651269364
+  },
+  "jump_positive_share_plateau_below_100": 0.5795603982716513,
+  "identity_native_minus_root_equals_jump_plus_distance_max_abs": 3.126388037344441e-12,
+  "share_of_absolute_shift_upper": 0.6828241741587313,
+  "share_of_absolute_shift_lower": 0.20448508307546542,
+  "share_of_absolute_shift_interior": 0.11269074276580339
+ },
+ "boundary_layer": {
+  "population": "certified roots, both LL.4, co-increasing, within 0.01 of the smaller upper plateau",
+  "cases": 13277,
+  "evaluable": 13277,
+  "log10_ratio_pred_over_certified": {
+   "n": 13277,
+   "median": 2.6639198901889927e-05,
+   "mean": 0.033779123064497915,
+   "p10": 1.2855308746395623e-07,
+   "p90": 0.001248355095178155,
+   "max": 9.24515002800793
+  },
+  "share_within_factor_1_01": 0.9404232883934623,
+  "share_within_factor_2": 0.976500715523085,
+  "loglog_pearson_r": 0.9976349584314337,
+  "certified_distance_decades": [
+   -58.32265925669386,
+   -2.0001771256524834
+  ],
+  "distance_source": "midpoint of the replayed certificate bracket",
+  "share_abs_slope_above_2": {
+   "C1_co_increasing_LL4": 0.9382217090069284,
+   "all_certified_roots_co_increasing_LL4": 0.4338451419292512
+  }
+ }
+}

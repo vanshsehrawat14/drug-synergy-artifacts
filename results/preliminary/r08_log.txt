@@ -1,0 +1,75 @@
+{
+ "sha256": "e08e3d35bfa4bea011afe1b05b7025acde5c669c5e8d265866b5e12b08037a2f",
+ "rows": 1175220,
+ "unmatched_oneil_drugs": [],
+ "unmatched_oneil_cells": [],
+ "matched_rows": 92820,
+ "matched_units": 22737,
+ "blocks_per_unit": {
+  "4": 21810,
+  "5": 612,
+  "8": 315
+ },
+ "block_id_range": [
+  1,
+  417346
+ ],
+ "coverage_of_583x39": 1.0,
+ "corr_deepsynergy_vs_drugcomb_loewe_mean": 0.41601760952432854,
+ "replicate_reliability": {
+  "synergy_loewe": {
+   "n": 22737,
+   "retest_corr": 0.9601307467148342,
+   "noise_var_single": 9.962885277247482,
+   "total_var": 249.79362978374945,
+   "noise_var_robust": 5.406809641143311
+  },
+  "synergy_bliss": {
+   "n": 22737,
+   "retest_corr": 0.8478219450355835,
+   "noise_var_single": 9.962885277247482,
+   "total_var": 65.39493722854046,
+   "noise_var_robust": 5.406809641143119
+  },
+  "synergy_zip": {
+   "n": 22737,
+   "retest_corr": 0.8324901935794685,
+   "noise_var_single": 7.08776454602291,
+   "total_var": 42.286673666836876,
+   "noise_var_robust": 3.459395447757454
+  },
+  "synergy_hsa": {
+   "n": 22737,
+   "retest_corr": 0.8479098135524203,
+   "noise_var_single": 9.962885277247484,
+   "total_var": 65.50101030984537,
+   "noise_var_robust": 5.4068096411431235
+  },
+  "S": {
+   "n": 22737,
+   "retest_corr": 0.9456913945183447,
+   "noise_var_single": 24.767760120747592,
+   "total_var": 455.8189571483306,
+   "noise_var_robust": 13.948507553203187
+  },
+  "css": {
+   "n": 22737,
+   "retest_corr": 0.9482779478867495,
+   "noise_var_single": 24.76776012074759,
+   "total_var": 478.581160900327,
+   "noise_var_robust": 13.948507553203177
+  }
+ },
+ "metric_correlations": {
+  "synergy_loewe~synergy_zip": 0.2301738010231828,
+  "synergy_bliss~synergy_loewe": 0.3364229461983465,
+  "synergy_bliss~synergy_zip": 0.9028961124444571,
+  "synergy_bliss~synergy_hsa": 0.8476787469348642,
+  "synergy_hsa~synergy_loewe": 0.5770164823212516,
+  "synergy_hsa~synergy_zip": 0.7266190603028732,
+  "S~synergy_loewe": 0.002610922195791341,
+  "S~synergy_bliss": 0.6110192462775095,
+  "S~synergy_zip": 0.552275825943869,
+  "S~synergy_hsa": 0.40396082430656516
+ }
+}

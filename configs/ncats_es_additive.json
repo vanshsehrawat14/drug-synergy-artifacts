@@ -1,0 +1,15 @@
+{
+ "dataset": "data/processed/ncats_es_v2",
+ "table": "observations",
+ "target": "inhibition",
+ "test_fold": 0,
+ "seed": 2026,
+ "features": {
+  "regime": "F0"
+ },
+ "model": {
+  "kind": "additive",
+  "regularization": 1.0
+ },
+ "bootstrap": 1000
+}

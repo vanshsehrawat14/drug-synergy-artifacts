@@ -1,0 +1,316 @@
+{
+ "inputs": {
+  "observations_sha256": "ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b",
+  "cache_sha256": "91f93811dedf5c0721198146638c21f25b1616d43f43ae9322cf8790a7e86687",
+  "coordinates_sha256": "ebdcf3090da9bf8bf9aede5281990b843df4befc02e429bc9972a886044896d1",
+  "split_sha256": "794db1fe9acf49316aad2e9789b04aa57f5b8e49c075fd0fcbf85eb37494e7e1"
+ },
+ "settings": {
+  "draws": 50,
+  "bootstrap": 2000,
+  "seed": 97
+ },
+ "rows": 1475328,
+ "blocks": 92208,
+ "units": {
+  "count": 365352,
+  "n_counts": {
+   "4": 361872,
+   "8": 3480
+  },
+  "pair_cells": 22737,
+  "truth_max_abs_diff_vs_cache": 2.842170943040401e-14,
+  "n_matches_cache": true
+ },
+ "split": {
+  "grid_group_sizes": {
+   "4": 22842,
+   "8": 105
+  },
+  "pair_cells_with_multiple_grids": 210,
+  "pair_cell_block_counts": {
+   "4": 22422,
+   "8": 315
+  },
+  "max_unit_sign_imbalance": {
+   "grid": 0.0,
+   "panel": 4.0
+  }
+ },
+ "results": {
+  "cross_cell_covariance_share": {
+   "raw": 0.24385149902425365,
+   "bliss_residual": 0.23374990682143693
+  },
+  "pair_cell:raw": {
+   "target_energy_per_row": 29.99470448583665,
+   "noise_share_grid_split": 0.06713301836787676,
+   "noise_share_panel_split": 0.06897717865868061,
+   "noise_share_grid_pair_interval": [
+    0.06213925370081794,
+    0.07210144314414645
+   ],
+   "noise_share_grid_drug_interval": [
+    0.04564671914957239,
+    0.08861931758618113
+   ],
+   "models": {
+    "neural_F2": {
+     "r2": 0.35565104082013843,
+     "noise_corrected_r2_grid": 0.38124518052713086,
+     "noise_corrected_r2_panel": 0.3820003470030455
+    },
+    "neural_base_F2": {
+     "r2": 0.2791651410488789,
+     "noise_corrected_r2_grid": 0.2992550347965558,
+     "noise_corrected_r2_panel": 0.2998477960472411
+    },
+    "gp_F2": {
+     "r2": 0.3325069235201277,
+     "noise_corrected_r2_grid": 0.35643551553125075,
+     "noise_corrected_r2_panel": 0.3571415392815901
+    },
+    "cf_selected": {
+     "r2": 0.3353591251464706,
+     "noise_corrected_r2_grid": 0.3594929735424164,
+     "noise_corrected_r2_panel": 0.3602050534736846
+    },
+    "bliss": {
+     "r2": 0.31359713207950335,
+     "noise_corrected_r2_grid": 0.3361648962329451,
+     "noise_corrected_r2_panel": 0.33683076815206925
+    }
+   }
+  },
+  "pair_cell:bliss_residual": {
+   "target_energy_per_row": 20.588451181506063,
+   "noise_share_grid_split": 0.09780410529352931,
+   "noise_share_panel_split": 0.10049080777831185,
+   "noise_share_grid_pair_interval": [
+    0.08929312697392058,
+    0.10767102591780217
+   ],
+   "noise_share_grid_drug_interval": [
+    0.06228274646845714,
+    0.1333254641186015
+   ],
+   "models": {
+    "neural_F2": {
+     "r2": 0.0612670935773334,
+     "noise_corrected_r2_grid": 0.06790885874876063,
+     "noise_corrected_r2_panel": 0.0681116925842753
+    },
+    "neural_base_F2": {
+     "r2": -0.05016294750477712,
+     "noise_corrected_r2_grid": -0.055600948529141325,
+     "noise_corrected_r2_panel": -0.0557670204357561
+    },
+    "gp_F2": {
+     "r2": 0.02754911484841671,
+     "noise_corrected_r2_grid": 0.03053562425860934,
+     "noise_corrected_r2_panel": 0.030626829705178937
+    },
+    "cf_selected": {
+     "r2": 0.03170440288645171,
+     "noise_corrected_r2_grid": 0.035141373478280724,
+     "noise_corrected_r2_panel": 0.03524633562459245
+    }
+   }
+  },
+  "dose_shape:raw": {
+   "target_energy_per_row": 117.290831579612,
+   "noise_share_grid_split": 0.13593902549493425,
+   "noise_share_panel_split": 0.16736199696452617,
+   "noise_share_grid_pair_interval": [
+    0.12765176681573442,
+    0.14465240132309853
+   ],
+   "noise_share_grid_drug_interval": [
+    0.09128587021177688,
+    0.18059218077809164
+   ],
+   "models": {
+    "neural_F2": {
+     "r2": 0.6724044648684306,
+     "noise_corrected_r2_grid": 0.7781909896504515,
+     "noise_corrected_r2_panel": 0.8075591822822235
+    },
+    "neural_base_F2": {
+     "r2": 0.6429290184928564,
+     "noise_corrected_r2_grid": 0.7440782970913902,
+     "noise_corrected_r2_panel": 0.7721591089392841
+    },
+    "gp_F2": {
+     "r2": 0.6829650803201561,
+     "noise_corrected_r2_grid": 0.7904130616607915,
+     "noise_corrected_r2_panel": 0.8202425037415197
+    },
+    "cf_selected": {
+     "r2": 0.5081517225985805,
+     "noise_corrected_r2_grid": 0.588097064434197,
+     "noise_corrected_r2_panel": 0.6102912919492712
+    },
+    "bliss": {
+     "r2": 0.6258700155173252,
+     "noise_corrected_r2_grid": 0.724335473981826,
+     "noise_corrected_r2_panel": 0.7516712103406846
+    }
+   }
+  },
+  "dose_shape:bliss_residual": {
+   "target_energy_per_row": 43.88201699884026,
+   "noise_share_grid_split": 0.36334704817338515,
+   "noise_share_panel_split": 0.4473364977574429,
+   "noise_share_grid_pair_interval": [
+    0.34408552460365854,
+    0.38212273071851943
+   ],
+   "noise_share_grid_drug_interval": [
+    0.29878749441809305,
+    0.42790660192867724
+   ],
+   "models": {
+    "neural_F2": {
+     "r2": 0.12438043268691923,
+     "noise_corrected_r2_grid": 0.19536614466336877,
+     "noise_corrected_r2_panel": 0.22505635378891042
+    },
+    "neural_base_F2": {
+     "r2": 0.04559646027601694,
+     "noise_corrected_r2_grid": 0.07161901966400464,
+     "noise_corrected_r2_panel": 0.08250311462761528
+    },
+    "gp_F2": {
+     "r2": 0.15260756199955117,
+     "noise_corrected_r2_grid": 0.2397029049527003,
+     "noise_corrected_r2_panel": 0.27613106597470516
+    },
+    "cf_selected": {
+     "r2": -0.3146454382198709,
+     "noise_corrected_r2_grid": -0.4942181408522879,
+     "noise_corrected_r2_panel": -0.5693255243798909
+    }
+   }
+  },
+  "oracle:raw:loco": {
+   "r2": 0.22448896683300779,
+   "pair_interval": [
+    0.19320211079865485,
+    0.2592996906908512
+   ],
+   "drug_interval": [
+    0.11789739074746569,
+    0.3310805429185499
+   ],
+   "minus_production_f2": -0.05467617421587116,
+   "minus_production_f2_pair_interval": [
+    -0.10256975972216151,
+    -0.003670422732434717
+   ],
+   "minus_production_f2_drug_interval": [
+    -0.22795231087501244,
+    0.1185999624432701
+   ]
+  },
+  "oracle:raw:matched": {
+   "r2": 0.21497529584349906,
+   "pair_interval": [
+    0.18174500718823683,
+    0.2496495501440072
+   ],
+   "drug_interval": [
+    0.10803358158218587,
+    0.3219170101048122
+   ],
+   "minus_production_f2": -0.06418984520537989,
+   "minus_production_f2_pair_interval": [
+    -0.11365639716338212,
+    -0.012426492498905917
+   ],
+   "minus_production_f2_drug_interval": [
+    -0.235771315377917,
+    0.10739162496715722
+   ]
+  },
+  "oracle:bliss_residual:loco": {
+   "r2": 0.2151129137556459,
+   "pair_interval": [
+    0.17489512522403083,
+    0.25999025421276445
+   ],
+   "drug_interval": [
+    0.10354140589480386,
+    0.3266844216164879
+   ],
+   "minus_production_f2": 0.2652758612604231,
+   "minus_production_f2_pair_interval": [
+    0.20919406735571405,
+    0.31905335093342174
+   ],
+   "minus_production_f2_drug_interval": [
+    0.09186844916415235,
+    0.43868327335669377
+   ]
+  },
+  "oracle:bliss_residual:matched": {
+   "r2": 0.2053990334409188,
+   "pair_interval": [
+    0.1664046508751623,
+    0.2502488862090528
+   ],
+   "drug_interval": [
+    0.09367669615467654,
+    0.31712137072716107
+   ],
+   "minus_production_f2": 0.255561980945696,
+   "minus_production_f2_pair_interval": [
+    0.19845631149891257,
+    0.3115440035451451
+   ],
+   "minus_production_f2_drug_interval": [
+    0.08211296172333363,
+    0.4290110001680584
+   ]
+  },
+  "pair_cell:bliss_residual:neural_base_F2:intervals": {
+   "pair_interval": [
+    -0.08859213118581316,
+    -0.012767734701361335
+   ],
+   "drug_interval": [
+    -0.1531336365179729,
+    0.052807741508418646
+   ]
+  },
+  "pair_cell:bliss_residual:neural_F2:intervals": {
+   "pair_interval": [
+    0.022007702055705042,
+    0.09785326037447195
+   ],
+   "drug_interval": [
+    -0.0387506595592457,
+    0.1612848467139125
+   ]
+  },
+  "pair_cell:bliss_residual:gp_F2:intervals": {
+   "pair_interval": [
+    0.011256629605783398,
+    0.04407075140441774
+   ],
+   "drug_interval": [
+    -0.016172630771989042,
+    0.07127086046882247
+   ]
+  },
+  "pair_cell:bliss_residual:cf_selected:intervals": {
+   "pair_interval": [
+    -0.0009716214548232068,
+    0.0664773640310481
+   ],
+   "drug_interval": [
+    -0.0687371308501368,
+    0.13214593662304022
+   ]
+  }
+ }
+}

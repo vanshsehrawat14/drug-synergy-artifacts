@@ -1,0 +1,52 @@
+{
+  "dataset_sha256": "ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b",
+  "names": [
+    "truth",
+    "neural_base_F2:2026",
+    "neural_base_F2:2027",
+    "neural_base_F2:2028",
+    "neural_F2:2026",
+    "neural_F2:2027",
+    "neural_F2:2028",
+    "gp_F2",
+    "cf_selected",
+    "mono_only:2026",
+    "mono_only:2027",
+    "mono_only:2028",
+    "bliss",
+    "hsa",
+    "no_drug_identity:2026",
+    "no_drug_identity:2027",
+    "no_drug_identity:2028",
+    "no_cell_identity:2026",
+    "no_cell_identity:2027",
+    "no_cell_identity:2028",
+    "no_dose:2026",
+    "no_dose:2027",
+    "no_dose:2028"
+  ],
+  "reference_sources": [
+    {
+      "fold": 0,
+      "feature_state_sha256": "53489cc28b97955483d6f93c7626f7469966605f70b729a562e7018eff4bb1d2"
+    },
+    {
+      "fold": 1,
+      "feature_state_sha256": "a3cfc6e0e5e64b502716b465f01cc0eb09a9a3fbb3052f7355513a9d87ca9c47"
+    },
+    {
+      "fold": 2,
+      "feature_state_sha256": "231ec3e325886abea5069affff81cd73ebffa975d1fd803f2f228d9067eca427"
+    },
+    {
+      "fold": 3,
+      "feature_state_sha256": "b67e583f65b979451bd421e13e9365e3f2a26ff3507ee2da285c46c85651fb5e"
+    },
+    {
+      "fold": 4,
+      "feature_state_sha256": "d8e837b329f1e00d560da3aad17553df21f47b286f5a4fb4379037edde743ffc"
+    }
+  ],
+  "max_error_identity_discrepancy": 4.76837158203125e-07,
+  "inference": "Pair intervals condition on nuisance projections; drug deletion refits both original and reference-augmented projections. Seed-specific errors averaged."
+}

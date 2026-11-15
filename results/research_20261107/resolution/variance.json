@@ -1,0 +1,25 @@
+{
+  "population_variance": 1152.2790533344146,
+  "components": {
+    "between_panel_additive": 422.3741558358848,
+    "between_panel_contrast": 29.994704485837264,
+    "within_panel_additive_dose": 519.9203533173005,
+    "within_panel_dose_contrast": 117.29083157961394,
+    "replicate_deviations": 62.69900811580745
+  },
+  "shares": {
+    "between_panel_additive": 0.3665554403802074,
+    "between_panel_contrast": 0.026030764335288316,
+    "within_panel_additive_dose": 0.4512104527221751,
+    "within_panel_dose_contrast": 0.101790300917302,
+    "replicate_deviations": 0.05441304164505274
+  },
+  "rows": 1475328,
+  "panels": 22737,
+  "unique_dose_units": 365352,
+  "replicate_counts": {
+    "4.0": 361872,
+    "8.0": 3480
+  },
+  "identity_error_max": 2.9331204132176936e-11
+}

@@ -1,0 +1,54 @@
+{
+  "declared": "configs/third_screen_confirmation.json",
+  "H1": {
+    "panel_rows": 1569,
+    "interaction_residual_r2": -0.005394185799497464,
+    "seeds": [
+      -0.006024437325723664,
+      -0.009653784199097348,
+      -0.0005043358736711578
+    ],
+    "drug_jackknife": [
+      -0.07778075370715908,
+      0.06699238210816415
+    ],
+    "max_drug_influence": 0.014965184386882768,
+    "max_drug_influence_drug": "DOXORUBICIN",
+    "rule_met": false,
+    "confirmed_in_sequence": false
+  },
+  "H2": {
+    "panel_rows": 3563,
+    "interaction_residual_r2": 0.020813790555327394,
+    "seeds": [
+      0.0222974638997655,
+      -0.005209331891313784,
+      0.04535323965753091
+    ],
+    "drug_jackknife": [
+      -0.026176744671061923,
+      0.06780432578171672
+    ],
+    "max_drug_influence": 0.008803760716809994,
+    "max_drug_influence_drug": "MEBENDAZOLE",
+    "rule_met": false,
+    "confirmed_in_sequence": false
+  },
+  "H3": {
+    "panel_rows": 1569,
+    "interaction_residual_r2": -0.008024817631829606,
+    "seeds": [
+      -0.006320857368306676,
+      -0.012548202546176057,
+      -0.005204634312250711
+    ],
+    "drug_jackknife": [
+      -0.08081384195915825,
+      0.06476420669549904
+    ],
+    "max_drug_influence": 0.016591517872098782,
+    "max_drug_influence_drug": "DOXORUBICIN",
+    "rule_met": false,
+    "confirmed_in_sequence": false
+  }
+}

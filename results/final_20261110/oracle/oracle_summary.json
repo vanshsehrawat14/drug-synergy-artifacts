@@ -1,0 +1,15 @@
+{
+  "dataset_sha256": "ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b",
+  "split_sha256": "d32914a94d8ead90e12d8cb10b6beed15f93339b0de2200ce2075a67a79370ea",
+  "cross_cell_covariance_share": {
+    "raw": 0.2438514990242537,
+    "bliss_residual": 0.2337499068214369
+  },
+  "gate": {
+    "rule": "matched oracle minus f2_base interaction-residual R^2 >= 0.10 and pair-bootstrap lower bound > 0",
+    "value": 0.2555619809456948,
+    "pair_low": 0.20183779988564823,
+    "passed": true
+  },
+  "note": "Oracles average the same pair's pair-cell contrast over other cells (all, or the B2 training folds)."
+}

@@ -1,0 +1,153 @@
+{
+ "name": "third-screen-dipg-validation-v1",
+ "frozen": "2026-11-06, before any NCATS_DIPG model, baseline or Bliss-reference run. f0_combined and f2_combined are copied unchanged from configs/almanac_validation.json and mono_only unchanged from configs/neural_sprint.json. Nothing is selected; validation fold (f+1)%5 only stops training. Hypotheses and tests: configs/third_screen_confirmation.json.",
+ "base": {
+  "F0": "configs/neural_dose_aware.json",
+  "F2": "configs/neural_monotherapy.json"
+ },
+ "shared_overrides": {
+  "dataset": "data/processed/ncats_dipg_v2",
+  "training": {
+   "eval_batch_size": 16384
+  }
+ },
+ "candidates": {
+  "f0_combined": {
+   "base": "F0",
+   "purpose": "all F0 changes together",
+   "overrides": {
+    "model": {
+     "hidden": [
+      512,
+      256
+     ],
+     "encoder_dim": 64,
+     "encoder_layers": 2,
+     "dropout": 0.3
+    },
+    "training": {
+     "weight_decay": 0.0001,
+     "scheduler": {
+      "kind": "plateau",
+      "factor": 0.5,
+      "patience": 5,
+      "min_lr": 1e-05
+     }
+    }
+   }
+  },
+  "f2_combined": {
+   "base": "F2",
+   "purpose": "all architecture/optimization changes with interpolated monotherapy",
+   "overrides": {
+    "features": {
+     "mono_missing": "interpolate"
+    },
+    "model": {
+     "hidden": [
+      512,
+      256
+     ],
+     "encoder_dim": 64,
+     "encoder_layers": 2,
+     "dropout": 0.3
+    },
+    "training": {
+     "weight_decay": 0.0001,
+     "scheduler": {
+      "kind": "plateau",
+      "factor": 0.5,
+      "patience": 5,
+      "min_lr": 1e-05
+     }
+    }
+   }
+  },
+  "mono_only": {
+   "base": "F2",
+   "purpose": "information ablation: monotherapy values only, no identities or doses, Bliss offset",
+   "overrides": {
+    "features": {
+     "mono_missing": "interpolate",
+     "identities": false,
+     "dose_input": false,
+     "reference_offset": "bliss"
+    }
+   }
+  }
+ },
+ "selection": {
+  "seed": 2026,
+  "metric": "best-checkpoint validation MSE",
+  "scope": "single frozen candidate per regime; no choice is made",
+  "ties": "not applicable",
+  "groups": {
+   "F0": [
+    "f0_combined"
+   ],
+   "F2": [
+    "f2_combined"
+   ]
+  }
+ },
+ "benchmark": {
+  "models": [
+   "selected:F0",
+   "selected:F2",
+   "mono_only"
+  ],
+  "seeds": [
+   2026,
+   2027,
+   2028
+  ],
+  "extension_seeds": []
+ },
+ "comparisons": [
+  [
+   "f2_combined",
+   "f0_combined",
+   "training-pair monotherapy on top of identities and doses"
+  ],
+  [
+   "f2_combined",
+   "bliss_reference",
+   "network vs the fixed Bliss rule on the same training-pair monotherapy"
+  ],
+  [
+   "f0_combined",
+   "bliss_reference",
+   "identities and doses vs the fixed Bliss rule"
+  ],
+  [
+   "f0_combined",
+   "additive",
+   "network vs additive ridge on the same inputs"
+  ],
+  [
+   "mono_only",
+   "bliss_reference",
+   "learned function of monotherapy values vs the fixed Bliss rule"
+  ],
+  [
+   "f2_combined",
+   "mono_only",
+   "identities and doses beyond a learned function of monotherapy values"
+  ]
+ ],
+ "secondary": [
+  "pair-cell contrast R2 and interaction residual R2 beyond Bliss with drug-jackknife intervals",
+  "hypotheses H1-H3 in configs/third_screen_confirmation.json"
+ ],
+ "verdict_rule": "as in the ONEIL sprint: lower error only if the pair-bootstrap and drug-jackknife intervals, every fold and every seed pairing agree",
+ "runs": {
+  "suite": "results/neural/runs/ncats_dipg_v2",
+  "baselines": {
+   "mean": "results/neural/runs/ncats_dipg_v2_mean",
+   "additive": "results/neural/runs/ncats_dipg_v2_additive",
+   "reference_bliss": "results/neural/runs/ncats_dipg_v2_reference_bliss"
+  },
+  "declared": "configs/third_screen_confirmation.json"
+ },
+ "amendment": "configs/third_screen_amendment.json"
+}

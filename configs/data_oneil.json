@@ -1,0 +1,11 @@
+{
+  "raw": "data/raw/drugcomb/drugcomb_data_v1.4.csv",
+  "summary": "data/raw/drugcomb/summary_table_v1.4.csv",
+  "labels": "data/raw/deepsynergy/labels.csv",
+  "output": "data/processed/oneil_v1",
+  "chunksize": 500000,
+  "expected_sha256": {
+    "raw": "58c3893c9b8973eaea22aee819c0f268b3739d091a1d451187c1488c1058fe1d",
+    "labels": "4ef40678fff51faa84fa4de63344c5b51e2e4abe7c28a417af24ec2b50fa135a"
+  }
+}

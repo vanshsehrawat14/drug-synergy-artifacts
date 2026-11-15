@@ -1,0 +1,38 @@
+deepsynergy_loewe 45.9
+drugcomb_loewe 139.1
+drugcomb_bliss 182.0
+drugcomb_hsa 224.6
+drugcomb_zip 268.3
+drugcomb_S 334.9
+                                       mse  pooled_cr2
+panel             model                               
+deepsynergy_loewe knn_after_mono  250.8268      0.1195
+                  knn_resid       250.2199      0.1203
+                  mono_lin        281.1118     -0.0009
+                  mono_mlp        280.0977      0.0042
+                  ridge           280.9851     -0.0000
+drugcomb_S        knn_after_mono   56.9116      0.2240
+                  knn_resid        59.9785      0.1805
+                  mono_lin         65.5102      0.1034
+                  mono_mlp         62.0582      0.1543
+                  ridge            73.4868      0.0000
+drugcomb_bliss    knn_after_mono   27.4943      0.1562
+                  knn_resid        27.4409      0.1577
+                  mono_lin         31.9927     -0.0008
+                  mono_mlp         31.9360      0.0022
+                  ridge            31.9952      0.0000
+drugcomb_hsa      knn_after_mono   28.5012      0.1561
+                  knn_resid        28.5231      0.1536
+                  mono_lin         32.9016      0.0040
+                  mono_mlp         32.8163      0.0092
+                  ridge            33.0511      0.0000
+drugcomb_loewe    knn_after_mono   87.4797      0.4287
+                  knn_resid        95.1795      0.3802
+                  mono_lin        135.4811      0.1131
+                  mono_mlp        107.3052      0.3072
+                  ridge           151.8903      0.0000
+drugcomb_zip      knn_after_mono   17.2182      0.0976
+                  knn_resid        17.3200      0.0898
+                  mono_lin         18.7739      0.0133
+                  mono_mlp         18.6325      0.0214
+                  ridge            19.0431      0.0000

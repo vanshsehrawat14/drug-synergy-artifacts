@@ -1,0 +1,14 @@
+{
+  "protocol": "third-screen-dipg-validation-v1",
+  "dataset": "data/processed/ncats_dipg_v2",
+  "rows": 224708,
+  "pairs": 3506,
+  "drugs": 128,
+  "cells": 2,
+  "imputed_rows": 0,
+  "bootstrap": 1000,
+  "monotherapy_status": {
+    "exact": 223071,
+    "interpolated": 1637
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "boundary": {
+    "cases": 13989,
+    "distance_quantiles": [
+      1.3670603016987835e-10,
+      5.896342324498614e-05,
+      0.004127909628969661
+    ],
+    "ref_change_mean": -20.960200186196353,
+    "ref_change_median": -4.362848427389853,
+    "share_ref_lowered": 0.9902065908928444,
+    "share_ref_raised": 0.004146114804489242,
+    "abs_change_median": 4.362848427389853
+  },
+  "interior": {
+    "cases": 1631,
+    "distance_quantiles": [
+      0.0112676841345114,
+      0.0230496976951515,
+      0.2999016604209408
+    ],
+    "ref_change_mean": -20.481245903352015,
+    "ref_change_median": -2.081177572646922,
+    "share_ref_lowered": 0.9625996321275291,
+    "share_ref_raised": 0.0,
+    "abs_change_median": 2.081177572646922
+  },
+  "pair_cell_score_change": {
+    "units_changed": 5009,
+    "share_up": 1.0,
+    "mean_change": 4.036938057807657
+  },
+  "top5_entered_mean_change": 9.351898976189592,
+  "top5_exited_mean_change": 0.0012801201993403472
+}

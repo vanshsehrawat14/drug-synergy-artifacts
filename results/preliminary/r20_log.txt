@@ -1,0 +1,21 @@
+{
+ "n_unique_surface_cells": 367152,
+ "cause_share": {
+  "root": 0.5323244868610276,
+  "stronger_exceeds_weaker_max": 0.32874667712555017,
+  "inactive_drug": 0.13892883601342224
+ },
+ "mean_shift_by_cause": {
+  "inactive_drug": 23.95899590840647,
+  "root": 9.892456662475837e-10,
+  "stronger_exceeds_weaker_max": 11.501054353168838
+ },
+ "spearman_logratio_shift_fallback_cells": 0.32446362406155993,
+ "shift_by_logratio_quintile": {
+  "(-9.074, -0.944]": 1.7246028421594533,
+  "(-0.944, 0.148]": 12.763525871744507,
+  "(0.148, 1.106]": 21.21384498949327,
+  "(1.106, 2.159]": 21.820640143615137,
+  "(2.159, 7.482]": 19.485342579893786
+ }
+}

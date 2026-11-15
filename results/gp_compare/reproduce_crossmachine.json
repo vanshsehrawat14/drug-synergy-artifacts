@@ -1,0 +1,12 @@
+{
+ "local": "results/neural/runs/gp_final",
+ "cluster": "results/neural/runs/gp_final_rebelx",
+ "rows": 1475328,
+ "same_observation_ids": true,
+ "max_abs_prediction_difference": 3.17697868013056e-10,
+ "max_abs_std_difference": 6.842526545369765e-12,
+ "same_selected_family": [
+  195,
+  195
+ ]
+}

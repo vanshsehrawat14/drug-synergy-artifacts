@@ -1,0 +1,18 @@
+{
+  "amends": "configs/gp_gpu.json",
+  "dated": "2026-11-06 ~18:20 PST, after the one-cell demo and before any coverage or features output",
+  "trigger": "In the frozen CPU study, removing the symmetrized interaction term (interaction_weight 0) lowered pooled validation MSE by 11.3% at cap 1500 (315.3 vs 355.4). Whether the interaction term helps when the GP sees every training row needs the same comparison at full data.",
+  "variants": {
+    "full_w0": {"rows": "all", "interaction_weight": 0.0},
+    "f2_residual_w0": {"rows": "all", "target": "bliss_residual", "interaction_weight": 0.0}
+  },
+  "groups": {
+    "interaction": {"variants": ["full_w0", "f2_residual_w0"]}
+  },
+  "selection": {
+    "metric": "pooled validation MSE, each cell at its selected family (lowest validation RMSE), exact predictor",
+    "F0": {"default": "full", "challengers": ["f0_drug_dose", "full_w0"], "margin": 0.01},
+    "F2": {"candidates": ["f2_mono", "f2_residual", "f2_residual_mono", "f2_residual_w0"]},
+    "production": "the selected F0 and F2 variants on all five folds, plus full and full_w0 as diagnostics of the interaction term"
+  }
+}

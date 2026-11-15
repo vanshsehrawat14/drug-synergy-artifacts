@@ -1,0 +1,17 @@
+{
+  "cases_sha256": "69e2c76476c8d14aa3c289b0a98ad6703b40b7eb9ad903f9e2df2cd1d4e23528",
+  "certificates_sha256": "7087e8531dfdf595e81a6b745861459cdc37c1b2bb110da2f7e2cb41381c9728",
+  "primary_replacements": 67,
+  "selected": 1137,
+  "changed_pair_cells": 134,
+  "strict_replacements": 79,
+  "accepted_root_accuracy_top5_replacements": 0,
+  "accepted_root_accuracy_max_panel_score_shift": 2.050521548113693e-07,
+  "undefined_cases": 53344,
+  "no_root_cases": 117824,
+  "corrected_cases": 15620,
+  "corrected_boundary_cases": 13989,
+  "all_corrected_pair_cells_increase": true,
+  "units": 22737,
+  "note": "Canonical ranking; pair bootstrap reselects within each draw; drug-LOO intervals are sensitivity ranges. Retrospective selections, no biological validation."
+}

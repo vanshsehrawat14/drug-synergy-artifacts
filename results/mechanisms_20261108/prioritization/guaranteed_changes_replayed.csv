@@ -1,0 +1,6 @@
+budget,unresolved,max_score_interval_width,guaranteed_exits,guaranteed_entries,ambiguous_native_selected,ambiguous_native_unselected
+0.01,0,8.330225398367475e-12,21,21,0,0
+0.02,0,8.330225398367475e-12,36,36,0,0
+0.05,0,8.330225398367475e-12,79,79,0,0
+0.1,0,8.330225398367475e-12,153,153,0,0
+0.2,0,8.330225398367475e-12,269,269,0,0

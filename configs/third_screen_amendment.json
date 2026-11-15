@@ -1,0 +1,9 @@
+{
+ "name": "third-screen-amendment-1",
+ "date": "2026-11-06 08:45 PST (commit 69fa7f8)",
+ "trigger": "Jobs 132600_0 and _1 stopped: the Bliss reference and the mono_only network need training-pair monotherapy for every row ('Reference requires training-pair monotherapy for every row'). In both NCATS screens a pair is usually measured in one cell line only, so a held-out drug can lack any training pair in the cell where it is tested. ONEIL measures every pair in every cell, and ALMANAC nearly so, so the drug-level rule was enough there.",
+ "change": "The seen-in-training rule moves from drugs to drug-cell combinations: pair-cells whose drug has fewer than 10 distinct pairs in that cell are excluded (single pass, after the drug-level rule), and generated folds must keep every validation and test drug-cell in the training pairs of that cell (configs/data_ncats_{es,dipg}.json: coverage drug_cell, min_pairs_per_drug_cell 10; outputs data/processed/ncats_{es,dipg}_v2). Only pair and cell identifiers enter. Seed 2026 qualifies for both screens.",
+ "effect": "NCATS_ES: 2,396 of 2,471 pair-cells kept, 72 drugs, 112,165 combination rows; all kept pair-cells are in UHO1, because EW8, RH36 and TC71 hold only 23 pair-cells each, so the primary screen is a single-cell all-pairs screen. NCATS_DIPG: 3,563 of 3,625 pair-cells kept (DIPG25 1,902, TC32 1,661), 128 drugs, 224,708 combination rows.",
+ "unchanged": "models, features, training settings, seeds, metrics, hypotheses H1-H3, decision rules and multiplicity",
+ "evidence_seen_before_change": "Only the error tracebacks and epoch-level training/validation MSE lines of jobs 132600_0/_1 on the v1 data. No test prediction, metric or Bliss reference output was viewed. Outputs written under the v1 data are moved aside on the cluster and not used."
+}

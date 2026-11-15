@@ -1,0 +1,16 @@
+{
+  "cases_sha256": "69e2c76476c8d14aa3c289b0a98ad6703b40b7eb9ad903f9e2df2cd1d4e23528",
+  "source_sha256": "ebc914c816ce543c382678d047f315181545fc1f58d43b9084934369ce9aebe7",
+  "sample_seed": 20261108,
+  "strata": {
+    "accepted:boundary": 50,
+    "accepted:interior": 50,
+    "accepted:undefined_opposite_or_flat": 50,
+    "fallback:boundary": 50,
+    "fallback:certified_no_root": 50,
+    "fallback:interior": 50,
+    "fallback:undefined_empty_interval": 50,
+    "fallback:undefined_opposite_or_flat": 50
+  },
+  "case_input_sha256": "36f848a28b506b7988aabd8bcefb9407640d03fd7bedca6865be5d05f9edf113"
+}

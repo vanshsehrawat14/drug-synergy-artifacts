@@ -1,0 +1,38 @@
+{
+  "cases": 367152,
+  "corrected_cases": 14197,
+  "panels": 22737,
+  "primary": {
+    "n": 22737,
+    "selected": 1137,
+    "retention": 0.9410729991204925,
+    "turnover": 0.05892700087950753,
+    "spearman": 0.9768745924245218,
+    "sign_flips": 517,
+    "turnover_pair_ci": [
+      0.04221635883905017,
+      0.07387862796833777
+    ],
+    "turnover_delete_drug_range": [
+      0.05258215962441315,
+      0.0713615023474179
+    ],
+    "bootstrap_draws": 2000
+  },
+  "score_change": {
+    "count": 22737.0,
+    "mean": 0.8068129565531368,
+    "std": 3.0803690701373454,
+    "min": 0.0,
+    "1%": 0.0,
+    "50%": 0.0,
+    "95%": 5.290545968205746,
+    "99%": 15.890654300680154,
+    "max": 51.069437283940154
+  },
+  "provenance": {
+    "native_cases_sha256": "69e2c76476c8d14aa3c289b0a98ad6703b40b7eb9ad903f9e2df2cd1d4e23528",
+    "verified_cases_sha256": "384a2bd51b4c9ffeca7d4d1768237a6212bf5cf126b2c16a382af87d72acf438"
+  },
+  "interpretation_boundary": "Rank changes measure scoring sensitivity, not improved biological hit discovery."
+}

@@ -1,0 +1,487 @@
+{
+  "campaign": "seed2029",
+  "dataset_sha256": "ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b",
+  "predictions": [
+    {
+      "family": "full",
+      "seed": 2026,
+      "fold": 0,
+      "predictions_sha256": "51dcd649798568fd98ba4632d01d79be1ebb400d171669815f332fa02328b2d9"
+    },
+    {
+      "family": "full",
+      "seed": 2026,
+      "fold": 1,
+      "predictions_sha256": "93f40495c00b7c18f6ecba2b0b4dad5cf7ae0aab4b7effadd7fe48e6e28de617"
+    },
+    {
+      "family": "full",
+      "seed": 2026,
+      "fold": 2,
+      "predictions_sha256": "43d18c2e08d1fb314c680be7cee7b07580fd815ccf26d5eb72d366718af23df9"
+    },
+    {
+      "family": "full",
+      "seed": 2026,
+      "fold": 3,
+      "predictions_sha256": "8974e1069e1c648d578754bbd972502d7c1d798dc5e155e4a732b39f717bfa1f"
+    },
+    {
+      "family": "full",
+      "seed": 2026,
+      "fold": 4,
+      "predictions_sha256": "284a21de25fd7924f597c5b4152efbc190f49b9ff58b045607892161afe7ce6b"
+    },
+    {
+      "family": "full",
+      "seed": 2027,
+      "fold": 0,
+      "predictions_sha256": "cae0017d5792ccaef62a00a54de52af6abc3ef2172ea8bf6749bcb76af94902a"
+    },
+    {
+      "family": "full",
+      "seed": 2027,
+      "fold": 1,
+      "predictions_sha256": "fb425eef947f79c92aeee7be407ce26a7bf40fb9a87084fba58cdc6f9366a784"
+    },
+    {
+      "family": "full",
+      "seed": 2027,
+      "fold": 2,
+      "predictions_sha256": "f4c999d7d2e3ce06127645bbace4a91bd72d6d53567f69c2c9f68e46ba17d9b5"
+    },
+    {
+      "family": "full",
+      "seed": 2027,
+      "fold": 3,
+      "predictions_sha256": "fa1403f9a93865f082bdafa15d84d3cf4af0db4067e9ebbc6a2fae1c617ab1bd"
+    },
+    {
+      "family": "full",
+      "seed": 2027,
+      "fold": 4,
+      "predictions_sha256": "2e9090bf2fa713b57ee9e837582d7ee98bac56e904b1dcab993aa793891f694d"
+    },
+    {
+      "family": "full",
+      "seed": 2028,
+      "fold": 0,
+      "predictions_sha256": "62c4654f9c3359603ef8a0574f1f45bb43a299bcf22584771531e153f710c279"
+    },
+    {
+      "family": "full",
+      "seed": 2028,
+      "fold": 1,
+      "predictions_sha256": "5ea702a84e8d2997c69675e9047e6a4b1b760655d2ed0647972b1310689be949"
+    },
+    {
+      "family": "full",
+      "seed": 2028,
+      "fold": 2,
+      "predictions_sha256": "4e80bbde787a92d0974a470a3451974a6932640d3ce0677d09e755cfebb5ee42"
+    },
+    {
+      "family": "full",
+      "seed": 2028,
+      "fold": 3,
+      "predictions_sha256": "8adf74a4df326670fcf6a186a9c92d2af3ebe29057bbe69be24a86ea97b09fec"
+    },
+    {
+      "family": "full",
+      "seed": 2028,
+      "fold": 4,
+      "predictions_sha256": "028aa7a0e0485602844688a2eba240f79af3a4bbf345d9b651aa3bdbbb0346e1"
+    },
+    {
+      "family": "full",
+      "seed": 2029,
+      "fold": 0,
+      "predictions_sha256": "232497e9c15ddc414db073df5f1853f1f39f49f6a4fc439049350c192ed7edea"
+    },
+    {
+      "family": "full",
+      "seed": 2029,
+      "fold": 1,
+      "predictions_sha256": "870fb445485a753e720b0436a62e683b88d8ef392e20a3d4ec9e8dc82249577b"
+    },
+    {
+      "family": "full",
+      "seed": 2029,
+      "fold": 2,
+      "predictions_sha256": "006fdc257cf9dc3bc19933c3200f990778a969420b2d9007b1950ce44b9d6f37"
+    },
+    {
+      "family": "full",
+      "seed": 2029,
+      "fold": 3,
+      "predictions_sha256": "a59b7dce9b1ec4fe1aa12ba76e4953f1d72d2b7929632881d1a5b6242f26e79b"
+    },
+    {
+      "family": "full",
+      "seed": 2029,
+      "fold": 4,
+      "predictions_sha256": "e6e4b5a401376115f0d9228e7cbb4a0a81427736259e9023992d2aa11a62345b"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2026,
+      "fold": 0,
+      "predictions_sha256": "453dcc4974a45cbc133a5d615495908a41352c8692b164b2786935d8b02ee26f"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2026,
+      "fold": 1,
+      "predictions_sha256": "e5c76073a982e4f073a97a7452cd2e0c0a11579013a0d8143b2d68c01bac606f"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2026,
+      "fold": 2,
+      "predictions_sha256": "70210065c4c734169ff05e62c21d15a0fa6ee9bada5aac29b2deffaef3c18f3c"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2026,
+      "fold": 3,
+      "predictions_sha256": "cfc77335c2b517730f9e77c5bde8ebfab6475447c51a2ee2fc92d04bc08a743f"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2026,
+      "fold": 4,
+      "predictions_sha256": "cb0e28225d6eb591a0860d34379fdab02939e150060c865d4e4a3c8bd8c4654b"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2027,
+      "fold": 0,
+      "predictions_sha256": "28e637896fbe4575d95e45ea485a970bc292d5a983b5927526cc1fa0d0082df4"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2027,
+      "fold": 1,
+      "predictions_sha256": "b6c1441741682c1c7120ea343722832746a6904459a6d52c03b398175db8e285"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2027,
+      "fold": 2,
+      "predictions_sha256": "0a2b4f350e96081951c2619789880da73bfbc1954982c375fe361b8e4b5f4c2f"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2027,
+      "fold": 3,
+      "predictions_sha256": "16b72f17ede49928dbbb397ca4a5211d3f9744f933d179ba6f148db4c12c9581"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2027,
+      "fold": 4,
+      "predictions_sha256": "da33902e60f271d3c4389ed3c36345dcdedc38a94a55924e1914371200a69115"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2028,
+      "fold": 0,
+      "predictions_sha256": "cebd474053ef6914c9868b6f26cb8d8e7a8e63750eee61cd49584e977c535d02"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2028,
+      "fold": 1,
+      "predictions_sha256": "64c5c6c5ddb8f9b0471cd3e6e50361fb3b0693b06add34a3577164cfc5d55091"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2028,
+      "fold": 2,
+      "predictions_sha256": "144aee82ba5a3dfa8d209fd2a8a62d239350c3709839d1b0b6499512759996fd"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2028,
+      "fold": 3,
+      "predictions_sha256": "8686c064deb5d04e8dfdb33ce28e558d9911539296ca68a22dabb1c99feabef5"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2028,
+      "fold": 4,
+      "predictions_sha256": "145b1f44c1bde5063c0470575951ca65817645d8fced1a5a2f0eb161b2f75bc0"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2029,
+      "fold": 0,
+      "predictions_sha256": "8aad39922a2828e34f88453ecb6198aa55253ef6e931ca3214a01c7ae6c10dd4"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2029,
+      "fold": 1,
+      "predictions_sha256": "13ae7c3dcd4ab599d888783b06d2456f4582f591e02cf9cf2190674bd0e84186"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2029,
+      "fold": 2,
+      "predictions_sha256": "94fa9112aa223b02a772cd98dc5c68da410dbed478a2db4ed28575232b4014e8"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2029,
+      "fold": 3,
+      "predictions_sha256": "67c7ca8c5943d2473ad232e7774dc5981ea89a9310befa9149040b74690b5b13"
+    },
+    {
+      "family": "no_drug_identity",
+      "seed": 2029,
+      "fold": 4,
+      "predictions_sha256": "a9ca5fd4b242deae31c29a4fa0fc74db8aa2a834ce900962858facb6913c5e29"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2026,
+      "fold": 0,
+      "predictions_sha256": "9c81297af5c21453879a564756b98075069665b525d61326450b68e61f00a26b"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2026,
+      "fold": 1,
+      "predictions_sha256": "0c2b03ca9cc8b8b8927cc6e4b7fa375695580d887c143d0f87b6fb756ae3b712"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2026,
+      "fold": 2,
+      "predictions_sha256": "5270b4849a56bbf04e2b4f745bc855b78d18a2118a53b60ac40c3f09c6efa572"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2026,
+      "fold": 3,
+      "predictions_sha256": "7347483a159c1c305077b570e06e59ab778a82d937f301ae98670182d65074f5"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2026,
+      "fold": 4,
+      "predictions_sha256": "b78c9295bcdc73a876b6a366190b4677333becead3fb828dd93d8b603336eaf9"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2027,
+      "fold": 0,
+      "predictions_sha256": "9c687ba821bbfecf3354976b2d6db35e99bf37dc01fc9159ae86fa63b390a4ba"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2027,
+      "fold": 1,
+      "predictions_sha256": "55a85a84e88ede9b0bfb259ba9ef5a06e8f421e2069421a03de17739195977c3"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2027,
+      "fold": 2,
+      "predictions_sha256": "333450da438b8834814f40af169bc88d036c0dd53f49c7215850ea9617bcf715"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2027,
+      "fold": 3,
+      "predictions_sha256": "5b9c786d9ccb0ccdb6207de301cdee723da566b1658705e522a3df45d9441ce2"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2027,
+      "fold": 4,
+      "predictions_sha256": "ad850ad84f3eb86e01c677f29a8c58a827582a1234d41f46e3a155b10c47153a"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2028,
+      "fold": 0,
+      "predictions_sha256": "d3787cfe3cf63b18ace83480be7266bc58582d16ab99617d3f9f725571f87fe1"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2028,
+      "fold": 1,
+      "predictions_sha256": "ddba44cdc19aecb9eff3efdb62ce03415520d04d31dbb34e414ce5945013b618"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2028,
+      "fold": 2,
+      "predictions_sha256": "994373799d9d2f0ffd430ce7040480d6a15daae8d1d459f49a8a9c5da24f624c"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2028,
+      "fold": 3,
+      "predictions_sha256": "c81b01a438eaf85afba8b268cdc78f18bc6dbb6fe4e554b85d1de3daef8a1b8a"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2028,
+      "fold": 4,
+      "predictions_sha256": "f9e690a2fa1fb7e5bc4987f09d3df2661ff095341a2645bfe5fe23cd25b14186"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2029,
+      "fold": 0,
+      "predictions_sha256": "44313459c87773e3e2d3633bcbb7a538660c791d9bd4c501bf5634749e11ddc1"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2029,
+      "fold": 1,
+      "predictions_sha256": "3d2e62bf9c8085d9534fedb18c6b3835a94df7d7b8de582b758ccd3d5fde347a"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2029,
+      "fold": 2,
+      "predictions_sha256": "276558fc79585fb96f61b538d9dfec762074177411dc6c7bf13eda068b9ef8d9"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2029,
+      "fold": 3,
+      "predictions_sha256": "68bc5104bd237b7524da9a02f4d5f3b47737508d67fd1d7731a9e70265badaec"
+    },
+    {
+      "family": "no_cell_identity",
+      "seed": 2029,
+      "fold": 4,
+      "predictions_sha256": "8259cc74e8dfc934e219dee1cd6e50941addf0461bd3c4101e0d6449317e8325"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2026,
+      "fold": 0,
+      "predictions_sha256": "8824b3a6e11f74fd7f337b4540407fac9f445fd5f6a01308e6e7253b55852fd7"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2026,
+      "fold": 1,
+      "predictions_sha256": "509732e7a2093bcb2a2b3fe0770d4975c3cb3d3edc2a39fb7ce0b28d40a6b5e4"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2026,
+      "fold": 2,
+      "predictions_sha256": "bc5c21d0b89535ea4007eecd6793570b6f87a9c7dfa8a92bb76e7b195c02a5a3"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2026,
+      "fold": 3,
+      "predictions_sha256": "d3100879de21cbd252f461bef4603afc74c026bd926e70eaed4036744f829e94"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2026,
+      "fold": 4,
+      "predictions_sha256": "ba6bd43510b4fee15d73b6d43609ab8514fa6b503af8cf344afb34bc00586fb9"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2027,
+      "fold": 0,
+      "predictions_sha256": "7811705a728f501bc08739c47f92b3d2c3b1882abfeb8b14dd22c0ae90deb26e"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2027,
+      "fold": 1,
+      "predictions_sha256": "1facac5294fd1531855b14390a2142d2d445e56044116010dd9a174f4453a15e"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2027,
+      "fold": 2,
+      "predictions_sha256": "d38a5a7d993aa3ac749072e694de0a7d9a34114aca4f7e3fafe1f6cd56c05156"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2027,
+      "fold": 3,
+      "predictions_sha256": "8b31f5c8c56a97b9ca98b3cab542231f7375c64872cdc715aa30a4f2ac4a15c4"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2027,
+      "fold": 4,
+      "predictions_sha256": "a9901c9f82785d5bffd810717d32a9a439f8f1ce98dc7ae00bfd8751cb20da7e"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2028,
+      "fold": 0,
+      "predictions_sha256": "d69e83c51d2abb555cdb3df66a32fef1a296e7be14a0d8247de098778eb38cda"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2028,
+      "fold": 1,
+      "predictions_sha256": "2045aee5d2674c41369a9249b0cf5bb1cc8d8ab644ccb95ddca9971640be48ee"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2028,
+      "fold": 2,
+      "predictions_sha256": "12bf77f7f35f9ff64f2fa01362521c6ef214fd75b0f36cecc02b006d798989ec"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2028,
+      "fold": 3,
+      "predictions_sha256": "7ef14430494a12bf319b31af0a03f05847df6907f93e74311b773c609fb20c02"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2028,
+      "fold": 4,
+      "predictions_sha256": "7c27c1a37de07f8cd5b51f3db9b0c7627eeaf19012b678dca2fba145eafb1861"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2029,
+      "fold": 0,
+      "predictions_sha256": "7ed2171e868f72680897a6d7f4a2bc1b15eedcd7e3cc41dff5bc2f857ffc76c5"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2029,
+      "fold": 1,
+      "predictions_sha256": "8201eee8d6e90c866689463871f28ddcb5dd4c432f4816a3e65dafd1dd223e9b"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2029,
+      "fold": 2,
+      "predictions_sha256": "2f12a577feb430597dacb7ad21a304a8ae669ae24d97772bc2e0d7841d5e71ee"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2029,
+      "fold": 3,
+      "predictions_sha256": "402013169eefbb961c1acbb7ee30d0fe2148a76d9ea3ec72f5ccf4c87de82b4f"
+    },
+    {
+      "family": "no_dose",
+      "seed": 2029,
+      "fold": 4,
+      "predictions_sha256": "720790d1159d42ff175836d5d941789e6ebc9e6f321ed5f3c0d6c440d660ae39"
+    }
+  ],
+  "interpretation": "Seed-2029 drug response is exploratory. New experiment claims need Holm across both new primary endpoints; use --combine after both complete."
+}

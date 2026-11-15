@@ -1,0 +1,24 @@
+{
+  "inputs": {
+    "cases": "69e2c76476c8d14aa3c289b0a98ad6703b40b7eb9ad903f9e2df2cd1d4e23528",
+    "blocks": "866ae92c09829e25dde86e139a83d6a9be11fe335b024b530141243d7f13f169",
+    "verified": "384a2bd51b4c9ffeca7d4d1768237a6212bf5cf126b2c16a382af87d72acf438",
+    "precision": "5e16570fbba38129b4a8de3ebf331b09b495398b9f0a60809475957e27c917a5",
+    "certificates": "0bb4d2da2ce08c7f49e4511a8926e1590f42e5b6839b0d3065338126c5edeb3b"
+  },
+  "pair_cells": 22737,
+  "replicate_counts": {
+    "4": 22422,
+    "8": 315
+  },
+  "halves": 200,
+  "bootstrap": 1000,
+  "seed": 20261110,
+  "decision": {
+    "within_resample_q025": 0.051890941072999124,
+    "entrant_mean_p_N": 0.06777611940298509,
+    "entrant_mean_p_C1": 0.7760746268656716,
+    "systematic": true
+  },
+  "limitations": "Combination replicate blocks only; monotherapy, fits and references fixed; shared plates would make noise an underestimate."
+}

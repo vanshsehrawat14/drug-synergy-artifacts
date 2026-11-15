@@ -1,0 +1,11 @@
+{
+  "name": "beyond-bliss-regimes-v1-addendum",
+  "frozen": "2026-11-06, after the declared regime results and before this control was computed. Post hoc.",
+  "reason": "The declared rule flagged selected F2 at Bliss expectation R >= 75. Near saturation, a monotone miscalibration of the Bliss rule can look like pair-specific gain, so the gain is re-measured against a recalibrated Bliss reference.",
+  "control": "calibrated_bliss: per test fold f, isotonic regression of inhibition on R fitted on the three training folds only (validation and test folds unused), applied to the test rows",
+  "analyses": [
+    "interaction residual R2 of calibrated_bliss relative to Bliss, per declared regime",
+    "interaction residual R2 of selected F2 and F0 relative to calibrated_bliss, per declared regime"
+  ],
+  "rule": "same intervals, Holm correction and seed requirement as the declared analysis; regimes stay defined by the original R"
+}
