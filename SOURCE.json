@@ -53,5 +53,7 @@
     "Site-specific launch scripts, operational logs, presentation files and original input datasets are omitted.",
     "Historical commit identifiers record provenance; new runs use this checkout.",
     "Host and path metadata are redacted; historical artifact hashes identify their original bytes."
-  ]
+  ],
+  "artifact_source_commit": "139fd43e44ffa02a882874882cac8dc0be0c0b2f",
+  "artifact_source_scope": "Source and release content used for the PDFs and validation; later changes to this metadata do not alter those artifacts."
 }
