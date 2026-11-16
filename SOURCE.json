@@ -3,17 +3,17 @@
   "repository": "https://github.com/vanshsehrawat14/drug-synergy-artifacts",
   "version": "0.2.0",
   "status": "editorial_review",
-  "date": "2026-11-15",
+  "date": "2026-11-16",
   "previous_snapshot_commit": "1fb37901d46b48564c515e7193d37cafeb3dd75c",
   "scope": "Research software, protocols, frozen scientific summaries, manuscript and supplement.",
   "source_text_encoding": "Committed bytes; maintained text uses UTF-8 and LF.",
-  "manifest_sha256": "bed3c04d8112e316c229fe579e65846e00f2d0bf0c0977a598160866a10c6a2f",
+  "manifest_sha256": "5005185c50990d3a7c4e2f4376619c30cc5f6b56026ebe754ae82993f17b3439",
   "artifacts": {
     "manuscript/manuscript.pdf": {
-      "sha256": "7ff2513c67df474cae273ab1587b551816f45854eb7762a205ef105a097aad38"
+      "sha256": "2734830fa72e221c881c5503caa82b184f80c9ae5578acd1e4b9e2b5d07487a8"
     },
     "manuscript/supplement.pdf": {
-      "sha256": "b1f0af487e83919c3807521aca2d2a8fb16baf0f9d25e9ee4cf8bcd57a192e18"
+      "sha256": "31bec6d3d957a7994ecbfc917cefc938a2be0cb05e55c1e997d2e2bf5406fe78"
     },
     "manuscript/figures/MANIFEST.json": {
       "sha256": "d9b6c4b871c3ceee4264bde8df7df3cf16519a9b27dee15fa7553bb6682813e9"
@@ -35,7 +35,7 @@
     "manuscript": {
       "citations": 41,
       "unused_references": 14,
-      "pages": 30,
+      "pages": 28,
       "missing_characters": 0,
       "overfull_hbox": 0,
       "overfull_vbox": 0,
@@ -46,7 +46,7 @@
     "supplement": {
       "citations": 8,
       "unused_references": 47,
-      "pages": 29,
+      "pages": 28,
       "missing_characters": 0,
       "overfull_hbox": 0,
       "overfull_vbox": 0,
@@ -84,9 +84,7 @@
         25,
         26,
         27,
-        28,
-        29,
-        30
+        28
       ],
       "supplement_pages": [
         1,
@@ -116,8 +114,7 @@
         25,
         26,
         27,
-        28,
-        29
+        28
       ],
       "publication_size_and_grayscale": true
     },
@@ -152,7 +149,13 @@
       "references_without_doi": 4
     },
     "new_model_training_runs": 0,
-    "gate2_protocol_sha256": "cc3051abd6e59205e5990088f66830bf050084773dadd19bdad799f7fe91c88b"
+    "gate2_protocol_sha256": "cc3051abd6e59205e5990088f66830bf050084773dadd19bdad799f7fe91c88b",
+    "layout_revision": {
+      "previous_editorial_commit": "01b7f9ac557ae53683950c497e10bd6cb7eae00c",
+      "scientific_text_preserved": true,
+      "figure_outputs_byte_preserved": 26,
+      "figure_sources_byte_preserved": 5
+    }
   },
   "notes": [
     "Independent Git history; no dependency on the development repository.",
@@ -161,6 +164,5 @@
     "Current file hashes are in MANIFEST.json; embedded historical hashes identify original execution artifacts.",
     "Input datasets, model weights, course presentations and site-specific execution files are excluded."
   ],
-  "artifact_source_scope": "Source and content used for PDFs and validation; a later provenance-only commit pins that source without changing the artifacts.",
-  "artifact_source_commit": "ea01f180d3674b63690aaded3600277c97eebe3b"
+  "artifact_source_scope": "Source and content used for PDFs and validation; a later provenance-only commit pins that source without changing the artifacts."
 }

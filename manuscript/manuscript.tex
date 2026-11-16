@@ -168,7 +168,6 @@ Pair means of the Bliss-residual contrast are nearly uncorrelated with those of 
 
 Held-out-pair models predict almost none of the pair offsets: their $R^2$ on pair means is −0.28 (interpolated base F2), −0.14 (selected F2), 0.06 (GP) and 0.06 (CF). The small total skill of the selected network comes from pair-centered structure, on which it reaches 0.13.
 
-\Needspace{12\baselineskip}% keep the heading, the lead sentence and the start of the list together
 \subsection{What same-pair information supplies}\label{sec:samepair}
 An anchor is a measurement of the evaluated pair in another cell line. Those outcomes are unavailable to a held-out-pair predictor. We compared three procedures using this additional information:
 \begin{itemize}
@@ -364,7 +363,6 @@ Replicate noise alone turns over 16.6\% (bootstrap) to 28.5\% (half-depth splits
 
 With shared single-agent inputs, within-unit statistics depending only on replicate differences are invariant to reference shifts (Proposition 5, Supplement S9). Unit means and other reliability statistics can change. Replicate agreement alone does not identify a biologically preferable convention, and selection-probability changes here do not validate either shortlist biologically or clinically.
 
-\Needspace{12\baselineskip}
 \section{Negative and inconclusive results}\label{sec:negative}
 The one confirmation attempted on an untouched NCATS screen failed its first prespecified step: interaction-residual $R^2$ was 0.057 [drug −0.006, 0.120], and later steps were not reached. Drug-identity ablations also did not establish the prespecified 5\% response-MSE cost: the pooled estimate was +4.61\% despite a Holm-adjusted $p$ of 0.0048. Removing identity did not establish improved interaction accuracy, and the frozen uncertainty-utility rule was unmet. Supplement S13 retains the full results, thresholds and sources. These outcomes limit the claims; they do not disprove every corresponding scientific hypothesis.
 
@@ -390,7 +388,7 @@ The study covers one screen and dose design. Analyses following the frozen Octob
 On the O'Neil screen, the evaluated held-out-pair predictors achieved high response accuracy while recovering little of a replicate-calibrated, drug-adjusted interaction contrast. Measurements of the same pair supplied additional predictive information. Separately, the Loewe inverse-root analysis identified rejected existing roots and a discontinuous fallback whose numerical treatment changed a screening shortlist. These findings concern the evaluated predictors, available inputs and reference reconstruction; their extension to other screens or biological prioritization remains untested.
 
 \section*{Data and code availability}
-The O'Neil response data and block scores are available in the DrugComb v1.4 deposits (\url{https://doi.org/10.5281/zenodo.18449193} and \url{https://doi.org/10.5281/zenodo.11102665}; CC BY 4.0). Published pair folds, Loewe labels and expression/descriptor inputs originate from DeepSynergy (\url{https://www.bioinf.jku.at/software/DeepSynergy/}); no redistribution license was identified for those assets. Analysis code, frozen designs, derived summaries, figure scripts and verification scripts are publicly available at \url{https://github.com/vanshsehrawat14/drug-synergy-artifacts}. Original software is released under the MIT license. Supplement S14 lists reproduction commands and input hashes. Per-pair-cell targets are regenerated from the source data.
+The O'Neil response data and block scores are available in the DrugComb v1.4 deposits (\url{https://doi.org/10.5281/zenodo.18449193} and \url{https://doi.org/10.5281/zenodo.11102665}; CC BY 4.0). Published pair folds, Loewe labels and expression/descriptor inputs originate from DeepSynergy (\url{https://www.bioinf.jku.at/software/DeepSynergy/}); no redistribution license was identified for those assets. Analysis code, frozen designs, derived summaries, figure scripts and verification scripts are publicly available at \url{https://github.com/vanshsehrawat14/drug-synergy-artifacts}. Original~software is released under the MIT license. Supplement S14 lists reproduction commands and input hashes. Per-pair-cell targets are regenerated from the source data.
 
 \section*{Author contributions}
 Vanshdeep Sehrawat led the integrated research, developed the neural-network models and shared evaluation infrastructure, and conducted the interaction-signal, numerical Loewe and screening analyses. He also developed the GP F2 and dose-aware collaborative-filtering extensions and prepared the manuscript and scientific figures.

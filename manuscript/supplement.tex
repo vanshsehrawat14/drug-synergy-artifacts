@@ -642,7 +642,6 @@ Seed & Fold & \normalfont\footnotesize SHA-256 \\
 \end{tabular}
 \end{table}
 
-\Needspace{10\baselineskip}
 \subsubsection*{Commands} Each step reads only the inputs above and the outputs of earlier steps.
 {\footnotesize
 \begin{verbatim}
@@ -758,6 +757,8 @@ The secondary response-level candidate, comboFM \citep{julkunen2020}, uses a fif
 
 The pre-execution budget allowed one additional model, five pair folds, one seed, one published configuration and at most 90 CPU minutes, with no parameter search, representation replacement or GPU campaign. Neither candidate passed the input/configuration gate, so no new model was trained and no test outcomes were generated. MatchMaker and JointSyn additionally require a changed output task or an explicitly aligned aggregate-target conversion; DeepDDS would require a regression model. This is a bounded reproducibility decision, not evidence that these methods cannot predict interactions. Larger models, other inputs and a complete matched reimplementation remain unevaluated. \file{docs/published_models.md} records the primary sources, inspected commits and unresolved details.
 
+% Keep the final reference line on the bibliography page.
+\enlargethispage{0.5\baselineskip}
 \begin{references}
 \input{build/supplement.bib.tex}
 \end{references}
