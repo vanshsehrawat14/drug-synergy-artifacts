@@ -7,13 +7,13 @@
   "previous_snapshot_commit": "1fb37901d46b48564c515e7193d37cafeb3dd75c",
   "scope": "Research software, protocols, frozen scientific summaries, manuscript and supplement.",
   "source_text_encoding": "Committed bytes; maintained text uses UTF-8 and LF.",
-  "manifest_sha256": "5005185c50990d3a7c4e2f4376619c30cc5f6b56026ebe754ae82993f17b3439",
+  "manifest_sha256": "fd474ad5f6b6e485b65619ce91a22758859a21d0f3772cbef12d2411432ba7ef",
   "artifacts": {
     "manuscript/manuscript.pdf": {
-      "sha256": "2734830fa72e221c881c5503caa82b184f80c9ae5578acd1e4b9e2b5d07487a8"
+      "sha256": "b002ef52ec376b1e1b5595776fd5bb30f28d585ae450671e7224edbc182b010e"
     },
     "manuscript/supplement.pdf": {
-      "sha256": "31bec6d3d957a7994ecbfc917cefc938a2be0cb05e55c1e997d2e2bf5406fe78"
+      "sha256": "5b6f4d86323ac449fc7e70956ad5a0dfebf1669d80fec0b2aef56cb086e7ca66"
     },
     "manuscript/figures/MANIFEST.json": {
       "sha256": "d9b6c4b871c3ceee4264bde8df7df3cf16519a9b27dee15fa7553bb6682813e9"
@@ -35,7 +35,7 @@
     "manuscript": {
       "citations": 41,
       "unused_references": 14,
-      "pages": 28,
+      "pages": 29,
       "missing_characters": 0,
       "overfull_hbox": 0,
       "overfull_vbox": 0,
@@ -46,7 +46,7 @@
     "supplement": {
       "citations": 8,
       "unused_references": 47,
-      "pages": 28,
+      "pages": 32,
       "missing_characters": 0,
       "overfull_hbox": 0,
       "overfull_vbox": 0,
@@ -84,7 +84,8 @@
         25,
         26,
         27,
-        28
+        28,
+        29
       ],
       "supplement_pages": [
         1,
@@ -114,7 +115,11 @@
         25,
         26,
         27,
-        28
+        28,
+        29,
+        30,
+        31,
+        32
       ],
       "publication_size_and_grayscale": true
     },
@@ -151,10 +156,16 @@
     "new_model_training_runs": 0,
     "gate2_protocol_sha256": "cc3051abd6e59205e5990088f66830bf050084773dadd19bdad799f7fe91c88b",
     "layout_revision": {
-      "previous_editorial_commit": "01b7f9ac557ae53683950c497e10bd6cb7eae00c",
+      "previous_editorial_commit": "ac3eaba0f160faffffbe657e330238bc65081665",
       "scientific_text_preserved": true,
+      "table_values_and_captions_preserved": true,
+      "input_hashes_and_mappings_preserved": true,
       "figure_outputs_byte_preserved": 26,
-      "figure_sources_byte_preserved": 5
+      "figure_sources_byte_preserved": 5,
+      "table_font_pt": 11,
+      "table_arraystretch": 1.6,
+      "table_caption_position": "below",
+      "reference_table_typography_glyph_runs_matched": 241
     }
   },
   "notes": [
@@ -164,6 +175,5 @@
     "Current file hashes are in MANIFEST.json; embedded historical hashes identify original execution artifacts.",
     "Input datasets, model weights, course presentations and site-specific execution files are excluded."
   ],
-  "artifact_source_scope": "Source and content used for PDFs and validation; a later provenance-only commit pins that source without changing the artifacts.",
-  "artifact_source_commit": "7b9da62cbae3de922dc7ddd502dabcbbd535f9d0"
+  "artifact_source_scope": "Source and content used for PDFs and validation; a later provenance-only commit pins that source without changing the artifacts."
 }

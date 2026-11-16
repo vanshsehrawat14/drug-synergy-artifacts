@@ -13,6 +13,7 @@
 \usepackage{float}
 \usepackage{needspace}
 \usepackage{booktabs,tabularx,array,multirow}
+\usepackage{caption}
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 \usepackage{enumitem}
@@ -32,8 +33,10 @@
 \renewcommand{\bottomfraction}{0.9}
 \renewcommand{\textfraction}{0.08}
 \renewcommand{\floatpagefraction}{0.8}
-\setlength{\textfloatsep}{16pt plus 2pt minus 4pt}
-\setlength{\intextsep}{10pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{20pt plus 2pt minus 4pt}
+\setlength{\intextsep}{12pt plus 2pt minus 2pt}
+% Match the table row spacing used throughout the article.
+\AddToHook{env/table/begin}{\renewcommand{\arraystretch}{1.6}}
 \setlength{\bibsep}{0pt}
 \setcounter{tocdepth}{2}
 \numberwithin{equation}{section}

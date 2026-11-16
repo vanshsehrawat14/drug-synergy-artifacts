@@ -37,8 +37,7 @@ Bliss independence and Loewe additivity formalize different notions of non-inter
 Feature-based networks, graph models and factorization machines predict aggregate synergy or dose-level response under different information conditions \citep{preuer2018,kuru2022matchmaker,wang2022deepdds,julkunen2020}. Table~\ref{tab:published} summarizes relevant O'Neil evaluations; Supplement S15 gives the implementation audit. Pair-out evaluation holds an unordered drug pair out across cell lines. Cell-out and drug-out instead test unseen cell lines and drugs. Random-triplet splits may retain the evaluated pair in other cell lines. These designs answer different generalization questions.
 
 \begin{table}[htbp]
-\centering\small
-\caption{Published O'Neil prediction tasks. Counts are retained records, drugs and cell lines. A record is an aggregate pair-cell label in the first four studies and a response matrix in DeepSynBa; the released DeepSynergy labels include 315 repeated pair-cells. Each named holdout is a separate evaluation design. None reports the Bliss-residual interaction contrast on the population and folds evaluated here.}\label{tab:published}
+\begin{center}
 \begin{tabularx}{\linewidth}{@{}P{0.16\linewidth} P{0.21\linewidth} P{0.23\linewidth} L@{}}
 \toprule
 Study & Records; drugs; cells & Prediction target & Evaluation protocol \\
@@ -50,6 +49,8 @@ JointSyn \citep{li2024jointsyn} & 12,033; 38; 34 & Filtered median Loewe score &
 DeepSynBa \citep{kuru2026deepsynba} & 14,031; 36; 27 & Dose-level viability & Pair-, cell- and drug-out; 60/20/20 partitions \\
 \bottomrule
 \end{tabularx}
+\end{center}
+\caption{Published O'Neil prediction tasks. Counts are retained records, drugs and cell lines. A record is an aggregate pair-cell label in the first four studies and a response matrix in DeepSynBa; the released DeepSynergy labels include 315 repeated pair-cells. Each named holdout is a separate evaluation design. None reports the Bliss-residual interaction contrast on the population and folds evaluated here.}\label{tab:published}
 \end{table}
 
 Aggregate Loewe regression, thresholded synergy classification and complete response-surface prediction cannot be ranked by placing their published metrics beside our response or interaction-contrast results. The retained populations, inputs and partitions also differ. Our existing dose-aware DeepSynergy adaptation supplies a controlled architectural comparison on the shared response task; it does not reproduce the published synergy benchmark. We make no architectural ranking from the unmatched published scores.
@@ -111,8 +112,7 @@ Controls are the Bliss reference, additive ridge regression, the training mean a
 The best held-out-pair models reach response $R^2$ 0.88 (Table~\ref{tab:response}); selected F2 has RMSE 11.84 [pair interval 11.59, 12.13]. GP-F2 is response-equivalent under the prespecified ±5\% relative-MSE margin: both grouped intervals lie inside that margin. Its MSE is 1.6\% lower than selected F2, a difference of −2.22 squared points [−3.93, −0.46; drug jackknife −4.83, 0.40]. Dose-aware CF has 16.5\% higher response error.
 
 \begin{table}[htbp]
-\centering\small
-\caption{Held-out-pair response prediction and Bliss-residual interaction accuracy. Response metrics cover all dose rows; network metrics average three seed fits. The last column weights pair-cells equally, unlike the row-weighted interaction analysis in the text. Production F2 uses mean-fill single-agent lookup; the matched same-pair experiment uses its interpolated base variant.}\label{tab:response}
+\begin{center}
 \begin{tabularx}{\linewidth}{@{}L L r r r@{}}
 \toprule
 Model & Inputs & RMSE & $R^2$ & \shortstack[r]{Bliss-residual\\contrast $R^2$} \\
@@ -126,6 +126,8 @@ DeepSynergy, dose-aware & descriptors, expression, doses & 18.19 & 0.713 & −0.
 Additive ridge & identities, doses & 24.18 & 0.493 & −0.459 \\
 \bottomrule
 \end{tabularx}
+\end{center}
+\caption{Held-out-pair response prediction and Bliss-residual interaction accuracy. Response metrics cover all dose rows; network metrics average three seed fits. The last column weights pair-cells equally, unlike the row-weighted interaction analysis in the text. Production F2 uses mean-fill single-agent lookup; the matched same-pair experiment uses its interpolated base variant.}\label{tab:response}
 \end{table}
 
 The response-variance decomposition explains how strong response prediction can coexist with weak interaction prediction (Figure~\ref{fig:response}a,b). Additive drug and drug-by-dose structure accounts for 81.8\% of measured row variance. The pair-cell contrast accounts for 2.6\%, dose-shape contrast for 10.2\% and replicate deviations for 5.4\%. These are projection-defined statistical components, not molecular causal contributions. A predictor can explain most row variance without recovering the smaller pair-specific component.
@@ -188,8 +190,7 @@ B1 and B2 estimate variances and covariances on training folds. Their prediction
 \subsubsection*{Matched comparison} In the pair-cell split, the anchors of an evaluated pair-cell are the pair's cell lines in the three training folds (about 23). B2's settings are selected on the validation fold, anchor and covariance construction fit drug effects without test entries, and every predictor is evaluated through the original frozen contrast on identical rows (Table~\ref{tab:matched}, Figure~\ref{fig:samepair}b).
 
 \begin{table}[htbp]
-\centering\small
-\caption{Matched, leak-free comparison on the Bliss-residual pair-cell contrast. Contrast $R^2$ of each predictor and paired differences on identical rows of the pair-cell split. Intervals are a pair-cluster bootstrap and a delete-one-drug jackknife. B3 per-pair errors were recomputed from the 15 saved prediction files, whose hashes match the campaign record; no model was retrained.}\label{tab:matched}
+\begin{center}
 \begin{tabular*}{0.86\linewidth}{@{\extracolsep{\fill}}l r r r@{}}
 \toprule
 Predictor & $R^2$ & Pair interval & Drug interval \\
@@ -204,6 +205,8 @@ B3 − B2 & 0.003 & [−0.031, 0.036] & [−0.079, 0.084] \\
 B2 − B1 & 0.039 & [0.029, 0.049] & [0.014, 0.063] \\
 \bottomrule
 \end{tabular*}
+\end{center}
+\caption{Matched, leak-free comparison on the Bliss-residual pair-cell contrast. Contrast $R^2$ of each predictor and paired differences on identical rows of the pair-cell split. Intervals are a pair-cluster bootstrap and a delete-one-drug jackknife. B3 per-pair errors were recomputed from the 15 saved prediction files, whose hashes match the campaign record; no model was retrained.}\label{tab:matched}
 \end{table}
 
 B1 reaches 81\% of B3's predictive $R^2$ [69\%, 97\%]. This is a ratio of prediction scores, not a causal attribution of the network's internal behavior. B3 exceeds B1 in all five folds (Supplementary Figure~S2b), but its advantage is concentrated: it is better for only 39\% of pairs, and the drug-jackknife interval of B3 − B1 includes zero. We did not resolve a B3–B2 difference: the paired estimate is 0.003 [pair −0.031, 0.036; drug −0.079, 0.084]. This uncertainty does not establish equivalence. B2 improves on B1 by 0.039 with both intervals excluding zero, so a modest cell-specific transfer beyond the offset is present. The simple same-pair predictors thus approach the network's reported accuracy. The network exceeds its matched held-out-pair counterpart by 0.268 [0.209, 0.330].
@@ -235,8 +238,7 @@ Here the Loewe reference is the one implicit in the published DrugComb scores. T
 CF and pair-kernel ridge regression predict the resulting aggregate labels under the published pair folds, using the historical equally weighted pair-cell contrast. Loewe labels remain predictable under this null; Bliss labels do not (Table~\ref{tab:labels}). Thus a learnable synergy label need not reflect learned interaction in the simulated response. This construction establishes a possibility under a specified null, not the absence of interaction in the measured screen.
 
 \begin{table}[htbp]
-\centering\small
-\caption{Contrast $R^2$ of label predictors on held-out pairs. Neighborhood CF and pair-kernel ridge regression predict the pair-cell contrast of each label. The simulation adds calibrated noise to the Bliss pair-cell reference (Supplement S8). Scores use the frozen, equally weighted pair-cell contrast.}\label{tab:labels}
+\begin{center}
 \begin{tabular*}{0.62\linewidth}{@{\extracolsep{\fill}}l r r@{}}
 \toprule
 Label & CF & Kernel ridge \\
@@ -247,6 +249,8 @@ Loewe, observed screen & 0.377 & 0.416 \\
 Bliss, observed screen & 0.156 & 0.149 \\
 \bottomrule
 \end{tabular*}
+\end{center}
+\caption{Contrast $R^2$ of label predictors on held-out pairs. Neighborhood CF and pair-kernel ridge regression predict the pair-cell contrast of each label. The simulation adds calibrated noise to the Bliss pair-cell reference (Supplement S8). Scores use the frozen, equally weighted pair-cell contrast.}\label{tab:labels}
 \end{table}
 
 On observed data, the reference-only term $M=R_{\mathrm{Bliss}}-R_{\mathrm{Loewe}}$ reaches contrast $R^2$ 0.772 for the Loewe label (Figure~\ref{fig:labels}d). It has no parameters fitted to combination outcomes; the single-agent curves underlying Loewe are fitted. Implementation, existence-rule and algebraic terms are evaluated separately in Supplementary Table S9. Their predictive $R^2$ values are not additive variance shares.
@@ -315,8 +319,7 @@ Existence and uniqueness of the root are properties of Eq.~\eqref{eq:loewe} and 
 A case is one of the 16 dose combinations of a surface, the fitted single-agent curves of one pair-cell and dose grid. Distinct deposited grids can give a pair-cell more than one surface. The 367,152 Loewe cases on 22,947 surfaces fall into the populations of Table~\ref{tab:populations}. The existence check instead covers co-monotone LL.4 arms, and the boundary-layer check certified roots within 0.01 of the smaller plateau (Supplementary Figure~S4).
 
 \begin{table}[htbp]
-\centering\small
-\caption{Mathematical populations and native solver outcomes for all 367,152 individual Loewe cases. Rows above the total are disjoint. Native acceptance means termination code 1–2; it does not certify a root. The 1,883 accepted opposite/flat-arm outcomes lie outside the stated inverse-root formulation.}\label{tab:populations}
+\begin{center}
 \begin{tabularx}{\linewidth}{@{}L r r r@{}}
 \toprule
 Population & Cases & Native accepted & Native fallback \\
@@ -330,6 +333,8 @@ Undefined: empty common interval & 4,160 & 0 & 4,160 \\
 Total & 367,152 & 182,247 & 184,905 \\
 \bottomrule
 \end{tabularx}
+\end{center}
+\caption{Mathematical populations and native solver outcomes for all 367,152 individual Loewe cases. Rows above the total are disjoint. Native acceptance means termination code 1–2; it does not certify a root. The 1,883 accepted opposite/flat-arm outcomes lie outside the stated inverse-root formulation.}\label{tab:populations}
 \end{table}
 
 The 15,620 rejected certified roots split into C1 (14,197 float64-verified cases) and C2 (1,423 cases requiring 100-digit certification). C1 contains 12,477 cases where the solver stopped at the root but its answer was discarded and 1,720 where the solver failed to reach it. C2 roots lie within about $10^{-13}$ of a plateau, where a float64 residual cannot separate root from asymptote. These are nested subgroups of the rejected roots, not extra populations.

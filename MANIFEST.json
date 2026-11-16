@@ -599,8 +599,8 @@
     },
     {
       "path": "manuscript/REPRODUCIBILITY.md",
-      "bytes": 7273,
-      "sha256": "48300dbf329210557f22c9d71d444bdbc2a23c5b23e5fbfccb32cbfb8267037e"
+      "bytes": 7333,
+      "sha256": "3562c3ad21d0f39698c1b563f7f5504cf577744bcecb3aacb00c7b4c11e7ee30"
     },
     {
       "path": "manuscript/STATISTICAL_AUDIT.md",
@@ -834,13 +834,13 @@
     },
     {
       "path": "manuscript/manuscript.pdf",
-      "bytes": 1010429,
-      "sha256": "2734830fa72e221c881c5503caa82b184f80c9ae5578acd1e4b9e2b5d07487a8"
+      "bytes": 1011529,
+      "sha256": "b002ef52ec376b1e1b5595776fd5bb30f28d585ae450671e7224edbc182b010e"
     },
     {
       "path": "manuscript/manuscript.tex",
-      "bytes": 60231,
-      "sha256": "41878312a6a0d0ac05877392a8a963d93be0e29f82b76e541ebbe74f435b419f"
+      "bytes": 60286,
+      "sha256": "03714b7ee4e4000135a6a27a9842c269f855f3fd79fae96e10769ab321012dbe"
     },
     {
       "path": "manuscript/references.json",
@@ -849,8 +849,8 @@
     },
     {
       "path": "manuscript/scripts/build.py",
-      "bytes": 6320,
-      "sha256": "3a77189162058375a012fcac6a25e11879a1876c398b4a2eea5f73ae27be1210"
+      "bytes": 6329,
+      "sha256": "46b361b982dc19fd36bf8d5d0ace5650fe7c21c3de0a2160b248abfc8237b493"
     },
     {
       "path": "manuscript/scripts/check_numbers.py",
@@ -884,18 +884,18 @@
     },
     {
       "path": "manuscript/style.tex",
-      "bytes": 3526,
-      "sha256": "e2baa419cc6eb7fd7cfa41566940b5b85280f73d6e76e45fe462932a5ad16c74"
+      "bytes": 3669,
+      "sha256": "6d0cb359adbceceea8fd075f3b7dac0cb3fc703699e7fe0f6580c5e0d688c7bf"
     },
     {
       "path": "manuscript/supplement.pdf",
-      "bytes": 564385,
-      "sha256": "31bec6d3d957a7994ecbfc917cefc938a2be0cb05e55c1e997d2e2bf5406fe78"
+      "bytes": 523343,
+      "sha256": "5b6f4d86323ac449fc7e70956ad5a0dfebf1669d80fec0b2aef56cb086e7ca66"
     },
     {
       "path": "manuscript/supplement.tex",
-      "bytes": 62432,
-      "sha256": "37c507e489a06b15aa0111a0ef9869eec78cdf04c7940bd7425377bf4eb9f26c"
+      "bytes": 63142,
+      "sha256": "5ca481b8472a641e94ef7cabd7c460c360d78155354bd67e1013bda32542dc0c"
     },
     {
       "path": "pyproject.toml",

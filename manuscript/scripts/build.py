@@ -4,7 +4,7 @@ python manuscript/scripts/build.py              # bibliographies from references
 python manuscript/scripts/build.py supplement   # one document
 
 Citations (\\citep{key}) are numbered; verified entries from manuscript/references.json appear in citation
-order. Requires pdfLaTeX with Computer Modern, natbib, booktabs, tabularx, enumitem,
+order. Requires pdfLaTeX with Computer Modern, natbib, booktabs, tabularx, caption, enumitem,
 xurl and hyperref.
 Prints a JSON report per document and exits non-zero on missing glyphs, undefined references, overflow or
 oversized floats.
