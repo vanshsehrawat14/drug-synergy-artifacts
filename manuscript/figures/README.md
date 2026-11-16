@@ -11,10 +11,10 @@ Defined once in `manuscript/scripts/figstyle.py`.
 
 | Role | Colour | Used for |
 |---|---|---|
-| Measured data, exact quantities | near-black | dose matrices, certified roots, zero-parameter references |
+| Measured data, exact quantities | near-black | dose matrices, certified roots, reference-only predictors |
 | Held-out-pair benchmark models | orange `#E69F00` | F0/F2 networks, GP, CF, DeepSynergy, ridge |
 | Same-pair predictors | sky blue / blue / bluish green | B1 pair offset / B2 cross-cell linear / B3 pair-seen network |
-| Historical pipeline | vermillion `#D55E00` | SynergyFinder 2.0.3 solver and summed-dose fallback, native scores |
+| Historical pipeline | vermillion `#D55E00` | SynergyFinder 2.0.12 reconstruction (solver branch matching 2.0.3) and summed-dose fallback, native scores |
 | Correction | blue `#0072B2` | certified roots, continuous extension, C1 restoration |
 | Controls | reddish purple `#CC79A7` | permutations, donor pairs, deranged anchors, simulated zero interaction |
 | Uncertainty and noise | grey | replicate noise, noise ceilings, replicate resampling |
@@ -33,14 +33,14 @@ delete-one-drug jackknife intervals. Noise, ceilings and replicate resampling ar
 | 3 | Why is response accuracy easy? | row-variance allocation; per-model error allocation; response versus interaction $R^2$ | resolution cache; interaction audit; pair-seen audit |
 | 4 | How much interaction is pair-wide, cell-specific or noise? | contrast heat map sorted by pair offset; energy shares with controls; cross-batch replication | pair-cell targets; variance components; cross-batch values |
 | 5 | What does same-pair information supply? | anchor curves with controls; matched B1/B2/B3; paired differences; energy budget | anchor experiment; paired B3 summary; variance components |
-| 6 | Can a reference alone create learnable labels? | Bliss and Loewe references of the Figure 1 block that uses the fallback; zero-interaction design (schematic); learnability; zero-parameter term against the Loewe label; components | native surfaces; Gate 2 rerun |
-| 7 | When does the Loewe root exist, and what does the solver do? | real fits of one surface: existence threshold, existence region with native outcomes, $g(y)$ near the plateau, reference along a slice with fallback jump, boundary-layer law; population checks; fallback error | native surfaces; Loewe audit tables |
+| 6 | Can a reference alone create learnable labels? | Bliss and Loewe references of the Figure 1 block that uses the fallback; Bliss-plus-noise pair-cell design; fixed-reference learnability; reference-only predictor and separate non-additive component scores | native surfaces; Gate 2 rerun |
+| 7 | When does the Loewe root exist, and what does the solver do? | real fits of one surface: existence threshold, existence region with native outcomes, $g(y)$ near the plateau, reference along a slice with fallback jump, boundary-layer law (five worked-surface panels); population checks in S5 | native surfaces; Loewe audit tables |
 | 8 | How does the convention change a shortlist? | native versus C1 scores near the cutoff; entrant score shifts; turnover by change and budget; replicate selection probabilities | screening audit tables |
 | S1 | Are single-agent values shared across replicates? | the four replicate blocks of the Figure 1 median case | observations |
 | S2 | Are the anchor results target- and fold-robust? | anchor curves for four targets; matched comparison by fold | anchor experiment; paired B3 summary |
 | S3 | How do the two batches compare? | batch-1 against batch-2 contrasts, before and after the cell-line shift | cross-batch values; variance components |
 | S4 | How do the Loewe case populations nest? | certificate class by native outcome, C1/C2 | Loewe audit |
-| S5 | Where do rejected roots lie, and how large are fallback errors? | error by population and fallback; location of C1 roots | Loewe audit tables |
+| S5 | Where do rejected roots lie, and how large are fallback errors? | error by population and fallback; location of C1 roots; population boundary-law check; weaker-arm slopes | Loewe audit tables |
 
 ## Case-selection rules
 
@@ -51,4 +51,4 @@ delete-one-drug jackknife intervals. Noise, ceilings and replicate resampling ar
   two cases have no fallback units).
 - **Figure 7.** Dasatinib and MK-2206 in MSTO (native surface 9458), chosen for illustration, not at random. It
   is one of 568 surfaces with co-increasing LL.4 arms, a weaker plateau below 100 and at least four grid cases
-  each of accepted roots, rejected certified roots and certified no-root cases. Population panels use all cases.
+  each of accepted roots, rejected certified roots and certified no-root cases. Population diagnostics are in Figure S5 and use the stated certificate subsets.

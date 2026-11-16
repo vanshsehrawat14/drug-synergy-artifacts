@@ -3,7 +3,7 @@
 ## Units and dependence
 
 - **Evaluation unit.** The held-out pair (583 pairs). Bootstrap intervals resample pairs (2,000 draws). Pair-cells within a pair share the pair offset and are never treated as independent.
-- **Shared drugs.** Pairs sharing a drug are dependent. Every main interval is paired with a delete-one-drug jackknife; these are typically about twice as wide as the pair bootstrap. Cell-jackknife intervals are given for the variance components.
+- **Shared drugs.** Pairs sharing a drug are dependent. Primary model comparisons additionally report delete-one-drug jackknife intervals; these are typically wider than pair-bootstrap intervals. Cell-jackknife intervals are given for the variance components.
 - **Folds.** The five folds are partitions of one screen, not independent studies. Fold-level values are reported as consistency checks, not as replication.
 - **Missingness.** The pair-cell matrix is complete. 75 re-measured pair-cells with changed doses are excluded from replicate comparisons only.
 
@@ -11,10 +11,10 @@
 
 - **Test-set dependence of the frozen contrast.** It fits drug effects within (pair fold, cell line) panels that contain the evaluated entries. It is the estimand of record, so targets were not redefined. Two consequences were found and handled:
   1. **Original pair folds.** A held-out pair's anchors carry other held-out pairs' values. A train-only target, whose baseline is fitted on other folds and which contains no held-out data, reproduces the anchor curves within 0.004 for $k\le16$.
-  2. **Pair-cell split.** Anchors and a covariance estimated in the same panels carry test entries. Matched B1 and B2 inflate from 0.177 and 0.216 to 0.209 and 0.309. The attribution in supplement Table S6 separates the two paths. All matched comparisons use contrasts refitted on training entries.
+  2. **Pair-cell split.** Anchors and a covariance estimated in the same panels carry test entries. Matched B1 and B2 inflate from 0.177 and 0.216 to 0.209 and 0.309. The attribution in supplement Table S6 separates the two paths. Matched anchors and covariance inputs use drug effects fitted without test entries; validation inputs exclude the test fold. Scoring retains the original frozen contrast on identical rows.
 - **Canary test.** Setting evaluated cells to +100 leaves B1 and B2 predictions unchanged (`tests/test_interaction_gap.py`).
 - **Hyperparameters.** B2 settings are chosen on validation fold $f+1$ with covariance from the remaining folds, then refitted. No held-out pair influences selection.
-- **Anchor masks.** Masks are SHA-256 hashes of (pair, seed) and never read targets. Evaluation rows are identical across $k$ and models.
+- **Anchor masks.** Masks are SHA-256 hashes of (pair, seed) and never read targets. For $k\le16$, the same 23 evaluation cell lines are used across $k$ and models. The all-38-anchor result instead evaluates all 39 cells leave-one-cell-out.
 - **Exploratory target.** "Bliss minus held-out-pair F2 prediction" uses out-of-fold predictions whose training data included the test fold for the covariance pairs. It is labelled exploratory and is not used for any conclusion.
 
 ## Variance decomposition
@@ -27,8 +27,8 @@
 - **Replicate noise is within batch.**
   - Unadjusted, the cross-batch mean squared difference is 4.47 times the within-batch prediction.
   - After the cell-line shift it is 1.79 times, and 88% of reproducible energy replicates.
-  - The full-screen extrapolation (0.67–0.82) depends on how batch variance scales and rests on 16 atypical pairs. Both assumptions are stated.
-- **Reference noise.** Not identifiable, because single-agent values are shared across replicates, pairs and both batches. Sensitivity: an assumed SD of 5 inhibition points moves 1.6% of target energy.
+  - The full-screen extrapolation (0.67–0.82) depends on how batch variance scales and rests on 16 atypical pairs. Both assumptions are stated; the range is not a confidence interval.
+- **Reference noise.** Not identifiable, because single-agent values are shared across within-batch replicates and nearly shared across pairs and batches. Sensitivity: an assumed SD of 5 inhibition points moves 1.6% of target energy.
 
 ## The pair-seen comparison
 
@@ -47,7 +47,7 @@
 
   The frozen materiality rule (difference at least 0.01, both intervals excluding 0) is met only by B2 − B1.
 - **Drug jackknife without refitting.** It deletes pairs containing each drug but does not refit the projection. The earlier pair-seen audit refitted it, giving a different drug interval for the pair-seen gain ([0.069, 0.468] against [0.115, 0.422]). The manuscript quotes the refitted interval for the gain and the non-refitted one only for the new paired differences.
-- **Training information.** Pair-seen and held-out-pair training use different supervision. The comparison isolates information, not capacity. Training-row counts differ by under 0.5%.
+- **Training information.** Pair-seen and held-out-pair training use different supervision. The interpolated base F2 architecture and training settings are held fixed while the split changes. The response table uses a distinct mean-fill production variant. This comparison does not rule out other capacity or representation limitations. Training-row counts differ by under 0.5%.
 
 ## Screening
 
@@ -73,5 +73,13 @@
   - noise shares;
   - Gate 2 outputs;
   - the B3 pooled $R^2$.
-- **Number check.** `scripts/check_numbers.py` passes 116/116.
+- **Number check.** `scripts/check_numbers.py` retains 116 original and 16 DeepSynergy checks and adds 15 editorial population, normalization, example and interval checks.
 - **Tests.** The full test suite passes; see `REPRODUCIBILITY.md` for the latest run.
+
+## Editorial target and denominator checks
+
+- The all-other-cell-line B1/B2 budget leaves 54.3% of total energy unpredicted after within-batch noise is removed: 60.2% of estimated reproducible energy. It is not an all-model bound.
+- Gate 2 simulates pair-cell means as Bliss reference plus Gaussian noise, with fixed published Loewe references. It does not rerun the native solver on simulated matrices. Its equal-pair-cell contrast differs from the response study's row-weighted contrast.
+- The historical 79.8% indicator counts pair-cells with an affected block, not dose cases. The native termination-code count is separately 184,905/367,152 (50.4%).
+- B3 − B2 = 0.003, pair interval [−0.031, 0.036], drug interval [−0.079, 0.084]. Failure to resolve a difference is not equivalence. The B1/B3 81% ratio concerns predictive scores.
+- Subtracting a fixed reference from both predictions and targets preserves errors and SSE, but not necessarily target energy, R² or separately trained score predictors.

@@ -4,29 +4,25 @@
 \renewcommand{\thesection}{S\arabic{section}}
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\thefigure}{S\arabic{figure}}
-\renewcommand{\theequation}{S\arabic{equation}}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
 \begin{document}
 
+\thispagestyle{empty}
 \begin{center}
-\vspace*{0.7em}
-
-{\large\bfseries Supplementary Material\par}
-
-\vspace{1.0em}
-
 \titleblock
+\vspace{0.4in}
+{\bfseries Supplementary Material\par}
 \end{center}
 
-\vspace{1.6em}
-
+\clearpage
 \contents
 \clearpage
 
 \section{Data, units and batches}\label{sec:S1}
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \small
-\caption{\textbf{The O'Neil screen as distributed by DrugComb v1.4.}}\label{tab:S1}
+\caption{The O'Neil screen as distributed by DrugComb v1.4.}\label{tab:S1}
 \begin{tabularx}{0.8\linewidth}{@{}L r@{}}
 \toprule
 Quantity & Value \\
@@ -41,27 +37,27 @@ Re-measured pair-cells: all / same doses & 315 (21 pairs × 15 cell lines) / 240
 \bottomrule
 \end{tabularx}
 \end{table}
-A block is one 4 × 4 combination matrix with single-agent edges.
+A pair-cell fixes one unordered drug pair and one cell line. A replicate block supplies 16 positive-dose combinations; including the zero-dose single-agent edges gives a 5 × 5 matrix. A dose unit fixes the pair-cell and both positive doses across blocks. Each measured response row belongs to one block at one dose unit. The rows in Table~\ref{tab:S1} exclude the single-agent edges.
 
-\paragraph{Shared single-agent values} All 184,416 (pair-cell, batch, drug, dose) edge groups take a single value across replicate blocks. Across pairs sharing a drug, cell line and dose, the 5,928 groups have pooled SD 0.0006 and maximum SD 0.0012. The double-zero well is the constant −0.000626.
+\subsubsection*{Shared single-agent values} All 184,416 (pair-cell, batch, drug, dose) edge groups take a single value across replicate blocks. Across pairs sharing a drug, cell line and dose, the 5,928 groups have pooled SD 0.0006 and maximum SD 0.0012. The double-zero well is the constant −0.000626.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \includegraphics{figures/figS1_replicates.pdf}
-\caption{\textbf{Single-agent values are shared by replicate blocks.} The four replicate blocks of the median pair-cell of main-text Figure 1 (BEZ235 + SN38 in DLD1). Single-agent edges (bottom row, left column) are identical in all four blocks; their standard deviation is zero (right), while the combination units vary between blocks. SN38 doses in nM, BEZ235 in µM.}\label{fig:S1}
+\caption{Single-agent values are shared by replicate blocks. The four replicate blocks of the median pair-cell of main-text Figure 1 (BEZ235 + SN38 in DLD1). Single-agent edges (bottom row, left column) are identical in all four blocks; their standard deviation is zero (right), while the combination units vary between blocks. SN38 doses in nM, BEZ235 in µM.}\label{fig:S1}
 \end{figure}
 
-\paragraph{The second batch}
+\subsubsection*{The second batch}
 
 \begin{itemize}
 \item The 1,260 blocks of the second batch have source rows of 2,273,700 or more.
-\item In the 240 replicate pair-cells, the batch-2 single-agent edges equal the batch-1 values (largest difference 0.22, mean 0.002). The second batch therefore re-measured combinations, not single agents.
+\item In the 240 same-dose pair-cells, batch-2 single-agent edges nearly equal the batch-1 values (largest difference 0.22, mean 0.002 points). The export is consistent with reuse of single-agent values; it does not supply independent single-agent replication.
 \item The other 75 re-measured pair-cells (5 pairs) changed the doses of one drug and are excluded from replicate analyses.
 \end{itemize}
-\paragraph{Frozen versus block-edge reference} The frozen Bliss reference (training-pair single-agent lookup) equals the block-edge reference everywhere except 604 units in 77 re-measured pair-cells. There the lookup mixes doses that differ between batches.
+\subsubsection*{Frozen versus block-edge reference} The frozen Bliss reference, obtained from training-pair single-agent measurements, equals the block-edge reference except at 604 dose units in 77 re-measured pair-cells. There the lookup mixes doses that differ between batches. These frozen values are retained in evaluation. All responses remain on the reported percent-growth-inhibition scale without clipping; residuals are inhibition minus reference.
 
 \section{Interaction targets}\label{sec:S2}
-For unit $u$ in pair-cell $(p,c)$ let $\bar y_u$ be the replicate mean, $n_u$ the number of replicate rows and $E_u$ a reference. The pair-cell mean residual is $m_{pc}=w_{pc}^{-1}\sum_u n_u(\bar y_u-E_u)$ with $w_{pc}=\sum_u n_u$.
+The primary contrast measures departure from the two drugs' usual mean Bliss-residual contributions in a cell line. It is a statistical adjustment, not a measurement of molecular mechanism. For unit $u$ in pair-cell $(p,c)$ let $\bar y_u$ be the replicate mean, $n_u$ the number of replicate rows and $E_u$ a reference. The pair-cell mean residual is $m_{pc}=w_{pc}^{-1}\sum_u n_u(\bar y_u-E_u)$ with $w_{pc}=\sum_u n_u$.
 
 Within each panel $\mathcal P_{f,c}$ (the pairs of published fold $f$ in cell line $c$):
 
@@ -76,7 +72,7 @@ t_{\cdot c}=\{I-H(H^\top WH)^{+}H^\top W\}m_{\cdot c}.
 \]
 It is a $W$-orthogonal projection removing every additive drug-by-cell effect, including the cell mean, because the columns of $H$ sum to twice the constant vector. The \textbf{dose-shape contrast} applies the same construction to unit residuals after subtracting pair-cell means, with indicators of drug by dose rank.
 
-Both are applied identically to targets, replicate half-differences and predictions. Energies are $\sum w t^2$. Four related targets are used:
+Both are applied identically to targets, replicate half-differences and predictions. Energies are $\sum w t^2$, with weights equal to measured row counts. The equally weighted pair-cell metrics in the frozen response table and historical label analysis (Section~\ref{sec:S8}) are identified separately. Four related targets are used:
 
 \begin{itemize}
 \item \textbf{measured-response contrast:} the same contrast of $\bar y_u$;
@@ -99,14 +95,14 @@ Let $d_u=n^{-1}\sum_b\sigma_by_{ub}$. Then $E\,d=0$ and $\operatorname{Cov}(d)=\
 $\sum_b\sigma_b=0$ removes $\mu$. $\operatorname{Cov}(d_u,d_{u'})=n^{-2}\sum_b\sigma_b^2\Sigma_{uu'}=\Sigma_{uu'}/n$, which is the covariance of block means. Then $E\|Cd\|_W^2=\operatorname{tr}(C^\top WC\operatorname{Cov}d)$.
 \end{proof}
 
-Signs are assigned to whole blocks, so whole-block shifts count as noise. The lemma requires every unit to receive balanced signs. In 210 eight-block pair-cells the two sets of blocks have different dose labels: 135 differ by rounding and 75 genuinely. A split balanced over all eight blocks of a pair-cell then gives some units three signs of one kind and one of the other, which leaks dose-shape signal into $d$. Balancing within dose-grid groups restores the lemma. Table~\ref{tab:S2} compares the two splits; the per-pair-cell split overstates the dose-shape noise share.
+The lemma conditions on the single-agent inputs and assumes independent block-error vectors, not merely exchangeable blocks. Shared single-agent error is therefore absent from this estimate. Signs are assigned to whole blocks, so independent whole-block shifts count as noise. The lemma requires every unit to receive balanced signs. In 210 eight-block pair-cells the two sets of blocks have different dose labels: 135 differ by rounding and 75 genuinely. A split balanced over all eight blocks of a pair-cell then gives some units three signs of one kind and one of the other, which leaks dose-shape signal into $d$. Balancing within dose-grid groups restores the lemma. Table~\ref{tab:S2} compares the two splits; the per-pair-cell split overstates the dose-shape noise share.
 
 The equivalent cross-product form is $t^2-d^2=t_At_B$ for the two half-sample targets, so the reproducible energy is the mean of $t_At_B$.
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \small
-\caption{\textbf{Noise shares (50 block-sign draws, seed 97).} The recomputation reproduces the frozen values bit for bit.}\label{tab:S2}
+\caption{Noise shares (50 block-sign draws, seed 97). The recomputation reproduces the frozen values bit for bit.}\label{tab:S2}
 \begin{tabularx}{\linewidth}{@{}L r r r@{}}
 \toprule
 Estimate & Frozen & Recomputed & Batch-aware split \\
@@ -118,15 +114,15 @@ Dose-shape Bliss noise share, per-pair-cell split & 0.4473 & 0.4473 &  \\
 \bottomrule
 \end{tabularx}
 \end{table}
-\paragraph{Noise-corrected $R^2$} With $y$ the replicate-mean target, $e=y-\hat y$ the prediction error and $\hat N$ the estimated noise energy of $Cy$, this is $1-(\|Ce\|^2-\hat N)/(\|Cy\|^2-\hat N)$. It is a ratio of unbiased estimators, so it is consistent rather than unbiased. On the dose-shape Bliss contrast it is 0.240 for GP and 0.195 for the selected network; with the per-pair-cell split they are 0.278 and 0.226.
+\subsubsection*{Noise-corrected $R^2$} With $y$ the replicate-mean target, $e=y-\hat y$ the prediction error and $\hat N$ the estimated noise energy of $Cy$, this is $1-(\|Ce\|^2-\hat N)/(\|Cy\|^2-\hat N)$. The noise correction removes estimated replicate noise from both energies. Their ratio is not unbiased; its consistency requires the corresponding energy estimates to converge under the stated sampling assumptions. On the dose-shape Bliss contrast it is 0.240 for GP and 0.195 for the selected network; with the per-pair-cell split they are 0.278 and 0.226.
 
 \section{Variance components and controls}\label{sec:S4}
-The pair-wide component $\hat\tau^2$ is the row-weighted cross-cell U-statistic (main-text Eq. 5, Section 6.2), the weighted mean product of one pair's contrasts in two different cell lines. The pair-by-cell share is total minus noise minus pair-wide. The descriptive in-sample pair-mean share is reported separately because it includes noise and pair-by-cell variance divided by the number of cell lines.
+A pair-wide offset is the component shared across a pair's cell lines. Its estimated variance $\hat\tau^2$ is the row-weighted cross-cell U-statistic given in the main text: the weighted mean product of one pair's contrasts in two different cell lines. The pair-by-cell share is total minus noise minus pair-wide. These moment-defined components do not identify a unique biological random-effects mechanism. The descriptive in-sample pair-mean share is reported separately because it also contains averaged noise and pair-by-cell variation.
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \small
-\caption{\textbf{Energy shares of the pair-cell contrast.} Pair-bootstrap intervals are shown for the main targets; for the Bliss target, drug and cell jackknife intervals are also given.}\label{tab:S3}
+\caption{Energy shares of the pair-cell contrast. Pair-bootstrap intervals are shown for the main targets; for the Bliss target, drug and cell jackknife intervals are also given.}\label{tab:S3}
 \begin{tabularx}{\linewidth}{@{}L r r r r@{}}
 \toprule
 Target & Noise & Pair-wide & Pair-by-cell & Descriptive pair mean \\
@@ -141,7 +137,7 @@ Reference only & 0 & 0.264 & 0.736 & 0.286 \\
 \bottomrule
 \end{tabularx}
 \end{table}
-\paragraph{Reference contribution} Pair-wide covariance decomposes as $\tau^2_{raw}=\tau^2_{ref}+\tau^2_{bliss}+2\,\mathrm{cov}$: $7.41=2.44+4.99+2(-0.013)$. Pair means of the Bliss target correlate with:
+\subsubsection*{Reference contribution} Pair-wide covariance decomposes as $\tau^2_{raw}=\tau^2_{ref}+\tau^2_{bliss}+2\,\mathrm{cov}$: $7.41=2.44+4.99+2(-0.013)$. Pair means of the Bliss target correlate with:
 
 \begin{itemize}
 \item measured response, 0.81;
@@ -149,10 +145,10 @@ Reference only & 0 & 0.264 & 0.736 & 0.286 \\
 \item the train-only target, 0.80;
 \item the reference alone, 0.009.
 \end{itemize}
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \small
-\caption{\textbf{Controls (Bliss residual).}}\label{tab:S4}
+\caption{Controls (Bliss residual).}\label{tab:S4}
 \begin{tabularx}{\linewidth}{@{}L L@{}}
 \toprule
 Control & Result \\
@@ -166,19 +162,19 @@ Single-agent values perturbed with SD 2 / 5 / 10 points & 0.25\% / 1.6\% / 6.4\%
 The noise-corrected 39 × 39 cross-cell covariance has a leading eigenvalue holding 30.6\% of its trace; that eigenvector has cosine 0.94 with the constant vector. The next four eigenvalues hold 13.9\%, 9.8\%, 8.0\% and 6.7\%.
 
 \section{Same-pair information experiments}\label{sec:S5}
-\paragraph{Design} The design was committed before outcomes were computed (\file{experiments/interaction_structure/design.json}).
+\subsubsection*{Design} The design was committed before outcomes were computed (\file{experiments/interaction_structure/design.json}).
 
 \begin{itemize}
-\item \textbf{Anchor masks.} For each held-out pair and seed (20 seeds), cell lines are permuted using a SHA-256 hash of (pair, seed). Anchors are the first $k$; evaluation uses positions 16–38 for every $k$ and model.
-\item \textbf{B1} uses $\hat\tau^2$ and $\hat s^2$ from the four non-test folds.
-\item \textbf{B2} uses the signal covariance $K=\lambda K_{CS}+(1-\lambda)(U_r\Lambda_rU_r^\top+\Psi)$ with $\lambda\in\{0,0.25,0.5,0.75,1\}$ and $r\in\{1,2,3,5,8,12,20,38\}$. These are chosen per (target, fold, $k$) on validation fold $f+1$, with covariance from the other three folds, then refitted.
+\item \textbf{Anchor masks.} Under the original pair folds, each held-out pair's cell lines are permuted using a SHA-256 hash of (pair, seed), for 20 seeds. The first $k$ are anchors. For $k\le16$, evaluation always uses positions 16–38: the same 23 cell lines for every $k$ and model. The all-38-anchor result instead predicts each of all 39 cell lines from its 38 others (leave-one-cell-out). It has a different evaluation population.
+\item \textbf{B1} shrinks the pair's average anchor contrast toward zero, using $\hat\tau^2$ and $\hat s^2$ from the four non-test folds. It reaches 0.12 $R^2$ with four anchors on the fixed evaluation cells.
+\item \textbf{B2} uses the identities of the anchor cell lines through the signal covariance $K=\lambda K_{CS}+(1-\lambda)(U_r\Lambda_rU_r^\top+\Psi)$ with $\lambda\in\{0,0.25,0.5,0.75,1\}$ and $r\in\{1,2,3,5,8,12,20,38\}$. These are chosen per (target, fold, $k$) on validation fold $f+1$, with covariance from the other three folds, then refitted.
 \item \textbf{Controls.} B4 feeds B1 or B2 the anchors of a training-fold donor pair that shares exactly one drug with the evaluated pair, and B5a those of a donor pair that shares none. B5b feeds B2 the pair's own anchor contrasts with their cell lines deranged. B0 predicts zero.
 \item \textbf{Leakage test.} Setting the targets of the evaluated cell lines to +100 leaves the B1 and B2 predictions unchanged.
 \end{itemize}
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \small
-\caption{\textbf{Anchor curve on the Bliss contrast.} The 23 evaluation cell lines are identical for every $k$; values are pooled $R^2$ with pair-bootstrap intervals.}\label{tab:S5}
+\caption{Anchor curve on the Bliss contrast. The 23 evaluation cell lines are identical for every $k$; values are pooled $R^2$ with pair-bootstrap intervals.}\label{tab:S5}
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}r r r r r r r@{}}
 \toprule
 $k$ & B1 & B2 & B2 − B1 & Donor sharing a drug (B2) & Unrelated donor (B2) & Deranged (B2) \\
@@ -205,14 +201,14 @@ At $k=16$:
 \item \textbf{Error scale.} RMSE is B0 4.54, B1 4.08, B2 3.85.
 \item \textbf{Across seeds and folds.} The SD of pooled $R^2$ across anchor seeds is 0.006 (B1) and 0.009 (B2). B2 exceeds B1 in all five folds.
 \end{itemize}
-\paragraph{Matched comparison} The pair-cell split assigns each pair's cell lines round-robin to five folds. With test fold $f$ and validation fold $f+1$, anchors are the pair's cell lines in the other three folds.
+\subsubsection*{Matched comparison} The pair-cell split assigns each pair's cell lines round-robin to five folds. With test fold $f$ and validation fold $f+1$, anchors are the pair's cell lines in the other three folds.
 
 The frozen contrast fits drug effects within panels that mix training and test entries. Anchors built from it therefore carry other pairs' test entries, and a covariance estimated on training entries of those panels picks up test entries through the drug fit.
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \small
-\caption{\textbf{Matched B1 and B2 under the frozen and the leak-free contrast (fixed $\lambda=0.5$, full rank).}}\label{tab:S6}
+\caption{Matched B1 and B2 with frozen versus training-only predictor inputs; the scored contrast is fixed (fixed $\lambda=0.5$, full rank).}\label{tab:S6}
 \begin{tabularx}{0.6\linewidth}{@{}L r r@{}}
 \toprule
 Anchors / covariance & B1 & B2 \\
@@ -224,18 +220,20 @@ leak-free / leak-free & 0.177 & 0.209 \\
 \bottomrule
 \end{tabularx}
 \end{table}
-With selected settings, the leak-free B2 is 0.216.
+With selected settings, leak-free B2 reaches 0.216. Training-anchor and covariance construction exclude test and validation entries from their drug-effect fits; validation uses a baseline fitted without test entries. The evaluation target remains the original frozen contrast on identical rows. This correction changes predictor inputs, not the scored target. The matched B3 and its held-out-pair comparator use the same interpolated base F2 architecture and training configuration; only the split changes. Production mean-fill F2 in the response table is a distinct configuration.
 
-\begin{figure}[H]
+The matched B3 − B2 difference is 0.003 [pair −0.031, 0.036; drug −0.079, 0.084], which does not establish equivalence. B1/B3 is a ratio of predictive $R^2$ values, not an attribution of the network's internal computation. In the separate all-other-cell-line B1/B2 analysis, 54.3\% of total contrast energy remains unpredicted after estimated within-batch noise is removed. Dividing by the reproducible share $1-0.0978$ gives 60.2\% of estimated reproducible energy. This budget concerns those evaluated procedures and inputs.
+
+\begin{figure}[htbp]
 \centering
 \includegraphics{figures/figS2_anchor_robustness.pdf}
-\caption{\textbf{Same-pair transfer for other targets and by fold.} \textbf{(a)}~Anchor curves as in main-text Figure 5a for four other targets: the Bliss residual with a drug-by-cell baseline fitted only on other folds (train-only), the measured-response contrast, the Bliss residual minus the held-out-pair F2 prediction, and the reference-only contrast. Light blue, B1; dark blue, B2; bands, 95\% pair-bootstrap intervals; squares, each cell line predicted from the pair's 38 others where computed. \textbf{(b)}~Leak-free matched comparison by pair-cell-split fold (Table~\ref{tab:S7}). \textbf{(c)}~B2 − B1 on the Bliss contrast against the number of anchors $k$, with 95\% pair-bootstrap intervals (Table~\ref{tab:S5}).}\label{fig:S2}
+\caption{Same-pair transfer for other targets and by fold. \textbf{(a)}~Anchor curves as in main-text Figure 5a for four other targets: the Bliss residual with a drug-by-cell baseline fitted only on other folds (train-only), the measured-response contrast, the Bliss residual minus the held-out-pair F2 prediction, and the reference-only contrast. Light blue, B1; dark blue, B2; bands, 95\% pair-bootstrap intervals; separated squares, all 39 cell lines evaluated leave-one-cell-out using 38 anchors, a different population from the fixed 23-cell curves. \textbf{(b)}~Leak-free matched comparison by pair-cell-split fold (Table~\ref{tab:S7}). \textbf{(c)}~B2 − B1 on the Bliss contrast against the number of anchors $k$, with 95\% pair-bootstrap intervals (Table~\ref{tab:S5}).}\label{fig:S2}
 \end{figure}
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \small
-\caption{\textbf{Leak-free matched comparison by pair-cell-split fold.} B3 values were recomputed from the 15 saved prediction files; the pooled B3 $R^2$ 0.2182355 equals the campaign record exactly.}\label{tab:S7}
+\caption{Leak-free matched comparison by pair-cell-split fold. B3 values were recomputed from the 15 saved prediction files; the pooled B3 $R^2$ 0.2182355 equals the campaign record exactly.}\label{tab:S7}
 \begin{tabularx}{0.75\linewidth}{@{}L r r r r r@{}}
 \toprule
 Fold & 0 & 1 & 2 & 3 & 4 \\
@@ -259,10 +257,10 @@ For the 240 replicate pair-cells, each batch alone (weight 64) replaces the pair
 \end{itemize}
 Intervals are a 2,000-draw bootstrap over the 16 pairs.
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \small
-\caption{\textbf{Moments of the Bliss contrast (contrast units squared).}}\label{tab:S8}
+\caption{Moments of the Bliss contrast (contrast units squared).}\label{tab:S8}
 \begin{tabularx}{0.85\linewidth}{@{}L r r@{}}
 \toprule
 Quantity & Unadjusted & Cell-line batch shift removed \\
@@ -276,70 +274,91 @@ Mean squared difference / within-batch noise & 4.47 & 1.79 \\
 \bottomrule
 \end{tabularx}
 \end{table}
-Removing the shift is appropriate because a complete re-run would absorb a cell-line shift through the contrast. The measured-response contrast gives a ratio of 0.89. Using each batch's own single-agent edges changes nothing, because they are the same values.
+A complete rerun of the contrast would absorb a cell-line shift; the shift-removed comparison approximates that adjustment in this subset. The measured-response contrast gives a ratio of 0.89. Substituting each batch's own single-agent edges has negligible effect, consistent with their near equality. Estimated reproducibility ratios can exceed one through sampling variability.
 
-\paragraph{Extrapolation} Batch-specific energy is 5.0 squared units against a within-batch noise of 5.7 per batch. If batch variance scales with replicate noise, the full-screen batch share is about 0.08 and the cross-batch reproducible share about 0.82. If batch variance is constant in absolute terms, the batch share is about 0.23 and the reproducible share about 0.67.
+\subsubsection*{Extrapolation} Batch-specific energy is 5.0 squared units against a within-batch noise of 5.7 per batch. If batch variance scales with replicate noise, the full-screen batch share is about 0.08 and the cross-batch reproducible share about 0.82. If batch variance is constant in absolute terms, the batch share is about 0.23 and the reproducible share about 0.67.
 
-The re-tested pairs have pair-wide share 0.449 and energy 26.9 per row against 0.242 and 20.6 for all pairs, so neither assumption can be checked here.
+The re-tested pairs have pair-wide share 0.449 and energy 26.9 per row against 0.242 and 20.6 for all pairs, so neither extrapolation assumption can be checked here. The resulting 0.67–0.82 range is assumption-dependent, not a confidence interval. Bootstrap intervals in Table~\ref{tab:S8} quantify uncertainty within the 16 re-measured pairs instead.
 
-\paragraph{Transfer to the other batch} Leave-one-cell-out B1 and B2 from batch-1 anchors give the following $R^2$:
+\subsubsection*{Transfer to the other batch} Leave-one-cell-out B1 and B2 from batch-1 anchors give the following $R^2$:
 
 \begin{itemize}
 \item against batch 1: B1 0.464, B2 0.497 (gain 0.033 [−0.030, 0.106]);
 \item against batch 2: B1 0.492, B2 0.523 (gain 0.030 [−0.015, 0.086]).
 \end{itemize}
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \includegraphics{figures/figS3_cross_batch.pdf}
-\caption{\textbf{Cross-batch replication.} The 240 pair-cells (16 pairs) measured in two batches with the same doses. \textbf{(a)}~Bliss contrasts of each batch alone, as measured. \textbf{(b)}~After removing a cell-line batch shift. \textbf{(c)}~Ratio of cross-batch to within-batch reproducible energy, overall and by component, with 95\% bootstrap intervals over the 16 pairs (Table~\ref{tab:S8}); grey, as measured; black, shift removed.}\label{fig:S3}
+\caption{Cross-batch replication. The 240 pair-cells (16 pairs) measured in two batches with the same doses. \textbf{(a)}~Bliss contrasts of each batch alone, as measured. \textbf{(b)}~After removing a cell-line batch shift. \textbf{(c)}~Ratio of cross-batch to within-batch reproducible energy, overall and by component, with 95\% bootstrap intervals over the 16 pairs (Table~\ref{tab:S8}); gray, as measured; black, shift removed.}\label{fig:S3}
 \end{figure}
 
 \section{Grounding of the cross-cell structure}\label{sec:S7}
 Cell-line similarity was taken from DeepSynergy expression features (FARMS-summarized, 3,984 genes), which are independent of combination outcomes \citep{preuer2018}.
 
 \begin{itemize}
-\item \textbf{Stability.} The noise-corrected correlation of pair-centred contrasts across cell lines is reproducible across disjoint halves of the pairs (Spearman 0.62, $p=0.0005$; measured response 0.72).
+\item \textbf{Stability.} The noise-corrected correlation of pair-centered contrasts across cell lines is reproducible across disjoint halves of the pairs (Spearman 0.62, $p=0.0005$; measured response 0.72).
 \item \textbf{Mantel test against expression similarity.} Bliss: $\rho=0.069$, $p=0.082$. Measured response: 0.121, $p=0.002$. 10,000 permutations each.
 \item \textbf{Expression-only predictor.} A leave-one-cell-out predictor whose cell similarity comes from expression gains 0.002 [−0.002, 0.006] over B1, 1.1\% of B2's gain.
 \end{itemize}
-\section{Zero-interaction control}\label{sec:S8}
+\section{Bliss-noninteraction simulation and reference-only prediction}\label{sec:S8}
 The zero-interaction protocol (scripts r16–r21) was frozen in October 2026 and re-executed for this paper. All committed numeric outputs and tables reproduced with maximum absolute difference 0.
 
-\paragraph{Construction}
-\begin{itemize}
-\item \textbf{Simulated screen.} Responses are a non-interaction reference plus noise, with no true interaction. Each block is then scored by the native Loewe pipeline and by Bliss.
-\item \textbf{Learners.} Neighbourhood CF and pair-kernel ridge regression are trained on held-out pairs to predict the contrast of each label.
-\end{itemize}
-\begin{table}[H]
-\centering
-\small
-\caption{\textbf{The zero-parameter term $M=R_{\mathrm{Bliss}}-R_{\mathrm{Loewe}}$ and its parts} (contrast $R^2$ against the observed Loewe label; parts as defined in main-text Figure 6d), with the role of the fallback.}\label{tab:S9}
-\begin{tabularx}{0.7\linewidth}{@{}L r@{}}
+\subsubsection*{Simulated pair-cell means}
+The frozen computation operates on pair-cell mean responses, not newly generated dose matrices. Let $T_{pc}$ be observed mean inhibition, $R_{B,pc}$ the mean Bliss reference and $L^{DC}_{pc}$ the published DrugComb Loewe score. The reference implicit in that score is $R^{DC}_{L,pc}=T_{pc}-L^{DC}_{pc}$. Both references are held fixed. The Bliss-noninteraction simulation is
+\[
+T^{sim}_{pc}=R_{B,pc}+\epsilon_{pc},\qquad
+\epsilon_{pc}\sim N\!\left(0,\frac{\sigma^2_{cell}}{16n_{pc}}\right),
+\]
+where $n_{pc}$ is the number of blocks and $\sigma^2_{cell}$ the pooled within-dose replicate variance. Independent Gaussian draws use seed 2. The factor 16 is the number of positive-dose combinations per block. This default calibration treats their errors as independent; the frozen sensitivity run instead uses the pooled variance of block means, $\sigma^2_{blockT}/n_{pc}$, under the tag \texttt{block\_T}.
+
+The simulated labels satisfy
+\[
+S^{sim}_B=\epsilon,\qquad
+S^{sim}_L=\epsilon+M_{DC},\qquad
+M_{DC}=R_B-R^{DC}_L.
+\]
+Thus the Bliss label is noise, while the Loewe label also contains a reference difference that requires no combination-outcome information. No single-agent curve is refitted and no solver is rerun on simulated outcomes. The construction holds the published reference implicit in the observed scores fixed; it tests a possibility under this null, not whether the measured O'Neil response lacks interaction.
+
+\subsubsection*{Predictors and metric}
+Neighborhood CF and pair-kernel ridge regression use the published pair folds, training on three folds and selecting on the next validation fold. The historical metric projects pair-cell labels on the two drug indicators within each test fold and cell line, with equal pair-cell weights. It therefore differs from the row-weighted response-study contrast. The frozen \texttt{cell\_independent} runs supply the main-text simulation results; the \texttt{block\_T} sensitivity results remain in \texttt{r18\_gate2.json}.
+
+\subsubsection*{Reference terms and fallback indicators}
+Let $R_{L,gen}$ be the historical generalized-root reference and $R_{L,exist}$ the existence-rule emulation. The evaluated reference-only predictors are
+\[
+M_{alg}=R_B-R_{L,gen},\qquad
+M_{impl}=R_{L,gen}-R^{DC}_L,\qquad
+M_{exist}=R_B-R_{L,exist}.
+\]
+Only the first two sum to $M_{DC}$. Their separate predictive $R^2$ values against the Loewe label are not additive variance shares. No parameters are fitted to combination outcomes, although the references use fitted single-agent curves.
+
+The historical fallback indicator first flags a block when its two mean references differ by more than $10^{-6}$ points, $|R_{L,exist}-R_{L,gen}|>10^{-6}$. A pair-cell is flagged if any of its blocks is flagged. The reported 79.8\% is the fraction of all 22,737 pair-cells so flagged, not the fraction of individual dose cases. The code's historical key \texttt{fraction\_units\_with\_fallback} therefore uses pair-cells as its units. This indicator differs from the native solver termination-code test. In the full native reconstruction, fallback is used for 184,905 of 367,152 individual Loewe cases (50.4\%; Section~\ref{sec:S10}).
+
+\begin{table}[htbp]
+\centering\small
+\caption{Reference-only predictors and historical fallback indicator. The first four rows are separate, non-additive contrast $R^2$ values against the observed Loewe label. The last two rows are percentages with distinct numerators.}\label{tab:S9}
+\begin{tabularx}{0.9\linewidth}{@{}L r@{}}
 \toprule
-Component & Value \\
+Predictor or population statistic & Value \\
 \midrule
-Zero-parameter single-agent term $M$ & 0.772 \\
-Implementation part $M_{impl}$ & 0.752 \\
-Existence part $M_{exist}$ & 0.703 \\
-Algebraic part $M_{alg}$ & −0.047 \\
-Share of units involving the fallback & 0.798 \\
-Share of $M_{impl}$ energy in fallback units & 0.917 \\
+Reference difference $M_{DC}$ & 0.772 \\
+Implementation term $M_{impl}$ & 0.752 \\
+Existence-rule comparator $M_{exist}$ & 0.703 \\
+Algebraic term $M_{alg}$ & −0.047 \\
+\midrule
+Pair-cells with an affected block & 79.8\% \\
+$M_{impl}$ contrast energy in those pair-cells & 91.7\% \\
 \bottomrule
 \end{tabularx}
 \end{table}
-A network using single-agent inputs only predicts the held-out Loewe contrast with $R^2$ 0.307 but the Bliss contrast with 0.003.
+A network using single-agent inputs alone predicts the held-out Loewe contrast with $R^2$ 0.307 but the Bliss contrast with 0.003.
 
-\paragraph{Limitations}
-\begin{itemize}
-\item The simulation fixes one reference and one noise model.
-\item It shows that Loewe labels can carry learnable reference structure. It does not show that observed screens lack interaction, nor that Loewe values are erroneous.
-\end{itemize}
-\paragraph{Reference cancellation} If $\hat S=\hat Y-R$ and $S=Y-R$ for a reference $R$ fixed before outcomes, then $\hat S-S=\hat Y-Y$. A model trained on responses therefore has the same error on any such score as on the response.
+\subsubsection*{Reference cancellation}
+For the same fixed reference $R$, let $\hat S=\hat Y-R$ and $S=Y-R$. Then $\hat S-S=\hat Y-Y$, so response errors and SSE are unchanged. A fixed linear contrast also preserves this equality. The score's target energy can differ, so $R^2$ need not agree. Separately training a predictor on each score can change its predictions and errors; the identity does not assert invariance of that training procedure.
 
 \section{Proofs for the Loewe reference}\label{sec:S9}
-Propositions 1--3 are stated in main-text Section 8.2; Proposition 5 is stated here.
-\paragraph{Setting} An arm is $f(x)=c+(d-c)/\{1+(x/e)^b\}$, $x>0$, with $e>0$, $b\neq0$, $c\neq d$. It is increasing if and only if $(b<0,d>c)$ or $(b>0,d<c)$. Its plateaus are $\ell_f=\lim_{x\to0^+}f$ and $h_f=\lim_{x\to\infty}f$.
+The main text states Propositions 1--3 for positive doses, compatible strictly monotone arms and a nonempty common effect interval. Proposition 3 additionally requires the weaker-arm slope magnitude to exceed one. Proposition 5 is stated here.
+\subsubsection*{Setting} An arm is $f(x)=c+(d-c)/\{1+(x/e)^b\}$, $x>0$, with $e>0$, $b\neq0$, $c\neq d$. It is increasing if and only if $(b<0,d>c)$ or $(b>0,d<c)$. Its plateaus are $\ell_f=\lim_{x\to0^+}f$ and $h_f=\lim_{x\to\infty}f$.
 
 On the open interval between $c$ and $d$ the inverse is $D(y)=e\{(d-y)/(y-c)\}^{1/b}$, continuous and strictly increasing for an increasing arm. For co-increasing arms of drugs 1 and 2 at positive doses $x_1,x_2$, with common interval $(\ell,h)=(\max_k\ell_k,\min_kh_k)\neq\emptyset$, let $g(y)=x_1/D_1(y)+x_2/D_2(y)-1$, and label the arms $i,j$ so that $h_i\le h_j$.
 
@@ -372,7 +391,7 @@ Off the boundary, $J$ evaluated at the actual doses can be close to zero: if the
 \end{enumerate}
 \end{proof}
 \setcounter{proposition}{4}
-\begin{proposition}[replicates sharing a reference cannot rank conventions]\label{prop:replicates}
+\begin{proposition}[invariance of within-unit replicate differences]\label{prop:replicates}
 Let block scores be $S^v_{ub}=y_{ub}-R^v_u$, where every convention's reference depends only on inputs shared by the blocks of unit $u$. Then:
 
 \begin{itemize}
@@ -380,15 +399,15 @@ Let block scores be $S^v_{ub}=y_{ub}-R^v_u$, where every convention's reference 
 \item the intraclass reliability of unit means over $m$ blocks is $\rho_v=V_v/(V_v+\sigma^2/m)$ with $V_v=\operatorname{Var}_u(\mu_u-R^v_u)$, so adding to $R^v$ any non-constant deterministic artifact uncorrelated with $\mu-R^v$ increases $V_v$ and therefore $\rho_v$.
 \end{itemize}
 \end{proposition}
-Replicate agreement therefore cannot select a convention when single-agent values are shared.
+Within-unit difference statistics cannot distinguish these conventions. Reliability of unit means can change, including through a deterministic reference artifact, so replicate agreement alone does not identify a biologically preferable reference.
 
-\paragraph{Unresolved: solver rejection} The mechanism of native Newton rejection is a conjecture: iterates leave $(\ell,h_i)$ when the boundary layer is thinner than the first step. It is supported by the slope concentration and by a start-point intervention (102 of 400 acceptance changes, 68 with certified roots), but is not proved.
+\subsubsection*{Unresolved: solver rejection} The mechanism of native Newton rejection is a conjecture: iterates leave $(\ell,h_i)$ when the boundary layer is thinner than the first step. It is supported by the slope concentration and by a start-point intervention (102 of 400 acceptance changes, 68 with certified roots), but is not proved.
 
 \section{Numerical certification and counts}\label{sec:S10}
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \small
-\caption{\textbf{Native solver codes on all 367,152 cases.}}\label{tab:S10}
+\caption{Native solver codes on all 367,152 cases.}\label{tab:S10}
 \begin{tabularx}{0.5\linewidth}{@{}L r@{}}
 \toprule
 Native code & Cases \\
@@ -401,9 +420,9 @@ Native code & Cases \\
 \bottomrule
 \end{tabularx}
 \end{table}
-Native accepted 182,247 cases and fell back on 184,905.
+The native solver accepted 182,247 cases and used fallback on 184,905 (50.4\% of all 367,152 cases). Accepted outcomes include 180,364 certified roots and 1,883 opposite/flat-arm outcomes outside the stated inverse-root formulation; acceptance is not itself a certificate.
 
-The populations of main-text Table 4 are disjoint, and their certificate classes sum to 367,152:
+The mathematical classes in the main-text population table are disjoint and sum to 367,152:
 
 \begin{itemize}
 \item certified root 195,984 (180,364 accepted + 15,620 rejected);
@@ -412,9 +431,9 @@ The populations of main-text Table 4 are disjoint, and their certificate classes
 \item empty interval 4,160.
 \end{itemize}
 
-\paragraph{Certificates} Each case was evaluated in 100-digit interval arithmetic (mpmath), with the stored float64 fit coefficients taken as exact binary rationals. Because $g$ is strictly monotone on $(\ell,h)$, with one end diverging and the other having a finite limit $g_{\mathrm{end}}$, a root exists if and only if $g_{\mathrm{end}}$ has the opposite sign to the diverging end. A case is a certified root when a bracket $[y_0,y_1]$ strictly inside $(\ell,h)$ has interval enclosures of $g(y_0)$ and $g(y_1)$ of strictly opposite signs, and a certified no-root case when the enclosure of $g_{\mathrm{end}}$ lies strictly on the same side of zero as the diverging end. Cases whose enclosure of $g_{\mathrm{end}}$ contains zero are left unresolved; no case of this screen is.
+\subsubsection*{Certificates} Each case was evaluated in 100-digit interval arithmetic (mpmath), with the stored float64 fit coefficients taken as exact binary rationals. Because $g$ is strictly monotone on $(\ell,h)$, with one end diverging and the other having a finite limit $g_{\mathrm{end}}$, a root exists if and only if $g_{\mathrm{end}}$ has the opposite sign to the diverging end. A case is a certified root when a bracket $[y_0,y_1]$ strictly inside $(\ell,h)$ has interval enclosures of $g(y_0)$ and $g(y_1)$ of strictly opposite signs, and a certified no-root case when the enclosure of $g_{\mathrm{end}}$ lies strictly on the same side of zero as the diverging end. Cases whose enclosure of $g_{\mathrm{end}}$ contains zero are left unresolved; no case of this screen is.
 
-\paragraph{C1 and C2} C1 roots are confirmed in double precision by two independent checks: the root satisfies the native Loewe equation and lies strictly inside both fitted effect ranges, and a second root finder that never inverts a curve (bisection on the dose fraction $x_1/D_1(y)$) finds it. C1 (14,197) contains:
+\subsubsection*{C1 and C2} C1 roots are confirmed in double precision by two independent checks: the root satisfies the native Loewe equation and lies strictly inside both fitted effect ranges, and a second root finder that never inverts a curve (bisection on the dose fraction $x_1/D_1(y)$) finds it. C1 (14,197) contains:
 
 \begin{itemize}
 \item 12,477 cases where the solver stopped at the root but the answer was discarded;
@@ -422,13 +441,13 @@ The populations of main-text Table 4 are disjoint, and their certificate classes
 \end{itemize}
 C2 (1,423) contains boundary roots within about $10^{-13}$ of a plateau, where float64 residuals cannot separate root from asymptote and only the 100-digit certificate does. $\mathrm{C1}\cup\mathrm{C2}$ equals the 15,620 rejected certified roots exactly.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \includegraphics{figures/figS4_loewe_populations.pdf}
-\caption{\textbf{Nesting of the Loewe case populations.} All 367,152 cases by certificate status, native solver outcome and, for rejected certified roots, the C1/C2 split (main-text Table 4). Counts are disjoint within a level and nest across levels.}\label{fig:S4}
+\caption{Nesting of the Loewe case populations. All 367,152 cases by certificate status, native solver outcome and, for rejected certified roots, the C1/C2 split (main-text population table). Counts are disjoint within a level and nest across levels.}\label{fig:S4}
 \end{figure}
 
-\paragraph{Checks}
+\subsubsection*{Checks}
 
 \begin{itemize}
 \item \textbf{Existence criterion.} Against certificates it agrees in all 310,928 co-monotone LL.4 cases, with 0 near-ties needing 60-digit arithmetic; 4,576 cases with an L.4 arm are excluded.
@@ -439,11 +458,13 @@ C2 (1,423) contains boundary roots within about $10^{-13}$ of a plateau, where f
 \item Accepted roots near an asymptote: 2,443/2,443.
 \end{itemize}
 \end{itemize}
+The reconstruction uses SynergyFinder 2.0.12, whose inspected solver branch matches 2.0.3, under R 3.6.3 and nleqslv 3.3.2. DrugComb v1.4's exact release is unknown. The later 3.7.4 source inspected solves on a response grid and retains a summed-dose fallback when no single drug reaches the observed response; that release was not evaluated here.
+
 \section{Fallback errors and jump}\label{sec:S11}
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \small
-\caption{\textbf{Absolute error of each fallback against the certified root (inhibition points).}}\label{tab:S11}
+\caption{Absolute error of each fallback against the certified root (inhibition points).}\label{tab:S11}
 \begin{tabularx}{\linewidth}{@{}L l r r r@{}}
 \toprule
 Population & Fallback & Median & Mean & 90th percentile \\
@@ -457,7 +478,7 @@ C2, 1,423 & HSA & 0.0000 & 0.29 & 0.33 \\
 \end{table}
 HSA is closer in 71.7\% of C1 cases.
 
-\paragraph{Where the C1 roots lie} Of the 13,856 co-increasing LL.4 C1 roots:
+\subsubsection*{Where the C1 roots lie} Of the 13,856 co-increasing LL.4 C1 roots:
 
 \begin{itemize}
 \item 10,712 lie within 0.01 of the upper plateau and carry 68.3\% of the absolute reference shift; 10,646 of these have a plateau below 100;
@@ -466,7 +487,7 @@ HSA is closer in 71.7\% of C1 cases.
 \end{itemize}
 For the 10,646, the jump $J$ has median 3.83 and mean 18.9 and is positive in 58\%.
 
-\paragraph{Boundary layer} For 13,277 certified roots within 0.01 of the smaller plateau:
+\subsubsection*{Boundary layer} For 13,277 certified roots within 0.01 of the smaller plateau:
 
 \begin{itemize}
 \item the median absolute $\log_{10}$ ratio of predicted to certified distance is $2.7\times10^{-5}$;
@@ -474,24 +495,25 @@ For the 10,646, the jump $J$ has median 3.83 and mean 18.9 and is positive in 58
 \item the log–log correlation is 0.998.
 \end{itemize}
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 \centering
 \includegraphics{figures/figS5_fallback_errors.pdf}
-\caption{\textbf{Fallback error by population and location of rejected roots.} \textbf{(a)}~Cumulative distribution of the absolute difference between each fallback and the certified root for C1 and C2 (Table~\ref{tab:S11}); differences below $10^{-16}$ are drawn at $10^{-16}$. \textbf{(b)}~Location of the 13,856 co-increasing LL.4 C1 roots: within 0.01 of the upper plateau, near the lower asymptote, or interior.}\label{fig:S5}
+\caption{Population checks of the fallback and boundary layer. \textbf{(a)} Cumulative absolute difference between each fallback and the certified root for C1 and C2 (Table~\ref{tab:S11}); differences below $10^{-16}$ are drawn at $10^{-16}$. \textbf{(b)} Location of the 13,856 co-increasing LL.4 C1 roots. \textbf{(c)} Proposition 3 against 13,277 certified root-to-plateau distances; the line is equality and shading marks the float64-scale region used for the worked example. \textbf{(d)} Weaker-arm slope magnitude in all co-increasing LL.4 certified roots and in C1. Population evidence supports, but does not prove, the conjectured Newton-rejection mechanism.}\label{fig:S5}
 \end{figure}
 
 \section{Screening analysis}\label{sec:S12}
-\paragraph{Fidelity} Native block scores reproduce the stored reconstruction exactly. Against published DrugComb scores they have:
+The shortlist ranks pair-cell Loewe scores averaged over replicate dose matrices, not independently validated treatments. Correcting C1 roots and replacing the no-root fallback are separate interventions.
+\subsubsection*{Fidelity} Native block scores reproduce the stored reconstruction exactly. Against published DrugComb scores they have:
 
 \begin{itemize}
 \item RMSE 0.704 and correlation 0.9990;
 \item 92.3\% of scores within 0.01;
 \item top-5\% list differing by 1 of 1,137.
 \end{itemize}
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \small
-\caption{\textbf{Turnover of the top list by budget (native to C1).} No budget has ties at its cutoff.}\label{tab:S12}
+\caption{Turnover of the top list by budget (native to C1). No budget has ties at its cutoff.}\label{tab:S12}
 \begin{tabularx}{0.6\linewidth}{@{}L r r r@{}}
 \toprule
 Budget & Selected & Replaced & Turnover \\
@@ -512,40 +534,44 @@ At the 5\% budget, other changes give different turnovers:
 \item both (IH): 30.78\%;
 \item from I to IH: 26.74\%.
 \end{itemize}
-\paragraph{Entrants and exits} Entrants sat a median 3.60 below the native cutoff (90th percentile 11.07, maximum 25.87; 10 within one point). Their scores rose by a median 6.06 and a mean 8.11. Exits sat a median 0.167 above the cutoff, and their scores did not change (maximum absolute change 0.023).
+\subsubsection*{Entrants and exits} Entrants sat a median 3.60 below the native cutoff (90th percentile 11.07, maximum 25.87; 10 within one point). Their scores rose by a median 6.06 and a mean 8.11. Exits sat a median 0.167 above the cutoff, and their scores did not change (maximum absolute change 0.023).
 
 C1 changes 5,003 pair-cell scores and reverses 517 pair-cell signs.
 
-\paragraph{Resampling} The resampling analysis uses 1,000 bootstrap resamples and 200 half-depth splits of combination replicates.
+\subsubsection*{Resampling} The resampling analysis uses 1,000 bootstrap resamples and 200 half-depth splits of combination replicates.
 
 \begin{itemize}
 \item The native-to-C1 turnover is 5.87\% [5.10, 6.68] (bootstrap) and 5.77\% (half-depth).
 \item Replicate noise alone turns over 16.6\% (consecutive bootstrap draws) and 28.5\% (half-depth).
 \end{itemize}
+Convention turnover compares native and C1 scores within a resample; noise turnover compares different resampled screens under one convention. The deterministic 67 replacements among 1,137 selected pair-cells (5.89\%) is therefore a different quantity from replicate-resampling turnover. The convention shift persists under the stated resampling procedure; this does not establish biological importance or improved prioritization.
+
 \section{Negative and inconclusive results}\label{sec:S13}
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \small
-\caption{\textbf{Hypotheses that were not supported, with sources (under \texttt{results/} unless stated).}}\label{tab:S13}
+\caption{Negative and inconclusive analyses, with sources (under \texttt{results/} unless stated). Failure to meet a decision rule does not disprove the broader hypothesis.}\label{tab:S13}
 \begin{tabularx}{\linewidth}{@{}L L L@{}}
 \toprule
 Hypothesis & Result & Source \\
 \midrule
 NCATS confirmation of high-inhibition specificity & H1: $R^2$ 0.057 (seeds 0.065, 0.042, 0.064), drug jackknife [−0.006, 0.120], rule not met; sequence stopped & \file{mechanism_analysis/historical_controls/failed_ncats_confirmation.json} \\
-Drug identity costs at least 5\% response MSE & +4.61\% pooled over seeds 2026–2029 (Holm $p$ 0.0048), below threshold; seed 2029 +3.23\% & \file{pair_information/claim_ledger.json} (I1) \\
+Drug identity costs at least 5\% response MSE & +4.61\% pooled over seeds 2026–2029 (Holm $p$ 0.0048), effect below 5\%; seed 2029 +3.23\% & \file{pair_information/claim_ledger.json} (I1) \\
 Removing drug identity improves the contrast & −7.41\% [drug −15.3, 0.5]; Bliss-residual objective −3.85\% & \file{reports/pair_information/results_summary.md} \\
 Identity channels interact & +2.21\%, Holm $p$ 0.38 & \file{mechanism_analysis/training_records/joint_identity/comparisons.csv} \\
 Uncertainty utility & Frozen rule unmet (GP and network ensembles) & \file{reports/pair_information/results_summary.md} \\
-Dose-aware DeepSynergy adaptation & Shared response task: RMSE 18.19, $R^2$ 0.713, measured-response contrast $R^2$ 0.283 & \file{compare/selected_models.csv} \\
+Dose-aware DeepSynergy adaptation & Shared response task: RMSE 18.19, $R^2$ 0.713, measured-response contrast $R^2$ 0.283; distinct from Bliss-residual accuracy (Section~\ref{sec:S15}) & \file{compare/selected_models.csv} \\
 \bottomrule
 \end{tabularx}
 \end{table}
 \section{Reproducibility}\label{sec:S14}
+The response table's production F2 is the mean-fill configuration \texttt{f2\_base\_mean}; the interpolated control and matched B3 use \texttt{f2\_base}. Selected F2 additionally uses validation-selected architectures. GP-F2 is \texttt{f2\_residual\_mono}: one GP per cell line, drug identities, pooled-standardized log doses and interpolated training-pair single-agent responses, predicting a Bliss residual. Dose-aware CF adds cell-specific own/partner dose-rank profiles to the residual-neighbor framework; it does not receive single-agent responses as direct features. These distinctions describe existing frozen configurations, not new fits.
+
 {\raggedright
 All commands run from the repository root at the manuscript commit, with Python 3.14, numpy 2.4.1, pandas 2.3.3, scipy 1.17.0, matplotlib 3.10.8 and mpmath. The native Loewe references were computed with the SynergyFinder 2.0.12 Loewe code under R 3.6.3 and nleqslv 3.3.2. Table~\ref{tab:S14} gives the SHA-256 of every input and Table~\ref{tab:S15} those of the saved pair-seen predictions. The commands refer to these directories:
 \begin{itemize}
 \item \texttt{RES}: \file{results/interaction_analysis/resolution} on branch \texttt{research/resolution-reliability} (d2c8f41), the frozen out-of-fold unit means;
-\item \texttt{RES\_B2}: the columns of \texttt{RES} holding the truth, the production F2 seeds and the Bliss reference, copied exactly;
+\item \texttt{RES\_B2}: the columns of \texttt{RES} holding the truth, the interpolated base F2 seeds and the Bliss reference, copied exactly;
 \item \texttt{NATIVE}: \file{results/neural/runs/scientific_native_full}, the native SynergyFinder run;
 \item \texttt{LOEWE}: the Loewe certificates, float64-verified cases and case regimes of Table~\ref{tab:S14};
 \item \texttt{RUNS}: \file{results/pair_information/runs} in the cluster run clone at 8bce416, holding the 15 prediction files;
@@ -554,9 +580,9 @@ All commands run from the repository root at the manuscript commit, with Python 
 \end{itemize}
 \par}
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering\footnotesize
-\caption{\textbf{SHA-256 of every input.} Raw files are verified by \texttt{synergy\_artifacts.download}; the split is hashed with LF line endings, as committed.}\label{tab:S14}
+\caption{SHA-256 of every input. Raw files are verified by \texttt{synergy\_artifacts.download}; the split is hashed with LF line endings, as committed.}\label{tab:S14}
 \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X >{\ttfamily\scriptsize}l@{}}
 \toprule
 Input & \normalfont\footnotesize SHA-256 \\
@@ -590,9 +616,9 @@ Pair-cell split, \file{results/pair_information/oracle/pair_cell_split.csv} & d3
 \end{tabularx}
 \end{table}
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering\footnotesize
-\caption{\textbf{SHA-256 of the 15 pair-seen prediction files} \texttt{RUNS/f2\_pair\_seen/seed\_}\textit{s}\texttt{/fold\_}\textit{f}\texttt{/predictions.parquet}, as recorded by the pair-seen audit (\texttt{pairseen\_audit.json}); all 15 matched again before the paired B3 comparison.}\label{tab:S15}
+\caption{SHA-256 of the 15 pair-seen prediction files\newline\texttt{RUNS/f2\_pair\_seen/seed\_}\textit{s}\texttt{/fold\_}\textit{f}\texttt{/predictions.parquet},\newline as recorded by the pair-seen audit (\texttt{pairseen\_audit.json}); all 15 matched again before the paired B3 comparison.}\label{tab:S15}
 \begin{tabular}{@{}l l >{\ttfamily\scriptsize}l@{}}
 \toprule
 Seed & Fold & \normalfont\footnotesize SHA-256 \\
@@ -617,7 +643,7 @@ Seed & Fold & \normalfont\footnotesize SHA-256 \\
 \end{table}
 
 \Needspace{10\baselineskip}
-\paragraph{Commands} Each step reads only the inputs above and the outputs of earlier steps.
+\subsubsection*{Commands} Each step reads only the inputs above and the outputs of earlier steps.
 {\footnotesize
 \begin{verbatim}
 # 1. Data; X.p.gz is http://www.bioinf.jku.at/software/DeepSynergy/X.p.gz
@@ -692,7 +718,6 @@ python -m pytest tests -q
 The pair-seen comparison summary, \file{results/interaction_structure/b3_paired_summary.json}, is transcribed from the cluster's \file{b3_paired.json}; its pooled B3 $R^2$ recomputes exactly. Every figure input, output and script is hashed in \file{manuscript/figures/MANIFEST.json}, and the interaction-gap inputs, scripts and outputs in \file{results/interaction_structure/MANIFEST.json}.
 
 
-\clearpage
 \section{Published-method comparability and the existing DeepSynergy controls}\label{sec:S15}
 This post-review audit adds no training runs and changes no frozen predictions. The comparison concerns two distinct outputs: measured inhibition at each dose, and the Bliss-residual pair-cell contrast defined in the main text. A published aggregate synergy score or classification probability is not a dose-response prediction.
 
@@ -708,9 +733,9 @@ An aggregate-score predictor is not inherently ineligible for an interaction com
 \subsection{Two existing DeepSynergy experiments}
 The original-label reproduction and the dose-aware adaptation are separate experiments in \file{synergy_artifacts/deepsynergy.py}. The former uses the released labels and features, published pair folds, 8,192--4,096 ReLU layers, input/hidden dropout 0.2/0.5, SGD with learning rate $10^{-5}$, momentum 0.5 and batch size 64. It trains both drug orders. A first fit on three folds selects the epoch by a 25-epoch smoothed validation loss; a second fit uses the other four folds. The original inner hyperparameter search is not repeated. The implementation is a deterministic PyTorch port, not the original Keras execution. The released example also differs from the article in first-layer width (8,182 versus 8,192), dropout placement and smoothing window (15 versus 25). The original fitted weights, full inner-loop selections and software/random-state record needed for exact numerical reproduction are not available in the inspected release.
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering\small
-\caption{\textbf{Existing reproduction on published aggregate Loewe labels.} Mean and standard deviation over five test folds; standard deviations are not confidence intervals. Source: \texttt{results/neural\_benchmark/deepsynergy.csv}. These RMSE values have different targets and units from the response table in the main text.}\label{tab:DSoriginal}
+\caption{Existing reproduction on published aggregate Loewe labels.\newline Mean and standard deviation over five test folds; standard deviations are not confidence intervals. Source: \texttt{results/neural\_benchmark/deepsynergy.csv}. These RMSE values have different targets and units from the response table in the main text.}\label{tab:DSoriginal}
 \begin{tabularx}{\linewidth}{@{}L r r r@{}}
 \toprule
 Experiment & Mean MSE & Mean RMSE (SD) & Mean Pearson (SD) \\
@@ -722,7 +747,7 @@ Existing original-label port & 260.74 & 16.07 (1.81) & 0.726 (0.037) \\
 \end{table}
 Agreement at this level supports the implementation lineage; it does not establish equivalence or reproduce the full published selection procedure. Three folds select epochs near the 1,000-epoch cap.
 
-The dose-aware experiment instead predicts training-mean-centred inhibition on every shared observation row. It appends a standardized log dose to each drug's descriptors, fits all transforms on training folds, uses validation fold $(k+1)\bmod5$ for test fold $k$, selects the lowest order-averaged validation MSE and does not refit. The frozen validation-only pilot sets a maximum of 48 epochs and patience 8; all five folds and seeds 2026--2028 were run. Best epochs are 17--42; thirteen fits stop on patience and two at the cap. Two best epochs occur in the last eight epochs, so convergence under a longer budget is unresolved. This is a controlled architectural adaptation, with no single-agent response input; F2 uses additional single-agent information. It does not establish the best attainable accuracy of DeepSynergy or its architecture.
+The dose-aware experiment instead predicts training-mean-centered inhibition on every shared observation row. It appends a standardized log dose to each drug's descriptors, fits all transforms on training folds, uses validation fold $(k+1)\bmod5$ for test fold $k$, selects the lowest order-averaged validation MSE and does not refit. The frozen validation-only pilot sets a maximum of 48 epochs and patience 8; all five folds and seeds 2026--2028 were run. Best epochs are 17--42; thirteen fits stop on patience and two at the cap. Two best epochs occur in the last eight epochs, so convergence under a longer budget is unresolved. This is a controlled architectural adaptation, with no single-agent response input; F2 uses additional single-agent information. It does not establish the best attainable accuracy of DeepSynergy or its architecture.
 
 The existing dose-aware predictions give response RMSE 18.19 (pair-bootstrap interval [17.87, 18.53]) and $R^2$ 0.713. On the equally weighted Bliss-residual pair-cell contrast, $R^2$ is $-0.047$ (delete-one-drug jackknife interval [$-0.179$, 0.085]); the measured-response contrast is 0.283. Paired response comparisons and uncertainty are recorded in \file{docs/neural_results.md} and \file{results/neural_benchmark/comparisons.csv}. Neither the response deficit nor the interval establishes an interaction advantage for the other architectures.
 

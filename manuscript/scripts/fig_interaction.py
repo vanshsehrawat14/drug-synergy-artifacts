@@ -52,7 +52,7 @@ def fig3(inp, path):
     x = 0
     for name, v, col in comp:
         ax.barh(0, 100 * v, left=x, color=col, height=0.62, edgecolor=S.MUTED if col == "white" else "white",
-                lw=0.5, hatch="////" if col == "white" else None)
+                lw=0.5, hatch="////" if col == "white" else ".." if col == DOSESHAPE else None)
         x += 100 * v
     ax.set_xlim(0, 100)
     ax.set_ylim(-0.5, 0.5)
@@ -74,7 +74,7 @@ def fig3(inp, path):
     ax = fig.add_subplot(gs[1, 0])
     models = [("Selected F2 network", ["neural_F2:2026", "neural_F2:2027", "neural_F2:2028"]),
               ("GP F2", ["gp_F2"]), ("CF, dose-aware", ["cf_selected"]),
-              ("Production F2 network", ["neural_base_F2:2026", "neural_base_F2:2027", "neural_base_F2:2028"]),
+              ("Base F2, interpolated", ["neural_base_F2:2026", "neural_base_F2:2027", "neural_base_F2:2028"]),
               ("Bliss reference", ["bliss"])]
     parts = [("between_panel_additive", "within_panel_additive_dose"), ("between_panel_contrast",),
              ("within_panel_dose_contrast",), ("replicate_deviations",)]
@@ -85,7 +85,7 @@ def fig3(inp, path):
         for (pk, (cname, _, col)) in zip(parts, comp):
             v = float(sum(e[k] for k in pk))
             ax.barh(y, v, left=left, color=col, height=0.62, edgecolor=S.MUTED if col == "white" else "white", lw=0.5,
-                    hatch="////" if col == "white" else None)
+                    hatch="////" if col == "white" else ".." if col == DOSESHAPE else None)
             left += v
         ax.text(left + 3, y, f"{left:.0f}", va="center", fontsize=6.2)
     ax.axvline(var["components"]["replicate_deviations"], color=S.MUTED, lw=0.6, ls=":")
@@ -97,7 +97,7 @@ def fig3(inp, path):
             color=S.MUTED, va="bottom")
     ax.set_ylim(-0.6, len(models) - 0.2)
     handles = [plt.Rectangle((0, 0), 1, 1, facecolor=c, edgecolor=S.MUTED if c == "white" else "none", lw=0.5,
-                             hatch="////" if c == "white" else None) for _, _, c in comp]
+                             hatch="////" if c == "white" else ".." if c == DOSESHAPE else None) for _, _, c in comp]
     ax.legend(handles, [c[0] for c in comp], loc="lower left", bbox_to_anchor=(-0.02, 1.02), ncol=2, fontsize=6.2,
               handlelength=1.2, columnspacing=1.0)
     pos = ax.get_position()
@@ -109,7 +109,7 @@ def fig3(inp, path):
     ax = fig.add_subplot(gs[:, 1])
     pts = [("Selected F2", resp([f"neural_F2:{s}" for s in (2026, 2027, 2028)]), "neural_F2", "o"),
            ("GP F2", resp(["gp_F2"]), "gp_F2", "D"), ("CF", resp(["cf_selected"]), "cf_selected", "^"),
-           ("Production F2", resp([f"neural_base_F2:{s}" for s in (2026, 2027, 2028)]), "neural_base_F2", "s")]
+           ("Base F2", resp([f"neural_base_F2:{s}" for s in (2026, 2027, 2028)]), "neural_base_F2", "s")]
     share = pc["noise_share_grid_split"]
     lo, hi = pc["noise_share_grid_pair_interval"]
     ax.axhspan(1 - hi, 1 - lo, color=S.UNCERT_FILL, lw=0)
@@ -121,7 +121,7 @@ def fig3(inp, path):
     ax.text(rc - 0.002, 0.45, "response ceiling\n(1 $-$ replicate share)", fontsize=6.0, color=S.MUTED,
             rotation=90, ha="right", va="center")
     offs = {"Selected F2": (14, 22, "left"), "GP F2": (16, 2, "left"), "CF": (-10, 18, "right"),
-            "Production F2": (12, -8, "left")}
+            "Base F2": (12, -8, "left")}
     for name, x, key, mk in pts:
         iv = ia[f"pair_cell:bliss_residual:{key}:intervals"]["pair_interval"]
         ax.plot([x, x], iv, color=S.HELDOUT, lw=1.6, solid_capstyle="butt")
@@ -290,6 +290,9 @@ def curve(cur, target, model, ks=(1, 2, 4, 8, 16)):
 
 def anchor_panel(ax, cur, loco, target, controls=True, small=False):
     xl = 64
+    if loco is not None:
+        ax.axvspan(26, 90, color="#f3f3f3", lw=0, zorder=0)
+        ax.axvline(32, color=S.MUTED, lw=0.5, ls=":")
     for m, col in [("B1", S.B1), ("B2", S.B2)]:
         x, y, lo, hi = curve(cur, target, m)
         ax.fill_between(x, lo, hi, color=col, alpha=0.18, lw=0)
@@ -306,7 +309,7 @@ def anchor_panel(ax, cur, loco, target, controls=True, small=False):
     ax.axhline(0, color=S.MUTED, lw=0.5)
     ax.set_xscale("log", base=2)
     ax.set_xticks([1, 2, 4, 8, 16] + ([xl] if loco is not None else []))
-    ax.set_xticklabels(["1", "2", "4", "8", "16"] + (["38"] if loco is not None else []))
+    ax.set_xticklabels(["1", "2", "4", "8", "16"] + (["38\nLOCO"] if loco is not None else []))
     ax.minorticks_off()
     ax.set_xlim(0.8, 90 if loco is not None else 20)
 
@@ -322,8 +325,8 @@ def fig5(inp, path):
     # (a) anchor curves
     ax = fig.add_subplot(gs[0, 0])
     anchor_panel(ax, cur, vc["loco"]["bliss"], "bliss")
-    ax.axvspan(26, 100, color="#f6f6f6", lw=0, zorder=0)
-    ax.text(64, -0.395, "all other\ncell lines", ha="center", va="bottom", fontsize=5.6, color=S.MUTED)
+    ax.text(4, -0.385, "23 fixed evaluation cells", ha="center", va="bottom", fontsize=5.6, color=S.MUTED)
+    ax.text(64, -0.385, "39 evaluation\ncell lines", ha="center", va="bottom", fontsize=5.6, color=S.MUTED)
     ax.set_ylim(-0.4, 0.62)
     ax.set_xlabel("Anchor cell lines of the held-out pair ($k$)")
     ax.set_ylabel("$R^2$, Bliss pair-cell contrast")
@@ -333,8 +336,6 @@ def fig5(inp, path):
     ax.text(17.5, y1[-1] - 0.01, "B1", color=S.B1, fontsize=6.5, va="center")
     ax.legend(loc="upper left", fontsize=5.9, handlelength=3.0, borderaxespad=0.1, title="Controls",
               title_fontsize=5.9, alignment="left")
-    ax.text(64, 0.6, f"ceiling\n{1 - cur['bliss:k=16']['eval_noise_share']:.2f}\n(off\nscale)", ha="center",
-            fontsize=5.6, color=S.MUTED, va="top")
     S.head(ax, "a", "Held-out pairs: anchors of the same pair", dx=-0.075, dy=0.02)
     # (b) matched comparison and paired differences
     ax = fig.add_subplot(gs[0, 1])
@@ -369,10 +370,10 @@ def fig5(inp, path):
     ax = fig.add_subplot(gs[1, :])
     lo = vc["loco"]["bliss"]
     noise = vc["components"]["bliss"]["noise"]
-    segs = [("B1 pair offset", lo["B1"]["r2"], S.B1, "white"),
-            ("B2 transfer beyond the offset", lo["B2"]["r2"] - lo["B1"]["r2"], S.B2, "white"),
-            ("reproducible within batch, not predicted", 1 - noise - lo["B2"]["r2"], "white", S.INK),
-            ("replicate noise", noise, S.UNCERT_FILL, S.INK)]
+    segs = [("B1 pair\noffset", lo["B1"]["r2"], S.B1, "white"),
+            ("B2 transfer\nbeyond offset", lo["B2"]["r2"] - lo["B1"]["r2"], S.B2, "white"),
+            ("within-batch reproducible,\nunpredicted by B1/B2", 1 - noise - lo["B2"]["r2"], "white", S.INK),
+            ("replicate\nnoise", noise, S.UNCERT_FILL, S.INK)]
     left = 0
     for name, v, col, tc in segs:
         ax.barh(0, v, left=left, color=col, height=0.5, edgecolor=S.MUTED, lw=0.5)
@@ -383,8 +384,8 @@ def fig5(inp, path):
     ax.set_ylim(-0.3, 0.8)
     ax.set_yticks([])
     ax.spines["left"].set_visible(False)
-    ax.set_xlabel("Share of Bliss pair-cell contrast energy (each cell line predicted from the pair's 38 others)")
-    S.head(ax, "c", "Where the contrast energy goes", dx=-0.075, dy=0.01)
+    ax.set_xlabel("Share of total Bliss contrast energy; 39 cells evaluated leave-one-cell-out, 38 anchors")
+    S.head(ax, "c", "Total-energy budget for the B1/B2 leave-one-cell-out analysis", dx=-0.075, dy=0.06)
     save(fig, path)
 
 

@@ -131,18 +131,18 @@ def fig6(inp, path):
             "The difference between the two labels\ndoes not involve the measured\ncombination: it is fixed by the\n"
             "single agents and the solver.", fontsize=6.0, va="top", linespacing=1.35)
     # (b) zero-interaction screen
-    head(0.03, 2.3, "b", "Zero-interaction screen (schematic)")
+    head(0.03, 2.3, "b", "Bliss-noninteraction simulation")
     axd = ax_(0.03, 0.05, 2.2, 2.2)
     axd.set_xlim(0, 2.2)
     axd.set_ylim(0, 2.2)
     axd.axis("off")
-    box(axd, 0.1, 1.72, 2.0, 0.36, "Responses = reference + replicate noise\n(no interaction by construction)",
+    box(axd, 0.1, 1.72, 2.0, 0.36, "Pair-cell mean = Bliss reference + noise\n(no interaction by construction)",
         ec=S.CONTROL)
-    box(axd, 0.1, 1.0, 0.92, 0.38, "Score with\nnative Loewe", ec=S.NATIVE)
+    box(axd, 0.1, 1.0, 0.92, 0.38, "Fixed published\nLoewe reference", ec=S.NATIVE)
     box(axd, 1.18, 1.0, 0.92, 0.38, "Score with\nBliss", ec=S.INK)
     arrow(axd, (0.56, 1.72), (0.56, 1.38))
     arrow(axd, (1.64, 1.72), (1.64, 1.38))
-    box(axd, 0.1, 0.28, 2.0, 0.38, "Contrast of each label; CF and kernel ridge\ntrained on held-out pairs")
+    box(axd, 0.1, 0.28, 2.0, 0.38, "CF and kernel ridge: fit training pairs,\nevaluate label contrasts on held-out pairs")
     arrow(axd, (0.56, 1.0), (0.56, 0.66))
     arrow(axd, (1.64, 1.0), (1.64, 0.66))
     axd.text(1.1, 0.12, "Any skill comes from the reference alone", ha="center", fontsize=5.9, color=S.MUTED)
@@ -176,7 +176,7 @@ def fig6(inp, path):
         h_.set_edgecolor(S.MUTED)
     # (d) zero-parameter term against the Loewe label
     x, y, r2 = gate2_contrasts(inp)
-    head(4.62, 2.3, "d", "A term with no fitted parameters")
+    head(4.62, 2.3, "d", "Reference-only predictor")
     ax = ax_(4.95, 0.35, 1.3, 1.3)
     lim = float(np.percentile(np.abs(np.r_[x, y]), 99.5))
     ax.plot([-lim, lim], [-lim, lim], color=S.RULE, lw=0.6)
@@ -187,9 +187,10 @@ def fig6(inp, path):
     ax.set_ylabel("Contrast of Loewe label", labelpad=1)
     ax.text(-lim * 0.95, lim * 0.95, f"$R^2$ = {r2:.3f}", fontsize=6.2, va="top")
     comp = g["components"]
-    fig.text(4.66 / W, 2.18 / H, minus(f"$R^2$ of its parts: implementation {comp['M_impl']['cr2_vs_Y_L']:.3f},\n"
-                                       f"existence rule {comp['M_exist']['cr2_vs_Y_L']:.3f}, exact algebra "
-                                       f"{comp['M_alg']['cr2_vs_Y_L']:.3f}"), fontsize=5.7, va="top", linespacing=1.35,
+    fig.text(4.66 / W, 2.18 / H, minus(f"No combination-outcome fit. Separate $R^2$:\n"
+                                        f"implementation {comp['M_impl']['cr2_vs_Y_L']:.3f}; existence rule "
+                                        f"{comp['M_exist']['cr2_vs_Y_L']:.3f};\n"
+                                        f"algebra {comp['M_alg']['cr2_vs_Y_L']:.3f}. These do not add."), fontsize=5.7, va="top", linespacing=1.35,
              color=S.MUTED)
     save(fig, path)
     return {"case": {k: c[k] for k in ("drug_a", "drug_b", "cell_line", "surface_id")},
@@ -249,8 +250,6 @@ def fig7(inp, path):
     s_all = pd.read_parquet(inp["surfaces"])
     w = Worked(s_all)
     rr = pd.read_csv(inp["rejected_roots"])
-    bl = pd.read_csv(inp["boundary_layer"])
-    la = inp.json("loewe_audit")
     obs = pd.read_parquet(inp["observations"], columns=["drug_a", "drug_b", "cell_line", "dose_a", "dose_b", "inhibition"])
     ob = obs[(obs.drug_a == "DASATINIB") & (obs.drug_b == "MK2206") & (obs.cell_line == "MSTO")]
     sa = ob[ob.dose_b == 0].groupby("dose_a").inhibition.mean()
@@ -258,7 +257,7 @@ def fig7(inp, path):
     cases = w.cases.merge(rr[["case_id", "C1", "C2"]], on="case_id", how="left")
     cases["C1"] = cases["C1"].astype("boolean").fillna(False).astype(bool)
     xi_slice = 3.0
-    W, H = S.WIDTH, 6.35
+    W, H = S.WIDTH, 4.55
     fig = plt.figure(figsize=(W, H))
 
     def ax_(x, y, wd, ht):
@@ -268,11 +267,11 @@ def fig7(inp, path):
         fig.text(x / W, y / H, letter, fontsize=9, fontfamily=S.BOLD, va="bottom")
         fig.text((x + 0.19) / W, y / H, text, fontsize=7, va="bottom")
 
-    fig.text(0.03 / W, 6.22 / H, "Worked surface: dasatinib (arm $i$, weaker plateau) and MK-2206 (arm $j$) in MSTO; "
+    fig.text(0.03 / W, 4.42 / H, "Worked surface: dasatinib (arm $i$, weaker plateau) and MK-2206 (arm $j$) in MSTO; "
              "native LL.4 fits", fontsize=6.6, color=S.MUTED, va="bottom")
     # (a) single agents and the existence threshold
-    head(0.03, 5.94, "a", "Existence threshold")
-    ax = ax_(0.42, 4.32, 1.55, 1.45)
+    head(0.03, 4.14, "a", "Existence threshold")
+    ax = ax_(0.42, 2.52, 1.55, 1.45)
     xs = np.logspace(-3, 1.6, 400)
     ax.plot(xs, ll4(xs, *w.Pi), color=S.INK, lw=1.0, label="dasatinib, $f_i$")
     ax.plot(xs, ll4(xs, *w.Pj), color=S.MUTED, lw=1.0, ls="--", label="MK-2206, $f_j$")
@@ -292,8 +291,8 @@ def fig7(inp, path):
     ax.set_ylabel("Inhibition (%)", labelpad=1)
     ax.legend(loc="upper left", fontsize=5.8, handlelength=1.8, borderaxespad=0.1)
     # (b) existence region and native outcomes on the grid
-    head(2.2, 5.94, "b", "Native outcome on the dose grid")
-    ax = ax_(2.55, 4.32, 1.55, 1.45)
+    head(2.2, 4.14, "b", "Native outcome on the dose grid")
+    ax = ax_(2.55, 2.52, 1.55, 1.45)
     ax.axvspan(w.xstar, 30, color="#f3f3f3", lw=0, zorder=0)
     ax.axvline(w.xstar, color=S.CORRECTED, lw=0.7, ls=":")
     ax.axhline(xi_slice, color=S.RULE, lw=2.6, zorder=1)
@@ -319,8 +318,8 @@ def fig7(inp, path):
     ax.set_ylabel("Dasatinib, $x_i$ ($\\mu$M)", labelpad=1)
     ax.legend(loc="upper left", fontsize=5.6, ncol=1, handletextpad=0.1, borderaxespad=0.1, labelspacing=0.25)
     # (c) g(y) near the plateau
-    head(4.32, 5.94, "c", "$g(y)$ near the plateau, $x_i$ = 3 $\\mu$M")
-    ax = ax_(4.72, 4.32, 1.53, 1.45)
+    head(4.32, 4.14, "c", "$g(y)$ near the plateau, $x_i$ = 3 $\\mu$M")
+    ax = ax_(4.72, 2.52, 1.53, 1.45)
     us = np.logspace(-17, 1.5, 260)
     xjs = [(0.2, 0.25), (0.9, 0.45), (2.9, 0.7), (3.03, 0.92)]
     cmap = plt.get_cmap("Blues")
@@ -346,8 +345,8 @@ def fig7(inp, path):
     ax.legend(loc="upper right", fontsize=5.3, handlelength=1.3, borderaxespad=0.1, labelspacing=0.1,
               bbox_to_anchor=(0.86, 1.0))
     # (d) the reference along the slice
-    head(0.03, 3.72, "d", "Reference along the slice $x_i$ = 3 $\\mu$M")
-    ax = ax_(0.42, 2.12, 3.55, 1.4)
+    head(0.03, 1.92, "d", "Reference along the slice $x_i$ = 3 $\\mu$M")
+    ax = ax_(0.42, 0.32, 3.55, 1.4)
     xj = np.logspace(-2, np.log10(25), 500)
     gap = np.array([float(w.root_gap(xi_slice, v)) if v < w.xstar else np.nan for v in xj])
     root = w.hi - gap
@@ -376,8 +375,8 @@ def fig7(inp, path):
     ax.set_ylabel("Loewe reference (%)", labelpad=1)
     ax.legend(loc="upper left", fontsize=5.8, borderaxespad=0.1, handlelength=2.2)
     # (e) boundary layer along the slice
-    head(4.32, 3.72, "e", "Boundary layer (Proposition 3)")
-    ax = ax_(4.72, 2.12, 1.53, 1.4)
+    head(4.32, 1.92, "e", "Boundary layer (Proposition 3)")
+    ax = ax_(4.72, 0.32, 1.53, 1.4)
     deltas = np.logspace(-6, np.log10(0.99), 60)
     gaps = np.array([float(w.root_gap(xi_slice, (1 - d) * w.xstar)) for d in deltas])
     law = np.array([w.law(xi_slice, (1 - d) * w.xstar) for d in deltas])
@@ -397,61 +396,6 @@ def fig7(inp, path):
     ax.text(2e-6, ulp * 3, "float64 spacing", fontsize=5.5, color=S.MUTED, va="bottom")
     ax.text(3e-3, 1e-12, f"slope $|b_i|$ = {abs(w.Pi[0]):.2f}", fontsize=5.9, rotation=0)
     ax.legend(loc="upper left", fontsize=5.5, handlelength=1.8, borderaxespad=0.1)
-    # (f) the law across all near-plateau certified roots
-    fig.add_artist(plt.Line2D([0.03 / W, 6.27 / W], [1.74 / H, 1.74 / H], color=S.RULE, lw=0.5))
-    fig.text(0.03 / W, 1.6 / H, "All cases", fontsize=6.6, color=S.MUTED, va="bottom")
-    head(0.03, 1.36, "f", f"{la['boundary_layer']['cases']:,} certified roots near a plateau")
-    ax = ax_(0.42, 0.34, 1.55, 0.9)
-    acc = ~bl.fallback.astype(bool)
-    ax.scatter(bl.log10_predicted[~acc], bl.log10_certified[~acc], s=1.5, color=S.NATIVE, alpha=0.35, lw=0,
-               rasterized=True, label=f"rejected (fallback), {int((~acc).sum()):,}")
-    ax.scatter(bl.log10_predicted[acc], bl.log10_certified[acc], s=1.5, color=S.CORRECTED, alpha=0.6, lw=0,
-               rasterized=True, label=f"accepted by solver, {int(acc.sum()):,}")
-    ax.plot([-62, 0], [-62, 0], color=S.INK, lw=0.5)
-    fs = np.log10(ulp)
-    ax.axhline(fs, color=S.MUTED, lw=0.5, ls=":")
-    ax.set_xlim(-62, 0)
-    ax.set_ylim(-62, 0)
-    ax.set_xticks([-60, -40, -20, 0])
-    ax.set_yticks([-60, -40, -20, 0])
-    ax.set_xlabel("Predicted $\\log_{10}(h_i - y^*)$", labelpad=1)
-    ax.set_ylabel(r"Certified $\log_{10}(h_i - y^*)$", labelpad=1)
-    ax.text(-60, -6, f"r = {la['boundary_layer']['loglog_pearson_r']:.3f}", fontsize=5.9, va="top")
-    lg = ax.legend(loc="lower right", fontsize=5.5, markerscale=4, handletextpad=0.1, borderaxespad=0.1)
-    for h_ in lg.legend_handles:
-        h_.set_alpha(1)
-    # (g) slopes of rejected roots
-    head(2.2, 1.36, "g", "Steep weaker arm")
-    ax = ax_(2.6, 0.34, 0.95, 0.9)
-    sh = la["boundary_layer"]["share_abs_slope_above_2"]
-    vals = [("all certified\nroots", sh["all_certified_roots_co_increasing_LL4"], S.CORRECTED),
-            ("rejected\n(C1)", sh["C1_co_increasing_LL4"], S.NATIVE)]
-    for k, (name, v, col) in enumerate(vals):
-        ax.bar(k, 100 * v, color=col, width=0.6)
-        ax.text(k, 100 * v + 2, f"{100 * v:.1f}%", ha="center", fontsize=6)
-    ax.set_xticks([0, 1])
-    ax.set_xticklabels([v[0] for v in vals], fontsize=5.8)
-    ax.tick_params(axis="x", length=0)
-    ax.set_ylim(0, 110)
-    ax.set_ylabel("Share with $|b_i| > 2$ (%)", labelpad=1)
-    # (h) fallback error on C1
-    head(3.95, 1.36, "h", f"Fallback error, {la['populations']['C1']:,} C1 roots")
-    ax = ax_(4.4, 0.34, 1.85, 0.9)
-    c1 = rr[rr.C1]
-    fe = la["fallback_error_on_rejected_roots"]["C1_14197"]
-    for col_, color, name, key in [("error_summed_dose", S.NATIVE, "summed dose", "summed_dose"),
-                                   ("error_hsa", S.CORRECTED, "HSA (continuous)", "hsa")]:
-        v = np.sort(np.maximum(c1[col_].to_numpy(), 1e-9))
-        ax.step(v, np.arange(1, len(v) + 1) / len(v), where="post", color=color, lw=1.2,
-                label=f"{name}; median {fe[key]['median']:.4f}" if key == "hsa" else f"{name}; median {fe[key]['median']:.2f}")
-        ax.axvline(fe[key]["median"], color=color, lw=0.5, ls=":")
-    ax.set_xscale("log")
-    ax.set_xlim(1e-9, 300)
-    ax.set_ylim(0, 1.0)
-    ax.set_xticks([1e-8, 1e-4, 1e0])
-    ax.set_xlabel("$|$reference $-$ certified root$|$ (points)", labelpad=1)
-    ax.set_ylabel("Cumulative share", labelpad=1)
-    ax.legend(loc="upper left", fontsize=5.5, handlelength=1.4, borderaxespad=0.1)
     save(fig, path)
     return {"surface": WORKED_SURFACE, "x_j_star_uM": w.xstar, "h_i": w.hi, "jump_at_boundary_slice": jb - w.hi,
             "selection": "illustrative surface: co-increasing LL.4 arms, weaker plateau below 100, at least four grid "
@@ -491,8 +435,8 @@ def fig8(inp, path):
     other = win & ~ent & ~ext
     ax.scatter(u.score_N[other], u.score_C1[other], s=1.5, color=S.UNCERT, alpha=0.5, lw=0, rasterized=True,
                label="other pair-cells")
-    ax.scatter(u.score_N[ext], u.score_C1[ext], s=7, color=S.NATIVE, lw=0, label=f"exits ({int(ext.sum())})")
-    ax.scatter(u.score_N[ent], u.score_C1[ent], s=7, color=S.CORRECTED, lw=0, label=f"entrants ({int(ent.sum())})")
+    ax.scatter(u.score_N[ext], u.score_C1[ext], s=7, marker="s", color=S.NATIVE, lw=0, label=f"exits ({int(ext.sum())})")
+    ax.scatter(u.score_N[ent], u.score_C1[ent], s=9, marker="^", color=S.CORRECTED, lw=0, label=f"entrants ({int(ent.sum())})")
     ax.axvline(cutN, color=S.NATIVE, lw=0.6, ls=":")
     ax.axhline(cutC, color=S.CORRECTED, lw=0.6, ls=":")
     ax.plot([cutN - 28, cutN + 14], [cutN - 28, cutN + 14], color=S.RULE, lw=0.5)
@@ -508,7 +452,7 @@ def fig8(inp, path):
     for i, r in e.iterrows():
         ax.plot([r.score_N, r.score_C1], [i, i], color=S.RULE, lw=0.6, zorder=1)
     ax.scatter(e.score_N, e.index, s=6, color=S.NATIVE, zorder=2, lw=0, label="native")
-    ax.scatter(e.score_C1, e.index, s=6, color=S.CORRECTED, zorder=3, lw=0, label="C1")
+    ax.scatter(e.score_C1, e.index, s=8, marker="^", color=S.CORRECTED, zorder=3, lw=0, label="C1")
     ax.axvline(cutN, color=S.NATIVE, lw=0.6, ls=":")
     ax.axvline(cutC, color=S.CORRECTED, lw=0.6, ls=":")
     ax.set_yticks([])
@@ -528,8 +472,8 @@ def fig8(inp, path):
     ax = ax_(4.95, 2.75, 1.3, 1.8)
     ax.plot([0, 1], [0, 1], color=S.RULE, lw=0.5)
     ax.scatter(u.p_select_N[kept], u.p_select_C1[kept], s=1.5, color=S.UNCERT, alpha=0.5, lw=0, rasterized=True)
-    ax.scatter(u.p_select_N[ext], u.p_select_C1[ext], s=7, color=S.NATIVE, lw=0)
-    ax.scatter(u.p_select_N[ent], u.p_select_C1[ent], s=7, color=S.CORRECTED, lw=0)
+    ax.scatter(u.p_select_N[ext], u.p_select_C1[ext], s=7, marker="s", color=S.NATIVE, lw=0)
+    ax.scatter(u.p_select_N[ent], u.p_select_C1[ent], s=9, marker="^", color=S.CORRECTED, lw=0)
     sp = sc["replicate_resampling"]["selection_probability"]
     for k in ("entrants", "exits"):
         ax.scatter(sp[k]["N"], sp[k]["C1"], s=40, marker="+", color=S.INK, lw=1.0, zorder=4)
@@ -636,9 +580,10 @@ def figS4(inp, path):
 def figS5(inp, path):
     la = inp.json("loewe_audit")
     rr = pd.read_csv(inp["rejected_roots"])
-    fig, axes = plt.subplots(1, 2, figsize=(S.WIDTH, 2.2), gridspec_kw={"width_ratios": [1.5, 1], "wspace": 0.55})
-    fig.subplots_adjust(bottom=0.2, top=0.9)
-    ax = axes[0]
+    fig, axes = plt.subplots(2, 2, figsize=(S.WIDTH, 4.65),
+                             gridspec_kw={"width_ratios": [1.5, 1], "wspace": 0.65, "hspace": 0.8})
+    fig.subplots_adjust(left=0.09, right=0.985, bottom=0.1, top=0.94)
+    ax = axes[0, 0]
     for pop, ls in [("C1", "-"), ("C2", "--")]:
         sub = rr[rr[pop]]
         for col_, color, name in [("error_summed_dose", S.NATIVE, "summed dose"), ("error_hsa", S.CORRECTED, "HSA")]:
@@ -652,7 +597,7 @@ def figS5(inp, path):
     ax.set_ylabel("Cumulative share")
     ax.legend(loc="upper left", fontsize=5.8)
     S.label(ax, "a", dx=-28)
-    ax = axes[1]
+    ax = axes[0, 1]
     loc = la["c1_location"]
     vals = [("upper plateau", loc["upper"]), ("lower asymptote", loc["lower"]), ("interior", loc["interior"])]
     for i, (name, v) in enumerate(vals):
@@ -663,4 +608,41 @@ def figS5(inp, path):
     ax.set_xlim(0, 13500)
     ax.set_xlabel(f"C1 roots, co-increasing LL.4 (n = {loc['co_increasing_LL4_C1']:,})")
     S.label(ax, "b", dx=-60)
+    bl = pd.read_csv(inp["boundary_layer"])
+    w = Worked(pd.read_parquet(inp["surfaces"]))
+    ulp = float(np.spacing(w.hi))
+    ax = axes[1, 0]
+    acc = ~bl.fallback.astype(bool)
+    ax.scatter(bl.log10_predicted[~acc], bl.log10_certified[~acc], s=1.5, color=S.NATIVE, alpha=0.35, lw=0,
+               rasterized=True, label=f"rejected (fallback), {int((~acc).sum()):,}")
+    ax.scatter(bl.log10_predicted[acc], bl.log10_certified[acc], s=1.5, color=S.CORRECTED, alpha=0.6, lw=0,
+               rasterized=True, label=f"accepted by solver, {int(acc.sum()):,}")
+    ax.plot([-62, 0], [-62, 0], color=S.INK, lw=0.5)
+    fs = np.log10(ulp)
+    ax.axhspan(-62, fs, color="#f3f3f3", lw=0, zorder=0)
+    ax.axhline(fs, color=S.MUTED, lw=0.5, ls=":")
+    ax.set_xlim(-62, 0)
+    ax.set_ylim(-62, 0)
+    ax.set_xticks([-60, -40, -20, 0])
+    ax.set_yticks([-60, -40, -20, 0])
+    ax.set_xlabel("Predicted $\\log_{10}(h_i - y^*)$", labelpad=1)
+    ax.set_ylabel(r"Certified $\log_{10}(h_i - y^*)$", labelpad=1)
+    ax.text(-60, -6, f"r = {la['boundary_layer']['loglog_pearson_r']:.3f}", fontsize=5.9, va="top")
+    lg = ax.legend(loc="lower right", fontsize=5.5, markerscale=4, handletextpad=0.1, borderaxespad=0.1)
+    for h_ in lg.legend_handles:
+        h_.set_alpha(1)
+    S.label(ax, "c", dx=-28)
+    ax = axes[1, 1]
+    sh = la["boundary_layer"]["share_abs_slope_above_2"]
+    vals = [("all certified\nroots", sh["all_certified_roots_co_increasing_LL4"], S.CORRECTED),
+            ("rejected\n(C1)", sh["C1_co_increasing_LL4"], S.NATIVE)]
+    for k, (name, v, col) in enumerate(vals):
+        ax.bar(k, 100 * v, color=col, width=0.6)
+        ax.text(k, 100 * v + 2, f"{100 * v:.1f}%", ha="center", fontsize=6)
+    ax.set_xticks([0, 1])
+    ax.set_xticklabels([v[0] for v in vals], fontsize=5.8)
+    ax.tick_params(axis="x", length=0)
+    ax.set_ylim(0, 110)
+    ax.set_ylabel("Share with $|b_i| > 2$ (%)", labelpad=1)
+    S.label(ax, "d", dx=-38)
     save(fig, path)

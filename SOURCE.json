@@ -2,19 +2,21 @@
   "schema_version": 2,
   "repository": "https://github.com/vanshsehrawat14/drug-synergy-artifacts",
   "version": "0.2.0",
-  "previous_snapshot_commit": "0ee067c3026ac0ce550c183a09ed3b35a92b5ef2",
+  "status": "editorial_review",
+  "date": "2026-11-15",
+  "previous_snapshot_commit": "1fb37901d46b48564c515e7193d37cafeb3dd75c",
   "scope": "Research software, protocols, frozen scientific summaries, manuscript and supplement.",
   "source_text_encoding": "Committed bytes; maintained text uses UTF-8 and LF.",
-  "manifest_sha256": "b3a9c70ceea05a51e5ee45667c159f3cb598a0d77fc6d1003f9117971006697d",
+  "manifest_sha256": "bed3c04d8112e316c229fe579e65846e00f2d0bf0c0977a598160866a10c6a2f",
   "artifacts": {
     "manuscript/manuscript.pdf": {
-      "sha256": "5d40bee52030f1b2002910bd988faa5e62f0f9617e7d05d33079112f742e6615"
+      "sha256": "7ff2513c67df474cae273ab1587b551816f45854eb7762a205ef105a097aad38"
     },
     "manuscript/supplement.pdf": {
-      "sha256": "af83d0a58c36dfe6174b2389e4baa8f2565d0fd2321daee113cc6173246db918"
+      "sha256": "b1f0af487e83919c3807521aca2d2a8fb16baf0f9d25e9ee4cf8bcd57a192e18"
     },
     "manuscript/figures/MANIFEST.json": {
-      "sha256": "6b0307897ce33c9a66e4c34a87525de5704d49690c4ed1814832fd8055e56507"
+      "sha256": "d9b6c4b871c3ceee4264bde8df7df3cf16519a9b27dee15fa7553bb6682813e9"
     }
   },
   "validation": {
@@ -25,46 +27,139 @@
       "skip_reason": "Original CF real-data target matrix is not redistributed."
     },
     "numerical_checks": {
-      "passed": 132,
+      "passed": 147,
       "original": 116,
-      "additional_existing_DeepSynergy_checks": 16
+      "additional_existing_DeepSynergy_checks": 16,
+      "additional_editorial_checks": 15
     },
     "manuscript": {
-      "pages": 27,
-      "citations": 49,
-      "undefined_references": 0,
-      "missing_glyphs": 0,
-      "overfull_boxes": 0
+      "citations": 41,
+      "unused_references": 14,
+      "pages": 30,
+      "missing_characters": 0,
+      "overfull_hbox": 0,
+      "overfull_vbox": 0,
+      "underfull_hbox": 0,
+      "undefined": 0,
+      "float_too_large": 0
     },
     "supplement": {
-      "pages": 24,
       "citations": 8,
-      "undefined_references": 0,
-      "missing_glyphs": 0,
-      "overfull_boxes": 0
+      "unused_references": 47,
+      "pages": 29,
+      "missing_characters": 0,
+      "overfull_hbox": 0,
+      "overfull_vbox": 0,
+      "underfull_hbox": 0,
+      "undefined": 0,
+      "float_too_large": 0
     },
-    "migration_validation": {
-      "python_ast_equivalent": 143,
-      "csv_values_preserved": 205,
-      "json_numbers_preserved": 235,
-      "figure_bytes_preserved": 66,
-      "broken_markdown_links": [],
-      "legacy_paths": [],
-      "mathematical_environments_preserved": {
-        "manuscript": 12,
-        "supplement": 6
-      }
+    "abstract_words": 251,
+    "visual_inspection": {
+      "manuscript_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "supplement_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "publication_size_and_grayscale": true
     },
-    "engineering_smoke": "Passed on synthetic fixtures; no new scientific training.",
-    "import_check": "Research package and original GP source resolve within this checkout.",
+    "scientific_integrity": {
+      "protected_paths_changed": [],
+      "mathematical_blocks": {
+        "manuscript": {
+          "equation": 10,
+          "proposition": 3
+        },
+        "supplement": {
+          "proof": 4,
+          "lemma": 1,
+          "proposition": 1
+        }
+      },
+      "manuscript_embedded_input_hashes_preserved": 0,
+      "supplement_embedded_input_hashes_preserved": 36,
+      "gate2_protocol_sha256": "cc3051abd6e59205e5990088f66830bf050084773dadd19bdad799f7fe91c88b",
+      "reference_records_unchanged": true,
+      "protected_tracked_files": 630,
+      "figure_outputs_matching_manifest": 26,
+      "unmodified_figure_outputs_preserved": 10,
+      "new_model_training_runs": 0
+    },
+    "figure_panel_comparisons": {
+      "preserved": 33,
+      "total": 33
+    },
+    "cited_doi_metadata": {
+      "matched_titles_and_dates": 37,
+      "references_without_doi": 4
+    },
+    "new_model_training_runs": 0,
     "gate2_protocol_sha256": "cc3051abd6e59205e5990088f66830bf050084773dadd19bdad799f7fe91c88b"
   },
   "notes": [
     "Independent Git history; no dependency on the development repository.",
-    "Layout changes preserve numerical JSON values, CSV values, algorithms and mathematical environments.",
+    "Editorial revisions preserve frozen results, research algorithms, configurations, proofs and certificates.",
+    "PDF bytes and eight revised figures intentionally differ; scientific figure arrays were checked separately.",
     "Current file hashes are in MANIFEST.json; embedded historical hashes identify original execution artifacts.",
     "Input datasets, model weights, course presentations and site-specific execution files are excluded."
   ],
-  "artifact_source_scope": "Source and release content used for the PDFs and validation; later provenance-only commits do not alter those artifacts.",
-  "artifact_source_commit": "dd8137e340a9dae479dba52ac25e743c9dc8cd7c"
+  "artifact_source_scope": "Source and content used for PDFs and validation; a later provenance-only commit pins that source without changing the artifacts."
 }

@@ -315,13 +315,15 @@ def fig2(inp, path):
     ax.plot([0.02, S.WIDTH - 0.02], [2.4, 2.4], color=S.RULE, lw=0.5)
     # (c) information matrix
     head(0.02, "c", "Information used to predict pair $p$ in cell line $c$", 2.17)
-    cols_c = ["Outcomes of\nother pairs", "Single-agent\nresponses", "Same pair,\nother cell lines"]
+    cols_c = ["Outcomes of\nother pairs", "Single-agent\nresponses\n(direct input)", "Same pair,\nother cell lines"]
     rows_c = [("Bliss reference (no fitting)", S.INK, [0, 1, 0]),
-              ("Held-out-pair models: F0, F2, GP,\nCF, DeepSynergy, additive ridge", S.HELDOUT, [1, 2, 0]),
+              ("F0, GP-F0, ridge, DeepSynergy", S.HELDOUT, [1, 0, 0]),
+              ("F2 and GP-F2", S.HELDOUT, [1, 1, 0]),
+              ("Dose-aware CF", S.HELDOUT, [1, 0, 0]),
               ("B1 pair offset", S.B1, [1, 0, 1]),
               ("B2 cross-cell linear predictor", S.B2, [1, 0, 1]),
               ("B3 pair-seen F2 network", S.B3, [1, 1, 1])]
-    cx0, cy0, dx, dy = 2.22, 1.72, 0.58, 0.25
+    cx0, cy0, dx, dy = 2.22, 1.72, 0.58, 0.205
     for j, t in enumerate(cols_c):
         ax.text(cx0 + j * dx, cy0 + 0.04, t, ha="center", va="bottom", fontsize=5.9, linespacing=1.2)
     for i, (name, col, flags) in enumerate(rows_c):
@@ -332,19 +334,17 @@ def fig2(inp, path):
             _dot(ax, cx0 + j * dx, y, f)
         if i == 0:
             ax.plot([0.2, cx0 + 2 * dx + 0.28], [y - dy / 2 - 0.025] * 2, color=S.RULE, lw=0.4)
-    yl = cy0 - 5 * dy - 0.2
+    yl = 0.14
     _dot(ax, 0.24, yl, 1, r=0.03)
     ax.text(0.31, yl, "used", va="center", fontsize=5.8, color=S.MUTED)
-    _dot(ax, 0.68, yl, 2, r=0.03)
-    ax.text(0.75, yl, "F2-type inputs only", va="center", fontsize=5.8, color=S.MUTED)
-    _dot(ax, 1.75, yl, 0, r=0.03)
-    ax.text(1.82, yl, "not used; no predictor reads the evaluated pair-cell", va="center", fontsize=5.8,
+    _dot(ax, 0.68, yl, 0, r=0.03)
+    ax.text(0.75, yl, "not used; evaluated pair-cell outcomes withheld", va="center", fontsize=5.8,
             color=S.MUTED)
     # (d) targets and metrics
     head(4.02, "d", "Interaction target and metrics", 2.17)
     steps = [(r"Replicate mean $\bar y_u$ at dose unit $u$", "$\\rightarrow$ response $R^2$ over all dose rows"),
              (r"Residual $\bar y_u - E_u$;  Bliss $E_u = a_u + b_u - a_u b_u/100$", None),
-             (r"Pair-cell mean $m_{pc}$ over its 16 dose units", None),
+             (r"Pair-cell mean $m_{pc}$ over measured dose units", None),
              ("Contrast $t_{pc}$: $m_{pc}$ minus additive drug\neffects fitted in its (fold, cell line) panel",
               r"$\rightarrow$ contrast $R^2 = 1 - \sum w\,(t - \hat t)^2 / \sum w\,t^2$")]
     bx, bw, y = 4.05, 2.22, 2.0

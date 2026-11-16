@@ -76,7 +76,7 @@ CHECKS = [
     ("1.6%", VC, "controls/reference_perturbation/5.0/induced_energy_share", 100, 1),
     ("0.359", VC, "loco/bliss/B2/r2", 1, 3),
     ("0.144 [0.116, 0.172]", VC, "loco/bliss/B2_minus_B1/r2", 1, 3),
-    ("−0.28 (production F2)", VC, "held_out_pair_models/f2_base/pair_mean_r2", 1, 2),
+    ("−0.28 (interpolated base F2)", VC, "held_out_pair_models/f2_base/pair_mean_r2", 1, 2),
     ("−0.14", VC, "held_out_pair_models/f2_selected/pair_mean_r2", 1, 2),
     ("reaches 0.13", VC, "held_out_pair_models/f2_selected/residual_r2", 1, 2),
     ("88% [65%, 101%]", VC, "cross_batch/bliss_frozen_reference/cell_shift/replication_overall", 100, 0),
@@ -242,6 +242,45 @@ def main():
         status = "ok" if want == stated and ok_text else "FAIL"
         fails += status != "ok"
         rows.append((status, stated, want, "Supplement S15 / neural_benchmark", key))
+    # Editorial audit: verify the newly explicit populations, energy normalization,
+    # worked contrast example and every endpoint of the unresolved B3-B2 comparison.
+    # The original checks remain in force, including all post-review S15 checks.
+    la, vc, bp = load(LA), load(VC), load(BP)
+    pop = la["populations"]
+    main_text = (M / "manuscript.tex").read_text(encoding="utf-8").replace(r"\%", "%")
+    supplement_text = supplement.replace(r"\%", "%")
+    noise = vc["components"]["bliss"]["noise"]
+    unresolved = 1 - noise - vc["loco"]["bliss"]["B2"]["r2"]
+    fig = load("manuscript/figures/MANIFEST.json")["figures"]["fig1_dose_response"]["notes"]["cases"]
+    worked = next(x for x in fig if x["drug_a"] == "DINACICLIB" and x["drug_b"] == "MK2206" and x["cell_line"] == "NCIH2122")
+    editorial = [
+        ("184,905", pop["native_fallback"], 0, "fallback on 184,905 of 367,152", main_text, "native fallback numerator"),
+        ("367,152", pop["cases"], 0, "184,905 of 367,152 individual Loewe cases", main_text, "native case denominator"),
+        ("50.4", 100 * pop["native_fallback"] / pop["cases"], 1, "(50.4%", main_text, "native fallback percent"),
+        ("182,247", pop["native_accepted"], 0, "182,247 cases", supplement_text, "native accepted total"),
+        ("1,883", pop["status_by_fallback"]["undefined_opposite_or_flat|accepted"], 0,
+         "1,883 opposite/flat-arm outcomes outside", supplement_text, "accepted outcomes outside inverse formulation"),
+        ("54.3", 100 * unresolved, 1, "54.3% of total energy", main_text, "unpredicted share of total energy"),
+        ("60.2", 100 * unresolved / (1 - noise), 1, "60.2% of estimated reproducible energy", main_text, "unpredicted share of reproducible energy"),
+        ("3.7", worked["m_pc"], 1, "residual is 3.7 points", main_text, "worked mean Bliss residual"),
+        ("9.7", worked["m_pc"] - worked["t_bliss"], 1, "contribution is 9.7 points", main_text, "worked additive contribution"),
+        ("−6.0", worked["t_bliss"], 1, "therefore −6.0 points", main_text, "worked adjusted contrast"),
+    ]
+    for kind in ("pair_interval", "drug_interval"):
+        for endpoint, stated in enumerate(["−0.031", "0.036"] if kind == "pair_interval" else ["−0.079", "0.084"]):
+            editorial.append((stated, bp["differences"]["B3-B2"][kind][endpoint], 3,
+                              "B3 − B2 & 0.003 & [−0.031, 0.036] & [−0.079, 0.084]", main_text,
+                              f"B3-B2 {kind} endpoint {endpoint}"))
+    for stated, value, dec, literal, context, key in editorial:
+        want = fmt(float(value), dec)
+        status = "ok" if want == stated and literal in context else "FAIL"
+        fails += status != "ok"
+        rows.append((status, stated, want, "editorial audit / frozen sources", key))
+    scoped = "79.8% of pair-cells" in main_text and "all 22,737 pair-cells" in supplement_text
+    scoped = scoped and "not the fraction of individual dose cases" in supplement_text
+    status = "ok" if scoped else "FAIL"
+    fails += status != "ok"
+    rows.append((status, "79.8% pair-cell denominator", "22,737 pair-cells", "r18_gate2_analysis.py", "FB > 0 over pair-cell matrix"))
     for r in rows:
         if r[0] != "ok":
             print(" | ".join(r))

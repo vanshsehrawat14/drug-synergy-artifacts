@@ -110,7 +110,7 @@ def main():
         }
         print(name, "written")
     manifest["scripts"] = scripts
-    man_path.write_text(json.dumps(manifest, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    man_path.write_text(json.dumps(manifest, indent=1, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":

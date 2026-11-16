@@ -8,7 +8,7 @@ All authors are affiliated with the University of Nevada, Las Vegas.
 |---|---|---|
 | Vanshdeep Sehrawat | Computer Science | [sehrawat@unlv.nevada.edu](mailto:sehrawat@unlv.nevada.edu) |
 | Kingsley Ukandu | Mathematical Sciences | [Kingsley.ukandu@unlv.edu](mailto:Kingsley.ukandu@unlv.edu) |
-| Sharlene Kim | Brain Health, Kirk Kerkorian School of Medicine | [sharlene.kim@unlv.edu](mailto:sharlene.kim@unlv.edu) |
+| Sharlene Kim | Brain Health | [sharlene.kim@unlv.edu](mailto:sharlene.kim@unlv.edu) |
 
 | Author | Contribution | Implementation |
 |---|---|---|

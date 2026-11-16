@@ -1,12 +1,13 @@
 """Build manuscript.pdf and supplement.pdf from their LaTeX sources.
 
-python manuscript/scripts/build.py              # bibliographies from references.json, XeLaTeX three times
+python manuscript/scripts/build.py              # bibliographies from references.json, pdfLaTeX three times
 python manuscript/scripts/build.py supplement   # one document
 
-Citations (\\citep{key}) are author-year; the reference list is generated from the verified entries in
-manuscript/references.json, sorted by author and year in the plainnat layout. Requires XeLaTeX with fontspec,
-lmodern, newunicodechar, natbib, titlesec, caption, booktabs, tabularx, enumitem, microtype, xurl and hyperref.
-Prints a JSON report per document and exits non-zero on undefined references or citations.
+Citations (\\citep{key}) are numbered; verified entries from manuscript/references.json appear in citation
+order. Requires pdfLaTeX with Computer Modern, natbib, booktabs, tabularx, enumitem,
+xurl and hyperref.
+Prints a JSON report per document and exits non-zero on missing glyphs, undefined references, overflow or
+oversized floats.
 """
 import argparse
 import json
@@ -14,7 +15,6 @@ import re
 import shutil
 import subprocess
 import sys
-import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -41,17 +41,11 @@ def join(names):
 
 
 def short_label(r):
-    """Author part of the author-year citation: Bliss; Park and Marcotte; O'Neil et al."""
+    """Author name for textual citations: Bliss; Park and Marcotte; O'Neil et al."""
     last = [split_name(a)[0] for a in r["authors"]]
     if not last:
         return r["title"].split(" ")[0]
     return last[0] if len(last) == 1 else " and ".join(last) if len(last) == 2 else last[0] + " et~al."
-
-
-def sort_key(r):
-    fold = lambda s: unicodedata.normalize("NFKD", s.replace("ı", "i")).encode("ascii", "ignore").decode().lower()
-    names = [split_name(a)[0] for a in r["authors"]] or [r["title"]]
-    return [fold(n) for n in names], r["year"], fold(r["title"])
 
 
 def fmt_ref(r, year):
@@ -80,13 +74,14 @@ def fmt_ref(r, year):
 def bibliography(name, refs):
     tex = (ROOT / f"{name}.tex").read_text(encoding="utf-8")
     body = "\n".join(ln.split("%")[0] if not ln.lstrip().startswith("%") else "" for ln in tex.splitlines())
-    cited = set()
+    cited = []
     for m in CITE.finditer(body):
         for k in (x.strip() for x in m.group(1).split(",")):
             if k not in refs:
                 raise SystemExit(f"{name}: unknown citation key {k}")
-            cited.add(k)
-    order = sorted(cited, key=lambda k: sort_key(refs[k]))
+            if k not in cited:
+                cited.append(k)
+    order = cited
     year = {k: str(refs[k]["year"]) for k in order}
     groups = {}
     for k in order:
@@ -111,17 +106,18 @@ def bibliography(name, refs):
 def build(name, refs):
     order = bibliography(name, refs)
     for _ in range(3):
-        p = subprocess.run(["xelatex", "-interaction=nonstopmode", "-halt-on-error", "-output-directory=build",
+        p = subprocess.run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error", "-output-directory=build",
                             f"{name}.tex"], cwd=ROOT, capture_output=True, text=True, encoding="utf-8",
                            errors="replace")
         if p.returncode != 0:
             print(p.stdout[-3000:])
-            raise SystemExit(f"xelatex failed for {name}")
+            raise SystemExit(f"pdflatex failed for {name}")
     log = (ROOT / "build" / f"{name}.log").read_text(encoding="utf-8", errors="replace")
     report = {"citations": len(order), "unused_references": len(set(refs) - set(order)),
               "pages": int(re.search(r"Output written on .*?\((\d+) page", log, re.S).group(1)),
               "missing_characters": len(re.findall(r"Missing character", log)),
               "overfull_hbox": len(re.findall(r"Overfull \\hbox", log)),
+              "overfull_vbox": len(re.findall(r"Overfull \\vbox", log)),
               "underfull_hbox": len(re.findall(r"Underfull \\hbox", log)),
               "undefined": len(re.findall(r"(Reference|Citation) .* undefined", log)),
               "float_too_large": len(re.findall(r"Float too large", log))}
@@ -138,7 +134,7 @@ def main():
     for name in a.names:
         r = build(name, refs)
         print(name, json.dumps(r))
-        bad |= r["undefined"] > 0 or r["missing_characters"] > 0
+        bad |= any(r[key] > 0 for key in ["undefined", "missing_characters", "overfull_hbox", "overfull_vbox", "float_too_large"])
     sys.exit(1 if bad else 0)
 
 

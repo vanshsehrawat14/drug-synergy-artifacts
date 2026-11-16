@@ -9,7 +9,7 @@ We separate measured-response prediction, pair-specific interaction structure an
 ## Findings
 
 - Measured-response $R^2$ reaches 0.88 across the evaluated neural, Gaussian-process and collaborative-filtering models; parameter-free Bliss reaches 0.83. Additive single-agent and drug-by-dose structure accounts for 81.8% of row variance.
-- The evaluated models explain at most 0.07 of the replicate-reproducible pair-specific interaction contrast. Seeing a pair in other cell lines supplies information unavailable to held-out-pair predictors.
+- The evaluated held-out-pair models explain at most 0.07 of the estimated within-batch reproducible Bliss-residual pair-cell contrast. Seeing a pair in other cell lines supplies additional information.
 - Loewe labels remain learnable in a zero-interaction simulation. Exact root analysis and interval certificates distinguish reference structure from solver failures.
 - Restoring 14,197 float64-verified roots changes 67 of 1,137 pair-cells in a top-5% shortlist. Numerical improvement does not establish better biological selection.
 - The NCATS confirmation failed. Results remain limited to the evaluated screens, methods and inputs; analyses on previously inspected data are exploratory.
@@ -31,7 +31,7 @@ We separate measured-response prediction, pair-specific interaction structure an
 
 ## Install and reproduce
 
-Python 3.11 or newer; CUDA for neural training. XeLaTeX is needed to build the PDFs.
+Python 3.11 or newer; CUDA for neural training. pdfLaTeX is needed to build the paper PDFs.
 
 ```sh
 python -m pip install -r requirements.txt -e ".[test]"

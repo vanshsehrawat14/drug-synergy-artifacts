@@ -61,8 +61,8 @@
   },
   "fig2_design": {
    "outputs": {
-    "pdf": "b4cfe5db85d1e1f1073e14f69381addde2a8df04d9783544f92a593b964227b4",
-    "png": "13ec9cbdf56a848540d05b63280061fa762cdc587926c09eec516071d9c63447"
+    "pdf": "587dc6814053c9cf00778a6721dbbc08e0b33e5f715192cb0b2d6903926dcf81",
+    "png": "9c002e70c5bec20618a64c92b67b5eb5bdec319ff74ce0cc7f9bd2e46982b50b"
    },
    "inputs": {},
    "notes": {
@@ -71,8 +71,8 @@
   },
   "fig3_response_interaction": {
    "outputs": {
-    "pdf": "d33caeff3a5ebd2e0a24a875c11fb373ceb5ca932feb1306585a5a51f80efc4f",
-    "png": "84b2e015b3c44b2bc512ab05d4c9f270e85261e2f390019c04b6e740df66f2d6"
+    "pdf": "f2326fe1d40e20f96a8c75ded9c7e4287c9a75ad162ede9211a99b973fd2cc3a",
+    "png": "bac4aaf1e16c026dcfb05761576608b803a46409dd3a847ded726e28e53f3549"
    },
    "inputs": {
     "error_decomposition": {
@@ -81,11 +81,11 @@
     },
     "interaction_audit": {
      "file": "interaction_audit.json",
-     "sha256": "fd2e5c957d2b2a5338da747b30b197bc621bc40f3bb407ebb76face38c4f6d53"
+     "sha256": "f48d7b56d161256dd21ac47905cb777413cc82fe80ee3076b5e09e4602d6fde3"
     },
     "pairseen_audit": {
      "file": "pairseen_audit.json",
-     "sha256": "bfb7a55b8a3de38429f3146fef738a267304f33636cd0cad0887355f3ac3ffb4"
+     "sha256": "075c3b8dcc08eff3a904f8ac6c7fb77366d17f65c02e28350353765930583401"
     },
     "resolution_cache": {
      "file": "cache.npz",
@@ -128,32 +128,32 @@
   },
   "fig5_same_pair": {
    "outputs": {
-    "pdf": "649b938f01a854fa88b9cd2ea9579ff8a7b67cfdf17e03f138dd8978c162919d",
-    "png": "66816906c7a20d5cc8414d102a9d192bc8f0cb21e1e4579075e6799193af80da"
+    "pdf": "f7679c2e551981be3355a7545e3aaf9b4315dfb6642ce60bca2643680a070d78",
+    "png": "2ef74853113e51fbee7e01f5771962a5ee6d47cb2e3bdabf843b3835c2b85cb6"
    },
    "inputs": {
     "anchor_experiment": {
      "file": "anchor_experiment.json",
-     "sha256": "e043421f1e05f3ac47c72686d9615368b62fa38f509e7d6a02660666dbb272c4"
+     "sha256": "ed10af89fa19b8fc14bd2b7ea71c94822d53d173f5d09eb7a8024fac045d8063"
     },
     "b3_paired": {
      "file": "b3_paired_summary.json",
-     "sha256": "469ef3afbce4f606bc79a608cb8286318aed53a8cf7b63710c2f3af2cdfecb97"
+     "sha256": "71fa8b516b11c6b8c0c22dc9404bb03fd5f0ce718f531b0ec7140d3710884570"
     },
     "pairseen_audit": {
      "file": "pairseen_audit.json",
-     "sha256": "bfb7a55b8a3de38429f3146fef738a267304f33636cd0cad0887355f3ac3ffb4"
+     "sha256": "075c3b8dcc08eff3a904f8ac6c7fb77366d17f65c02e28350353765930583401"
     },
     "variance_components": {
      "file": "variance_components.json",
-     "sha256": "3b9c1ee652d0ace9c9e0e1930897b83b901432803f7b105cf46bbc07570aa4ee"
+     "sha256": "a4839c5e5f01285ba6754b1a49b4ffa1f1c6c5ef5bd3ae0efa4c23c890c89aad"
     }
    }
   },
   "fig6_reference_labels": {
    "outputs": {
-    "pdf": "9950b2a4e9359dc3a1e24655ea10f4abf25ba161129c509a560f289d09eb8413",
-    "png": "ffd15325924d2f8870f8503dc935d5c982a01e58f29077935761536529f1fe13"
+    "pdf": "984b1cc3ea1b7d53248b15c9520876e0ec7be8cd3f9f4fdf5f2834ef3e0500d3",
+    "png": "33d10db7cba3ff931e439b05b046a1a58807c21e67e2f8bf77015ff106bcb2b5"
    },
    "inputs": {
     "gate2": {
@@ -199,18 +199,10 @@
   },
   "fig7_loewe_mechanism": {
    "outputs": {
-    "pdf": "36b4fbb3d8445b2a3454ecf1ac91e5e67adc3a6bb23121e8f542f9646e736a0a",
-    "png": "30fb1dbe1a93016b87535eee037169c95601db062493dcaa40f0b45e9d5846ee"
+    "pdf": "48a15c8e263ede46a4475593e3c5766acdd9853a945ea7428f59d1bf32b563ac",
+    "png": "35ff8ade5460ea63c3a36a2f2b7e1480dc63044c6d79e6ee0aebe10ce94b649f"
    },
    "inputs": {
-    "boundary_layer": {
-     "file": "boundary_layer_cases.csv",
-     "sha256": "c096ae4cd3262d107d796c1b895ef5fcee61a93f0d77e076641743290874e275"
-    },
-    "loewe_audit": {
-     "file": "loewe_audit.json",
-     "sha256": "8edd81ea2d9977a5e81391189f579c8bd0ec30b3771da9b13b50106488b09437"
-    },
     "observations": {
      "file": "observations.parquet",
      "sha256": "ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b"
@@ -234,8 +226,8 @@
   },
   "fig8_screening": {
    "outputs": {
-    "pdf": "82b2fe7a85cec563c0a58d7da8da2baa88f4f81eb4ec3c0d26d47a3a22ab198e",
-    "png": "cba0c6b2b85a38bf7b0bbc36b4ca4100148128433cf9df882477c1f0f47f7c77"
+    "pdf": "7a0c448ff496f47c9d991bbd731901789e169cd161c99131ba94e6f124abc93c",
+    "png": "301dc6d9b71114b6943513c0a2c333c667487c41e6231e6f2209683a08720275"
    },
    "inputs": {
     "pair_cell_scores": {
@@ -244,7 +236,7 @@
     },
     "screening_audit": {
      "file": "screening_audit.json",
-     "sha256": "77a95b967e70042fdf9838e40a0b56ca57a8a64394b6e41c3004cf7aa149cb9d"
+     "sha256": "fafff5b9f26563b495c960d5748cbcfa0bc8502bca5fbf015b9d085cf93340d3"
     }
    },
    "notes": {
@@ -285,21 +277,21 @@
   },
   "figS2_anchor_robustness": {
    "outputs": {
-    "pdf": "c310dcee75b8a24cd07ccc761b87aa019574d089ec3be43ab48baccfd9f4c7f2",
-    "png": "76cbb8b9965bf95576de579b37eb60cc2c5982824c79565eb3c5b6a42ab28a15"
+    "pdf": "b50ea23dbf00f892cab43cda9c18c179e30d3e096dfb813a0856c57c0b64dfb4",
+    "png": "39aef099bc81f52a63c5442bb1764efc5333be8bdcf98a695adf4ed7723c70b2"
    },
    "inputs": {
     "anchor_experiment": {
      "file": "anchor_experiment.json",
-     "sha256": "e043421f1e05f3ac47c72686d9615368b62fa38f509e7d6a02660666dbb272c4"
+     "sha256": "ed10af89fa19b8fc14bd2b7ea71c94822d53d173f5d09eb7a8024fac045d8063"
     },
     "b3_paired": {
      "file": "b3_paired_summary.json",
-     "sha256": "469ef3afbce4f606bc79a608cb8286318aed53a8cf7b63710c2f3af2cdfecb97"
+     "sha256": "71fa8b516b11c6b8c0c22dc9404bb03fd5f0ce718f531b0ec7140d3710884570"
     },
     "variance_components": {
      "file": "variance_components.json",
-     "sha256": "3b9c1ee652d0ace9c9e0e1930897b83b901432803f7b105cf46bbc07570aa4ee"
+     "sha256": "a4839c5e5f01285ba6754b1a49b4ffa1f1c6c5ef5bd3ae0efa4c23c890c89aad"
     }
    }
   },
@@ -333,26 +325,34 @@
   },
   "figS5_fallback_errors": {
    "outputs": {
-    "pdf": "18e11c72e2f2a878c67ff41bfc91e418ea9af4b7c66d8588951b5cebcddc7428",
-    "png": "7181d54534c8cfc99b0b1f267b70f4f128566c0886d1fd7e104f3bf07d4fd467"
+    "pdf": "0e9baff668a011992f5f07ba8621eb421c2477fc1897b70d310d0d68e580cd09",
+    "png": "45e48fda40a9557a79da8f12cb5a2c3c2b090e9338f45c515351edfb16f8d0e0"
    },
    "inputs": {
+    "boundary_layer": {
+     "file": "boundary_layer_cases.csv",
+     "sha256": "c096ae4cd3262d107d796c1b895ef5fcee61a93f0d77e076641743290874e275"
+    },
     "loewe_audit": {
      "file": "loewe_audit.json",
-     "sha256": "8edd81ea2d9977a5e81391189f579c8bd0ec30b3771da9b13b50106488b09437"
+     "sha256": "ac9efc30751bdcc911a8378b2c4d457dceee446c44127e45b158d561d34dc761"
     },
     "rejected_roots": {
      "file": "rejected_roots.csv",
      "sha256": "42caca7b90d24bddf359b245aa3672c553fdc6d1dce8943ca47c33f7f45068d2"
+    },
+    "surfaces": {
+     "file": "surface_cases.parquet",
+     "sha256": "69e2c76476c8d14aa3c289b0a98ad6703b40b7eb9ad903f9e2df2cd1d4e23528"
     }
    }
   }
  },
  "scripts": {
-  "fig_interaction.py": "df90cac2e1e7671669c15e13ed7e1b04706d5df08a36fd10baa58158f2407375",
-  "fig_loewe.py": "8ddd6215cfdf351d9537de7cf05a4a732a91f03e7e667684f87a66da945d7820",
-  "fig_measure.py": "05bc37e6419911de99fb81f7cc10f7b87b4cb106e7be91c37269ccff87425869",
-  "figstyle.py": "29adb48f98a994f2733134d1295fe65843ae1575aa53119094fb2522a866e375",
-  "make_figures.py": "2a703f7c9bc25f3e6e22b1e724d33e9340f49b661d07d7494b3090f0007088fc"
+  "fig_interaction.py": "69e99bb88b46cc1c5b90225d37ff55bbfb36bdcd2bceed622c686a09bb315965",
+  "fig_loewe.py": "4050a37a95bbefe5f8573b235dee59b64e55b1087a866c1246287e8954eef15d",
+  "fig_measure.py": "11812b78bfb9685eaeaeaf8f9e44bb670452d47350bfa0d560b9d97652240afb",
+  "figstyle.py": "80ef55fe54d0c5525dbff409d156a7f95234669f7752b8e6d6bdeb271f4241b5",
+  "make_figures.py": "d70eb68fea8681615c87429c26b0be86c4e561f6ee72fc237540ac1fd08b951b"
  }
 }
