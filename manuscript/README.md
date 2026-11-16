@@ -6,7 +6,7 @@
 |---|---|
 | `manuscript.tex`, `manuscript.pdf` | Main text (title page and abstract; no contents page; 8 figures, 5 tables) |
 | `supplement.tex`, `supplement.pdf` | Supplement S1–S15 (contents page retained, 5 figures): data, operators, proofs, certification, extended tables, reproducibility with full input hashes and commands |
-| `style.tex` | Shared layout: Computer Modern 11 pt, 2.2 cm margins, 1.3 line spread, 0.13 cm paragraph separation, numbered citations and shared departmental title block; contents in supplement only |
+| `style.tex` | Shared layout: Latin Modern 11 pt, 1.25 line spacing, 10 pt table captions above tables with a 9 pt gap, numbered citations and shared departmental title block; contents in supplement only |
 | `references.json` | 55 verified references; `build.py` lists the cited ones in citation order |
 | `figures/` | Figure PDFs (publication) and PNGs (preview), `MANIFEST.json` (provenance), `README.md` (conventions, storyboard, case-selection rules) |
 | `CLAIM_EVIDENCE_LEDGER.md` | Every central claim with its artifact and status, plus corrections to earlier reports |

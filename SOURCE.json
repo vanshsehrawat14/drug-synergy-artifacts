@@ -2,12 +2,12 @@
   "schema_version": 2,
   "repository": "https://github.com/vanshsehrawat14/drug-synergy-artifacts",
   "version": "0.2.0",
-  "status": "editorial_review",
+  "status": "main",
   "date": "2026-11-16",
   "previous_snapshot_commit": "1fb37901d46b48564c515e7193d37cafeb3dd75c",
   "scope": "Research software, protocols, frozen scientific summaries, manuscript and supplement.",
   "source_text_encoding": "Committed bytes; maintained text uses UTF-8 and LF.",
-  "manifest_sha256": "3f6f8c20a6325bd74f0c7e936d172d69f002266556a51631d209ab4c6be5d538",
+  "manifest_sha256": "8cbb463ca258a5aff4d743cf36b57ba42ee7a32f507e3c4bbb9c3973846af171",
   "artifacts": {
     "manuscript/manuscript.pdf": {
       "sha256": "81cf5a49f537c11e953b76fec608a40c2639e1b6e2d89cd02ee8e505d205a433"
@@ -170,6 +170,6 @@
     "Current file hashes are in MANIFEST.json; embedded historical hashes identify original execution artifacts.",
     "Input datasets, model weights, course presentations and site-specific execution files are excluded."
   ],
-  "artifact_source_scope": "Source and content used for PDFs and validation; a later provenance-only commit pins that source without changing the artifacts.",
+  "artifact_source_scope": "Exact manuscript sources and figure artifacts used for the reviewed PDFs; current repository hashes are in MANIFEST.json.",
   "artifact_source_commit": "466bb45b67dd90a91e7af4f1e5f3bf3e4482c2e0"
 }
