@@ -24,13 +24,13 @@
     },
     {
       "path": "AUTHORS.md",
-      "bytes": 1081,
-      "sha256": "403b2b6098f86022ce702358da3d41907ed8f86e43a9421f57139beff0daae26"
+      "bytes": 1545,
+      "sha256": "a98e2f1a96381e73b843c04680d962996715a28e10096596517494d5c9793677"
     },
     {
       "path": "CITATION.cff",
-      "bytes": 853,
-      "sha256": "3d689851bd4320a38c7922c9e6bd6d61edd46efdd0cdba749c665b2dc5c41aa1"
+      "bytes": 1096,
+      "sha256": "01814b1265211adc2770f2d71ab76c6faaa14344239c5afb4a7d2b8a26533ffc"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -834,13 +834,13 @@
     },
     {
       "path": "manuscript/manuscript.pdf",
-      "bytes": 900617,
-      "sha256": "f63cb02d7fb9bfdd875de655fa4efbdc710a445aee49b2203afef5d392152885"
+      "bytes": 900332,
+      "sha256": "5d40bee52030f1b2002910bd988faa5e62f0f9617e7d05d33079112f742e6615"
     },
     {
       "path": "manuscript/manuscript.tex",
-      "bytes": 62162,
-      "sha256": "22a2f48077858ca4eaefb15ab535d9a40407259d73d6d1c9b441479463200afc"
+      "bytes": 62075,
+      "sha256": "60cfb0e1e8d905b274d73cb4988f3a781f2b89c1f508af221b131419d972b8d5"
     },
     {
       "path": "manuscript/references.json",
@@ -884,13 +884,13 @@
     },
     {
       "path": "manuscript/style.tex",
-      "bytes": 4633,
-      "sha256": "2f53abd043d4a37a8b09543914f7f070d00b7b9df9909cf5a71693b17c154d31"
+      "bytes": 4673,
+      "sha256": "3c6e582c8a3cea9266f164f599c62e3f92c3406cd747558df388e87949b6b100"
     },
     {
       "path": "manuscript/supplement.pdf",
-      "bytes": 354070,
-      "sha256": "48718d46bba2f027fe18d79f6f97e7fe2b5485662229561409e593c136f7b869"
+      "bytes": 354088,
+      "sha256": "af83d0a58c36dfe6174b2389e4baa8f2565d0fd2321daee113cc6173246db918"
     },
     {
       "path": "manuscript/supplement.tex",

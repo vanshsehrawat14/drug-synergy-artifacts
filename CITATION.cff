@@ -5,13 +5,16 @@ title: "Interaction Signal and Loewe Reference Computation in Drug-Synergy Predi
 authors:
   - family-names: Sehrawat
     given-names: Vanshdeep
-    affiliation: "University of Nevada, Las Vegas"
+    affiliation: "Department of Computer Science, University of Nevada, Las Vegas"
+    email: "sehrawat@unlv.nevada.edu"
   - family-names: Ukandu
     given-names: Kingsley
-    affiliation: "University of Nevada, Las Vegas"
+    affiliation: "Department of Mathematical Sciences, University of Nevada, Las Vegas"
+    email: "Kingsley.ukandu@unlv.edu"
   - family-names: Kim
     given-names: Sharlene
-    affiliation: "University of Nevada, Las Vegas"
+    affiliation: "Department of Brain Health, Kirk Kerkorian School of Medicine, University of Nevada, Las Vegas"
+    email: "sharlene.kim@unlv.edu"
 version: 0.2.0
 license: MIT
 repository-code: "https://github.com/vanshsehrawat14/drug-synergy-artifacts"

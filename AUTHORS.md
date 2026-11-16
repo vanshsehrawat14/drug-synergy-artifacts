@@ -2,6 +2,14 @@
 
 Author order follows the accompanying manuscript.
 
+All authors are affiliated with the University of Nevada, Las Vegas.
+
+| Author | Department | Institutional email |
+|---|---|---|
+| Vanshdeep Sehrawat | Computer Science | [sehrawat@unlv.nevada.edu](mailto:sehrawat@unlv.nevada.edu) |
+| Kingsley Ukandu | Mathematical Sciences | [Kingsley.ukandu@unlv.edu](mailto:Kingsley.ukandu@unlv.edu) |
+| Sharlene Kim | Brain Health, Kirk Kerkorian School of Medicine | [sharlene.kim@unlv.edu](mailto:sharlene.kim@unlv.edu) |
+
 | Author | Contribution | Implementation |
 |---|---|---|
 | [Vanshdeep Sehrawat](https://github.com/vanshsehrawat14) | Neural models, original-label DeepSynergy port and dose-aware adaptation; shared data, splits, runner and metrics; GP and CF extensions; interaction, replicate, Loewe and screening analyses; manuscript and figures | `synergy_artifacts/`, `experiments/`, `manuscript/` |

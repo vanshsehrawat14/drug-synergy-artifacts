@@ -2,16 +2,16 @@
   "schema_version": 2,
   "repository": "https://github.com/vanshsehrawat14/drug-synergy-artifacts",
   "version": "0.2.0",
-  "previous_snapshot_commit": "d10295674e6c8cdea12f80d22786b190b99235a0",
+  "previous_snapshot_commit": "0ee067c3026ac0ce550c183a09ed3b35a92b5ef2",
   "scope": "Research software, protocols, frozen scientific summaries, manuscript and supplement.",
   "source_text_encoding": "Committed bytes; maintained text uses UTF-8 and LF.",
-  "manifest_sha256": "eee384f20cb95c54bb7420d15a2fbcc8d10658460efa503d1c5bd5d3aef2c3e2",
+  "manifest_sha256": "b3a9c70ceea05a51e5ee45667c159f3cb598a0d77fc6d1003f9117971006697d",
   "artifacts": {
     "manuscript/manuscript.pdf": {
-      "sha256": "f63cb02d7fb9bfdd875de655fa4efbdc710a445aee49b2203afef5d392152885"
+      "sha256": "5d40bee52030f1b2002910bd988faa5e62f0f9617e7d05d33079112f742e6615"
     },
     "manuscript/supplement.pdf": {
-      "sha256": "48718d46bba2f027fe18d79f6f97e7fe2b5485662229561409e593c136f7b869"
+      "sha256": "af83d0a58c36dfe6174b2389e4baa8f2565d0fd2321daee113cc6173246db918"
     },
     "manuscript/figures/MANIFEST.json": {
       "sha256": "6b0307897ce33c9a66e4c34a87525de5704d49690c4ed1814832fd8055e56507"
@@ -65,6 +65,5 @@
     "Current file hashes are in MANIFEST.json; embedded historical hashes identify original execution artifacts.",
     "Input datasets, model weights, course presentations and site-specific execution files are excluded."
   ],
-  "artifact_source_scope": "Source and release content used for the PDFs and validation; later provenance-only commits do not alter those artifacts.",
-  "artifact_source_commit": "7bac4a77880a8bf28d2c19549737a92cd8703719"
+  "artifact_source_scope": "Source and release content used for the PDFs and validation; later provenance-only commits do not alter those artifacts."
 }
