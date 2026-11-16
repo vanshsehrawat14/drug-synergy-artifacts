@@ -65,5 +65,6 @@
     "Current file hashes are in MANIFEST.json; embedded historical hashes identify original execution artifacts.",
     "Input datasets, model weights, course presentations and site-specific execution files are excluded."
   ],
-  "artifact_source_scope": "Source and release content used for the PDFs and validation; later provenance-only commits do not alter those artifacts."
+  "artifact_source_scope": "Source and release content used for the PDFs and validation; later provenance-only commits do not alter those artifacts.",
+  "artifact_source_commit": "7bac4a77880a8bf28d2c19549737a92cd8703719"
 }
