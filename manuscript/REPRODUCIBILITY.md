@@ -8,10 +8,10 @@ Supplement S14 gives the full SHA-256 of every input (Tables S14 and S15) and th
 
 | Input | Location | SHA-256 |
 |---|---|---|
-| O'Neil observation table (DrugComb v1.4) | `data/processed/oneil_v1/observations.parquet` (from `python -m cs622.download deepsynergy drugcomb_summary drugcomb_raw` and `python -m cs622.data --config configs/data_oneil.json`; not tracked) | `ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b` |
-| Resolution cache (out-of-fold unit means) | `results/research_20261107/resolution/`, written by `python -m cs622.resolution` at commit d2c8f41 (`cache.npz` is not tracked) | `cache.npz` `91f93811dedf5c0721198146638c21f25b1616d43f43ae9322cf8790a7e86687` |
-| Pair-cell split | `results/final_20261110/oracle/pair_cell_split.csv` | `d32914a94d8ead90e12d8cb10b6beed15f93339b0de2200ce2075a67a79370ea` (LF, as committed; a CRLF checkout gives `794db1fe9acf49316aad2e9789b04aa57f5b8e49c075fd0fcbf85eb37494e7e1`) |
-| Pair-seen predictions (15 files) | Cluster run directory `results/final_20261110/runs/f2_pair_seen/` (not tracked) | listed in `audit/outputs/pairseen_audit.json`; all 15 re-verified on 2026-11-10 |
+| O'Neil observation table (DrugComb v1.4) | `data/processed/oneil_v1/observations.parquet` (from `python -m synergy_artifacts.download deepsynergy drugcomb_summary drugcomb_raw` and `python -m synergy_artifacts.data --config configs/data_oneil.json`; not tracked) | `ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b` |
+| Resolution cache (out-of-fold unit means) | `results/interaction_analysis/resolution/`, written by `python -m synergy_artifacts.resolution` at commit d2c8f41 (`cache.npz` is not tracked) | `cache.npz` `91f93811dedf5c0721198146638c21f25b1616d43f43ae9322cf8790a7e86687` |
+| Pair-cell split | `results/pair_information/oracle/pair_cell_split.csv` | `d32914a94d8ead90e12d8cb10b6beed15f93339b0de2200ce2075a67a79370ea` (LF, as committed; a CRLF checkout gives `794db1fe9acf49316aad2e9789b04aa57f5b8e49c075fd0fcbf85eb37494e7e1`) |
+| Pair-seen predictions (15 files) | Cluster run directory `results/pair_information/runs/f2_pair_seen/` (not tracked) | listed in `audit/outputs/pairseen_audit.json`; all 15 re-verified on 2026-11-10 |
 | Final campaign archive | `final_return_20261110.tar.gz` (retained by the authors, not tracked) | `c2e369a075c798d66561d58f77ada9bc4230400c31944899fa4e44c8d7172b77`, re-verified (154 entries) |
 | Pair-seen summary return | `research_return_20261110_pairseen_summary.tar.gz` (retained by the authors, not tracked) | prefix `2a63212e`, re-verified |
 | Expression features | `data/processed/deepsynergy/features.npz` | `4ece7882cbc3e1576bc7400d5c2f53d48d466de9eaafbc5d69ff1bb547d7f40d` |
@@ -24,12 +24,12 @@ Let `RES` be the resolution cache directory and `DERIVED` a directory outside th
    - `manuscript/audit/interaction_audit.py`;
    - `loewe_audit.py`;
    - `screening_audit.py`;
-   - `gate2_compare.py` (after re-executing `experiments/preliminary/r16–r21` on a main checkout).
-2. **Interaction-gap analyses** (outputs in `results/interaction_gap_20261110/`):
+   - `gate2_compare.py` (after re-executing `experiments/preliminary/r16–r21` in a clean source checkout).
+2. **Interaction-gap analyses** (outputs in `results/interaction_structure/`):
    ```
-   X=experiments/interaction_gap_20261110; OBS=data/processed/oneil_v1/observations.parquet; OUT=results/interaction_gap_20261110
+   X=experiments/interaction_structure; OBS=data/processed/oneil_v1/observations.parquet; OUT=results/interaction_structure
    python $X/variance.py --observations $OBS --resolution $RES --output $OUT --derived $DERIVED
-   python $X/anchors.py --observations $OBS --resolution $RES --split results/final_20261110/oracle/pair_cell_split.csv \
+   python $X/anchors.py --observations $OBS --resolution $RES --split results/pair_information/oracle/pair_cell_split.csv \
        --pairseen manuscript/audit/outputs/pairseen_audit.json --output $OUT
    python $X/grounding.py --observations $OBS --resolution $RES --features data/processed/deepsynergy/features.npz --output $OUT
    python $X/batch_transfer.py --observations $OBS --resolution $RES --output $OUT
@@ -44,7 +44,7 @@ Let `RES` be the resolution cache directory and `DERIVED` a directory outside th
    ```
    The scripts used are `core.py`, `anchors.py`, `variance.py`, `b3_pair_energies.py` and `b3_paired.py` from this repository, uploaded as bundles with SHA-256 prefixes `8e250eb9604d2b27` and `08f23608b68acb21`.
    - Cluster outputs: `b3_pair_energies.json` (`411b68bc8af94286…`) and `b3_paired.json` (`a8fc4bff417c54a7…`).
-   - The summary is transcribed in `results/interaction_gap_20261110/b3_paired_summary.json`.
+   - The summary is transcribed in `results/interaction_structure/b3_paired_summary.json`.
    - The recomputed pooled B3 $R^2$ equals the recorded value exactly.
 4. **Figures** (all 13 main and supplementary figures; about 40 s):
    ```

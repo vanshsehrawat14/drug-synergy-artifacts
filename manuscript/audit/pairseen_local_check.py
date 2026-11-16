@@ -4,9 +4,9 @@ Checks provenance fields, training-set sizes against the held-out-pair protocol,
 the pooled response MSE of both procedures. Contrast-level R^2 needs the per-row predictions, which are
 retained on the cluster (see pairseen_audit.py).
 
-python manuscript/audit/pairseen_local_check.py --runs results/final_20261110/gpu_return/runs/f2_pair_seen \
+python manuscript/audit/pairseen_local_check.py --runs results/pair_information/training_records/runs/f2_pair_seen \
     --observations data/processed/oneil_v1/observations.parquet --resolution RESOLUTION_DIR \
-    --manifest results/final_20261110/gpu_return/full_return_manifest.json --output manuscript/audit/outputs/pairseen_local_check.json
+    --manifest results/pair_information/training_records/execution_manifest.json --output manuscript/audit/outputs/pairseen_local_check.json
 """
 import argparse
 import hashlib
@@ -37,7 +37,7 @@ def main():
             d = runs / f"seed_{seed}" / f"fold_{fold}"
             meta = json.loads((d / "metadata.json").read_text())
             pooled = json.loads((d / "evaluation" / "metrics.json").read_text())["pooled"]
-            rel = f"results/final_20261110/runs/f2_pair_seen/seed_{seed}/fold_{fold}"
+            rel = f"results/pair_information/runs/f2_pair_seen/seed_{seed}/fold_{fold}"
             hashes = {name: sha256(d / name) == manifest.get(f"{rel}/{name}") for name in
                       ["metadata.json", "config.json", "evaluation/metrics.json", "checkpoints/history.json"]}
             pair_train = int(fold_rows.drop([fold, (fold + 1) % 5]).sum())

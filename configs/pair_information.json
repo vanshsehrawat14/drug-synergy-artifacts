@@ -1,0 +1,70 @@
+{
+  "name": "pair-information",
+  "status": "Exploratory. Frozen before any quantity below was computed. O'Neil has been inspected extensively, so no result here is confirmatory. The failed NCATS confirmation, the frozen ablation seed limits and the 5% materiality threshold are unchanged; no ablation seed is added.",
+  "starting_revision": "124d95a (research/mechanisms-2026-11-08); seed-2029 results from 7090494 (research/response_analysis-2026-11-07)",
+  "preceding_observations": [
+    "Pooled repeat-row dispersion 83.34 points^2; replicate deviations 5.44% of row variance; pair-cell contrast 2.60%, dose-shape contrast 10.18% of row variance (interaction_analysis/resolution).",
+    "Selected F2 interaction-residual R^2 0.064 [drug -0.037, 0.165]; contrast R^2 0.359; Bliss contrast R^2 0.315.",
+    "C1 replaces 67/1,137 native top-5% pair-cell choices; entrants median native margin 3.60, exits 0.17.",
+    "No replicate-split noise energy, cross-cell pair oracle or pair-cell-fold training result had been computed."
+  ],
+  "common": {
+    "dataset": "oneil_v1, observations sha256 ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b",
+    "units": "Dose rows are never independent units. Inference resamples whole unordered drug pairs (2000 draws, seed 20261110) and deletes one drug at a time with every evaluation projection refitted.",
+    "evaluation_operators": "Unchanged synergy_artifacts.resolution projections: pair-cell contrast (P-A) and dose-shape contrast (E-P-D), fitted within cell and original pair fold with replicate-count weights. Bliss residual targets use the training-pair Bliss reference already cached for the historical comparisons.",
+    "multiplicity": "One primary endpoint per direction; no Holm family is shared with historical endpoints."
+  },
+  "direction_A_replicate_noise": {
+    "question": "How much of each evaluation target and of the Loewe shortlist is explained by combination-replicate measurement noise?",
+    "A1_noise_ceilings": {
+      "estimand": "For target T = C y, noise energy N_C = E||C eps_bar||_W^2 of replicate-mean noise; ceiling R^2 = 1 - N_C/||C y||^2; noise-corrected model R^2 = 1 - (||C e||^2 - N_C)/(||C y||^2 - N_C).",
+      "estimator": "Within each pair-cell, split its blocks into two equal halves (4 -> 2+2, 8 -> 4+4). For every identical-input unit, d = sqrt(n1 n2)/n (mean half 1 - mean half 2) has the variance of the full replicate-mean noise and zero mean. N_C is ||C d||^2, averaged over 50 random block partitions (seed 20261110). Operators are applied to d exactly as to y.",
+      "targets": ["row response", "pair-cell contrast", "Bliss-residual pair-cell contrast (primary)", "dose-shape contrast", "Bliss-residual dose-shape contrast"],
+      "models": "Cached historical predictions only: selected neural F2 and F0 (3 seeds), production F2 (f2_base, 3 seeds), GP F2, CF selected extension, mono_only, Bliss.",
+      "primary": "Noise share N_C/||C(y - r_B)||^2 of the Bliss-residual pair-cell contrast, with pair-bootstrap and drug-jackknife intervals.",
+      "interpretation": "Noise share <= 0.2 (upper interval bound): replicate noise cannot explain interaction-residual R^2 near 0.06; the unexplained interaction contrast is reproducible across replicate blocks. Noise share >= 0.5: the interaction target is mostly replicate noise. Otherwise intermediate.",
+      "limitations": "Replicate blocks may share plates or processing, so N_C can underestimate independent-repeat noise and ceilings are upper bounds. Monotherapy is shared across blocks, so monotherapy measurement noise is not represented."
+    },
+    "A2_shortlist_noise": {
+      "estimand": "Top-5% pair-cell Loewe shortlist turnover caused by combination-replicate resampling, compared with the fixed-data N -> C1 turnover (67/1,137).",
+      "scores": "Block scores under N, C1 and I from synergy_artifacts.decision_sensitivity references and unit_scores with the historical inputs; pair-cell score = mean of block scores.",
+      "procedures": [
+        "Half-split: 200 random equal block partitions per pair-cell; turnover between half-screen lists under the same convention.",
+        "Bootstrap: 1000 resamples of blocks within pair-cell (seed 20261110); selection probability of every unit under N and C1 computed on the same resample; N -> C1 turnover within each resample; N turnover between consecutive independent resamples."
+      ],
+      "primary": "Within-resample N -> C1 top-5% turnover distribution, and mean selection probability of the 67 C1 entrants under N and under C1.",
+      "interpretation": "The C1 change is systematic beyond replicate noise if the within-resample turnover 2.5% quantile is above zero and C1 entrants have mean selection probability < 0.1 under N and >= 0.5 under C1. Noise turnover is reported as context; a larger noise turnover does not make a bias disappear.",
+      "limitations": "Combination replicates only; monotherapy, fit and plate uncertainty are not represented. A 4-block bootstrap is coarse."
+    }
+  },
+  "direction_B_pair_information": {
+    "question": "Is the weak held-out-pair interaction prediction an information limit (the pair-specific interaction is reproducible across cells but not inferable from other pairs) or a model limit?",
+    "B1_cross_cell_oracle": {
+      "target": "Bliss-residual pair-cell contrast t = (P-A)(y - r_B) (primary); raw pair-cell contrast (secondary).",
+      "oracles": [
+        "LOCO: mean of the same pair's contrast in every other cell, projected by (P-A) in the evaluated cell/fold.",
+        "Split-matched: mean over cells whose pair-cell fold (B2 assignment) is a training fold for the evaluated pair-cell."
+      ],
+      "secondary": "Cross-cell covariance share: pooled mean of t_pc t_pc' over c != c' divided by pooled mean of t_pc^2 (noise-robust share of pair-consistent energy).",
+      "comparators": "Held-out-pair production F2 (f2_base, 3 seeds) and selected F2.",
+      "gate_for_B2": "Run B2 only if split-matched oracle R^2 minus production F2 held-out R^2 on the primary target is >= 0.10 with pair-bootstrap lower bound > 0. Otherwise report that pair-consistent interaction is too small to motivate retraining and stop direction B.",
+      "note": "Oracles read other cells of the evaluated pair. They are information diagnostics, not held-out-pair predictors."
+    },
+    "B2_pair_seen_training": {
+      "hypothesis": "With the pair observed in other cells, the frozen production F2 procedure captures substantially more Bliss-residual pair-cell contrast than under held-out pairs.",
+      "competing": "(i) The architecture cannot represent pair-specific interaction even when trained on the pair (representation limit). (ii) Gains are response-level or additive rather than contrast-level.",
+      "split": "Pair-cell folds: every pair-cell (all blocks and orientations) in one fold. Per pair, cells are sorted, permuted (numpy default_rng seed 20261110) and assigned round-robin from a random offset, so each pair has 7-8 cells per fold. Test f, validation (f+1)%5, other three train. Monotherapy only from training blocks.",
+      "model": "Production F2 exactly as results/neural/runs/benchmark_v1/runs/f2_base: configs/neural_monotherapy.json with mono_missing interpolate, device cuda, eval_batch_size 16384. No search, no selection beyond the original validation checkpoint rule.",
+      "seeds": [2026, 2027, 2028],
+      "tasks": 15,
+      "controls": "Existing held-out-pair f2_base predictions for the same seeds and all rows.",
+      "primary": "Change in interaction-residual R^2 (Bliss-residual pair-cell contrast), pair-seen minus held-out-pair, seed-averaged errors, identical rows and original evaluation operators.",
+      "secondary": ["response MSE change", "raw pair-cell contrast R^2", "dose-shape contrast R^2", "fraction of split-matched oracle gain captured"],
+      "decision": "Exploitable pair information: change >= 0.05 with both grouped intervals above zero and at least 4/5 original folds positive. Representation-limited: change < 0.05 or an interval including zero while the oracle gate passed. Report the oracle fraction in both cases.",
+      "checks": "Before training: no test pair-cell block in training or validation; every test drug and cell seen in training; monotherapy rows only from training blocks; assignment hash recorded. After: finite predictions, every row predicted exactly once across folds.",
+      "resources": "One allocated GPU, 4 CPUs, 16 GiB, 30 minute cap per task, one active task. Expected 15 x 1-6 min; budget ceiling 7.5 GPU hours.",
+      "stopping": "Exactly 15 tasks. Diagnose any failure; rerun only affected tasks after a documented fix. No added seeds, models, masks or datasets based on outcomes.",
+      "interpretation_limits": "Compares learning procedures with different information on identical rows. It is not a deployable benchmark and does not identify biological mechanism. Random pair-cell splits are known to inflate performance; the estimand here is the contrast-level share of that gain."
+    }
+  }
+}

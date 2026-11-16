@@ -2,10 +2,10 @@ data/raw/
 data/processed/
 private/
 results/**/runs/
-!results/**/gpu_return/runs/
-results/**/gpu_return/runs/**
-!results/**/gpu_return/runs/**/
-!results/**/gpu_return/runs/**/*.json
+!results/**/training_records/runs/
+results/**/training_records/runs/**
+!results/**/training_records/runs/**/
+!results/**/training_records/runs/**/*.json
 results/**/slurm/
 build/
 .venv/

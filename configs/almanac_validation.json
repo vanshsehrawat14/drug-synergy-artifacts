@@ -1,6 +1,6 @@
 {
  "name": "almanac-validation-v1",
- "frozen": "2026-11-06, before any ALMANAC dose-level model run. Architectures, optimization, features and seeds are copied from the ONEIL sprint without change: f0_combined (selected in 5/5 ONEIL folds) and f2_combined (declared in docs/neural_results.md as the configuration to confirm, with interpolation for absent monotherapy doses). Nothing is selected on ALMANAC; validation fold (f+1)%5 only stops training.",
+ "frozen": "2026-11-06, before any ALMANAC dose-level model run. Architectures, optimization, features and seeds are copied from the ONEIL benchmark without change: f0_combined (selected in 5/5 ONEIL folds) and f2_combined (declared in docs/neural_results.md as the configuration to confirm, with interpolation for absent monotherapy doses). Nothing is selected on ALMANAC; validation fold (f+1)%5 only stops training.",
  "base": {
   "F0": "configs/neural_dose_aware.json",
   "F2": "configs/neural_monotherapy.json"
@@ -116,5 +116,5 @@
   "pair-cell contrast R2 and interaction residual R2 beyond Bliss with drug-jackknife intervals",
   "ONEIL-trained frozen networks are not applied to ALMANAC: only 14 drugs and 9 cells overlap and the targets differ (see report)"
  ],
- "verdict_rule": "as in the ONEIL sprint: lower error only if the pair-bootstrap and drug-jackknife intervals, every fold and every seed pairing agree"
+ "verdict_rule": "as in the ONEIL benchmark: lower error only if the pair-bootstrap and drug-jackknife intervals, every fold and every seed pairing agree"
 }

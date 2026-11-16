@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
 
-from cs622.controls import bliss_null, bliss_reference, hsa_reference
-from cs622.features import FeatureBuilder, Standardizer
+from synergy_artifacts.controls import bliss_null, bliss_reference, hsa_reference
+from synergy_artifacts.features import FeatureBuilder, Standardizer
 from test_features_models import data
 
 

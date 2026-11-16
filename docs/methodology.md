@@ -21,7 +21,7 @@ Sources and file checksums:
 | Block scores | [DrugComb summary](https://zenodo.org/records/11102665) | `e08e3d35bfa4bea011afe1b05b7025acde5c669c5e8d265866b5e12b08037a2f` |
 | Labels/folds | [DeepSynergy](https://github.com/KristinaPreuer/DeepSynergy) | `4ef40678fff51faa84fa4de63344c5b51e2e4abe7c28a417af24ec2b50fa135a` |
 
-`cs622.download` acquires files under `data/raw/`; `cs622.data` streams them
+`synergy_artifacts.download` acquires files under `data/raw/`; `synergy_artifacts.data` streams them
 into `data/processed/oneil_v1/`. Preparation records source/output hashes,
 settings, counts and exclusions in `manifest.json`. Do not edit raw files.
 Drug names are uppercased with nonalphanumeric characters removed; ambiguous
@@ -61,12 +61,12 @@ Save strict validation-MSE improvements and evaluate the best checkpoint.
 GP/CF choose their settings using the same validation groups and report their
 search/runtime budgets. Never select a model or change features using test errors.
 
-For one fold, use `python -m cs622.runner --config ... --output ...`.
+For one fold, use `python -m synergy_artifacts.runner --config ... --output ...`.
 For five sequential folds and pooled evaluation:
 
 ```sh
-python -m cs622.cv run --config configs/neural_dose_aware.json --output results/neural/runs/f0_cv
-python -m cs622.cv aggregate --runs results/neural/runs/f0_cv/fold_0 results/neural/runs/f0_cv/fold_1 results/neural/runs/f0_cv/fold_2 results/neural/runs/f0_cv/fold_3 results/neural/runs/f0_cv/fold_4 --output results/neural/runs/f0_cv/aggregate
+python -m synergy_artifacts.cv run --config configs/neural_dose_aware.json --output results/neural/runs/f0_cv
+python -m synergy_artifacts.cv aggregate --runs results/neural/runs/f0_cv/fold_0 results/neural/runs/f0_cv/fold_1 results/neural/runs/f0_cv/fold_2 results/neural/runs/f0_cv/fold_3 results/neural/runs/f0_cv/fold_4 --output results/neural/runs/f0_cv/aggregate
 ```
 
 Replace the config with `mean.json`, `additive.json` or
@@ -81,8 +81,8 @@ Optional diagnostic plots require `python -m pip install -e ".[plots]"`.
 Build a label-isolated bundle from the same config and test fold:
 
 ```sh
-python -m cs622.export --config configs/neural_dose_aware.json --output data/processed/integration/f0_fold0
-python -m cs622.integration --bundle data/processed/integration/f0_fold0 --output results/neural/runs/contract_example
+python -m synergy_artifacts.export --config configs/neural_dose_aware.json --output data/processed/integration/f0_fold0
+python -m synergy_artifacts.integration --bundle data/processed/integration/f0_fold0 --output results/neural/runs/contract_example
 ```
 
 The second command validates the bundle and submits shuffled training-mean dummy
@@ -101,7 +101,7 @@ selection with the submission. The evaluator aligns IDs and rejects incomplete
 coverage and inconsistent supplied metadata:
 
 ```sh
-python -m cs622.evaluate --predictions results/neural/runs/contract_example/predictions.parquet --observations data/processed/integration/f0_fold0/evaluation/test_targets.parquet --target inhibition --output results/neural/runs/contract_check
+python -m synergy_artifacts.evaluate --predictions results/neural/runs/contract_example/predictions.parquet --observations data/processed/integration/f0_fold0/evaluation/test_targets.parquet --target inhibition --output results/neural/runs/contract_check
 ```
 
 ## Metrics and comparisons
@@ -135,7 +135,7 @@ and prediction/dataset hashes are retained in [response_metrics.csv](../results/
 The frozen-protocol GPU benchmark and the DeepSynergy reproduction are reported in
 [neural_results.md](neural_results.md).
 Original runs, checkpoints, scoring analyses and full records remain on the
-preserved `feat/cs622-neural-pipeline` development branch/local data, not in this
+preserved `feat/synergy_artifacts-neural-pipeline` development branch/local data, not in this
 team snapshot. No production predictions or scientific results were changed.
 
 Bliss reference is a+b-ab/100; HSA reference is max(a,b). Scores subtract a
@@ -152,7 +152,7 @@ does not itself prove a numerical artifact. No stable model-ranking reversal
 or independent-study confirmation is established. Detailed scorer investigations
 are retained separately from the shared ML implementation.
 
-`cs622.deepsynergy reproduce` runs the published protocol on the original chemical
+`synergy_artifacts.deepsynergy reproduce` runs the published protocol on the original chemical
 and expression features; its audit is in [neural_results.md](neural_results.md).
 `deepsynergy_paper.json` is an uncompleted adaptation configuration, not a faithful
 numerical reproduction. `neural_onehot.json` predicts published synergy, a

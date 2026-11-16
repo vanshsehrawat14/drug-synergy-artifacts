@@ -88,7 +88,7 @@ The case score is observed inhibition minus the expectation. A block score avera
 
 The figure `results/summary/figures/fig6_loewe_mechanism.png` shows this case and the distance of every root to the range edge.
 
-**Root-level experiment.** The 98 probe cases are native drc fits under R 3.6.3, every one a fallback with an admissible root. `python -m cs622.loewe_example` recomputes each from the stored coefficients alone, without R:
+**Root-level experiment.** The 98 probe cases are native drc fits under R 3.6.3, every one a fallback with an admissible root. `python -m synergy_artifacts.loewe_example` recomputes each from the stored coefficients alone, without R:
 - **Solvers.** The two independent solvers agree to 2.4e-13; the largest residual at a root is 5.9e-7.
 - **Code-3 cases.** In 75 of the 82, the native iterate lies outside the joint range. The median root is 0.0003 points from the range edge. The median iterate is 0.008 points from the root.
 - **Error cases.** Their roots are also near the edge (median 0.011).
@@ -146,7 +146,7 @@ We used an identity-only panel network with drug-pair folds, seed 2026. Retraini
 
 ## Reproduction
 
-The upstream stage runs on `feat/cs622-neural-pipeline` with an R 3.6.3 / nleqslv 3.3.2 runtime and the synergyfinder 2.0.12 source:
+The upstream stage runs on `feat/synergy_artifacts-neural-pipeline` with an R 3.6.3 / nleqslv 3.3.2 runtime and the synergyfinder 2.0.12 source:
 - `experiments/scientific_validation/native_full.py`;
 - `experiments/phase3/native_fit.py`;
 - `experiments/phase2/panel_neural.py`; the retraining adds `--targets published solver_root valid_root valid_root_any`.
@@ -164,9 +164,9 @@ The upstream stage runs on `feat/cs622-neural-pipeline` with an R 3.6.3 / nleqsl
 Then, on this branch:
 
 ```sh
-python -m cs622.loewe_audit --output results/loewe_audit
-python -m cs622.loewe_verify --cases results/loewe_audit/full_cases.parquet --output results/loewe_verify --retrained <retrained panel predictions>
-python -m cs622.loewe_example --output results/loewe_audit --cases results/loewe_audit/full_cases.parquet --verified results/loewe_verify/cases_verified.parquet
+python -m synergy_artifacts.loewe_audit --output results/loewe_audit
+python -m synergy_artifacts.loewe_verify --cases results/loewe_audit/full_cases.parquet --output results/loewe_verify --retrained <retrained panel predictions>
+python -m synergy_artifacts.loewe_example --output results/loewe_audit --cases results/loewe_audit/full_cases.parquet --verified results/loewe_verify/cases_verified.parquet
 ```
 
 The verification plan was frozen in `configs/loewe_verification.json` before it ran. The worked example and the root-level experiment need only the tracked `results/loewe_audit/probe_98_cases.csv`.

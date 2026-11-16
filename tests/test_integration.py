@@ -1,9 +1,9 @@
 import pandas as pd
 import pytest
 
-from cs622.export import export_bundle
-from cs622.io import digest, read_json, write_json
-from cs622.integration import example, validate_bundle
+from synergy_artifacts.export import export_bundle
+from synergy_artifacts.io import digest, read_json, write_json
+from synergy_artifacts.integration import example, validate_bundle
 from test_runner import config, dataset
 
 @pytest.mark.parametrize("regime", ["F0", "F2"])
@@ -25,7 +25,7 @@ def test_independent_contract_and_incomplete_submission(dataset, tmp_path, regim
 
 
 def test_external_evaluator_rejects_missing_test_rows(dataset,tmp_path):
-    from cs622.evaluate import evaluate_files
+    from synergy_artifacts.evaluate import evaluate_files
     observations=dataset/"observations.parquet"
     source=pd.read_parquet(observations)
     expected=source[source.is_combination & (source.fold==0)]

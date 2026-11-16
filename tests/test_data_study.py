@@ -3,8 +3,8 @@ import itertools
 import pandas as pd
 import pytest
 
-from cs622.data import SCORES, prepare
-from cs622.io import read_json
+from synergy_artifacts.data import SCORES, prepare
+from synergy_artifacts.io import read_json
 
 
 def write_sources(tmp_path):
@@ -61,7 +61,7 @@ def test_sparse_drugs_are_excluded_and_held_out_drugs_stay_seen(tmp_path):
 
 
 def test_drug_cell_coverage_drops_sparse_drug_cells_and_keeps_held_out_drug_cells_seen():
-    from cs622.data import _covering_folds, _sparse_drug_cells
+    from synergy_artifacts.data import _covering_folds, _sparse_drug_cells
     units = [(a, b, "C1") for a, b in itertools.combinations([f"D{i}" for i in range(8)], 2)] + [("D0", "D1", "C2")]
     df = pd.DataFrame([{"pair_id": f"{a}|{b}", "drug_a": a, "drug_b": b, "cell_line": c} for a, b, c in units])
     excluded, kept = _sparse_drug_cells(df, 3)

@@ -3,7 +3,7 @@
   "frozen": "2026-11-06, before any regime-level number was computed. The pooled results (contrast R2 F2 0.359 vs Bliss 0.315; interaction residual R2 0.064, jackknife [-0.037, 0.165]) were already known, so this is an exploratory subgroup analysis of existing out-of-fold predictions. No model is refit or retuned.",
   "models": ["selected:F2", "selected:F0"],
   "seeds": [2026, 2027, 2028],
-  "reference": "bliss_reference: Bliss rule on training-pair monotherapy, as in the sprint benchmark",
+  "reference": "bliss_reference: Bliss rule on training-pair monotherapy, as in the benchmark benchmark",
   "unit": "pair-cell panel rows: mean of the dose rows of a pair and cell inside the regime",
   "metrics": {
     "interaction_residual_r2": "1 - ||P(y - p)||^2 / ||P(y - R)||^2, P removes drug main effects within fold and cell",

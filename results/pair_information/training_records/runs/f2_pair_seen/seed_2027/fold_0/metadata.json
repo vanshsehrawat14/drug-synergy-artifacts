@@ -1,0 +1,216 @@
+{
+  "config": {
+    "dataset": "data/processed/oneil_v1",
+    "table": "observations",
+    "target": "inhibition",
+    "test_fold": 0,
+    "seed": 2027,
+    "features": {
+      "regime": "F2",
+      "mono_missing": "interpolate"
+    },
+    "model": {
+      "kind": "dose",
+      "hidden": [
+        128,
+        64
+      ],
+      "encoder_dim": 32,
+      "dropout": 0.1
+    },
+    "training": {
+      "epochs": 200,
+      "batch_size": 1024,
+      "lr": 0.001,
+      "weight_decay": 1e-05,
+      "patience": 20,
+      "threads": 4,
+      "device": "cuda",
+      "eval_batch_size": 16384
+    },
+    "bootstrap": 1000,
+    "split": {
+      "kind": "pair_cell",
+      "seed": 20261110
+    }
+  },
+  "git": {
+    "commit": "8bce416b9374323c45fb9eb5b51c8b05bcf62eec",
+    "dirty": false
+  },
+  "python": "3.12.16",
+  "dependencies": {
+    "numpy": "2.4.1",
+    "pandas": "2.3.3",
+    "scipy": "1.17.0",
+    "torch": "2.12.1+cu129",
+    "pyarrow": "23.0.1"
+  },
+  "dataset_sha256": "ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b",
+  "fold_counts": {
+    "0": {
+      "rows": 296064,
+      "pairs": 583
+    },
+    "1": {
+      "rows": 294592,
+      "pairs": 583
+    },
+    "2": {
+      "rows": 294528,
+      "pairs": 583
+    },
+    "3": {
+      "rows": 295488,
+      "pairs": 583
+    },
+    "4": {
+      "rows": 294656,
+      "pairs": 583
+    }
+  },
+  "partition_rows": {
+    "train": 884672,
+    "validation": 294592,
+    "test": 296064
+  },
+  "fit": {
+    "best_epoch": 44,
+    "validation_mse": 130.76974831229302,
+    "epochs_completed": 65,
+    "device": "cuda",
+    "parameters": 23009,
+    "fit_seconds": 182.71476471610367,
+    "cuda_max_memory_allocated_bytes": 694447616,
+    "cuda_max_memory_reserved_bytes": 719323136
+  },
+  "elapsed_seconds": 195.56092041917145,
+  "device": {
+    "type": "cuda",
+    "torch": "2.12.1+cu129",
+    "cuda": "12.9",
+    "hip": null,
+    "float32_matmul_precision": "highest",
+    "deterministic_algorithms": true,
+    "name": "NVIDIA A100-SXM4-80GB",
+    "capability": "8.0",
+    "total_memory_bytes": 85095874560,
+    "cudnn": 92000,
+    "index": 0
+  },
+  "process_peak_resident_bytes": 2910154752,
+  "code_sha256": {
+    "__init__.py": "3e9ae627744f3126a27e769d8d70dbb44e307d6880a4a44bde4d176274557879",
+    "ablation_summary.py": "1cc561ff4ea272925a2d8697d4d67e2a2af26674fffd744d7f09c8bd6c90ff20",
+    "almanac_report.py": "bd587b2f1d6429d68f792acc1ff5540d8236f4f0efdd62e0a8f02061935950d9",
+    "almanac_sites.py": "ffa3b9147c7ea4bf569f150f42ffcf493adfffa47e50f4049699930f0d8da5b5",
+    "certificate_audit.py": "1d6b60c25d7e370d673ee653f1b80880ab4133160c0c8454ae98575696ff9306",
+    "cf.py": "3a749469cc07ed5b8cf685f4da1b47fb81364d20c034e25a91e08c77c8d2f097",
+    "controls.py": "cdbbd4dd47b5094e11c759127b19acc76bae95edb7bafe225d8c7e431b93ad89",
+    "cross_screen.py": "5bc895bcde8da9fee030d6ae156ba3f7996b185190ab6077499c68f453c25901",
+    "cv.py": "c4366ad7b7e1784b69d9b3b5c4a54be0cde683737d94c4329dbd1cbb9369fabb",
+    "data.py": "6f53f5e3cdae2a1a8cd9f4c75338e67127d377a5eed5de501942819c14463da6",
+    "decision_followup.py": "939235c660bfb465166751e5ec9663d6bbbca105cb5444bbbb27232b3abfcbb9",
+    "decision_sensitivity.py": "547ff0da5d807e5903aa2d14162b8d8107b9fb30f4596329c7ae0db831bb7e41",
+    "deck.py": "9c7d6ce21a859ea11358f7abf30f3bf4493a307e6be5aa9f983f9ac2fca32e6b",
+    "deepsynergy.py": "02326771f79fe13c20357159afb7a87431cd52841de032e14211d9cf0aad3ab9",
+    "diagnostics.py": "0511d2de942043876eb1e0c994d1f4ea0b377e112a06b46757997d60636fd2a8",
+    "download.py": "2906ab23da0a1edddeced56026c877c71c20eef82b084cceccbcaadb5903cb84",
+    "evaluate.py": "8d7cf6feaec32227b2be4a121210ff0c03e51c081870594455b4945a17ff4b90",
+    "export.py": "4c0a8171ea5152307f5c4cd57bb18e007b2e4ae5459a92c6e80a217fdddbc09e",
+    "features.py": "ca9ab3002673319702ed976d679bef182db11b8c05f166779221e0152c2215f6",
+    "pair_analysis.py": "3df9b629d26b8071e3e0810eae9095898c3e8ae8e247317bb995970a92f1f870",
+    "gp_gpu.py": "958fd706cced5ab6c203b06ccf9364c16dfa34d8cc4871a503e1e7f27ef96383",
+    "gp_select.py": "de4b0480b7380f21550742e65751ce4eaf6d4bef7474eb5087fcc47b16194a8a",
+    "gp_shared.py": "24964c435c64364ea8f056dcbffe74099ec417cfe5c978e86282d6470e67f2de",
+    "gp_uncertainty.py": "e2f224ba3f8744cbb66c68eaa0715cd81442b90ea81da904bd1bd22e844bab97",
+    "gp_verify.py": "75325a3c8176604d8d168042efc5af4d6a156889366b589ff5a29a071d1829bd",
+    "gpu.py": "2f20f866995eb5a982e74db8406e1c812c75655446def8f4002aa66797e0c98e",
+    "information_audit.py": "1d18c2150cd395f9ce92808798dea9b6398d9b3acc5e05414ea6177279d3e7d9",
+    "integration.py": "914277346e4f159b22c8e0c1e5ee8a7bf866576a5476271cfe0ab0449e561a8d",
+    "io.py": "409c726d1f3bc8623c7a79992fbdb9154a840fbfab327001cf376d3ba5800897",
+    "loewe_audit.py": "acc1b7143351fdfac3c80c3e3cdbb16771a2f726141b9373198803c13f98b499",
+    "loewe_example.py": "16a73cc574b160c22ec8e7dd7d3518ccaa7eb89ba528838d380af7d702de55df",
+    "loewe_interval.py": "1ccfe0725704bc1cb98565cf39d3e2e8ac6affd7ac7362e670f6a5cba3e84762",
+    "loewe_precision.py": "fe32b9bf330f20144543578e2e3d267a586acc3fbdaf1ee65d1c6e5f1118b1bd",
+    "loewe_priority.py": "0b2fb0324c6c333ed5f2d457268477f769bd5977eda1e8d787e9aab1f27a4c6b",
+    "loewe_verify.py": "11ba7e7af6f722db1131092da3b9e8f51a2e95634bdb0493395684bb23f3c6ec",
+    "mechanism_analysis.py": "265a3fba32dc87559f5ffc208dd9654b887705275429e0931e1f7006e4512986",
+    "mechanism_figures.py": "bee36db357f2776e98f7c6342332e0695ac0b18e8213e99e99fe1d4cde117642",
+    "mechanism_jobs.py": "839da80c4268f63ec508d1870d38cbee62a7be0f5ec5f95e9ab7cf9b5165f141",
+    "metrics.py": "3f1ed2ee4f3e2760fcfad152170896cf5ea466753ab7f3646c9ca5c2d8305bad",
+    "models.py": "e6e4cf97b48fbd3592c79a43a81eead3581999085891d7eb97c4065c7d811efc",
+    "native_reliability.py": "99250f2efef3e1e0794144b31273e0b67dcdf5fc27350a698e988d1cd25a586d",
+    "native_start_audit.py": "1a6b0bd412a2d796debafc3c5f6aa9078a95aaf9648cc168336565552b3a1616",
+    "pair_seen.py": "5af2c5c7047e69f63843ffd51b570f3ec8f3476949d093b801a379f0b7cdba84",
+    "prioritization_audit.py": "f7de15d1c7dab166f78deb0c0656aa2ff0168967f69e9045d13f7303f392d5c6",
+    "prospective_scoring.py": "eff77be022ad8339466490e68c7d21674ccd12d83107a070640d5b571f5a8af4",
+    "regimes.py": "f3d88b7373a63df6e93437f4799666c384da34bb65ea884ccc4f25203db692bc",
+    "reliability.py": "05b1f700a509669ae8179a71095600a48b74818950c10420643eec1349f7bea3",
+    "research_jobs.py": "b08b0414fb28a55ce60b210ece9f326ec9e329cec5985a5efcf8aaa64030cf2d",
+    "research_report.py": "0a4aae6aa89140ca5214751c9de306a7ae1e9918fff4a3c405af0366ba8a0132",
+    "resolution.py": "389a052962950835383b80d21b5e5676b57081473dfa20a193269054297936ee",
+    "resolution_checks.py": "17d63697b855c2813baf48b234f4ccc30890e3399c110cfae29a59f11d951f25",
+    "runner.py": "ffe4ccb5ad1216b4b8c81e6031a21f7f30e5c237119c287449c26b52451ec866",
+    "runtime.py": "c5ce44419b95fb64f8343cf19efcc97910d9cbf5fef9b42c2cfe4695003582aa",
+    "screen_audit.py": "1c1fb9bd9e4c105e5d6739c8ec29326abff976f21bb95c5ff9e70f1e2d2c2792",
+    "screen_compatibility.py": "101ea39ada147265c90ce473c1cee55eb16e0c6f5e8372039dfad7aff0ffa6e5",
+    "screen_support.py": "df48af4f96ed223a806123bda6626804492808a2748d229de55a5ddb941f19fc",
+    "smoke.py": "d4bfe689cc5e9dd838c421d43166d52e1382ab5d0524317a37364590e9c1d71f",
+    "splits.py": "fb605b824cc5492742814829c035a4d55c367945093f4ef5f517290dc4409efd",
+    "neural_report.py": "48dbc163d764ed5b117e14804d78f92ed2eb6c9ad4913d3ecffa361370c11229",
+    "stress.py": "ae48c7709ff7660d2f980ca92de0f730bc0413bd5ec0d2ae57131c00a222fcbd",
+    "suite.py": "6e3d5f3dad84b7f22c6c25ce0efa973324925ba74857dcebb2bc6ee5e7a64469",
+    "synthesis.py": "fb11e98a0aa07cdebba76de1006dac9d96c21334b8490402e0fd8cbf58e4b167",
+    "third_screen.py": "2990e7d244684e5b68f943575c7dd4176b85babce864bb78fcfb6d885d346019",
+    "training.py": "89c903820220988d3ea006b36bba115c8f36b7218e5b06be9dd84863c474cc68",
+    "unified.py": "4fa20897d15b9c9896cb4ce98e560a2ac180a64b5e5cf111a09b2b7e7d034408"
+  },
+  "split_rule": "pair-cell folds seed 20261110: test f, validation (f+1)%5, other folds train",
+  "pilot": false,
+  "split_assignment_sha256": "d32914a94d8ead90e12d8cb10b6beed15f93339b0de2200ce2075a67a79370ea",
+  "monotherapy_coverage": {
+    "train": {
+      "a": {
+        "available": 884672,
+        "interpolated": 0,
+        "unavailable": 0,
+        "rows": 884672
+      },
+      "b": {
+        "available": 884672,
+        "interpolated": 0,
+        "unavailable": 0,
+        "rows": 884672
+      }
+    },
+    "validation": {
+      "a": {
+        "available": 294192,
+        "interpolated": 400,
+        "unavailable": 0,
+        "rows": 294592
+      },
+      "b": {
+        "available": 294048,
+        "interpolated": 544,
+        "unavailable": 0,
+        "rows": 294592
+      }
+    },
+    "test": {
+      "a": {
+        "available": 295856,
+        "interpolated": 208,
+        "unavailable": 0,
+        "rows": 296064
+      },
+      "b": {
+        "available": 295648,
+        "interpolated": 416,
+        "unavailable": 0,
+        "rows": 296064
+      }
+    }
+  }
+}

@@ -36,7 +36,7 @@ Among fallback roots, 13,989 lie within 0.01 points of an asymptote and 1,631 li
 
 ## Actual selections and threshold margins
 
-The [changed-selection table](../results/mechanisms_20261108/prioritization/changed_selections.csv) lists canonical pair/cell identifiers, before/after score, rank, both cutoff margins, entry/exit and boundary/interior score contributions for every comparison and budget. The primary C1 result contains 67 incoming and 67 outgoing units, or 67 replaced members of a 1,137-member list.
+The [changed-selection table](../results/mechanism_analysis/prioritization/changed_selections.csv) lists canonical pair/cell identifiers, before/after score, rank, both cutoff margins, entry/exit and boundary/interior score contributions for every comparison and budget. The primary C1 result contains 67 incoming and 67 outgoing units, or 67 replaced members of a 1,137-member list.
 
 Examples among C1 entrants, all selected retrospectively:
 
@@ -52,7 +52,7 @@ These names identify the changed screening decisions; they are not recommendatio
 
 Incoming C1 selections have median native margin 3.601 points, 90th percentile 11.069 and maximum 25.871; outgoing selections have median 0.167 and maximum 0.316. Only 10/67 entrants are within one point of the cutoff, versus every exit. With the augmented correction, incoming median margin rises to 4.231 and maximum to 35.396. The pooled median of changed units largely describes displaced exits and obscures the incoming-score mechanism.
 
-Integer rounding alone replaces 57 native top-5% choices. Its incoming set overlaps C1 in just **three units**, and overlaps the augmented incoming set in the same three. Equal turnover percentages therefore do not establish that the correction is equivalent to rounding, even though near-tied exits are expected when any ranking moves. [Rounding overlap](../results/mechanisms_20261108/prioritization/rounding_overlap.csv) and the [margin figure](figures/mechanisms_20261108/selection_margins.pdf) make this distinction explicit.
+Integer rounding alone replaces 57 native top-5% choices. Its incoming set overlaps C1 in just **three units**, and overlaps the augmented incoming set in the same three. Equal turnover percentages therefore do not establish that the correction is equivalent to rounding, even though near-tied exits are expected when any ranking moves. [Rounding overlap](../results/mechanism_analysis/prioritization/rounding_overlap.csv) and the [margin figure](figures/mechanism_analysis/selection_margins.pdf) make this distinction explicit.
 
 ## Stability across budgets and clusters
 
@@ -64,7 +64,7 @@ Integer rounding alone replaces 57 native top-5% choices. Its incoming set overl
 | 10% | 2,274 | 5.72% | 6.73% | [5.54%, 7.87%] |
 | 20% | 4,548 | 5.23% | 5.91% | [5.23%, 6.77%] |
 
-Bootstrap resamples whole drug pairs, retaining all their cell decisions and reselecting each draw's lists. At top 5%, deleting any one drug leaves C1 turnover in [5.26%, 7.14%] and I turnover in [6.20%, 8.26%]. Deleting any one cell leaves C1 in [5.32%, 6.23%] and I in [6.23%, 7.31%]. These are sensitivity ranges, not confidence intervals. Within-cell lists and budgets are retained in [within-cell evidence](../results/mechanisms_20261108/prioritization/within_cell.csv); small lists have coarse, heterogeneous turnover.
+Bootstrap resamples whole drug pairs, retaining all their cell decisions and reselecting each draw's lists. At top 5%, deleting any one drug leaves C1 turnover in [5.26%, 7.14%] and I turnover in [6.20%, 8.26%]. Deleting any one cell leaves C1 in [5.32%, 6.23%] and I in [6.23%, 7.31%]. These are sensitivity ranges, not confidence intervals. Within-cell lists and budgets are retained in [within-cell evidence](../results/mechanism_analysis/prioritization/within_cell.csv); small lists have coarse, heterogeneous turnover.
 
 Changing the unit matters: the historical top-5% list of 30 drug-pair averages does not change under C1, even though pair-cell choices do. Neither pair bootstrap nor drug/cell deletion supplies independent biological replication. The effect is a finite-screen ranking consequence under a stated convention.
 
@@ -90,9 +90,9 @@ The new experiment samples 50 cases in each of eight observed status strata, usi
 
 The other three fallback strata—certified no root, empty interval and opposite/flat—have zero acceptance changes. Union across starts: 102 cases change acceptance; 68 have certified roots. Alternate acceptance on opposite/flat cases is not counted as mathematical recovery. All 29 interior-root recoveries at lower+0.1 match the independent certified reference within 10⁻⁵ points. Original accepted interior roots change only by small approximation error, with unchanged acceptance.
 
-This is direct evidence of solver-path dependence. It corrects the overly broad overnight characterization “convention, not accuracy”: **failure to find an admissible root** is numerical, while **choosing to exclude an otherwise valid boundary root** is a convention. Native code implements the former acceptance path, not a documented uniform ε exclusion. Interior recovery is a particularly useful falsification control. The intervention does not estimate the population fraction sensitive to alternate starts, and varying starts is not proposed as a production acceptance rule.
+This is direct evidence of solver-path dependence. It corrects the overly broad response_analysis characterization “convention, not accuracy”: **failure to find an admissible root** is numerical, while **choosing to exclude an otherwise valid boundary root** is a convention. Native code implements the former acceptance path, not a documented uniform ε exclusion. Interior recovery is a particularly useful falsification control. The intervention does not estimate the population fraction sensitive to alternate starts, and varying starts is not proposed as a production acceptance rule.
 
-The historical R runtime was available in the local validation environment, contrary to the overnight environment note. Initial execution needed its existing library directory and the host emitted a locale warning. The exact original-code/reference reconstruction passed after locating the library; no curve fitting or source replacement was needed.
+The historical R runtime was available in the local validation environment, contrary to the response_analysis environment note. Initial execution needed its existing library directory and the host emitted a locale warning. The exact original-code/reference reconstruction passed after locating the library; no curve fitting or source replacement was needed.
 
 ## Precision, serialization and legitimate convention sensitivity
 
@@ -115,11 +115,11 @@ Unresolved: which edge/undefined-reference convention has greater experimental v
 Use fresh output directories and the original input hashes. The returned handoff contains the complete historical certificates; local predictions/data remain untracked.
 
 ```sh
-python -m cs622.certificate_audit --certificates CERTIFICATES --output NEW_CERT_AUDIT --workers 4
-python -m cs622.native_start_audit --prepare --certificates CERTIFICATES --source PINNED_SOURCE --output NEW_START_AUDIT
+python -m synergy_artifacts.certificate_audit --certificates CERTIFICATES --output NEW_CERT_AUDIT --workers 4
+python -m synergy_artifacts.native_start_audit --prepare --certificates CERTIFICATES --source PINNED_SOURCE --output NEW_START_AUDIT
 Rscript --vanilla experiments/native_start_audit.R NEW_START_AUDIT/cases.csv PINNED_SOURCE NEW_START_AUDIT/native
-python -m cs622.native_start_audit --certificates CERTIFICATES --source PINNED_SOURCE --output NEW_START_AUDIT
-python -m cs622.prioritization_audit --verified VERIFIED_CASES --precision PRECISION_CERTIFICATES --certificates NEW_CERT_AUDIT/certificates_replayable.parquet --output NEW_DECISION_AUDIT
+python -m synergy_artifacts.native_start_audit --certificates CERTIFICATES --source PINNED_SOURCE --output NEW_START_AUDIT
+python -m synergy_artifacts.prioritization_audit --verified VERIFIED_CASES --precision PRECISION_CERTIFICATES --certificates NEW_CERT_AUDIT/certificates_replayable.parquet --output NEW_DECISION_AUDIT
 ```
 
-The original R library must expose nleqslv 3.3.2. No native refits are performed by these commands. Numerical outputs, source hashes, detailed interventions and named changed selections are in [machine-readable evidence](../results/mechanisms_20261108/).
+The original R library must expose nleqslv 3.3.2. No native refits are performed by these commands. Numerical outputs, source hashes, detailed interventions and named changed selections are in [machine-readable evidence](../results/mechanism_analysis/).

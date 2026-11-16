@@ -1,0 +1,74 @@
+{
+ "name": "interaction_structure",
+ "status": "exploratory CPU analysis; frozen before any target-level or model-level outcome was computed",
+ "question": "Does same-pair information in other cell lines help through a pair-wide offset, a transferable cell-specific profile, or artifacts of reference construction and shared measurement?",
+ "protocol_sha256": "69fc167e018cca06fb348c5c422f69ce4a5e0ef5d1819fde6f2127e09935b0b5",
+ "seen_before_freeze": [
+  "Monotherapy edges are identical across the replicate blocks of every pair-cell (182,316 groups) and across pairs sharing a drug, cell line and dose (pooled SD 0.0006).",
+  "315 pair-cells (21 pairs x 15 cell lines) carry a second set of four blocks deposited later (source_row >= 2273700); 75 of them (5 pairs) use different dose grids.",
+  "Raw pair-cell mean inhibition of the two sets differs far more than within-set replicate dispersion predicts (all 315, unprojected, dose-confounded pairs included).",
+  "No contrast target, variance component, anchor-model or control outcome had been computed."
+ ],
+ "inputs": {
+  "observations": {"path": "data/processed/oneil_v1/observations.parquet", "sha256": "ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b"},
+  "resolution_cache": {"path": "results/interaction_analysis/resolution (branch research/resolution-reliability, d2c8f41)", "cache_sha256": "91f93811dedf5c0721198146638c21f25b1616d43f43ae9322cf8790a7e86687", "coordinates_sha256": "ebdcf3090da9bf8bf9aede5281990b843df4befc02e429bc9972a886044896d1", "inputs_sha256": "8b81e6e3f526e232f0269c826ad26dcbe8f0466297521e2cf60b68696afc78f4"},
+  "pair_cell_split": {"path": "results/pair_information/oracle/pair_cell_split.csv", "sha256_crlf_checkout": "794db1fe9acf49316aad2e9789b04aa57f5b8e49c075fd0fcbf85eb37494e7e1"},
+  "pair_seen_reference_values": "manuscript/audit/outputs/pairseen_audit.json"
+ },
+ "unit": "pair-cell: one drug pair x one cell line; all combination rows of its blocks",
+ "targets": {
+  "T_bliss": "primary. Row-weighted pair-cell mean of (unit mean inhibition - frozen Bliss reference), residualized on additive endpoint-drug indicators within (original pair fold, cell line) with row-count weights. Identical to the frozen pair_cell:bliss_residual estimand.",
+  "T_raw": "same contrast applied to unit mean inhibition (measured combination response, reference-free).",
+  "T_ref": "same contrast applied to the frozen Bliss reference (reference-only control); T_raw = T_ref + T_bliss.",
+  "T_train": "pair-cell mean Bliss residual minus an additive drug-by-cell baseline (row-weighted least squares on drug indicators, per cell line) fitted only on pairs outside the excluded folds."
+ },
+ "noise": {"split": "block signs balanced within (pair-cell, dose-grid group), as frozen", "draws": 50, "seed": 97,
+           "batch_split": "block signs balanced within (pair-cell, batch, dose-grid group)"},
+ "cross_batch": {
+  "batch": "blocks with source_row >= 2273700 form batch 2",
+  "eligible": "8-block pair-cells whose two dose grids agree within |log ratio| <= 0.02 at every rank",
+  "targets": "each batch alone substitutes the pair-cell mean (weight 64) in the frozen panel contrast; references from block edges",
+  "adjustments": ["none", "batch-2 minus batch-1 mean shift per cell line removed before the contrast"],
+  "moments": ["within-batch reproducible energy E[t_b^2] - noise_b", "cross-batch energy E[t1 t2]", "within-batch cross-cell product E[t_b,c t_b,c']", "cross-batch cross-cell product E[t1,c t2,c']"],
+  "uncertainty": "pair-cluster bootstrap, 2000 draws, seed 13"
+ },
+ "variance_components": {
+  "pair_wide": "row-weighted cross-cell U-statistic sum_p sum_{c!=c'} w t w' t' / sum_p sum_{c!=c'} w w'",
+  "noise": "split estimate",
+  "pair_by_cell": "total - pair_wide - noise",
+  "descriptive": "in-sample pair-mean share, reported separately",
+  "out_of_sample": "leave-one-cell-out B1 and B2 with covariance estimated on the other folds",
+  "intervals": {"pair_bootstrap": {"draws": 2000, "seed": 11}, "drug_jackknife": 38, "cell_jackknife": 39},
+  "negative_controls": {
+   "pair_permutation": "pair labels permuted within each (fold, cell) panel independently per cell; 20 permutations, seed 17",
+   "zero_interaction": "rows replaced by the frozen Bliss reference plus block-sign-flipped centred replicate deviations scaled by sqrt(n/(n-1)); 5 realizations, seed 19",
+   "reference_only": "T_ref",
+   "reference_perturbation": "shared monotherapy values perturbed by independent N(0, s^2) per (drug, cell, dose), s in {2, 5, 10}; 10 draws, seed 23; Bliss recomputed from block-edge monotherapy",
+   "hsa_convention": "contrast of (truth - max(a, b)) from block edges"
+  }
+ },
+ "anchor_experiment": {
+  "folds": "original five pair folds; test fold f, validation fold (f+1) mod 5",
+  "k": [0, 1, 2, 4, 8, 16],
+  "anchor_seeds": [0, 19],
+  "selection_seeds": [1000, 1004],
+  "mask": "per (pair_id, seed): numpy default_rng(int(sha256('pair_id|seed')[:16], 16)).permutation of the pair's sorted cell lines; anchors are the first k, evaluation cells are positions 16..end (identical for every k and model); masks never read targets",
+  "models": {
+   "B0": "zero (no same-pair information); for T_train the train-only baseline",
+   "B1": "empirical-Bayes pair intercept: k tau2 / (s2 + k tau2) x mean of anchors; tau2 = cross-cell U-statistic, s2 = mean square - tau2, both on the four non-test folds",
+   "B2": "best linear predictor from anchors with signal covariance K = lambda K_cs + (1 - lambda) (rank-r eigen part of the noise-corrected cross-cell covariance + residual diagonal), observation noise per cell added on anchors; lambda in {0, .25, .5, .75, 1}, r in {1, 2, 3, 5, 8, 12, 20, 38}; selected per (target, fold, k) on validation pairs with covariance from the remaining three folds, then refit on the four non-test folds",
+   "B3": "saved pair-seen F2 predictions, projected contrast, only in the matched pair-cell-split condition",
+   "B4": "B1 and B2 fed the anchors of a donor pair sharing exactly one drug (non-test folds, chosen by hash of pair_id, seed)",
+   "B5a": "B1 and B2 fed the anchors of a donor pair sharing no drug",
+   "B5b": "B2 fed the pair's own anchor values on deranged anchor cells (k >= 2)"
+  },
+  "loco": "B1 and B2 with all other cells as anchors (out-of-sample predictable shares)",
+  "matched_b3": "pair-cell split: anchors are the pair's cells in folds not in {f, f+1}; B2 selected on fold f+1; evaluated on fold f with and without the panel projection of out-of-fold predictions",
+  "metrics": "row-weighted SSE, MSE (per row weight), RMSE, R2 = 1 - SSE/SSE(B0) on identical rows, pair-macro R2 (mean and median), noise share of evaluated rows reported separately",
+  "uncertainty": {"pair_bootstrap": {"draws": 2000, "seed": 11}, "drug_jackknife": "delete pairs containing each drug"},
+  "contrasts": ["B1 - B0", "B2 - B1", "B3 - B1", "B3 - B2", "B1 - B4", "B1 - B5a", "B2 - B5b"],
+  "materiality": "a difference is material if >= 0.01 R2 and both the pair-bootstrap and drug-jackknife 95% intervals exclude zero; B1 explains almost all of the pair-seen gain if matched R2(B1) >= 0.9 R2(B3); transferable cell structure is substantial if B2 - B1 >= 0.02 at k = 16 and at LOCO"
+ },
+ "experiment_c": "residual after the anchor-derived B1 intercept on evaluation cells: B2 versus B1 residual R2, replicate noise of the residual from the split draws, cross-batch reproducibility of the pair-centred residual",
+ "gpu": "none planned"
+}

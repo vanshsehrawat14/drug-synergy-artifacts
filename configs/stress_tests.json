@@ -1,7 +1,7 @@
 {
  "name": "high-inhibition-stress-tests-v1",
  "frozen": "2026-11-06 08:28 PST, before any control below was computed. Post hoc relative to the known ONEIL and ALMANAC results (pooled, per Bliss bin, site check).",
- "target": "Interaction residual R2 vs Bliss at R >= 75 (and pooled) for selected F2 on ONEIL (results/neural/runs/sprint_v1, seeds 2026-2028) and f2_combined on ALMANAC (results/neural/runs/almanac_v1).",
+ "target": "Interaction residual R2 vs Bliss at R >= 75 (and pooled) for selected F2 on ONEIL (results/neural/runs/benchmark_v1, seeds 2026-2028) and f2_combined on ALMANAC (results/neural/runs/almanac_v1).",
  "controls": {
   "site": "ALMANAC only; computed earlier (configs/almanac_site_check.json) and restated, not recomputed.",
   "dose_regime": "R bin x dose region (low/low, mixed, high/high by dense dose rank within block, as in configs/beyond_bliss_regimes.json). The R >= 75 gain is checked within each dose region holding at least 200 pair-cells.",

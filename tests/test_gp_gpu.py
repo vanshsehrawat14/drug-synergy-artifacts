@@ -2,8 +2,8 @@ import numpy as np
 import pandas as pd
 import torch
 
-from cs622.gp_gpu import DEFAULT, Encoder, ExactGP, collapse, fit_cell
-from cs622.gp_shared import HIS, gp_module, make_model
+from synergy_artifacts.gp_gpu import DEFAULT, Encoder, ExactGP, collapse, fit_cell
+from synergy_artifacts.gp_shared import HIS, gp_module, make_model
 from tests.test_gp_shared import synthetic
 
 CPU = torch.device("cpu")
@@ -107,7 +107,7 @@ def test_fit_cell_hides_the_test_fold_and_reports_every_variant():
 
 
 def test_uncertainty_summaries_on_known_distributions():
-    from cs622.gp_uncertainty import calibration, risk, within_rank_correlation
+    from synergy_artifacts.gp_uncertainty import calibration, risk, within_rank_correlation
     rng = np.random.default_rng(0)
     std = rng.uniform(1, 5, 50000)
     y = rng.normal(0, std)

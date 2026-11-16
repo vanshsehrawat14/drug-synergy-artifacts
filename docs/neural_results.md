@@ -1,8 +1,8 @@
-# Neural results: GPU sprint and DeepSynergy reproduction
+# Neural results: GPU benchmark and DeepSynergy reproduction
 
 Development results on the already examined ONEIL screen (DrugComb v1.4), not
 independent confirmation. Every number below is read from the tables in
-[results/neural_sprint](../results/neural_sprint); the commands at the end
+[results/neural_benchmark](../results/neural_benchmark); the commands at the end
 regenerate them. Errors are in inhibition percentage points; ΔMSE < 0 favours
 the first model.
 
@@ -53,7 +53,7 @@ the training mean. Its effect on combination error at the production size (ΔMSE
 is not established. That effect was measured only after the subgroup was found in
 test errors, so it is post hoc. The original mean-imputed F2 results are kept.
 
-**Final neural results** ([final.csv](../results/neural_sprint/final.csv)). These
+**Final neural results** ([selected_models.csv](../results/neural_benchmark/selected_models.csv)). These
 are pooled out-of-fold rows, the same 1,475,328 for every model. Seed SD is the spread
 over seeds. The intervals are pair-cluster bootstrap and delete-one-drug jackknife.
 Verdicts follow the rule under Paired comparisons.
@@ -81,11 +81,11 @@ Code was commit `21ca03e` with a clean tree. The frozen CPU references are
 `phase2_f0` and `phase2_f2` in [response_metrics.csv](../results/response_metrics.csv)
 (seed 2026, one run per fold).
 
-`python -m cs622.sprint_report verify` passed all 38 checks
-([verification.json](../results/neural_sprint/verification.json)):
+`python -m synergy_artifacts.neural_report verify` passed all 38 checks
+([verification.json](../results/neural_benchmark/verification.json)):
 
 - Protocol, base configurations, budget and folds equal the frozen files.
-- Every run's configuration equals `cs622.suite.candidate_config`, and the 160 run
+- Every run's configuration equals `synergy_artifacts.suite.candidate_config`, and the 160 run
   folders equal the planned set.
 - Every run records commit `21ca03e` with a clean tree, dataset SHA-256 `ea588405…`
   and per-module code hashes equal to `git show 21ca03e`.
@@ -119,8 +119,8 @@ was unchanged.
 Each candidate changes one stated factor relative to its control. Δ validation is
 the change in best-checkpoint validation MSE per fold, which selection used. Δ test
 is the pooled change on the selection seed, with a pair-bootstrap 95% CI; it was not
-used for selection ([candidates.csv](../results/neural_sprint/candidates.csv),
-[selection.csv](../results/neural_sprint/selection.csv)).
+used for selection ([candidates.csv](../results/neural_benchmark/candidates.csv),
+[selection.csv](../results/neural_benchmark/selection.csv)).
 
 | Candidate (control) | Parameters | Δ validation mean [min, max] | Folds lower | Selected | Δ test [95% CI] |
 |---|---|---|---|---|---|
@@ -163,7 +163,7 @@ used for selection ([candidates.csv](../results/neural_sprint/candidates.csv),
   exchange invariant.
 
 The SD of validation MSE across the three benchmark seeds has median 1.7 per
-model-fold ([runs.csv](../results/neural_sprint/runs.csv)). For every factor with a
+model-fold ([runs.csv](../results/neural_benchmark/runs.csv)). For every factor with a
 clear validation effect, the test change agrees in sign and size.
 
 **Audit of the F2 choice.** Wide-only F2 (`f2_wide`) is simpler than `f2_combined`
@@ -177,13 +177,13 @@ mixed per-fold selection stands. Fixing wide-only would have given pooled test M
 141.3 against 139.4 for combined on the selection seed. That test result was not
 used for the decision.
 
-![Validation learning curves](../results/neural_sprint/figures/fig1_learning_curves.png)
-![Controlled ablations](../results/neural_sprint/figures/fig2_ablations.png)
+![Validation learning curves](../results/neural_benchmark/figures/fig1_learning_curves.png)
+![Controlled ablations](../results/neural_benchmark/figures/fig2_ablations.png)
 
 ## Five-fold, three-seed benchmark
 
 The table pools out-of-fold rows over all five folds; every row covers the same
-1,475,328 observations ([benchmark.csv](../results/neural_sprint/benchmark.csv)).
+1,475,328 observations ([benchmark.csv](../results/neural_benchmark/benchmark.csv)).
 For each model:
 
 - RMSE is the seed mean, followed by the SD across seeds.
@@ -210,14 +210,14 @@ For each model:
 | training mean | 1 | 33.96 [33.57, 34.30] | 29.63 | −0.001 | −0.022 | 1155.5 | 21.32 / −0.038 | −4.92 | 0.000 |
 
 Per-fold RMSE is in `benchmark.csv`, and every fold-and-seed run is in `runs.csv`.
-Pair and cell-line breakdowns are in [groups.csv](../results/neural_sprint/groups.csv).
+Pair and cell-line breakdowns are in [groups.csv](../results/neural_benchmark/groups.csv).
 For the selected F2 model, median per-pair RMSE is 11.18; macro-cell MSE is 140.4.
 
-![Benchmark](../results/neural_sprint/figures/fig3_benchmark.png)
+![Benchmark](../results/neural_benchmark/figures/fig3_benchmark.png)
 
 ### Paired comparisons
 
-All differences are computed on identical rows ([comparisons.csv](../results/neural_sprint/comparisons.csv)).
+All differences are computed on identical rows ([comparisons.csv](../results/neural_benchmark/comparisons.csv)).
 ΔMSE averages squared error over seeds before differencing. A comparison is marked
 "lower error" only when all of these lie below zero:
 
@@ -256,7 +256,7 @@ the frozen CPU runs in MSE. The CPU runs fall within about 1.3 seed SDs of the G
 seeds, so they behave like one further seed. GPU and CPU runs differ in dropout random
 streams and float32 rounding, so a shared seed does not make them identical.
 
-![Paired per-pair errors](../results/neural_sprint/figures/fig4_paired_errors.png)
+![Paired per-pair errors](../results/neural_benchmark/figures/fig4_paired_errors.png)
 
 ## Prediction beyond the noninteraction reference
 
@@ -317,11 +317,11 @@ than a monotherapy-based Bliss reference. They do not establish:
 - performance on unseen drugs or cell lines;
 - generalization beyond ONEIL.
 
-![Beyond the reference](../results/neural_sprint/figures/fig5_beyond_reference.png)
+![Beyond the reference](../results/neural_benchmark/figures/fig5_beyond_reference.png)
 
 ## Monotherapy provenance
 
-The audit is in [monotherapy.csv](../results/neural_sprint/monotherapy.csv).
+The audit is in [monotherapy.csv](../results/neural_benchmark/monotherapy.csv).
 
 **Where the inputs come from.** F2 and the Bliss reference read single-agent
 responses from the block edges of training pairs. An edge is the row where the
@@ -352,7 +352,7 @@ behave as follows:
 
 - **Production F2 (`f2_base_mean`).** Absent keys take the training lookup mean.
   Subgroup RMSE is 26.5, on GPU and CPU alike.
-- **Interpolation (`f2_base` and every other sprint F2 candidate).** Absent keys are
+- **Interpolation (`f2_base` and every other benchmark F2 candidate).** Absent keys are
   interpolated in log dose along the same drug-cell training values. Subgroup RMSE is
   19.6, close to F0 (20.5 GPU, 19.5 CPU) and Bliss (18.9).
 
@@ -381,8 +381,8 @@ from single-agent data and apply it to a screen not yet examined.
 
 ## DeepSynergy reproduction audit
 
-`cs622.deepsynergy reproduce` trains the published architecture on the original
-DeepSynergy inputs ([deepsynergy.csv](../results/neural_sprint/deepsynergy.csv)).
+`synergy_artifacts.deepsynergy reproduce` trains the published architecture on the original
+DeepSynergy inputs ([deepsynergy.csv](../results/neural_benchmark/deepsynergy.csv)).
 
 | Aspect | Reproduction | Relation to paper |
 |---|---|---|
@@ -413,11 +413,11 @@ SD 34.0), sample unit, inputs, training data (a four-fold refit) and aggregation
 Neither its RMSE of 16.07 nor its R² of 0.50 can be placed beside the response
 models; the matched comparison follows.
 
-![DeepSynergy](../results/neural_sprint/figures/fig6_deepsynergy.png)
+![DeepSynergy](../results/neural_benchmark/figures/fig6_deepsynergy.png)
 
 ## Dose-aware DeepSynergy on the shared rows
 
-`python -m cs622.deepsynergy dose` trains the published DeepSynergy network on
+`python -m synergy_artifacts.deepsynergy dose` trains the published DeepSynergy network on
 exactly the benchmark rows, folds, target and metrics of F0/F2. It is kept apart from
 the faithful reproduction above. The protocol is
 [deepsynergy_dose.json](../configs/deepsynergy_dose.json).
@@ -476,7 +476,7 @@ This run does not separate the possible reasons:
 
 Changing any of these would be a new, separately declared experiment.
 
-![Dose-aware DeepSynergy](../results/neural_sprint/figures/fig7_deepsynergy_dose.png)
+![Dose-aware DeepSynergy](../results/neural_benchmark/figures/fig7_deepsynergy_dose.png)
 
 ## Compute environment
 
@@ -511,10 +511,10 @@ above.
 On a CUDA machine (prepared data and the frozen CPU runs in place):
 
 ```sh
-python -m cs622.suite run --protocol configs/neural_sprint.json --output results/neural/runs/sprint_v1 --stage all --device cuda
-python -m cs622.deepsynergy reproduce --output results/neural/runs/deepsynergy_original --folds 0 1 2 3 4 --device cuda
-python -m cs622.deepsynergy dose --protocol configs/deepsynergy_dose.json --output results/neural/runs/deepsynergy_dose_pilot --pilot
-python -m cs622.deepsynergy dose --protocol configs/deepsynergy_dose.json --output results/neural/runs/deepsynergy_dose --seeds 2026 --folds 0
+python -m synergy_artifacts.suite run --protocol configs/neural_benchmark.json --output results/neural/runs/benchmark_v1 --stage all --device cuda
+python -m synergy_artifacts.deepsynergy reproduce --output results/neural/runs/deepsynergy_original --folds 0 1 2 3 4 --device cuda
+python -m synergy_artifacts.deepsynergy dose --protocol configs/deepsynergy_dose.json --output results/neural/runs/deepsynergy_dose_pilot --pilot
+python -m synergy_artifacts.deepsynergy dose --protocol configs/deepsynergy_dose.json --output results/neural/runs/deepsynergy_dose --seeds 2026 --folds 0
 ```
 
 The last command runs one seed and fold; the 15 runs are independent jobs.
@@ -523,9 +523,9 @@ Then, with those outputs and `phase2_*` under `results/neural/runs/`:
 
 ```sh
 python -m pip install -e ".[plots]"
-python -m cs622.sprint_report verify --output results/neural_sprint
-python -m cs622.sprint_report analyze --output results/neural_sprint
-python -m cs622.sprint_report figures --output results/neural_sprint
+python -m synergy_artifacts.neural_report verify --output results/neural_benchmark
+python -m synergy_artifacts.neural_report analyze --output results/neural_benchmark
+python -m synergy_artifacts.neural_report figures --output results/neural_benchmark
 ```
 
 `analyze` refuses to run unless verification passed, and `figures` reads only the
@@ -540,13 +540,13 @@ Each method supplies `fold_<k>.parquet` for k = 0–4, holding `observation_id` 
 contract with one file per fold. Then:
 
 ```sh
-python -m cs622.sprint_report analyze --output results/neural_sprint --method GP=results/gp/oof --method CF=results/cf/oof
-python -m cs622.sprint_report figures --output results/neural_sprint
+python -m synergy_artifacts.neural_report analyze --output results/neural_benchmark --method GP=results/gp/oof --method CF=results/cf/oof
+python -m synergy_artifacts.neural_report figures --output results/neural_benchmark
 ```
 
 Each method is added on identical rows:
 
-- **Tables.** It gets a row in `benchmark.csv` and `final.csv`: pooled metrics,
+- **Tables.** It gets a row in `benchmark.csv` and `selected_models.csv`: pooled metrics,
   pair-bootstrap and drug-jackknife intervals, contrast R² and interaction residual R².
 - **Comparisons.** It is compared, with the same verdict rule, against selected F2,
   selected F0, the additive ridge and Bliss in `comparisons.csv`.

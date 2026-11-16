@@ -1,0 +1,40 @@
+{
+  "name": "mechanisms-20261108",
+  "baseline_commit": "a5adc3d",
+  "status": "Exploratory follow-up. Historical protocols, thresholds, results and the failed NCATS confirmation remain unchanged.",
+  "registration": "Written after reading the November 8 handoff and analysis implementations, before computing new endpoints. Existing published handoff results are known.",
+  "seed": 20261108,
+  "bootstrap_draws": 2000,
+  "design_audit": {
+    "hypothesis": "The four recorded seed triggers require matched full-input seed-2029 baselines, not comparisons with different training seeds.",
+    "primary": "Reproduce each recorded trigger and its exact endpoint. Prepare all three masks and the full-input baseline at seed 2029, five folds each.",
+    "controls": "Keep all historical thresholds. Report the code's fold-extrema trigger separately from the literal one-fold rule. Drug-identity response at seed 2029 is exploratory, although its runs are shared with a triggered contrast endpoint.",
+    "decision": "No new classification until matched predictions return. Report seed-2029 separately and the four-seed pooled error endpoint; never substitute a different-seed control or drop a seed."
+  },
+  "loewe": {
+    "hypothesis": "Prioritization changes follow a fixed-fit reference switch at admissible near-boundary roots; root approximation error and explicit exclusion conventions are distinct mechanisms.",
+    "primary": "Replay the strict-interior certificate and native-to-C1 67/1137 selections. Identify every changed pair-cell, score and rank margins, and conditional entering/exiting effects.",
+    "controls": "C1, interval correction, replacement of accepted answers by certified roots, HSA fallback, uniformly applied edge exclusion, genuinely undefined cases, published reconstruction. Preserve identical responses, fits, dose cases, aggregation and canonical tie rule.",
+    "certification_audit": "Parse serialized brackets at high precision and independently check strict interior and opposite interval signs. Re-certify any non-replayable brackets with precision-preserving serialization; audit all corrected cases and 200 seeded accepted controls. Original artifacts remain unchanged.",
+    "mechanism_test": "Using pinned native equations and nleqslv 3.3.2 with fixed coefficients, select up to 50 cases per historical fallback/root/edge status using seed 20261108; compare the original start with lower+0.1, lower+5 and interval midpoint. First reproduce the original native start. Different acceptance/reference at fixed fits is evidence of solver-path dependence, not of a documented exclusion convention.",
+    "inference": "Pair-cluster bootstrap and delete-one-drug/leave-one-cell sensitivity. Budgets 1,2,5,10,20 percent; compare incoming and outgoing margin distributions and compute convention-robust shortlist core. No dose-level iid significance.",
+    "decision": "Historical materiality rule remains >=5% top-5% turnover and pair-bootstrap lower bound above zero. All new margin, native-start and convention-core analyses are exploratory. Numerical certification cannot establish improved biological selections.",
+    "negative": "If precision replay or source reconstruction fails, restrict the affected claim. Near ties or explicit convention sensitivity limit practical interpretation even when roots are valid."
+  },
+  "information": {
+    "hypothesis": "Most response-MSE cost of masking identities or dose lies in additive or reference-derived variation rather than the specified combination contrasts.",
+    "primary": "Exact five-component orthogonal decomposition of the paired ablation error difference, preserving row weights and seed-specific errors.",
+    "controls": "Reproduce historical contrasts. Add nested evaluation contrasts that remove the span of projected training-pair Bliss and HSA reference vectors within each cell/fold. Fit no predictor to test outcomes. Audit direct masked channels, retained monotherapy lookup identity/dose dependence, and parameter-count changes.",
+    "metrics": "Component delta MSE and share of net response delta; truth/reference energy; reference-augmented contrast R2 and paired relative errors with pair-cluster intervals and drug-deletion refits. Signed components may offset and shares may exceed 100%.",
+    "decision": "Descriptive mechanism evidence only. No causal or biological interaction interpretation. Drug-identity response remains provisional pending seed 2029.",
+    "negative": "If the residual effect vanishes after reference projection, the original contrast was partly reference-derived. Persistence still does not prove interaction biology."
+  },
+  "screens": {
+    "hypothesis": "Correct weighting, seed handling and uncertainty may limit the response_analysis standardization interpretation even if its point estimate is reproducible.",
+    "primary": "Reproduce seed-2026 within-screen F2-versus-Bliss gains and estimate the change in absolute between-screen gain gaps under common-input-stratum standardization, with paired pair-cluster bootstrap and drug-deletion sensitivity.",
+    "controls": "Report seed-average pair-cell MSE separately from ensemble MSE; training-only target variance; aligned complete-case rows; full monotherapy status; all baseline denominators. For each screen comparison use exactly the same common-support O'Neil population on both sides. Correct row ESS is (sum w)^2/sum(w^2), not the number of occupied strata.",
+    "decision": "Frozen criterion: standardized gap smaller with grouped uncertainty supporting the reduction. Report sparse support, pair-cluster ESS, one-sided missingness and fold sensitivity. No pooled targets or direct transport without assay compatibility.",
+    "negative": "Failure to reduce gaps means these particular strata do not explain the difference; it does not demonstrate that assay heterogeneity is the cause. Preserve the failed NCATS H1 and exploratory screen labels."
+  },
+  "gpu_followups": "At most two mechanistically motivated experiments will be frozen in a separate configuration before their new predictions are inspected. No architecture, hyperparameter or dataset search. Local execution is CPU diagnostics and tests only; GPU execution packet is prepared for the operator."
+}

@@ -7,9 +7,9 @@ import pandas as pd
 import pytest
 import torch
 
-from cs622 import deepsynergy as ds
-from cs622.features import load_independent_features
-from cs622.io import digest, read_json, write_json
+from synergy_artifacts import deepsynergy as ds
+from synergy_artifacts.features import load_independent_features
+from synergy_artifacts.io import digest, read_json, write_json
 from test_runner import dataset
 
 
@@ -171,7 +171,7 @@ def test_reproduction_protocol_on_synthetic_features(tmp_path):
 
 
 def test_dose_adaptation_scores_the_benchmark_rows(dataset, tmp_path):
-    from cs622.sprint_report import load_truth
+    from synergy_artifacts.neural_report import load_truth
     rng = np.random.default_rng(5)
     np.savez_compressed(tmp_path / "f.npz", drug_ids=np.array(list("ABCDEF")), drug_features=rng.normal(size=(6, 5)),
                         cell_ids=np.array(["X"]), cell_features=rng.normal(size=(1, 3)))

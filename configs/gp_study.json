@@ -5,7 +5,7 @@
   "seed": 42,
   "study_fold": 0,
   "split": "Train on folds 2-4, validate on fold 1, all 39 cell lines. Test-fold rows are never predicted in the study.",
-  "base_method": "Kingsley Ukandu's GP (GP_Regression/src/project_utils.py): one model per cell line, drug identities and standardized log doses, rho 0.25, w 1, RBF vs Matern 5/2 per cell by validation RMSE.",
+  "base_method": "Kingsley Ukandu's GP (gaussian_process/src/project_utils.py): one model per cell line, drug identities and standardized log doses, rho 0.25, w 1, RBF vs Matern 5/2 per cell by validation RMSE.",
   "groups": {
     "cap1500": {"fit": {"cap": 1500}, "predictors": ["exact", "inducing"]},
     "cap1500_w0": {"fit": {"cap": 1500, "interaction_weight": 0.0}, "predictors": ["exact"]},

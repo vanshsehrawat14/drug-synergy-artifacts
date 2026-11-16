@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from cs622.metrics import align_predictions, evaluate, interaction_contrast, regression_metrics
+from synergy_artifacts.metrics import align_predictions, evaluate, interaction_contrast, regression_metrics
 
 
 def test_hand_metrics():

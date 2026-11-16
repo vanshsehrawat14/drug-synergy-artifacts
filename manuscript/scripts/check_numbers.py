@@ -33,18 +33,18 @@ PS = "manuscript/audit/outputs/pairseen_audit.json"
 LA = "manuscript/audit/outputs/loewe_audit.json"
 SA = "manuscript/audit/outputs/screening_audit.json"
 G2 = "manuscript/audit/outputs/gate2_reproduction.json"
-VC = "results/interaction_gap_20261110/variance_components.json"
-AE = "results/interaction_gap_20261110/anchor_experiment.json"
-GR = "results/interaction_gap_20261110/grounding.json"
-BT = "results/interaction_gap_20261110/batch_transfer.json"
-DS = "results/interaction_gap_20261110/dose_shape_check.json"
-BP = "results/interaction_gap_20261110/b3_paired_summary.json"
-NC = "results/mechanisms_20261108/historical_controls/failed_ncats_confirmation.json"
-CL = "results/final_20261110/claim_ledger.json"
+VC = "results/interaction_structure/variance_components.json"
+AE = "results/interaction_structure/anchor_experiment.json"
+GR = "results/interaction_structure/grounding.json"
+BT = "results/interaction_structure/batch_transfer.json"
+DS = "results/interaction_structure/dose_shape_check.json"
+BP = "results/interaction_structure/b3_paired_summary.json"
+NC = "results/mechanism_analysis/historical_controls/failed_ncats_confirmation.json"
+CL = "results/pair_information/claim_ledger.json"
 
 # (stated text, source, key path, scale, decimals). scale converts the source to the stated unit.
 CHECKS = [
-    # Response benchmark (results/compare/final.csv handled below).
+    # Response benchmark (results/compare/selected_models.csv handled below).
     # Interaction audit.
     ("9.8%", IA, "results/pair_cell:bliss_residual/noise_share_grid_split", 100, 1),
     ("8.9, 10.8", IA, "results/pair_cell:bliss_residual/noise_share_grid_pair_interval/0", 100, 1),
@@ -183,7 +183,7 @@ def main():
     status = "ok" if (want == "0.041" and "B3 − B1 & 0.041 &" in text) else "FAIL"
     fails += status != "ok"
     rows.append((status, "B3 − B1 0.041", want, "full precision", "pairseen B3 minus leak-free B1"))
-    fc = pd.read_csv(ROOT / "results/compare/final.csv").set_index("model")
+    fc = pd.read_csv(ROOT / "results/compare/selected_models.csv").set_index("model")
     for stated, model, col, dec in [("11.84", "selected:F2", "rmse", 2), ("0.878", "selected:F2", "r2", 3),
                                     ("11.75", "gp_f2", "rmse", 2), ("0.880", "gp_f2", "r2", 3), ("12.78", "cf_selected", "rmse", 2),
                                     ("14.03", "bliss_reference", "rmse", 2), ("0.829", "bliss_reference", "r2", 3),
@@ -192,7 +192,7 @@ def main():
         want = fmt(float(fc.loc[model, col]), dec)
         status = "ok" if (want == stated and stated in text) else "FAIL"
         fails += status != "ok"
-        rows.append((status, stated, want, "compare/final.csv", f"{model}/{col}"))
+        rows.append((status, stated, want, "compare/selected_models.csv", f"{model}/{col}"))
     if a.resolution:
         var = json.loads((Path(a.resolution) / "variance.json").read_text())["shares"]
         for stated, v in [("81.8%", var["between_panel_additive"] + var["within_panel_additive_dose"]),
@@ -207,7 +207,7 @@ def main():
     import numpy as np
     import re
     supplement = (M / "supplement.tex").read_text(encoding="utf-8")
-    ds = pd.read_csv(ROOT / "results/neural_sprint/deepsynergy.csv")
+    ds = pd.read_csv(ROOT / "results/neural_benchmark/deepsynergy.csv")
     folds = ds[ds.fold.isin([str(k) for k in range(5)])]
     if len(folds) != 5:
         raise ValueError("Original-label reproduction must contain five individual folds")
@@ -225,7 +225,7 @@ def main():
                              ("1.56", "rmse_sd", 2), ("0.73", "pearson", 2),
                              ("0.04", "pearson_sd", 2)]:
         review_checks.append((stated, published[col], dec, paper, f"published {col}"))
-    bench = pd.read_csv(ROOT / "results/neural_sprint/benchmark.csv").set_index("model").loc["deepsynergy_dose"]
+    bench = pd.read_csv(ROOT / "results/neural_benchmark/benchmark.csv").set_index("model").loc["deepsynergy_dose"]
     for stated, col, dec, literal in [
         ("17.87", "rmse_ci_low", 2, "[17.87, 18.53]"),
         ("18.53", "rmse_ci_high", 2, "[17.87, 18.53]"),
@@ -241,7 +241,7 @@ def main():
         ok_text = stated in context or stated.replace("−", "-") in context
         status = "ok" if want == stated and ok_text else "FAIL"
         fails += status != "ok"
-        rows.append((status, stated, want, "Supplement S15 / neural_sprint", key))
+        rows.append((status, stated, want, "Supplement S15 / neural_benchmark", key))
     for r in rows:
         if r[0] != "ok":
             print(" | ".join(r))

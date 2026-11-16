@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 
-from cs622.loewe_audit import strict_reference
-from cs622.loewe_verify import admissible, theta_root
+from synergy_artifacts.loewe_audit import strict_reference
+from synergy_artifacts.loewe_verify import admissible, theta_root
 
 
 def frame(rows):

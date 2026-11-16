@@ -1,0 +1,61 @@
+{
+  "name": "neural-benchmark-v1",
+  "frozen": "2026-11-04, before any benchmark run; candidates, selection rule and seeds are fixed in advance",
+  "base": {"F0": "configs/neural_dose_aware.json", "F2": "configs/neural_monotherapy.json"},
+  "shared_overrides": {"training": {"eval_batch_size": 16384}},
+  "selection": {
+    "seed": 2026,
+    "metric": "best-checkpoint validation MSE",
+    "scope": "per outer test fold f, using only its validation fold (f+1)%5; test outcomes never enter selection",
+    "ties": "fewer parameters, then candidate name",
+    "groups": {
+      "F0": ["f0_base", "f0_plateau", "f0_deep", "f0_wide", "f0_regularized", "f0_combined"],
+      "F2": ["f2_base_mean", "f2_base", "f2_plateau", "f2_deep", "f2_wide", "f2_regularized", "f2_combined", "f2_residual", "f2_refinput"]
+    }
+  },
+  "benchmark": {
+    "models": ["f0_base", "selected:F0", "f2_base_mean", "f2_base", "selected:F2", "f2_residual", "mono_only"],
+    "seeds": [2026, 2027, 2028],
+    "extension_seeds": [2029, 2030]
+  },
+  "candidates": {
+    "f0_base": {"base": "F0", "purpose": "production F0 architecture and optimizer", "overrides": {}},
+    "f0_plateau": {"base": "F0", "purpose": "optimization: halve lr after 5 stale validation epochs",
+      "overrides": {"training": {"scheduler": {"kind": "plateau", "factor": 0.5, "patience": 5, "min_lr": 1e-5}}}},
+    "f0_deep": {"base": "F0", "purpose": "dose representation: two-layer drug-dose encoder allows drug-specific dose curves",
+      "overrides": {"model": {"encoder_layers": 2}}},
+    "f0_wide": {"base": "F0", "purpose": "capacity: wider encoder and head",
+      "overrides": {"model": {"hidden": [512, 256], "encoder_dim": 64}}},
+    "f0_regularized": {"base": "F0", "purpose": "regularization: dropout 0.3, weight decay 1e-4",
+      "overrides": {"model": {"dropout": 0.3}, "training": {"weight_decay": 1e-4}}},
+    "f0_combined": {"base": "F0", "purpose": "all F0 changes together",
+      "overrides": {"model": {"hidden": [512, 256], "encoder_dim": 64, "encoder_layers": 2, "dropout": 0.3},
+                    "training": {"weight_decay": 1e-4, "scheduler": {"kind": "plateau", "factor": 0.5, "patience": 5, "min_lr": 1e-5}}}},
+    "f0_ordered": {"base": "F0", "purpose": "symmetry ablation: ordered concatenation, not exchange invariant; never eligible",
+      "overrides": {"model": {"combine": "concat"}}},
+    "f2_base_mean": {"base": "F2", "purpose": "production F2: absent dose keys take the training lookup mean", "overrides": {}},
+    "f2_base": {"base": "F2", "purpose": "missing handling: absent dose keys interpolate same drug/cell training values",
+      "overrides": {"features": {"mono_missing": "interpolate"}}},
+    "f2_plateau": {"base": "F2", "purpose": "f2_base with plateau lr schedule",
+      "overrides": {"features": {"mono_missing": "interpolate"},
+                    "training": {"scheduler": {"kind": "plateau", "factor": 0.5, "patience": 5, "min_lr": 1e-5}}}},
+    "f2_deep": {"base": "F2", "purpose": "f2_base with two-layer endpoint encoder",
+      "overrides": {"features": {"mono_missing": "interpolate"}, "model": {"encoder_layers": 2}}},
+    "f2_wide": {"base": "F2", "purpose": "f2_base with wider encoder and head",
+      "overrides": {"features": {"mono_missing": "interpolate"}, "model": {"hidden": [512, 256], "encoder_dim": 64}}},
+    "f2_regularized": {"base": "F2", "purpose": "f2_base with dropout 0.3, weight decay 1e-4",
+      "overrides": {"features": {"mono_missing": "interpolate"}, "model": {"dropout": 0.3}, "training": {"weight_decay": 1e-4}}},
+    "f2_combined": {"base": "F2", "purpose": "all architecture/optimization changes with interpolated monotherapy",
+      "overrides": {"features": {"mono_missing": "interpolate"},
+                    "model": {"hidden": [512, 256], "encoder_dim": 64, "encoder_layers": 2, "dropout": 0.3},
+                    "training": {"weight_decay": 1e-4, "scheduler": {"kind": "plateau", "factor": 0.5, "patience": 5, "min_lr": 1e-5}}}},
+    "f2_residual": {"base": "F2", "purpose": "residual learning: network fits Y minus training-pair Bliss reference",
+      "overrides": {"features": {"mono_missing": "interpolate", "reference_offset": "bliss"}}},
+    "f2_refinput": {"base": "F2", "purpose": "monotherapy integration: Bliss and HSA references enter the head",
+      "overrides": {"features": {"mono_missing": "interpolate", "reference_inputs": ["bliss", "hsa"]}}},
+    "mono_only": {"base": "F2", "purpose": "information ablation: monotherapy values only, no identities or doses, Bliss offset",
+      "overrides": {"features": {"mono_missing": "interpolate", "identities": false, "dose_input": false, "reference_offset": "bliss"}}},
+    "mono_dose": {"base": "F2", "purpose": "information ablation: monotherapy values and doses, no identities, Bliss offset",
+      "overrides": {"features": {"mono_missing": "interpolate", "identities": false, "reference_offset": "bliss"}}}
+  }
+}

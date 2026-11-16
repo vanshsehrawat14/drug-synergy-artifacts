@@ -3,7 +3,7 @@ import itertools
 import numpy as np
 import pandas as pd
 
-from cs622.gp_shared import FAMILIES, InducingPredictor, fit_cell, gp_module, make_model, HIS, shared_frame
+from synergy_artifacts.gp_shared import FAMILIES, InducingPredictor, fit_cell, gp_module, make_model, HIS, shared_frame
 
 
 def synthetic(cell="C1", drugs=7, seed=0):

@@ -1,6 +1,6 @@
 {
  "name": "third-screen-validation-v1",
- "frozen": "2026-11-06, before any NCATS_ES(Nampt+PARP) model, baseline or Bliss-reference run. f0_combined and f2_combined are copied unchanged from configs/almanac_validation.json and mono_only unchanged from configs/neural_sprint.json. Nothing is selected; validation fold (f+1)%5 only stops training. Hypotheses and tests: configs/third_screen_confirmation.json.",
+ "frozen": "2026-11-06, before any NCATS_ES(Nampt+PARP) model, baseline or Bliss-reference run. f0_combined and f2_combined are copied unchanged from configs/almanac_validation.json and mono_only unchanged from configs/neural_benchmark.json. Nothing is selected; validation fold (f+1)%5 only stops training. Hypotheses and tests: configs/third_screen_confirmation.json.",
  "base": {
   "F0": "configs/neural_dose_aware.json",
   "F2": "configs/neural_monotherapy.json"
@@ -139,7 +139,7 @@
   "pair-cell contrast R2 and interaction residual R2 beyond Bliss with drug-jackknife intervals",
   "hypotheses H1-H3 in configs/third_screen_confirmation.json"
  ],
- "verdict_rule": "as in the ONEIL sprint: lower error only if the pair-bootstrap and drug-jackknife intervals, every fold and every seed pairing agree",
+ "verdict_rule": "as in the ONEIL benchmark: lower error only if the pair-bootstrap and drug-jackknife intervals, every fold and every seed pairing agree",
  "runs": {
   "suite": "results/neural/runs/ncats_es_v2",
   "baselines": {

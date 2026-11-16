@@ -7,7 +7,7 @@ python manuscript/scripts/make_figures.py \
     --derived AUDIT_DERIVED --resolution RES --gate2 GATE2_RERUN/results/preliminary \
     --labels data/raw/deepsynergy/labels.csv [--only fig1 fig7]
 
-GAP_DERIVED is the --derived directory of experiments/interaction_gap_20261110/variance.py; NATIVE is
+GAP_DERIVED is the --derived directory of experiments/interaction_structure/variance.py; NATIVE is
 results/neural/runs/scientific_native_full of a research checkout; AUDIT_DERIVED holds the per-case tables
 written by manuscript/audit/loewe_audit.py and screening_audit.py; RES is the frozen resolution cache;
 GATE2_RERUN is a re-execution of experiments/preliminary r16-r21. Outputs go to manuscript/figures/.
@@ -41,7 +41,7 @@ class Inputs:
 
     def __init__(self, a):
         res, g2, der = Path(a.resolution), Path(a.gate2), Path(a.derived)
-        gap = ROOT / "results" / "interaction_gap_20261110"
+        gap = ROOT / "results" / "interaction_structure"
         aud = ROOT / "manuscript" / "audit" / "outputs"
         self.paths = {
             "observations": Path(a.observations), "targets": Path(a.targets), "cross_batch": Path(a.cross_batch),
@@ -55,7 +55,7 @@ class Inputs:
             "loewe_audit": aud / "loewe_audit.json", "screening_audit": aud / "screening_audit.json",
             "variance_components": gap / "variance_components.json", "anchor_experiment": gap / "anchor_experiment.json",
             "b3_paired": gap / "b3_paired_summary.json", "batch_transfer": gap / "batch_transfer.json",
-            "compare": ROOT / "results" / "compare" / "final.csv",
+            "compare": ROOT / "results" / "compare" / "selected_models.csv",
         }
         self.used = set()
         self.cache = {}

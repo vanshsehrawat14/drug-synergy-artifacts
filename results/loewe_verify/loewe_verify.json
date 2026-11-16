@@ -116,7 +116,7 @@
    "max_block_shift": 38.87049305263112
   },
   {
-   "label": "artifact: every admissible root, co-increasing curves (overnight audit set)",
+   "label": "artifact: every admissible root, co-increasing curves (response_analysis audit set)",
    "cases": 13888,
    "surfaces": 5044,
    "blocks_affected": 20088,

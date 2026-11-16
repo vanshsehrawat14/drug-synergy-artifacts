@@ -4,10 +4,10 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from cs622.data import prepare
-from cs622.io import digest, read_json, write_json
-from cs622.runner import run
-from cs622.splits import generated_folds, pair_id
+from synergy_artifacts.data import prepare
+from synergy_artifacts.io import digest, read_json, write_json
+from synergy_artifacts.runner import run
+from synergy_artifacts.splits import generated_folds, pair_id
 
 
 @pytest.fixture

@@ -1,11 +1,11 @@
 import pandas as pd
 import pytest
 
-from cs622.cv import aggregate
-from cs622.evaluate import evaluate_files
-from cs622.export import export_bundle
-from cs622.io import read_json, write_json
-from cs622.runner import run
+from synergy_artifacts.cv import aggregate
+from synergy_artifacts.evaluate import evaluate_files
+from synergy_artifacts.export import export_bundle
+from synergy_artifacts.io import read_json, write_json
+from synergy_artifacts.runner import run
 from test_runner import config, dataset
 
 

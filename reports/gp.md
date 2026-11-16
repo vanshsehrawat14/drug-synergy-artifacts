@@ -4,11 +4,11 @@
 
 | Part | Author | Code |
 |---|---|---|
-| Kernel, encoder, block cap, scikit-learn fit, RBF vs Matern 5/2 choice | Kingsley Ukandu | `GP_Regression/src/project_utils.py`, unchanged |
-| Shared folds, validation fold (f+1)%5, no refit | Vansh, adapter | `cs622/gp_shared.py` (`fit_cell`, `run`) |
-| Inducing-point predictor: his hyperparameters, conditioned on every training row | Vansh, extension | `cs622/gp_shared.py` (`InducingPredictor`) |
-| Exact GP on every training row in float64 torch; dose, monotherapy and residual variants | Vansh, extension | `cs622/gp_gpu.py` |
-| Selection, uncertainty and prediction checks | Vansh | `cs622/gp_select.py`, `cs622/gp_uncertainty.py`, `cs622/gp_verify.py` |
+| Kernel, encoder, block cap, scikit-learn fit, RBF vs Matern 5/2 choice | Kingsley Ukandu | `gaussian_process/src/project_utils.py`, unchanged |
+| Shared folds, validation fold (f+1)%5, no refit | Vansh, adapter | `synergy_artifacts/gp_shared.py` (`fit_cell`, `run`) |
+| Inducing-point predictor: his hyperparameters, conditioned on every training row | Vansh, extension | `synergy_artifacts/gp_shared.py` (`InducingPredictor`) |
+| Exact GP on every training row in float64 torch; dose, monotherapy and residual variants | Vansh, extension | `synergy_artifacts/gp_gpu.py` |
+| Selection, uncertainty and prediction checks | Vansh | `synergy_artifacts/gp_select.py`, `synergy_artifacts/gp_uncertainty.py`, `synergy_artifacts/gp_verify.py` |
 
 His model, as run everywhere below:
 - one GP per cell line on drug identities and standardized log doses;
@@ -209,22 +209,22 @@ Frozen CPU study and production, on branch `integration/2026-11-06`:
 
 ```sh
 for g in cap1500 cap1500_w0 cap1500_rho0 cap1500_rho05 cap3000; do
-  python -m cs622.gp_shared study --config configs/gp_study.json --group $g --output results/neural/runs/gp_study
+  python -m synergy_artifacts.gp_shared study --config configs/gp_study.json --group $g --output results/neural/runs/gp_study
 done
-python -m cs622.gp_select --config configs/gp_study.json --study results/neural/runs/gp_study --output results/gp
-python -m cs622.gp_shared study --config configs/gp_study_amendment2.json --group cap3000_w0 --output results/neural/runs/gp_study
-python -m cs622.gp_select --config configs/gp_study.json --study results/neural/runs/gp_study --output results/gp --amendment configs/gp_study_amendment2.json
-python -m cs622.gp_shared run --method results/gp/decision.json --output results/neural/runs/gp_final
+python -m synergy_artifacts.gp_select --config configs/gp_study.json --study results/neural/runs/gp_study --output results/gp
+python -m synergy_artifacts.gp_shared study --config configs/gp_study_amendment2.json --group cap3000_w0 --output results/neural/runs/gp_study
+python -m synergy_artifacts.gp_select --config configs/gp_study.json --study results/neural/runs/gp_study --output results/gp --amendment configs/gp_study_amendment2.json
+python -m synergy_artifacts.gp_shared run --method results/gp/decision.json --output results/neural/runs/gp_final
 ```
 
 GPU study and production on one A100, on this branch:
 
 ```sh
 C="configs/gp_gpu.json configs/gp_gpu_amendment.json"
-for g in demo coverage features interaction; do python -m cs622.gp_gpu study --config $C --group $g --output results/neural/runs/gp_gpu_study; done
-python -m cs622.gp_gpu check --config $C --cell A2058 --output results/neural/runs/gp_gpu_study/collapse_check.json
-python -m cs622.gp_gpu select --config $C --study results/neural/runs/gp_gpu_study --output results/gp_gpu
-for v in f0_drug_dose f2_residual_mono full full_w0; do python -m cs622.gp_gpu run --config $C --variant $v --output results/neural/runs/gp_gpu_$v; done
+for g in demo coverage features interaction; do python -m synergy_artifacts.gp_gpu study --config $C --group $g --output results/neural/runs/gp_gpu_study; done
+python -m synergy_artifacts.gp_gpu check --config $C --cell A2058 --output results/neural/runs/gp_gpu_study/collapse_check.json
+python -m synergy_artifacts.gp_gpu select --config $C --study results/neural/runs/gp_gpu_study --output results/gp_gpu
+for v in f0_drug_dose f2_residual_mono full full_w0; do python -m synergy_artifacts.gp_gpu run --config $C --variant $v --output results/neural/runs/gp_gpu_$v; done
 ```
 
 Evaluation on the shared rows, all six GP runs (the GPU runs' fold files copied from the cluster):
@@ -232,10 +232,10 @@ Evaluation on the shared rows, all six GP runs (the GPU runs' fold files copied 
 ```sh
 R=results/neural/runs
 M="--method gp_his=$R/gp_cap1500 --method gp_frozen=$R/gp_final --method gp_full=$R/gp_gpu_full --method gp_full_w0=$R/gp_gpu_full_w0 --method gp_f0=$R/gp_gpu_f0_drug_dose --method gp_f2=$R/gp_gpu_f2_residual_mono"
-python -m cs622.gp_verify --output results/gp_compare/gp_verification.json $M --decision results/gp/decision.json --config configs/gp_study.json --study results/neural/runs/gp_study
-python -m cs622.gp_verify --output results/gp_compare/reproduce_frozen.json --method gp_frozen=results/neural/runs/gp_final --reproduce A2058:0
-python -m cs622.sprint_report analyze --output results/gp_compare $M      # needs verification.json from sprint_report verify
-python -m cs622.unified --output results/gp_compare $M
-python -m cs622.gp_uncertainty --output results/gp_compare/uncertainty $M
-python -c "import json; from cs622.synthesis import variance_shares; print(json.dumps(variance_shares()))"
+python -m synergy_artifacts.gp_verify --output results/gp_compare/gp_verification.json $M --decision results/gp/decision.json --config configs/gp_study.json --study results/neural/runs/gp_study
+python -m synergy_artifacts.gp_verify --output results/gp_compare/reproduce_frozen.json --method gp_frozen=results/neural/runs/gp_final --reproduce A2058:0
+python -m synergy_artifacts.neural_report analyze --output results/gp_compare $M      # needs verification.json from neural_report verify
+python -m synergy_artifacts.unified --output results/gp_compare $M
+python -m synergy_artifacts.gp_uncertainty --output results/gp_compare/uncertainty $M
+python -c "import json; from synergy_artifacts.synthesis import variance_shares; print(json.dumps(variance_shares()))"
 ```

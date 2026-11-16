@@ -4,7 +4,7 @@
 |---|---|---|
 | Raw-response CF evaluation: target, tuning grid, five-fold evaluation | Sharlene Kim | `experiments/neighborhood_cf/` (her commit `d6e9550` on `sharlenekim-neighborhood-cf`, cherry-picked with her authorship) |
 | Residual kNN, additive ridge, folds and metrics it imports | shared preliminary pipeline | `experiments/preliminary/pairlearners.py`, `common.py`, unchanged from `main` |
-| Benchmark adapter, checks, extension, pair-cell comparison | Vansh | `cs622/cf.py`, `configs/cf_study.json`, `tests/test_cf.py` |
+| Benchmark adapter, checks, extension, pair-cell comparison | Vansh | `synergy_artifacts/cf.py`, `configs/cf_study.json`, `tests/test_cf.py` |
 
 ## 1. Her method
 
@@ -34,7 +34,7 @@
 
 **Held-out pairs.** The test pair enters neither the ridge, the similarities nor the neighbour sets, and validation pairs are not used for test predictions.
 - **Check.** Refitting fold 0 with every test-pair label replaced by noise reproduces the saved predictions bitwise for all three runs (`results/cf/verification.json`).
-- **Tests.** `tests/test_cf.py` checks the same invariance, and that `cs622.cf.pair_cell` reproduces her `predict_cf` bitwise.
+- **Tests.** `tests/test_cf.py` checks the same invariance, and that `synergy_artifacts.cf.pair_cell` reproduces her `predict_cf` bitwise.
 
 **Contrast metric.** Her overall contrast R² (0.143) projects drug main effects off all 583 pairs at once, so fold-to-fold differences in the additive fit count as contrast; this is also why her additive ridge scores −0.194.
 - Within each test fold her CF scores 0.23–0.31.
@@ -46,7 +46,7 @@
 
 60.7% of dose-level response variance lies within pair-cells (`results/summary/variance_shares.json`). Every model is therefore scored twice.
 - **Her task.** Each model's predictions are averaged per pair and cell line and compared with the pair-cell mean response, each pair-cell weighted equally as she does (`results/compare/pair_cell.csv`).
-- **Shared benchmark.** Her pair-cell value is given to every dose row of that pair-cell, the smallest possible adapter. No dose information is added (`results/compare/final.csv`).
+- **Shared benchmark.** Her pair-cell value is given to every dose row of that pair-cell, the smallest possible adapter. No dose information is added (`results/compare/selected_models.csv`).
 
 ## 4. Extension, selected on validation only
 
@@ -133,16 +133,16 @@ Paired results on this task (`results/compare/pair_cell_comparisons.csv`).
 ```sh
 python experiments/neighborhood_cf/build_raw_response_targets.py      # her target matrix (needs data/processed/drugcomb_oneil)
 python experiments/neighborhood_cf/run_neighborhood_cf.py             # her evaluation, unchanged
-python -m cs622.cf study --config configs/cf_study.json --output results/neural/runs/cf_study
-python -m cs622.cf select --config configs/cf_study.json --study results/neural/runs/cf_study --output results/cf
-python -m cs622.cf run --config configs/cf_study.json --cf shar --dose none --output results/neural/runs/cf_shar
-python -m cs622.cf run --config configs/cf_study.json --decision results/cf/decision.json --output results/neural/runs/cf_selected
-python -m cs622.cf run --config configs/cf_study.json --cf shar --dose partner --output results/neural/runs/cf_shar_dose
+python -m synergy_artifacts.cf study --config configs/cf_study.json --output results/neural/runs/cf_study
+python -m synergy_artifacts.cf select --config configs/cf_study.json --study results/neural/runs/cf_study --output results/cf
+python -m synergy_artifacts.cf run --config configs/cf_study.json --cf shar --dose none --output results/neural/runs/cf_shar
+python -m synergy_artifacts.cf run --config configs/cf_study.json --decision results/cf/decision.json --output results/neural/runs/cf_selected
+python -m synergy_artifacts.cf run --config configs/cf_study.json --cf shar --dose partner --output results/neural/runs/cf_shar_dose
 R=results/neural/runs
-python -m cs622.cf verify --method cf_shar=$R/cf_shar --method cf_selected=$R/cf_selected --method cf_shar_dose=$R/cf_shar_dose --output results/cf/verification.json
+python -m synergy_artifacts.cf verify --method cf_shar=$R/cf_shar --method cf_selected=$R/cf_selected --method cf_shar_dose=$R/cf_shar_dose --output results/cf/verification.json
 M="--method gp_his=$R/gp_cap1500 --method gp_frozen=$R/gp_final --method gp_full=$R/gp_gpu_full --method gp_full_w0=$R/gp_gpu_full_w0 --method gp_f0=$R/gp_gpu_f0_drug_dose --method gp_f2=$R/gp_gpu_f2_residual_mono --method cf_shar=$R/cf_shar --method cf_shar_dose=$R/cf_shar_dose --method cf_selected=$R/cf_selected"
-python -m cs622.sprint_report verify --output results/compare
-python -m cs622.sprint_report analyze --output results/compare $M
-python -m cs622.unified --output results/compare $M
-python -m cs622.cf compare --method gp_frozen=$R/gp_final --method gp_f0=$R/gp_gpu_f0_drug_dose --method gp_f2=$R/gp_gpu_f2_residual_mono --method cf_shar=$R/cf_shar --method cf_selected=$R/cf_selected --output results/compare
+python -m synergy_artifacts.neural_report verify --output results/compare
+python -m synergy_artifacts.neural_report analyze --output results/compare $M
+python -m synergy_artifacts.unified --output results/compare $M
+python -m synergy_artifacts.cf compare --method gp_frozen=$R/gp_final --method gp_f0=$R/gp_gpu_f0_drug_dose --method gp_f2=$R/gp_gpu_f2_residual_mono --method cf_shar=$R/cf_shar --method cf_selected=$R/cf_selected --output results/compare
 ```

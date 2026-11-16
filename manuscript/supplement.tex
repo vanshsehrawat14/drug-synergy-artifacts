@@ -166,7 +166,7 @@ Single-agent values perturbed with SD 2 / 5 / 10 points & 0.25\% / 1.6\% / 6.4\%
 The noise-corrected 39 × 39 cross-cell covariance has a leading eigenvalue holding 30.6\% of its trace; that eigenvector has cosine 0.94 with the constant vector. The next four eigenvalues hold 13.9\%, 9.8\%, 8.0\% and 6.7\%.
 
 \section{Same-pair information experiments}\label{sec:S5}
-\paragraph{Design} The design was committed before outcomes were computed (\file{experiments/interaction_gap_20261110/design.json}).
+\paragraph{Design} The design was committed before outcomes were computed (\file{experiments/interaction_structure/design.json}).
 
 \begin{itemize}
 \item \textbf{Anchor masks.} For each held-out pair and seed (20 seeds), cell lines are permuted using a SHA-256 hash of (pair, seed). Anchors are the first $k$; evaluation uses positions 16–38 for every $k$ and model.
@@ -531,12 +531,12 @@ C1 changes 5,003 pair-cell scores and reverses 517 pair-cell signs.
 \toprule
 Hypothesis & Result & Source \\
 \midrule
-NCATS confirmation of high-inhibition specificity & H1: $R^2$ 0.057 (seeds 0.065, 0.042, 0.064), drug jackknife [−0.006, 0.120], rule not met; sequence stopped & \file{mechanisms_20261108/historical_controls/failed_ncats_confirmation.json} \\
-Drug identity costs at least 5\% response MSE & +4.61\% pooled over seeds 2026–2029 (Holm $p$ 0.0048), below threshold; seed 2029 +3.23\% & \file{final_20261110/claim_ledger.json} (I1) \\
-Removing drug identity improves the contrast & −7.41\% [drug −15.3, 0.5]; Bliss-residual objective −3.85\% & \file{reports/final_20261110/FINAL_RESEARCH_VERDICT.md} \\
-Identity channels interact & +2.21\%, Holm $p$ 0.38 & \file{mechanisms_20261108/gpu_return/joint_identity/comparisons.csv} \\
-Uncertainty utility & Frozen rule unmet (GP and network ensembles) & \file{reports/final_20261110/FINAL_RESEARCH_VERDICT.md} \\
-Dose-aware DeepSynergy adaptation & Shared response task: RMSE 18.19, $R^2$ 0.713, measured-response contrast $R^2$ 0.283 & \file{compare/final.csv} \\
+NCATS confirmation of high-inhibition specificity & H1: $R^2$ 0.057 (seeds 0.065, 0.042, 0.064), drug jackknife [−0.006, 0.120], rule not met; sequence stopped & \file{mechanism_analysis/historical_controls/failed_ncats_confirmation.json} \\
+Drug identity costs at least 5\% response MSE & +4.61\% pooled over seeds 2026–2029 (Holm $p$ 0.0048), below threshold; seed 2029 +3.23\% & \file{pair_information/claim_ledger.json} (I1) \\
+Removing drug identity improves the contrast & −7.41\% [drug −15.3, 0.5]; Bliss-residual objective −3.85\% & \file{reports/pair_information/results_summary.md} \\
+Identity channels interact & +2.21\%, Holm $p$ 0.38 & \file{mechanism_analysis/training_records/joint_identity/comparisons.csv} \\
+Uncertainty utility & Frozen rule unmet (GP and network ensembles) & \file{reports/pair_information/results_summary.md} \\
+Dose-aware DeepSynergy adaptation & Shared response task: RMSE 18.19, $R^2$ 0.713, measured-response contrast $R^2$ 0.283 & \file{compare/selected_models.csv} \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -544,19 +544,19 @@ Dose-aware DeepSynergy adaptation & Shared response task: RMSE 18.19, $R^2$ 0.71
 {\raggedright
 All commands run from the repository root at the manuscript commit, with Python 3.14, numpy 2.4.1, pandas 2.3.3, scipy 1.17.0, matplotlib 3.10.8 and mpmath. The native Loewe references were computed with the SynergyFinder 2.0.12 Loewe code under R 3.6.3 and nleqslv 3.3.2. Table~\ref{tab:S14} gives the SHA-256 of every input and Table~\ref{tab:S15} those of the saved pair-seen predictions. The commands refer to these directories:
 \begin{itemize}
-\item \texttt{RES}: \file{results/research_20261107/resolution} on branch \texttt{research/resolution-reliability} (d2c8f41), the frozen out-of-fold unit means;
+\item \texttt{RES}: \file{results/interaction_analysis/resolution} on branch \texttt{research/resolution-reliability} (d2c8f41), the frozen out-of-fold unit means;
 \item \texttt{RES\_B2}: the columns of \texttt{RES} holding the truth, the production F2 seeds and the Bliss reference, copied exactly;
 \item \texttt{NATIVE}: \file{results/neural/runs/scientific_native_full}, the native SynergyFinder run;
 \item \texttt{LOEWE}: the Loewe certificates, float64-verified cases and case regimes of Table~\ref{tab:S14};
-\item \texttt{RUNS}: \file{results/final_20261110/runs} in the cluster run clone at 8bce416, holding the 15 prediction files;
+\item \texttt{RUNS}: \file{results/pair_information/runs} in the cluster run clone at 8bce416, holding the 15 prediction files;
 \item \texttt{GAP\_DERIVED}, \texttt{AUDIT\_DERIVED}: directories outside the repository for per-pair-cell and per-case tables, which are regenerated rather than redistributed;
-\item \texttt{GATE2}, \texttt{COMMITTED}: two checkouts of \texttt{main} at ae55c68; the zero-interaction (Gate 2) pipeline frozen in October 2026 is re-executed in the first and compared with the committed outputs of the second.
+\item \texttt{GATE2}, \texttt{COMMITTED}: two clean copies of this source; re-execute the zero-interaction pipeline in the first and compare with the committed summaries in the second. The recorded original verification used source ae55c68; a new re-execution does not require that historical checkout.
 \end{itemize}
 \par}
 
 \begin{table}[H]
 \centering\footnotesize
-\caption{\textbf{SHA-256 of every input.} Raw files are verified by \texttt{cs622.download}; the split is hashed with LF line endings, as committed.}\label{tab:S14}
+\caption{\textbf{SHA-256 of every input.} Raw files are verified by \texttt{synergy\_artifacts.download}; the split is hashed with LF line endings, as committed.}\label{tab:S14}
 \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X >{\ttfamily\scriptsize}l@{}}
 \toprule
 Input & \normalfont\footnotesize SHA-256 \\
@@ -568,7 +568,7 @@ DeepSynergy feature archive, \file{data/raw/deepsynergy_original/X.p.gz} & e399f
 \addlinespace
 O'Neil observation table, \file{data/processed/oneil_v1/observations.parquet} & ea588405019971906ac99c3caa547d5f4fac5b1be340356f0a8fe17a6aa3ce8b \\
 Expression features, \file{data/processed/deepsynergy/features.npz} & 4ece7882cbc3e1576bc7400d5c2f53d48d466de9eaafbc5d69ff1bb547d7f40d \\
-Pair-cell split, \file{results/final_20261110/oracle/pair_cell_split.csv} & d32914a94d8ead90e12d8cb10b6beed15f93339b0de2200ce2075a67a79370ea \\
+Pair-cell split, \file{results/pair_information/oracle/pair_cell_split.csv} & d32914a94d8ead90e12d8cb10b6beed15f93339b0de2200ce2075a67a79370ea \\
 \addlinespace
 \texttt{RES}/\file{cache.npz} & 91f93811dedf5c0721198146638c21f25b1616d43f43ae9322cf8790a7e86687 \\
 \texttt{RES}/\file{coordinates.parquet} & ebdcf3090da9bf8bf9aede5281990b843df4befc02e429bc9972a886044896d1 \\
@@ -580,9 +580,9 @@ Pair-cell split, \file{results/final_20261110/oracle/pair_cell_split.csv} & d329
 \texttt{NATIVE}/\file{blocks.parquet} & 866ae92c09829e25dde86e139a83d6a9be11fe335b024b530141243d7f13f169 \\
 \texttt{NATIVE}/\file{panel.parquet} & cc314c726f7e161dab0d49cc2edc49606805b1a2945889bdf68e0f527456a9bc \\
 \texttt{NATIVE}/\file{surface_cases.parquet} & 69e2c76476c8d14aa3c289b0a98ad6703b40b7eb9ad903f9e2df2cd1d4e23528 \\
-\texttt{LOEWE}/\file{certificates_replayable.parquet} (\texttt{cs622.certificate\_audit}) & 7087e8531dfdf595e81a6b745861459cdc37c1b2bb110da2f7e2cb41381c9728 \\
-\texttt{LOEWE}/\file{cases_verified.parquet} (\texttt{cs622.loewe\_verify}) & 384a2bd51b4c9ffeca7d4d1768237a6212bf5cf126b2c16a382af87d72acf438 \\
-\texttt{LOEWE}/\file{loewe_regimes.csv} (\file{experiments/overnight_20261107/regimes_and_tests.py}) & 9129a93bb77634db885bf8c7854c3314e9cd8ef4c377d98e74011fd2bff1fbc7 \\
+\texttt{LOEWE}/\file{certificates_replayable.parquet} (\texttt{synergy\_artifacts.certificate\_audit}) & 7087e8531dfdf595e81a6b745861459cdc37c1b2bb110da2f7e2cb41381c9728 \\
+\texttt{LOEWE}/\file{cases_verified.parquet} (\texttt{synergy\_artifacts.loewe\_verify}) & 384a2bd51b4c9ffeca7d4d1768237a6212bf5cf126b2c16a382af87d72acf438 \\
+\texttt{LOEWE}/\file{loewe_regimes.csv} (\file{experiments/response_analysis/regimes_and_tests.py}) & 9129a93bb77634db885bf8c7854c3314e9cd8ef4c377d98e74011fd2bff1fbc7 \\
 \addlinespace
 \texttt{GATE2}/\file{results/preliminary/r18_gate2.json} & 9db2939781ded864e55401b1a28523a588b3ff0502c794f37a7e5464e8616aa4 \\
 \texttt{GATE2}/\file{results/preliminary/r18_units.npz} & d55477283e0fadd3a9e983586d36e3f12731a7b0a5132c09f6a1da6ad956367e \\
@@ -621,13 +621,14 @@ Seed & Fold & \normalfont\footnotesize SHA-256 \\
 {\footnotesize
 \begin{verbatim}
 # 1. Data; X.p.gz is http://www.bioinf.jku.at/software/DeepSynergy/X.p.gz
-python -m cs622.download deepsynergy drugcomb_summary drugcomb_raw
-python -m cs622.data --config configs/data_oneil.json
-python -m cs622.deepsynergy extract-original --archive data/raw/deepsynergy_original/X.p.gz \
+python -m synergy_artifacts.download deepsynergy drugcomb_summary drugcomb_raw
+python -m synergy_artifacts.data --config configs/data_oneil.json
+python -m synergy_artifacts.deepsynergy extract-original \
+    --archive data/raw/deepsynergy_original/X.p.gz \
     --labels data/raw/deepsynergy/labels.csv --output data/processed/deepsynergy
 OBS=data/processed/oneil_v1/observations.parquet
-SPLIT=results/final_20261110/oracle/pair_cell_split.csv
-A=manuscript/audit; O=manuscript/audit/outputs; X=experiments/interaction_gap_20261110
+SPLIT=results/pair_information/oracle/pair_cell_split.csv
+A=manuscript/audit; O=manuscript/audit/outputs; X=experiments/interaction_structure
 
 # 2. Gate 2 re-execution (in GATE2), then comparison with its committed outputs
 P=experiments/preliminary; S=data/raw/drugcomb/summary_table_v1.4.csv
@@ -653,9 +654,9 @@ python $A/screening_audit.py --observations $OBS --blocks $NATIVE/blocks.parquet
     --cases $NATIVE/surface_cases.parquet --certificates $LOEWE/certificates_replayable.parquet \
     --verified $LOEWE/cases_verified.parquet --regimes $LOEWE/loewe_regimes.csv \
     --output $O/screening_audit.json --derived $AUDIT_DERIVED
-python $A/pairseen_local_check.py --runs results/final_20261110/gpu_return/runs/f2_pair_seen \
+python $A/pairseen_local_check.py --runs results/pair_information/training_records/runs/f2_pair_seen \
     --observations $OBS --resolution $RES \
-    --manifest results/final_20261110/gpu_return/full_return_manifest.json \
+    --manifest results/pair_information/training_records/execution_manifest.json \
     --output $O/pairseen_local_check.json
 
 # 4. On the cluster, where the predictions are stored (no training)
@@ -667,7 +668,7 @@ python $X/b3_paired.py --observations $OBS --resolution $RES_B2 --split $SPLIT \
     --pairseen $O/pairseen_audit.json --b3 b3_pair_energies.json --output b3_paired.json
 
 # 5. Interaction-gap analyses
-G=results/interaction_gap_20261110
+G=results/interaction_structure
 python $X/variance.py --observations $OBS --resolution $RES --output $G --derived $GAP_DERIVED
 python $X/anchors.py --observations $OBS --resolution $RES --split $SPLIT \
     --pairseen $O/pairseen_audit.json --output $G
@@ -688,7 +689,7 @@ python manuscript/scripts/build.py
 python -m pytest tests -q
 \end{verbatim}
 }
-The pair-seen comparison summary, \file{results/interaction_gap_20261110/b3_paired_summary.json}, is transcribed from the cluster's \file{b3_paired.json}; its pooled B3 $R^2$ recomputes exactly. Every figure input, output and script is hashed in \file{manuscript/figures/MANIFEST.json}, and the interaction-gap inputs, scripts and outputs in \file{results/interaction_gap_20261110/MANIFEST.json}.
+The pair-seen comparison summary, \file{results/interaction_structure/b3_paired_summary.json}, is transcribed from the cluster's \file{b3_paired.json}; its pooled B3 $R^2$ recomputes exactly. Every figure input, output and script is hashed in \file{manuscript/figures/MANIFEST.json}, and the interaction-gap inputs, scripts and outputs in \file{results/interaction_structure/MANIFEST.json}.
 
 
 \clearpage
@@ -705,11 +706,11 @@ The identity studies \citep{candir2026,tasnina2025} compare original features, o
 An aggregate-score predictor is not inherently ineligible for an interaction comparison. If its target were exactly the weighted mean $s_{pc}=\overline{y-L}_{pc}$ on our dose grid and its reference $\bar L_{pc}$ were available without test outcomes, then $\hat s_{pc}+\bar L_{pc}-\bar E_{pc}$ would predict the mean Bliss residual. The same panel projection could then be applied. This requires the exact grid, weights, reference and row mapping, not just a common label name. It would still not recover dose-level predictions or their response RMSE. Original Combenefit summaries, filtered medians and thresholded classes cannot be silently substituted for this target.
 
 \subsection{Two existing DeepSynergy experiments}
-The original-label reproduction and the dose-aware adaptation are separate experiments in \file{cs622/deepsynergy.py}. The former uses the released labels and features, published pair folds, 8,192--4,096 ReLU layers, input/hidden dropout 0.2/0.5, SGD with learning rate $10^{-5}$, momentum 0.5 and batch size 64. It trains both drug orders. A first fit on three folds selects the epoch by a 25-epoch smoothed validation loss; a second fit uses the other four folds. The original inner hyperparameter search is not repeated. The implementation is a deterministic PyTorch port, not the original Keras execution. The released example also differs from the article in first-layer width (8,182 versus 8,192), dropout placement and smoothing window (15 versus 25). The original fitted weights, full inner-loop selections and software/random-state record needed for exact numerical reproduction are not available in the inspected release.
+The original-label reproduction and the dose-aware adaptation are separate experiments in \file{synergy_artifacts/deepsynergy.py}. The former uses the released labels and features, published pair folds, 8,192--4,096 ReLU layers, input/hidden dropout 0.2/0.5, SGD with learning rate $10^{-5}$, momentum 0.5 and batch size 64. It trains both drug orders. A first fit on three folds selects the epoch by a 25-epoch smoothed validation loss; a second fit uses the other four folds. The original inner hyperparameter search is not repeated. The implementation is a deterministic PyTorch port, not the original Keras execution. The released example also differs from the article in first-layer width (8,182 versus 8,192), dropout placement and smoothing window (15 versus 25). The original fitted weights, full inner-loop selections and software/random-state record needed for exact numerical reproduction are not available in the inspected release.
 
 \begin{table}[H]
 \centering\small
-\caption{\textbf{Existing reproduction on published aggregate Loewe labels.} Mean and standard deviation over five test folds; standard deviations are not confidence intervals. Source: \texttt{results/neural\_sprint/deepsynergy.csv}. These RMSE values have different targets and units from the response table in the main text.}\label{tab:DSoriginal}
+\caption{\textbf{Existing reproduction on published aggregate Loewe labels.} Mean and standard deviation over five test folds; standard deviations are not confidence intervals. Source: \texttt{results/neural\_benchmark/deepsynergy.csv}. These RMSE values have different targets and units from the response table in the main text.}\label{tab:DSoriginal}
 \begin{tabularx}{\linewidth}{@{}L r r r@{}}
 \toprule
 Experiment & Mean MSE & Mean RMSE (SD) & Mean Pearson (SD) \\
@@ -723,7 +724,7 @@ Agreement at this level supports the implementation lineage; it does not establi
 
 The dose-aware experiment instead predicts training-mean-centred inhibition on every shared observation row. It appends a standardized log dose to each drug's descriptors, fits all transforms on training folds, uses validation fold $(k+1)\bmod5$ for test fold $k$, selects the lowest order-averaged validation MSE and does not refit. The frozen validation-only pilot sets a maximum of 48 epochs and patience 8; all five folds and seeds 2026--2028 were run. Best epochs are 17--42; thirteen fits stop on patience and two at the cap. Two best epochs occur in the last eight epochs, so convergence under a longer budget is unresolved. This is a controlled architectural adaptation, with no single-agent response input; F2 uses additional single-agent information. It does not establish the best attainable accuracy of DeepSynergy or its architecture.
 
-The existing dose-aware predictions give response RMSE 18.19 (pair-bootstrap interval [17.87, 18.53]) and $R^2$ 0.713. On the equally weighted Bliss-residual pair-cell contrast, $R^2$ is $-0.047$ (delete-one-drug jackknife interval [$-0.179$, 0.085]); the measured-response contrast is 0.283. Paired response comparisons and uncertainty are recorded in \file{docs/neural_results.md} and \file{results/neural_sprint/comparisons.csv}. Neither the response deficit nor the interval establishes an interaction advantage for the other architectures.
+The existing dose-aware predictions give response RMSE 18.19 (pair-bootstrap interval [17.87, 18.53]) and $R^2$ 0.713. On the equally weighted Bliss-residual pair-cell contrast, $R^2$ is $-0.047$ (delete-one-drug jackknife interval [$-0.179$, 0.085]); the measured-response contrast is 0.283. Paired response comparisons and uncertainty are recorded in \file{docs/neural_results.md} and \file{results/neural_benchmark/comparisons.csv}. Neither the response deficit nor the interval establishes an interaction advantage for the other architectures.
 
 \subsection{Feasibility decision for an additional model}
 DeepSynBa \citep{kuru2026deepsynba} was the priority candidate because it predicts a complete response surface. Fractional viability $v$ can be converted to inhibition by $100(1-v)$, allowing both response and Bliss-residual scoring when its assay normalization matches. Its published O'Neil preprocessing nevertheless retains only 14,031 matrices from 36 drugs and 27 cells, takes replicate medians and excludes missing-feature entities. Those outputs cannot score our complete population. The inspected source commit \file{43c16961da835c8545842d564a8efdfec58bdd2f} packages NCI-ALMANAC metadata, MoLFormer embeddings and NCI-60 landmark expression. It provides no complete aligned O'Neil feature set or O'Neil configuration. The active code fixes the untreated response at 100 and adds dose-dependent bias heads, while the article describes a dataset-dependent untreated response and eight surface-parameter heads. These differences need resolution before a faithful O'Neil reproduction; replacing the missing features or deleting the extra heads would be a new variant.

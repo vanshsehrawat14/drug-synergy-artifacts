@@ -1,4 +1,4 @@
-# Overnight experiments, 2026-11-05/06
+# Response analysis experiments, 2026-11-05/06
 
 Three experiments using existing artifacts and the frozen neural protocol: no
 hyperparameter search and no retuning on test data. Each analysis plan was committed
@@ -111,7 +111,7 @@ jackknife; the seeds are 2026–2028. Results are in `results/beyond_bliss_regim
 - **The controls rule out simpler explanations.**
   - *Bliss miscalibration.* Isotonic recalibration of Bliss alone adds ≤ 0.011 in
     every regime, so a monotone miscalibration of Bliss does not explain the gain.
-  - *A better monotherapy-based reference.* The sprint's `mono_only` network
+  - *A better monotherapy-based reference.* The benchmark's `mono_only` network
     (monotherapy inputs, no identities) adds ≤ 0.007 over Bliss in every regime. A
     learned two-argument surface of the monotherapies does not explain it either.
   - What remains needs drug or pair identity.
@@ -172,7 +172,7 @@ cells.
   ALMANAC.
 
 **Protocol** (`configs/almanac_validation.json`).
-- **Models.** `f0_combined` and `f2_combined`, copied unchanged from the ONEIL sprint.
+- **Models.** `f0_combined` and `f2_combined`, copied unchanged from the ONEIL benchmark.
   `f0_combined` was selected in 5/5 ONEIL folds, and `f2_combined` is the
   configuration declared for confirmation.
 - **Training.** Three seeds. Generated label-free pair folds (seed 2026). Validation
@@ -331,24 +331,24 @@ partial.
 ## Reproduction
 
 ```sh
-python -m cs622.loewe_audit --output results/loewe_audit
-python -m cs622.regimes --output results/beyond_bliss_regimes
-python -m cs622.regimes --addendum --output results/beyond_bliss_regimes
-python -m cs622.data --config configs/data_almanac.json
-python -m cs622.suite run --protocol configs/almanac_validation.json --output results/neural/runs/almanac_v1 --stage all --device cuda
-python -m cs622.cv run --config configs/almanac_mean.json --output results/neural/runs/almanac_mean
-python -m cs622.cv run --config configs/almanac_additive.json --output results/neural/runs/almanac_additive
-python -m cs622.cv run --config configs/almanac_reference_bliss.json --output results/neural/runs/almanac_reference_bliss
-python -m cs622.almanac_report --output results/almanac_validation
-python -m cs622.almanac_sites --nci ComboDrugGrowth_Nov2017.csv --output results/almanac_validation/pair_screener.csv
-python -m cs622.almanac_report --output results/almanac_validation --site-map results/almanac_validation/pair_screener.csv
+python -m synergy_artifacts.loewe_audit --output results/loewe_audit
+python -m synergy_artifacts.regimes --output results/beyond_bliss_regimes
+python -m synergy_artifacts.regimes --addendum --output results/beyond_bliss_regimes
+python -m synergy_artifacts.data --config configs/data_almanac.json
+python -m synergy_artifacts.suite run --protocol configs/almanac_validation.json --output results/neural/runs/almanac_v1 --stage all --device cuda
+python -m synergy_artifacts.cv run --config configs/almanac_mean.json --output results/neural/runs/almanac_mean
+python -m synergy_artifacts.cv run --config configs/almanac_additive.json --output results/neural/runs/almanac_additive
+python -m synergy_artifacts.cv run --config configs/almanac_reference_bliss.json --output results/neural/runs/almanac_reference_bliss
+python -m synergy_artifacts.almanac_report --output results/almanac_validation
+python -m synergy_artifacts.almanac_sites --nci ComboDrugGrowth_Nov2017.csv --output results/almanac_validation/pair_screener.csv
+python -m synergy_artifacts.almanac_report --output results/almanac_validation --site-map results/almanac_validation/pair_screener.csv
 ```
 
 The Loewe audit reads `results/neural/runs/{scientific_native_full,
 phase3_native_attribution_v3, phase2_panel_neural}` from the scoring audit on
-`feat/cs622-neural-pipeline`. `--addendum` runs both post hoc controls (calibrated Bliss and
+`feat/synergy_artifacts-neural-pipeline`. `--addendum` runs both post hoc controls (calibrated Bliss and
 mono_only).
 
 On RebelX the 20 benchmark-seed runs were executed from explicit run lists with
-`cs622.suite.execute`, after the suite's static sharding left one GPU idle. Run
+`synergy_artifacts.suite.execute`, after the suite's static sharding left one GPU idle. Run
 configurations and outputs are unchanged by this.

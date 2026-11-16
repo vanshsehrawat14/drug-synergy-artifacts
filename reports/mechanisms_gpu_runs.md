@@ -1,6 +1,6 @@
 # Frozen GPU execution and return contract
 
-The [manifest](../results/mechanisms_20261108/gpu_manifest.json) specifies exactly **50 tasks**. The [scientific protocol](../configs/gpu_mechanisms_20261108.json) was frozen before new training; all follow-ups on these inspected data are exploratory. No GPU job was launched by this continuation.
+The [manifest](../results/mechanism_analysis/gpu_manifest.json) specifies exactly **50 tasks**. The [scientific protocol](../configs/mechanism_training.json) was frozen before new training; all follow-ups on these inspected data are exploratory. No GPU job was launched by this continuation.
 
 | Tasks | Campaign | New runs | Matched controls |
 |---|---|---:|---|
@@ -46,8 +46,8 @@ Dependencies: existing Python/PyTorch CUDA environment, prepared O'Neil data, co
 Run from this checkout after regenerating the frozen controls and ablations. `TASK` is an integer from 0 to 49. Use one allocated CUDA GPU, four CPU cores, 16 GiB RAM and a 30-minute limit per task; run tasks serially. The task table and stopping rules above apply unchanged.
 
 ```sh
-python -m cs622.mechanism_jobs --task TASK --check-only --baseline-root . --ablations results/research_20261107/runs
-python -m cs622.mechanism_jobs --task TASK --output results/mechanisms_20261108/runs --baseline-root . --ablations results/research_20261107/runs
+python -m synergy_artifacts.mechanism_jobs --task TASK --check-only --baseline-root . --ablations results/interaction_analysis/runs
+python -m synergy_artifacts.mechanism_jobs --task TASK --output results/mechanism_analysis/runs --baseline-root . --ablations results/interaction_analysis/runs
 ```
 
 The commands validate matched controls and resume only matching checkpoints. Site-specific scheduler wrappers and transfer bundles are omitted; no additional repository or historical Git objects are needed for a new run. Stored commit identifiers describe the original execution.
@@ -57,10 +57,10 @@ The commands validate matched controls and resume only matching checkpoints. Sit
 Verify archive paths, manifest and hashes before extraction into a fresh directory. The following commands require local historical predictions and the original resolution cache; replace capitalized paths explicitly:
 
 ```sh
-python -m cs622.mechanism_analysis --campaign seed2029 --runs RETURNED_RUNS --ablations ORIGINAL_ABLATIONS --baseline-root HISTORICAL_ROOT --resolution RESOLUTION_CACHE --output NEW_SEED_ANALYSIS
-python -m cs622.mechanism_analysis --campaign joint_identity --runs RETURNED_RUNS --ablations ORIGINAL_ABLATIONS --baseline-root HISTORICAL_ROOT --resolution RESOLUTION_CACHE --output NEW_JOINT_ANALYSIS
-python -m cs622.mechanism_analysis --campaign residual_drug_identity --runs RETURNED_RUNS --ablations ORIGINAL_ABLATIONS --baseline-root HISTORICAL_ROOT --resolution RESOLUTION_CACHE --output NEW_RESIDUAL_ANALYSIS
-python -m cs622.mechanism_analysis --combine NEW_JOINT_ANALYSIS/comparisons.csv NEW_RESIDUAL_ANALYSIS/comparisons.csv --output NEW_TWO_TEST_DECISION.csv
+python -m synergy_artifacts.mechanism_analysis --campaign seed2029 --runs RETURNED_RUNS --ablations ORIGINAL_ABLATIONS --baseline-root HISTORICAL_ROOT --resolution RESOLUTION_CACHE --output NEW_SEED_ANALYSIS
+python -m synergy_artifacts.mechanism_analysis --campaign joint_identity --runs RETURNED_RUNS --ablations ORIGINAL_ABLATIONS --baseline-root HISTORICAL_ROOT --resolution RESOLUTION_CACHE --output NEW_JOINT_ANALYSIS
+python -m synergy_artifacts.mechanism_analysis --campaign residual_drug_identity --runs RETURNED_RUNS --ablations ORIGINAL_ABLATIONS --baseline-root HISTORICAL_ROOT --resolution RESOLUTION_CACHE --output NEW_RESIDUAL_ANALYSIS
+python -m synergy_artifacts.mechanism_analysis --combine NEW_JOINT_ANALYSIS/comparisons.csv NEW_RESIDUAL_ANALYSIS/comparisons.csv --output NEW_TWO_TEST_DECISION.csv
 ```
 
 Analysis checks configuration, dataset hash, exact out-of-fold row IDs and finite predictions. It averages seed-specific squared errors, refits both nuisance stages under drug deletion and uses whole-pair bootstrap. The combined decision requires both primary experiments; neither missing tasks nor the exploratory drug-response label is silently waived.

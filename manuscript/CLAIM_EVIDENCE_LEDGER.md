@@ -12,17 +12,17 @@ Status labels:
 
 | # | Claim (manuscript section) | Evidence | Status |
 |---|---|---|---|
-| 1 | Best response models reach $R^2$ 0.88; selected F2 RMSE 11.84 (§5) | `results/compare/final.csv` | verified |
+| 1 | Best response models reach $R^2$ 0.88; selected F2 RMSE 11.84 (§5) | `results/compare/selected_models.csv` | verified |
 | 2 | GP-F2 meets the ±5% response-equivalence margin against selected F2: −1.6% MSE, −2.22 [−3.93, −0.46; drug −4.83, 0.40] (§5) | `results/compare/comparisons.csv` | verified |
-| 3 | Additive structure 81.8%, pair-cell contrast 2.6%, dose-shape contrast 10.2%, replicate deviations 5.4% of row variance (§5) | `research_20261107/resolution/variance.json` | verified |
+| 3 | Additive structure 81.8%, pair-cell contrast 2.6%, dose-shape contrast 10.2%, replicate deviations 5.4% of row variance (§5) | `interaction_analysis/resolution/variance.json` | verified |
 | 4 | Held-out-pair models explain at most 0.07 of the noise-corrected pair-cell contrast (§5) | `audit/outputs/interaction_audit.json` | verified |
-| 5 | Within-batch replicate noise 9.8% of contrast energy; ceiling 0.90 (§6.1) | `interaction_audit.json`, `results/interaction_gap_20261110/variance_components.json` | verified, narrowed to "within batch, conditional on shared single-agent values" |
+| 5 | Within-batch replicate noise 9.8% of contrast energy; ceiling 0.90 (§6.1) | `interaction_audit.json`, `results/interaction_structure/variance_components.json` | verified, narrowed to "within batch, conditional on shared single-agent values" |
 | 6 | Dose-shape noise share 36% (§6.1) | `interaction_audit.json`, `dose_shape_check.json` | corrected from 45% |
 | 7 | Cross-batch: 88% [65, 101] of within-batch reproducible energy replicates; full-screen extrapolation 0.67–0.82 (§6.1) | `variance_components.json` (cross_batch) | verified; the extrapolation states both assumptions |
 | 8 | Reference noise is not independently estimable (§6.1) | `variance_components.json` (audit.monotherapy); Proposition 5 | verified |
 | 9 | Decomposition: pair-wide 0.242, pair-by-cell 0.660, noise 0.098 (§6.2) | `variance_components.json` | verified |
 | 10 | Bliss pair offset not inherited from the reference ($r$ 0.009 vs 0.81) (§6.2) | `variance_components.json` | verified |
-| 11 | Leak-free matched: B1 0.177, B2 0.216, B3 0.218, held-out F2 −0.050, with paired intervals (§6.3, Table 3) | `results/interaction_gap_20261110/b3_paired_summary.json` (computed on RebelX from 15 hash-verified prediction files); `anchor_experiment.json` | verified |
+| 11 | Leak-free matched: B1 0.177, B2 0.216, B3 0.218, held-out F2 −0.050, with paired intervals (§6.3, Table 3) | `results/interaction_structure/b3_paired_summary.json` (computed on RebelX from 15 hash-verified prediction files); `anchor_experiment.json` | verified |
 | 12 | B1 is 81% [69, 97] of B3; B3 − B2 0.003 [−0.031, 0.036]; B3 − B1 not material (drug interval includes 0) (§6.3) | `b3_paired_summary.json` | verified |
 | 13 | Matched oracle 0.205 was leaky; leak-free 0.177 (§6.3) | `anchor_experiment.json`; leak attribution (supplement Table S6) | corrected |
 | 14 | Transfer grows with anchors (0.033 → 0.086 → 0.144); same-pair and same-cell specific (§6.3) | `anchor_experiment.json`, `variance_components.json` | verified |
@@ -36,7 +36,7 @@ Status labels:
 | 22 | Fallback error medians: summed-dose 4.17, HSA 0.0040 (§8.3) | `loewe_audit.json` | corrected (0.0044 → 0.0040) |
 | 23 | C1 replaces 67/1,137 top-5% candidates (5.89%); systematic under resampling (§9) | `audit/outputs/screening_audit.json` | verified |
 | 24 | Native reconstruction differs from published DrugComb top-5% by one candidate (§9) | `screening_audit.json` (P_to_N_turnover 0.00088 = 1/1,137) | verified |
-| 25 | Negative results (§10) | `failed_ncats_confirmation.json`; `final_20261110/claim_ledger.json`; `FINAL_RESEARCH_VERDICT.md` | verified (NCATS, drug identity); secondary (identity contrast −7.41%, uncertainty utility) |
+| 25 | Negative results (§10) | `failed_ncats_confirmation.json`; `pair_information/claim_ledger.json`; `results_summary.md` | verified (NCATS, drug identity); secondary (identity contrast −7.41%, uncertainty utility) |
 
 ## Corrections relative to earlier project reports
 

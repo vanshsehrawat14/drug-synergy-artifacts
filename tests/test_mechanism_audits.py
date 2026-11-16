@@ -3,13 +3,13 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from cs622.certificate_audit import bracket_structure,replay
-from cs622.loewe_interval import certify
-from cs622.information_audit import remove_reference_span
-from cs622.mechanism_analysis import linear_effect
-from cs622.mechanism_jobs import jobs,config_for,trigger_audit
-from cs622.resolution import projections
-from cs622.screen_audit import row_ess,standardized_gain,panel_errors,endpoint
+from synergy_artifacts.certificate_audit import bracket_structure,replay
+from synergy_artifacts.loewe_interval import certify
+from synergy_artifacts.information_audit import remove_reference_span
+from synergy_artifacts.mechanism_analysis import linear_effect
+from synergy_artifacts.mechanism_jobs import jobs,config_for,trigger_audit
+from synergy_artifacts.resolution import projections
+from synergy_artifacts.screen_audit import row_ess,standardized_gain,panel_errors,endpoint
 
 
 def test_extreme_boundary_certificate_is_replayable_after_serialization():
@@ -27,7 +27,7 @@ def test_extreme_boundary_certificate_is_replayable_after_serialization():
 
 
 def test_guaranteed_selection_respects_canonical_cutoff_ties():
-    from cs622.decision_sensitivity import guaranteed
+    from synergy_artifacts.decision_sensitivity import guaranteed
     g=guaranteed(np.array([1.,1.]),np.array([1.,1.]),np.array([1.,1.]),.5)
     assert g['guaranteed_exits']==g['guaranteed_entries']==0
     assert g['ambiguous_native_selected']==g['ambiguous_native_unselected']==0
@@ -110,9 +110,9 @@ def test_seed_trigger_does_not_add_provisional_response_endpoint():
 
 
 def test_new_training_arms_on_synthetic_data(tmp_path):
-    from cs622.smoke import smoke
-    from cs622.runner import run
-    from cs622.io import read_json
+    from synergy_artifacts.smoke import smoke
+    from synergy_artifacts.runner import run
+    from synergy_artifacts.io import read_json
     smoke(tmp_path/'fixture')
     for arm in ['joint_identity','residual_no_drug']:
         c=config_for(arm,2026,0);c['dataset']=str(tmp_path/'fixture/prepared')
@@ -127,14 +127,14 @@ def test_new_training_arms_on_synthetic_data(tmp_path):
 
 def test_return_collector_preserves_task_accounting_hashes_and_existing_files(tmp_path):
     import hashlib,json,tarfile
-    from experiments.mechanisms_20261108.collect_return import collect
-    repo=tmp_path/'repo';d=repo/'results/mechanisms_20261108/runs'/jobs()[0]['output'];d.mkdir(parents=True)
+    from experiments.mechanism_analysis.collect_artifacts import collect
+    repo=tmp_path/'repo';d=repo/'results/mechanism_analysis/runs'/jobs()[0]['output'];d.mkdir(parents=True)
     (d/'config.json').write_text(json.dumps(jobs()[0]['config']))
     (d/'metadata.json').write_text('{}');(d/'predictions.parquet').write_bytes(b'fixture')
     archive=tmp_path/'return.tar.gz';manifest=collect(repo,archive)
     assert manifest['complete_tasks']==1 and len(manifest['tasks'])==50
     with tarfile.open(archive) as tar:
-        saved=json.load(tar.extractfile('return_manifest.json'))
+        saved=json.load(tar.extractfile('artifact_manifest.json'))
         for f in saved['files']:
             assert hashlib.sha256(tar.extractfile(f['path']).read()).hexdigest()==f['sha256']
     with pytest.raises(FileExistsError):collect(repo,archive)

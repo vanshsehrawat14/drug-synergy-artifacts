@@ -2,10 +2,10 @@
 
 No project module is imported. Units, the two evaluation contrasts, the block split and the oracles are
 reimplemented from their definitions. Inputs: the O'Neil observation table, the frozen resolution cache
-of out-of-fold unit means (research_20261107/resolution) and the pair-cell split.
+of out-of-fold unit means (interaction_analysis/resolution) and the pair-cell split.
 
 python manuscript/audit/interaction_audit.py --observations data/processed/oneil_v1/observations.parquet \
-    --resolution RESOLUTION_DIR --split results/final_20261110/oracle/pair_cell_split.csv \
+    --resolution RESOLUTION_DIR --split results/pair_information/oracle/pair_cell_split.csv \
     --output manuscript/audit/outputs/interaction_audit.json
 """
 import argparse

@@ -2,11 +2,11 @@
 import numpy as np
 import pandas as pd
 
-from cs622.features import FeatureBuilder
-from cs622.loewe_priority import certificate, rank_metrics
-from cs622.loewe_verify import theta_root
-from cs622.resolution import residualize
-from cs622.research_jobs import job
+from synergy_artifacts.features import FeatureBuilder
+from synergy_artifacts.loewe_priority import certificate, rank_metrics
+from synergy_artifacts.loewe_verify import theta_root
+from synergy_artifacts.resolution import residualize
+from synergy_artifacts.research_jobs import job
 
 
 def test_weighted_orthogonal_decomposition():
@@ -37,7 +37,7 @@ def test_ranking_turnover_denominator():
 
 
 def test_high_precision_boundary_root_survives_float_rounding():
-    from cs622.loewe_precision import precise_root
+    from synergy_artifacts.loewe_precision import precise_root
     f=pd.DataFrame({"model_a":["LL.4"],"model_b":["LL.4"],"dose_a":[1e20],"dose_b":[2e20]})
     for arm in "ab":
         for k,v in zip("bcde",[-1.,0.,100.,1.]):f[f"{arm}_{k}"]=v
@@ -54,7 +54,7 @@ def test_high_precision_boundary_root_survives_float_rounding():
 
 
 def test_error_triage_ties_are_outcome_independent():
-    from cs622.reliability import top_mass
+    from synergy_artifacts.reliability import top_mass
     e=np.array([100.,2.,3.,4.,5.,6.,7.,8.,9.,10.])
     assert np.isclose(top_mass(e,np.ones(10)),.1)
     score=np.array([1.,1.,0.,0.,0.,0.,0.,0.,0.,0.])
@@ -62,7 +62,7 @@ def test_error_triage_ties_are_outcome_independent():
 
 
 def test_dose_error_calibrator_never_uses_test_outcomes():
-    from cs622.reliability import calibrator
+    from synergy_artifacts.reliability import calibrator
     f=pd.DataFrame(dict(cell_line=["A","A","B","B"],mean_logdose=[-2.,-1.,0.,1.],
                         gap_logdose=[0.,1.,2.,1.],reference=[10.,20.,30.,40.],error=[1.,4.,9.,16.]))
     test=f.copy();a=calibrator(f,test,"dose_bliss");test.error=1e9
@@ -78,7 +78,7 @@ def test_masks_preserve_lookup_but_remove_direct_identity():
     b=FeatureBuilder("F2",drug_identity=False,cell_identity=False)
     b.drugs=["A","B"];b.cells=["C","D"]
     b.mono={(d,c,x):10*x for d in b.drugs for c in b.cells for x in [1.,2.]};b.mono_mean=15.
-    from cs622.features import Standardizer
+    from synergy_artifacts.features import Standardizer
     b.endpoint_scaler=Standardizer().fit(np.vstack([b._continuous(f,e) for e in "ab"]))
     a,c,cell=b.transform(f)
     assert cell.shape==(4,0) and a.shape==(4,4)
@@ -96,9 +96,9 @@ def test_frozen_job_coverage_and_control_settings():
 
 
 def test_runner_applies_each_mask(tmp_path):
-    from cs622.smoke import smoke
-    from cs622.runner import run
-    from cs622.io import read_json
+    from synergy_artifacts.smoke import smoke
+    from synergy_artifacts.runner import run
+    from synergy_artifacts.io import read_json
     smoke(tmp_path/"fixture")
     for task in [0,15,30]:
         mask,_,_,config=job(task)

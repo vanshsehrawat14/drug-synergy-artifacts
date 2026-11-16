@@ -5,3 +5,4 @@
 *.jpeg binary
 *.gz binary
 *.zip binary
+docs/gate2_protocol.md -text

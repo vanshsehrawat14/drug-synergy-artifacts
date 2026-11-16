@@ -4,11 +4,11 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from cs622.data import prepare
-from cs622.io import read_json
-from cs622.pair_seen import assign, assignment_sha256, control_config, job, pair_cell_folds
-from cs622.runner import run
-from cs622.splits import pair_id, partitions, validate_folds
+from synergy_artifacts.data import prepare
+from synergy_artifacts.io import read_json
+from synergy_artifacts.pair_seen import assign, assignment_sha256, control_config, job, pair_cell_folds
+from synergy_artifacts.runner import run
+from synergy_artifacts.splits import pair_id, partitions, validate_folds
 
 CELLS = ["X1", "X2", "X3", "X4", "X5"]
 
@@ -70,7 +70,7 @@ def dataset(tmp_path):
 
 
 def test_pair_cell_runner_uses_training_blocks_only(dataset, tmp_path, monkeypatch):
-    import cs622.runner as runner
+    import synergy_artifacts.runner as runner
     seen, fit = {}, runner.FeatureBuilder.fit
     def record(self, train, monotherapy=None):
         seen["mono"], seen["train"] = set(monotherapy.block_id), set(train.block_id)

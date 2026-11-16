@@ -1,14 +1,14 @@
-# CS 622: mechanisms, information and independent-screen audit
+# Mechanisms, information and independent-screen audit
 
-Vansh Sehrawat (neural models and shared pipeline), Kingsley Ukandu (Gaussian process), Sharlene Kim (collaborative filtering). 8 November 2026.
+Vanshdeep Sehrawat (neural models and shared pipeline), Kingsley Ukandu (Gaussian process), Sharlene Kim (collaborative filtering). 8 November 2026.
 
-This investigation starts at `a5adc3d`, following the November 8 overnight handoff. Historical experiments, authorship, thresholds and failed confirmations are retained. The new analyses are exploratory. The [analysis plan](../configs/mechanisms_20261108.json), [GPU protocols](../configs/gpu_mechanisms_20261108.json) and [support amendment](../configs/screen_support_amendment_20261108.json) record which observations preceded each test.
+This investigation starts at `a5adc3d`, following the November 8 response_analysis handoff. Historical experiments, authorship, thresholds and failed confirmations are retained. The new analyses are exploratory. The [analysis plan](../configs/mechanism_analysis.json), [GPU protocols](../configs/mechanism_training.json) and [support amendment](../configs/screen_support_amendment.json) record which observations preceded each test.
 
 The strongest new findings are a native-source intervention that establishes solver-path dependence at fixed fits; an asymmetry between incoming and outgoing screening selections that was hidden by pooled margins; and a reference-augmented evaluation showing that neural and GP dose-shape prediction survives removal of much, but not all, reference-derived variation. Input-stratum standardization still does not explain the screen-performance gaps.
 
 ## 1. Provenance and design closure
 
-The handoff SHA-256 is `f01719c7cead3c7fc06f08c169cd106b104ee4dd67ea696a5029de4cf746240d`. All 54 manifest entries and all 270 files in the returned ablation subset passed their hashes. All 45 frozen ablations remain complete; no new training result is reported here. See [verification](../results/mechanisms_20261108/input_verification.json).
+The handoff SHA-256 is `f01719c7cead3c7fc06f08c169cd106b104ee4dd67ea696a5029de4cf746240d`. All 54 manifest entries and all 270 files in the returned ablation subset passed their hashes. All 45 frozen ablations remain complete; no new training result is reported here. See [verification](../results/mechanism_analysis/input_verification.json).
 
 Replaying the frozen seed-trigger code identifies exactly four result cells:
 
@@ -21,7 +21,7 @@ Replaying the frozen seed-trigger code identifies exactly four result cells:
 
 Tasks 0–4 supply the necessary **full-input seed-2029 baseline**. Four endpoint cells therefore require 20 unique runs, rather than 20 mask runs without matched controls. The code originally inferred sign disagreement from fold extrema; the complete five-fold table confirms exactly one opposing fold for the drug/pair-cell result. No threshold is changed and no extra trigger is invented for no-dose pair-cell error or drug-identity response.
 
-The drug-identity response estimate remains **provisional**: +5.0826% response MSE on seeds 2026–2028. The five new no-drug runs also support a separately labeled exploratory response check. Sharing runs with a triggered contrast endpoint does not make the response endpoint preregistered. Report seed 2029 separately and then four-seed pooled errors, preserving every original seed. The [design audit](../results/mechanisms_20261108/seed2029_design_audit.json) and [execution manifest](../results/mechanisms_20261108/gpu_manifest.json) specify the comparison exactly.
+The drug-identity response estimate remains **provisional**: +5.0826% response MSE on seeds 2026–2028. The five new no-drug runs also support a separately labeled exploratory response check. Sharing runs with a triggered contrast endpoint does not make the response endpoint preregistered. Report seed 2029 separately and then four-seed pooled errors, preserving every original seed. The [design audit](../results/mechanism_analysis/seed2029_design_audit.json) and [execution manifest](../results/mechanism_analysis/gpu_manifest.json) specify the comparison exactly.
 
 ## 2. Loewe prioritization: a stronger, narrower mechanism
 
@@ -108,9 +108,9 @@ All four screens have complete finite matched prediction coverage, valid positiv
 | NCATS ES | 112,165 | 22.665 | 0.2669 | 109.231 | 11.92% |
 | NCATS DIPG | 224,708 | 14.352 | 0.1555 | 44.289 | 15.20% |
 
-Training variance excludes test and validation folds. Baseline gains use ratios of summed errors on the same rows; model SSE and baseline SSE are both reweighted. Full mean/additive/Bliss denominators, MAE and monotherapy status counts are in [screen evidence](../results/mechanisms_20261108/screens/). Direct cross-screen transport still fails the identity/dose/assay compatibility gate; within-screen error normalization is not transfer validation.
+Training variance excludes test and validation folds. Baseline gains use ratios of summed errors on the same rows; model SSE and baseline SSE are both reweighted. Full mean/additive/Bliss denominators, MAE and monotherapy status counts are in [screen evidence](../results/mechanism_analysis/screens/). Direct cross-screen transport still fails the identity/dose/assay compatibility gate; within-screen error normalization is not transfer validation.
 
-Two corrections qualify the overnight results:
+Two corrections qualify the response_analysis results:
 
 1. The original three-seed pair-cell calculation averaged predictions before squaring. It was an **ensemble** metric. The corrected seed-average pair-cell MSE is 31.65 rather than 28.61 for ALMANAC F2; 111.65 rather than 104.08 for ES; and 43.45 rather than 40.55 for DIPG. Seed-2026 primary estimates are unchanged. O'Neil `f2_combined` remains incomplete for the extra seeds and is reported unavailable, with no substitution.
 2. Row effective sample size under stratum weights is $(\sum_i w_i)^2/\sum_i w_i^2$. The former 14–19 values summarized concentration of stratum counts. Correct row ESS is approximately **1,319,319**, **49,473** and **152,311** for ALMANAC, ES and DIPG; pair-weight ESS is 3,612, 1,030 and 1,562. These do not create that many independent experimental units.
@@ -139,10 +139,10 @@ The decisive biological test is an independently measured, prospectively fixed c
 
 ## Reproduction and validation
 
-[Aggregate evidence](../results/mechanisms_20261108/), [four vector figure pages](figures/mechanisms_20261108/mechanisms_20261108.pdf), and their hash manifests accompany this report. Modules `certificate_audit`, `native_start_audit`, `prioritization_audit`, `information_audit`, `screen_audit` and `screen_support` expose explicit input/output arguments; fresh output paths are required. Native source interventions additionally require the pinned R runtime/source documented in the numerical audit. Figure rebuilding uses only shared aggregates:
+[Aggregate evidence](../results/mechanism_analysis/), [four vector figure pages](figures/mechanism_analysis/mechanism_analysis.pdf), and their hash manifests accompany this report. Modules `certificate_audit`, `native_start_audit`, `prioritization_audit`, `information_audit`, `screen_audit` and `screen_support` expose explicit input/output arguments; fresh output paths are required. Native source interventions additionally require the pinned R runtime/source documented in the numerical audit. Figure rebuilding uses only shared aggregates:
 
 ```sh
-python -m cs622.mechanism_figures
+python -m synergy_artifacts.mechanism_figures
 python -m pytest -q
 ```
 

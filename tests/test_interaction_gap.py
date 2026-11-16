@@ -1,4 +1,4 @@
-"""Synthetic checks of the interaction-gap estimators (experiments/interaction_gap_20261110)."""
+"""Synthetic checks of the interaction-gap estimators (experiments/interaction_structure)."""
 import sys
 from pathlib import Path
 from types import SimpleNamespace
@@ -6,7 +6,7 @@ from types import SimpleNamespace
 import numpy as np
 import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "experiments" / "interaction_gap_20261110"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "experiments" / "interaction_structure"))
 from anchors import masked_contrast, predict_all  # noqa: E402
 from core import Covariance, Panel, anchor_masks, blup, components, shares, train_baseline  # noqa: E402
 

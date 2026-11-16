@@ -1,6 +1,6 @@
 # Data
 
-`python -m cs622.download [name ...]` fetches into `data/raw/` and verifies checksums. With no arguments it fetches everything.
+`python -m synergy_artifacts.download [name ...]` fetches into `data/raw/` and verifies checksums. With no arguments it fetches everything.
 
 | Name | File | Size | Source | License | Used for |
 |---|---|---|---|---|---|

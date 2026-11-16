@@ -4,7 +4,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from cs622 import cf
+from synergy_artifacts import cf
 
 REAL = Path("data/raw/deepsynergy/labels.csv").exists() and cf.TARGETS.exists()
 

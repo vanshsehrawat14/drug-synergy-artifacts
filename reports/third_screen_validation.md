@@ -1,4 +1,4 @@
-# Validation sprint, 2026-11-06
+# Validation benchmark, 2026-11-06
 
 **Scope.** Four parts:
 1. an independent check of the Loewe fallback finding;
@@ -14,7 +14,7 @@
 
 ## 1. Loewe fallback: independent verification
 
-Plan: `configs/loewe_verification.json`. Code: `cs622/loewe_verify.py`. Results: `results/loewe_verify/`.
+Plan: `configs/loewe_verification.json`. Code: `synergy_artifacts/loewe_verify.py`. Results: `results/loewe_verify/`.
 
 **Admissibility under the scorer's own definition.** A root counts as admissible only if two conditions hold:
 - the Loewe equation of `calculate_synergy_score.R` has residual < 1e-6 at the root;
@@ -81,7 +81,7 @@ Plan: `configs/loewe_verification.json`. Code: `cs622/loewe_verify.py`. Results:
 
 ## 2. Stress tests of the high-inhibition result
 
-Declared in `configs/stress_tests.json`. Code: `cs622/stress.py`. Results: `results/stress_tests/`.
+Declared in `configs/stress_tests.json`. Code: `synergy_artifacts/stress.py`. Results: `results/stress_tests/`.
 
 **Rule.** A control is survived only if two things hold at R ≥ 75:
 - the interval is above 0 (drug jackknife, or cell jackknife for that control);
@@ -108,7 +108,7 @@ Declared in `configs/stress_tests.json`. Code: `cs622/stress.py`. Results: `resu
 - **Batch is not testable here.** DrugComb has no ONEIL batch identifiers, and no local copy of the original batch file exists.
 - **Pooled across all bins** (unchanged): 0.064, drug [−0.037, 0.165], cell [0.009, 0.119].
 
-### ALMANAC (f2_combined, seeds 2026–2028; mono_only retrained on ALMANAC with the frozen sprint config, 15 runs)
+### ALMANAC (f2_combined, seeds 2026–2028; mono_only retrained on ALMANAC with the frozen benchmark config, 15 runs)
 
 | Control | Pair-cells | Interaction residual R² | Interval | Seeds | Survives |
 |---|---:|---:|---|---|---|
@@ -136,7 +136,7 @@ Declared in `configs/stress_tests.json`. Code: `cs622/stress.py`. Results: `resu
 
 ## 3. Third screen (frozen protocol, GPU)
 
-Plan: `configs/third_screen_confirmation.json` and amendment 1. Code: `cs622/third_screen.py`. Results: `results/third_screen/`.
+Plan: `configs/third_screen_confirmation.json` and amendment 1. Code: `synergy_artifacts/third_screen.py`. Results: `results/third_screen/`.
 
 **Screen choice.**
 
@@ -183,7 +183,7 @@ Plan: `configs/third_screen_confirmation.json` and amendment 1. Code: `cs622/thi
 - **Calibration.** Isotonic recalibration of Bliss changes no bin by more than 0.02 on either screen.
 - **f0_combined** (no monotherapy) is below Bliss at R ≥ 75 on both screens (−0.089 and −0.238). On NCATS_DIPG it is below Bliss pooled as well (−0.147).
 
-**Response level** (declared comparisons; verdict rule as in the sprint):
+**Response level** (declared comparisons; verdict rule as in the benchmark):
 
 | Screen | Model | RMSE | R² | Pearson | ΔMSE vs Bliss | vs f0 | vs mono_only |
 |---|---|---:|---:|---:|---|---|---|
@@ -235,19 +235,19 @@ The corrections it lists:
 ## Reproduction
 
 ```sh
-python -m cs622.loewe_verify --cases results/loewe_audit/full_cases.parquet --output results/loewe_verify [--retrained <panel predictions>]
-python -m cs622.stress --screen oneil --output results/stress_tests
-python -m cs622.stress --screen almanac --output results/stress_tests --batch almanac_unit_batch.csv
-python -m cs622.data --config configs/data_ncats_es.json        # and data_ncats_dipg.json
-python -m cs622.suite run --protocol configs/third_screen_validation.json --output results/neural/runs/ncats_es_v2 --stage all --device cuda
-python -m cs622.suite run --protocol configs/third_screen_dipg_validation.json --output results/neural/runs/ncats_dipg_v2 --stage all --device cuda
-python -m cs622.suite run --protocol configs/almanac_mono_only.json --output results/neural/runs/almanac_mono_only --stage all --device cuda
-python -m cs622.cv run --config configs/ncats_es_mean.json --output results/neural/runs/ncats_es_v2_mean   # likewise additive, reference_bliss and ncats_dipg
-python -m cs622.third_screen --protocol configs/third_screen_validation.json --output results/third_screen/ncats_es
-python -m cs622.third_screen --protocol configs/third_screen_dipg_validation.json --output results/third_screen/ncats_dipg
+python -m synergy_artifacts.loewe_verify --cases results/loewe_audit/full_cases.parquet --output results/loewe_verify [--retrained <panel predictions>]
+python -m synergy_artifacts.stress --screen oneil --output results/stress_tests
+python -m synergy_artifacts.stress --screen almanac --output results/stress_tests --batch almanac_unit_batch.csv
+python -m synergy_artifacts.data --config configs/data_ncats_es.json        # and data_ncats_dipg.json
+python -m synergy_artifacts.suite run --protocol configs/third_screen_validation.json --output results/neural/runs/ncats_es_v2 --stage all --device cuda
+python -m synergy_artifacts.suite run --protocol configs/third_screen_dipg_validation.json --output results/neural/runs/ncats_dipg_v2 --stage all --device cuda
+python -m synergy_artifacts.suite run --protocol configs/almanac_mono_only.json --output results/neural/runs/almanac_mono_only --stage all --device cuda
+python -m synergy_artifacts.cv run --config configs/ncats_es_mean.json --output results/neural/runs/ncats_es_v2_mean   # likewise additive, reference_bliss and ncats_dipg
+python -m synergy_artifacts.third_screen --protocol configs/third_screen_validation.json --output results/third_screen/ncats_es
+python -m synergy_artifacts.third_screen --protocol configs/third_screen_dipg_validation.json --output results/third_screen/ncats_dipg
 ```
 
 **Inputs and artifacts kept elsewhere.**
-- The retraining for section 1 uses `experiments/phase2/panel_neural.py` from `feat/cs622-neural-pipeline`, with `--targets published solver_root valid_root valid_root_any`.
+- The retraining for section 1 uses `experiments/phase2/panel_neural.py` from `feat/synergy_artifacts-neural-pipeline`, with `--targets published solver_root valid_root valid_root_any`.
 - The ALMANAC batch map comes from exact row matches to `ComboDrugGrowth_Nov2017.csv`.
 - Run directories, checkpoints and the ALMANAC analog-similarity table stay on RebelX.

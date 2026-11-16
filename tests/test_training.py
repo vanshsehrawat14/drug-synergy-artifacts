@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from cs622.training import NeuralRegressor
+from synergy_artifacts.training import NeuralRegressor
 
 
 def problem():

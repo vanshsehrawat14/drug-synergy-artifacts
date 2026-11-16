@@ -11,7 +11,7 @@
  },
  "preprocessing": "configs/data_ncats_es.json and configs/data_ncats_dipg.json: DrugComb v1.4 rows of the study, uM only, inhibition as reported (no clipping), drugs in fewer than 10 distinct pairs excluded (single pass, as in ALMANAC amendment 1), generated pair folds from the first seed >= 2026 that keeps validation and test drugs seen in training (seed 2026 qualifies for both screens).",
  "models": "configs/third_screen_validation.json (primary) and configs/third_screen_dipg_validation.json (secondary): f0_combined, f2_combined, mono_only; seeds 2026, 2027, 2028; no selection. Baselines: training mean, additive ridge, Bliss reference on training-pair monotherapy with interpolation (configs/ncats_{es,dipg}_{mean,additive,reference_bliss}.json).",
- "metrics": "RMSE, MSE, MAE, R2, Pearson on combination rows; pair-cluster bootstrap (1000) and delete-one-drug jackknife; contrast R2; interaction residual R2 vs Bliss, with P removing drug main effects within fold and cell. Response comparisons use the sprint verdict rule.",
+ "metrics": "RMSE, MSE, MAE, R2, Pearson on combination rows; pair-cluster bootstrap (1000) and delete-one-drug jackknife; contrast R2; interaction residual R2 vs Bliss, with P removing drug main effects within fold and cell. Response comparisons use the benchmark verdict rule.",
  "regimes": "Bliss expectation R of each dose row from the Bliss reference: [-inf, 25), [25, 50), [50, 75), [75, inf); pair-cell means within each bin.",
  "hypotheses": {
   "H1": "Primary. Interaction residual R2 of f2_combined vs Bliss at R >= 75 is positive. Confirmed only if the delete-one-drug jackknife interval lies above 0 and every seed is positive.",

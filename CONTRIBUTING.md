@@ -1,12 +1,13 @@
 # Contributing
 
-Use issues or pull requests for corrections and extensions. State the affected result, implementation change and validation. Keep changes to scientific assumptions distinct from implementation fixes.
+Use a focused branch and state the affected method, evidence and validation in the pull request. Merge shared changes after a collaborator's review; preserve history.
 
-- Preserve frozen protocols, splits, targets, units and evidence. Amend a protocol before running a changed experiment.
-- Use validation folds for model selection. Held-out outcomes must not enter fitting or tuning.
-- Keep input data, model weights, checkpoints, credentials and machine-specific configuration out of Git.
-- For model results, record configuration, seed, information regime, dataset and split hashes, validation selection, runtime and prediction coverage.
-- Run `python -m pytest -q` and the numerical checks relevant to the change. Do not change a test merely to obtain a passing result.
-- Keep `docs/gate2_protocol.md` byte-identical; the original analysis verifies its SHA-256.
+- Name paths for their scientific content, using lowercase snake_case. Keep campaign dates, temporary phases and operational handoff labels out of maintained paths.
+- Update imports, configurations, commands, reports and manuscript references together when a path changes.
+- Preserve protocols, targets, folds, units, thresholds and numerical evidence. Amend a scientific protocol before running a changed experiment.
+- Select models on validation folds only. Keep input datasets, predictions, checkpoints and machine-specific settings out of Git.
+- Retain attribution for original frameworks and extensions; see [AUTHORS.md](AUTHORS.md).
+- Run the complete tests and numerical checker; rebuild affected documents and inspect the diff.
+- Use short, plain commit messages describing the change, such as `clean up`. Avoid promotional wording and elaborate summaries.
 
-Original frameworks and extensions must retain their attribution in [AUTHORS.md](AUTHORS.md) and the method reports.
+The frozen Gate 2 protocol must remain byte-identical.

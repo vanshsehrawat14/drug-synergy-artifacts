@@ -1,6 +1,6 @@
 # Preliminary pipeline
 
-This pipeline produces the numbers in [docs/preliminary_findings.md](../../docs/preliminary_findings.md). Scripts are numbered by the original analysis log; gaps are exploratory runs that were not carried over. Run from the repo root after `python -m cs622.download`. The total is about 30 min. r17 and r20 start 12 worker processes; lower `Pool(12)` if memory is short.
+This pipeline produces the numbers in [docs/preliminary_findings.md](../../docs/preliminary_findings.md). Scripts are numbered by the original analysis log; gaps are exploratory runs that were not carried over. Run from the repo root after `python -m synergy_artifacts.download`. The total is about 30 min. r17 and r20 start 12 worker processes; lower `Pool(12)` if memory is short.
 
 | Step | Command | Output (`results/preliminary/`) |
 |---|---|---|

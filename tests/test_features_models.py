@@ -3,8 +3,8 @@ import pandas as pd
 import pytest
 import torch
 
-from cs622.features import FeatureBuilder, Standardizer
-from cs622.models import DeepSynergy, DoseNetwork
+from synergy_artifacts.features import FeatureBuilder, Standardizer
+from synergy_artifacts.models import DeepSynergy, DoseNetwork
 
 
 def data():

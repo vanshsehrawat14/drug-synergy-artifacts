@@ -2,8 +2,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from cs622.data import canonicalize
-from cs622.splits import generated_folds, pair_id, partitions, published_folds, validate_folds
+from synergy_artifacts.data import canonicalize
+from synergy_artifacts.splits import generated_folds, pair_id, partitions, published_folds, validate_folds
 
 
 def test_pair_swap_and_dose_association():

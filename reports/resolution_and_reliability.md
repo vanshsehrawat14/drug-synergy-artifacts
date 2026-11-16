@@ -1,8 +1,8 @@
-# CS 622 research continuation: resolution and reliability
+# Resolution and reliability
 
-Vansh Sehrawat (neural models and shared pipeline), Kingsley Ukandu (Gaussian process), Sharlene Kim (collaborative filtering). 7 November 2026.
+Vanshdeep Sehrawat (neural models and shared pipeline), Kingsley Ukandu (Gaussian process), Sharlene Kim (collaborative filtering). 7 November 2026.
 
-The validated three-model milestone is `c56fda8`. This continuation uses its saved predictions and preserves its models, attribution and historical results. All follow-up analyses are exploratory. The failed NCATS confirmation remains failed. Protocols were recorded before the corresponding new endpoints: [main protocol](../configs/research_20261107.json), [precision amendment](../configs/loewe_precision_amendment.json), [dose-based calibration control](../configs/reliability_baseline_amendment.json). The amendments identify which earlier observations motivated them.
+The validated three-model milestone is `c56fda8`. This continuation uses its saved predictions and preserves its models, attribution and historical results. All follow-up analyses are exploratory. The failed NCATS confirmation remains failed. Protocols were recorded before the corresponding new endpoints: [main protocol](../configs/interaction_analysis.json), [precision amendment](../configs/loewe_precision_amendment.json), [dose-based calibration control](../configs/reliability_baseline_amendment.json). The amendments identify which earlier observations motivated them.
 
 ## 1. Prediction resolution
 
@@ -113,6 +113,6 @@ The next decisive computations are the frozen 45 GPU input ablations and common-
 
 ## Evidence and execution
 
-[Aggregate evidence](../results/research_20261107/) is retained. Source predictions and native raw outputs remain untracked. Numerical verification uses the `research` optional dependencies. Native-input generation is `python -m cs622.native_reliability --prepare --directory OUTPUT --sources PINNED_SOURCE`; run `experiments/research_native_fit.R` on those inputs in the pinned R environment, then analyze with the same module without `--prepare`.
+[Aggregate evidence](../results/interaction_analysis/) is retained. Source predictions and native raw outputs remain untracked. Numerical verification uses the `research` optional dependencies. Native-input generation is `python -m synergy_artifacts.native_reliability --prepare --directory OUTPUT --sources PINNED_SOURCE`; run `experiments/research_native_fit.R` on those inputs in the pinned R environment, then analyze with the same module without `--prepare`.
 
 GPU results and standardized cross-screen performance differences are pending, not negative findings.
