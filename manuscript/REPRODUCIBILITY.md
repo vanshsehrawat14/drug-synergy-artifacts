@@ -1,6 +1,6 @@
 # Reproducibility
 
-All commands run from the repository root. Python 3.14, numpy 2.4.1, pandas 2.3.3, scipy 1.17.0, matplotlib 3.10.8, mpmath 1.3.0. pdfLaTeX (MiKTeX) with Computer Modern; figures use matplotlib's bundled Computer Modern (cmr10, cmb10).
+All commands run from the repository root. Python 3.14, numpy 2.4.1, pandas 2.3.3, scipy 1.17.0, matplotlib 3.10.8, mpmath 1.3.0. pdfLaTeX (MiKTeX) with Latin Modern, microtype and titlesec; figures use matplotlib's bundled Computer Modern (cmr10, cmb10).
 
 ## Frozen inputs
 
@@ -89,4 +89,4 @@ Per-pair-cell targets, per-case Loewe tables and the observation table are deriv
 
 The editorial revision retains all frozen results, research code, model configurations, proofs, certificates and input hashes. No model was retrained. The full suite passes 142 tests with the documented original CF real-data test skipped; the numerical checker passes 147/147 checks.
 
-The main manuscript has 29 pages and the supplement 32, with no missing glyphs, undefined references, overfull boxes or oversized floats. Tables use 11 pt type, 1.6 row spacing and captions below. Eight figures were revised for information access, evaluation populations, simulation definitions or visual clarity. Thirty-three panel-level comparisons preserve the original plotted scientific arrays, including the population panels moved from Figure 7 to S5. Five unmodified figures retain their original PDF/PNG hashes. Current figure hashes are in `figures/MANIFEST.json`; exact source and document hashes are in the repository's `SOURCE.json` and `MANIFEST.json`.
+The main manuscript has 25 pages and the supplement 26, with no missing glyphs, undefined references, overfull boxes or oversized floats. Table captions use 10 pt type above the table with a 9 pt separation; table rows use the normal spacing. Eight figures were revised for information access, evaluation populations, simulation definitions or visual clarity. Thirty-three panel-level comparisons preserve the original plotted scientific arrays, including the population panels moved from Figure 7 to S5. Five unmodified figures retain their original PDF/PNG hashes. Current figure hashes are in `figures/MANIFEST.json`; exact source and document hashes are in the repository's `SOURCE.json` and `MANIFEST.json`.
